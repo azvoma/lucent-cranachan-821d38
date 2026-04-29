@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" fill="none">
+  <!-- Shield/badge mark -->
+  <path d="M4 6C4 4.895 4.895 4 6 4h36c1.105 0 2 .895 2 2v24c0 8-9 16-18 20C17 46 8 38 8 30V6z" fill="#0a1628"/>
+  <path d="M4 6C4 4.895 4.895 4 6 4h36c1.105 0 2 .895 2 2v24c0 8-9 16-18 20C17 46 8 38 8 30V6z" stroke="#c8102e" stroke-width="1.5"/>
+  <!-- UK text in shield -->
+  <text x="24" y="30" text-anchor="middle" font-family="Oswald,Arial Black,sans-serif" font-weight="700" font-size="16" fill="#ffffff" letter-spacing="1">UK</text>
+  <!-- Red accent bar bottom of shield -->
+  <rect x="4" y="42" width="40" height="3" rx="1.5" fill="#c8102e"/>
+  <!-- Main wordmark -->
+  <text x="56" y="24" font-family="Oswald,Arial Black,sans-serif" font-weight="700" font-size="20" fill="#0a1628" letter-spacing="0.5">RUGBY CLUB</text>
+  <text x="56" y="42" font-family="Oswald,Arial Black,sans-serif" font-weight="400" font-size="12" fill="#c8102e" letter-spacing="3">DIRECTORY</text>
+  <!-- Decorative line -->
+  <line x1="56" y1="27" x2="215" y2="27" stroke="#dde2ea" stroke-width="1"/>
+</svg>

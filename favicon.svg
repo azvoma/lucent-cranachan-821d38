@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <path d="M4 7C4 5.895 4.895 5 6 5h36c1.105 0 2 .895 2 2v22c0 11-10 17-20 20C14 46 4 40 4 29V7z" fill="#0a1628"/>
+  <path d="M4 7C4 5.895 4.895 5 6 5h36c1.105 0 2 .895 2 2v22c0 11-10 17-20 20C14 46 4 40 4 29V7z" stroke="#c8102e" stroke-width="2"/>
+  <line x1="4" y1="14" x2="44" y2="14" stroke="#d4af37" stroke-width="1.5"/>
+  <text x="24" y="34" text-anchor="middle" font-family="Oswald,Arial Black,sans-serif" font-weight="900" font-size="16" fill="#ffffff" letter-spacing="1.5">UK</text>
+  <circle cx="24" cy="42" r="2" fill="#c8102e"/>
+</svg>
