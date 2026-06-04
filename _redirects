@@ -1,9 +1,6 @@
-# Blog index — static HTML page
+# Blog index
 /blog        /blog.html    200
 /blog/       /blog.html    200
-
-# Blog articles — edge function handles /blog/:slug
-# (netlify.toml routes these to the edge function)
 
 # Trailing slash redirects
 /rugby-joints/  /rugby-joints  301

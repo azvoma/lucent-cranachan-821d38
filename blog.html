@@ -5,46 +5,33 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rugby Blog — Guides, Tips &amp; Club Advice | UK Rugby Club Directory</title>
 <meta name="description" content="Rugby tips, club guides, county breakdowns and grassroots rugby news from the UK Rugby Club Directory team. Find your local club today.">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="rugby blog, rugby club guides, grassroots rugby, rugby tips UK">
 <link rel="canonical" href="https://ukrugbyclubdirectory.co.uk/blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rugby Blog — Guides, Tips &amp; Club Advice | UK Rugby Club Directory">
 <meta property="og:description" content="Rugby tips, club guides, county breakdowns and grassroots rugby news from the UK Rugby Club Directory team.">
 <meta property="og:url" content="https://ukrugbyclubdirectory.co.uk/blog">
-<meta property="og:image" content="https://ukrugbyclubdirectory.co.uk/Home Page copy.jpg">
+<meta property="og:image" content="https://ukrugbyclubdirectory.co.uk/imgs/rugby-union-hero.jpg">
 <meta property="og:site_name" content="UK Rugby Club Directory">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rugby Blog — Guides, Tips &amp; Club Advice | UK Rugby Club Directory">
 <meta name="twitter:description" content="Rugby tips, club guides, county breakdowns and grassroots rugby news from the UK Rugby Club Directory team.">
-<meta name="twitter:image" content="https://ukrugbyclubdirectory.co.uk/Home Page copy.jpg">
+<meta name="twitter:image" content="https://ukrugbyclubdirectory.co.uk/imgs/rugby-union-hero.jpg">
+<meta name="geo.region" content="GB">
+<meta name="theme-color" content="#0a1628">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* ── Blog page styles ──────────────────────────────────────── */
-.blog-hero{background:var(--navy);padding:3.5rem 0 4rem;position:relative;overflow:hidden}
-.blog-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,16,46,.06) 0%,transparent 60%);pointer-events:none}
-.blog-hero-inner{position:relative;z-index:1}
-.blog-breadcrumb{display:flex;align-items:center;gap:.4rem;font-size:.78rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.blog-breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
-.blog-breadcrumb a:hover{color:#fff}
-.blog-breadcrumb .bc-sep{color:rgba(255,255,255,.2)}
-.blog-breadcrumb .bc-cur{color:rgba(255,255,255,.8);font-weight:600}
-.blog-hero-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
-.blog-hero h1{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.3px}
-.blog-hero-meta{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
-.blog-meta-item{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:rgba(255,255,255,.6)}
-.blog-meta-item svg{color:var(--gold);flex-shrink:0}
-/* Grid */
-.blog-index-wrap{padding:4rem 0 5rem}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:2.5rem}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:2rem}
 .blog-card{background:#fff;border:1px solid var(--gl);border-radius:var(--rad);overflow:hidden;box-shadow:var(--sh1);transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
 .blog-card:hover{box-shadow:var(--sh3);transform:translateY(-4px)}
 .blog-card-img{height:190px;background:linear-gradient(135deg,var(--navy) 0%,#1e3050 100%);position:relative;overflow:hidden;flex-shrink:0}
-.blog-card-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75;transition:opacity .3s,transform .4s}
-.blog-card:hover .blog-card-img img{opacity:.9;transform:scale(1.04)}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.8;transition:opacity .3s,transform .4s}
+.blog-card:hover .blog-card-img img{opacity:1;transform:scale(1.04)}
 .blog-card-cat{position:absolute;top:.85rem;left:.85rem;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:var(--red);color:#fff;padding:.22rem .65rem;border-radius:100px}
 .blog-card-body{padding:1.35rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
 .blog-card-date{font-size:.73rem;color:var(--grey);font-weight:500}
@@ -53,14 +40,26 @@
 .blog-card-excerpt{font-size:.86rem;color:var(--gd);line-height:1.6;margin:0;flex:1}
 .blog-card-cta{margin-top:auto;padding-top:.75rem;border-top:1px solid var(--off);font-size:.78rem;font-weight:700;color:var(--red);display:flex;align-items:center;gap:.3rem;transition:gap .15s}
 .blog-card:hover .blog-card-cta{gap:.55rem}
+.blog-empty{grid-column:1/-1;text-align:center;padding:5rem 2rem;color:var(--grey)}
+.blog-empty h3{font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin-bottom:.75rem}
+.blog-empty p{font-size:.95rem;max-width:440px;margin:0 auto 1.5rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin 1s linear infinite;display:block;margin:0 auto 1rem}
 @media(max-width:1060px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.blog-grid{grid-template-columns:1fr}.blog-card-img{height:160px}}
 </style>
 </head>
 <body>
+    <div class="tb-actions">
+      <a href="register.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Register Club</a>
+      <span class="tb-pipe">|</span>
+      <a href="contact-us.html">Contact</a>
+    </div>
+  </div>
+</div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="/index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
@@ -70,68 +69,61 @@
       </svg>
     </a>
     <nav id="main-nav" aria-label="Main navigation">
-      <a href="/index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <div class="nav-dropdown">
         <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9.5" ry="6"/><line x1="2.5" y1="12" x2="21.5" y2="12"/></svg>
-          Rugby Union
-          <svg class="drop-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          Rugby Union <svg class="drop-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="dropdown-panel">
           <div class="dp-inner">
             <div class="dp-col">
               <span class="dp-heading">Browse by Region</span>
-              <a href="/rugby-union.html" class="dp-link">All Union Clubs</a>
-              <a href="/rugby-union.html?region=london-se" class="dp-link">London &amp; South East</a>
-              <a href="/rugby-union.html?region=north-west" class="dp-link">North West</a>
-              <a href="/rugby-union.html?region=yorkshire" class="dp-link">Yorkshire</a>
-              <a href="/rugby-union.html?region=midlands" class="dp-link">Midlands</a>
-              <a href="/rugby-union.html?region=south-west" class="dp-link">South West</a>
-              <a href="/rugby-union.html?region=north-east" class="dp-link">North East</a>
-              <a href="/rugby-union.html?region=wales" class="dp-link">Wales</a>
-              <a href="/rugby-union.html?region=scotland" class="dp-link">Scotland</a>
-              <a href="/rugby-union.html?region=northern-ireland" class="dp-link">Northern Ireland</a>
+              <a href="rugby-union.html" class="dp-link">All Union Clubs</a>
+              <a href="rugby-union.html?region=london-se" class="dp-link">London &amp; South East</a>
+              <a href="rugby-union.html?region=north-west" class="dp-link">North West</a>
+              <a href="rugby-union.html?region=yorkshire" class="dp-link">Yorkshire</a>
+              <a href="rugby-union.html?region=midlands" class="dp-link">Midlands</a>
+              <a href="rugby-union.html?region=south-west" class="dp-link">South West</a>
+              <a href="rugby-union.html?region=north-east" class="dp-link">North East</a>
+              <a href="rugby-union.html?region=wales" class="dp-link">Wales</a>
+              <a href="rugby-union.html?region=scotland" class="dp-link">Scotland</a>
+              <a href="rugby-union.html?region=northern-ireland" class="dp-link">N. Ireland</a>
             </div>
             <div class="dp-col">
-              <span class="dp-heading">Popular Searches</span>
-              <a href="/rugby-union.html?region=yorkshire" class="dp-link dp-tag">Rugby in Yorkshire</a>
-              <a href="/rugby-union.html?region=london-se" class="dp-link dp-tag">Rugby in Surrey</a>
-              <a href="/rugby-union.html?region=south-west" class="dp-link dp-tag">Rugby in the South West</a>
+              <span class="dp-heading">Popular</span>
+              <a href="rugby-union.html?region=yorkshire" class="dp-link dp-tag">Rugby in Yorkshire</a>
+              <a href="rugby-union.html?region=london-se" class="dp-link dp-tag">Rugby in Surrey</a>
+              <a href="rugby-union.html?region=south-west" class="dp-link dp-tag">Rugby in the South West</a>
             </div>
           </div>
         </div>
       </div>
       <div class="nav-dropdown">
         <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9.5" ry="6"/><line x1="2.5" y1="12" x2="21.5" y2="12"/></svg>
-          Rugby League
-          <svg class="drop-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          Rugby League <svg class="drop-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="dropdown-panel">
           <div class="dp-inner">
             <div class="dp-col">
               <span class="dp-heading">Browse Clubs</span>
-              <a href="/rugby-league.html" class="dp-link">All League Clubs</a>
-              <a href="/rugby-league.html?region=yorkshire" class="dp-link">Yorkshire</a>
-              <a href="/rugby-league.html?region=north-west" class="dp-link">North West</a>
+              <a href="rugby-league.html" class="dp-link">All League Clubs</a>
+              <a href="rugby-league.html?region=yorkshire" class="dp-link">Yorkshire</a>
+              <a href="rugby-league.html?region=north-west" class="dp-link">North West</a>
             </div>
           </div>
         </div>
       </div>
-      <a href="/rugby-joints.html" class="nav-link">Businesses</a>
+      <a href="rugby-joints.html" class="nav-link">Businesses</a>
       <a href="/blog" class="nav-link active">Blog</a>
-      <a href="/contact-us.html" class="nav-link">Contact</a>
-      <a href="/register.html" class="nav-link nav-cta btn btn-red btn-sm">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        Register Club
-      </a>
+      <a href="contact-us.html" class="nav-link">Contact</a>
+      <a href="register.html" class="nav-link nav-cta btn btn-red btn-sm">+ Register Club</a>
     </nav>
-    <button id="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav id="mobile-nav" aria-hidden="true">
   <div class="mob-header">
-    <a href="/index.html" class="mob-logo">
+    <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
@@ -139,113 +131,87 @@
         <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
         <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="3.5">DIRECTORY</text>
       </svg>
-    </a>
-    <button id="mob-close" aria-label="Close menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
+      </a>
+    <button id="mob-close" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="mob-links">
-    <a href="/index.html" class="mob-link">Home</a>
+    <a href="index.html" class="mob-link">Home</a>
     <div class="mob-group">
       <button class="mob-group-btn" aria-expanded="false">Rugby Union <svg class="mob-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="mob-sub" hidden>
-        <a href="/rugby-union.html" class="mob-sub-link">All Union Clubs</a>
-        <a href="/rugby-union.html?region=london-se" class="mob-sub-link">London &amp; SE</a>
-        <a href="/rugby-union.html?region=north-west" class="mob-sub-link">North West</a>
-        <a href="/rugby-union.html?region=yorkshire" class="mob-sub-link">Yorkshire</a>
-        <a href="/rugby-union.html?region=midlands" class="mob-sub-link">Midlands</a>
-        <a href="/rugby-union.html?region=south-west" class="mob-sub-link">South West</a>
-        <a href="/rugby-union.html?region=wales" class="mob-sub-link">Wales</a>
-        <a href="/rugby-union.html?region=scotland" class="mob-sub-link">Scotland</a>
+        <a href="rugby-union.html" class="mob-sub-link">All Union Clubs</a>
+        <a href="rugby-union.html?region=london-se" class="mob-sub-link">London &amp; SE</a>
+        <a href="rugby-union.html?region=north-west" class="mob-sub-link">North West</a>
+        <a href="rugby-union.html?region=yorkshire" class="mob-sub-link">Yorkshire</a>
+        <a href="rugby-union.html?region=midlands" class="mob-sub-link">Midlands</a>
+        <a href="rugby-union.html?region=south-west" class="mob-sub-link">South West</a>
+        <a href="rugby-union.html?region=wales" class="mob-sub-link">Wales</a>
+        <a href="rugby-union.html?region=scotland" class="mob-sub-link">Scotland</a>
       </div>
     </div>
     <div class="mob-group">
       <button class="mob-group-btn" aria-expanded="false">Rugby League <svg class="mob-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="mob-sub" hidden>
-        <a href="/rugby-league.html" class="mob-sub-link">All League Clubs</a>
-        <a href="/rugby-league.html?region=yorkshire" class="mob-sub-link">Yorkshire</a>
-        <a href="/rugby-league.html?region=north-west" class="mob-sub-link">North West</a>
+        <a href="rugby-league.html" class="mob-sub-link">All League Clubs</a>
+        <a href="rugby-league.html?region=yorkshire" class="mob-sub-link">Yorkshire</a>
+        <a href="rugby-league.html?region=north-west" class="mob-sub-link">North West</a>
       </div>
     </div>
-    <a href="/rugby-joints.html" class="mob-link">Businesses</a>
-    <a href="/blog" class="mob-link">Blog</a>
-    <a href="/contact-us.html" class="mob-link">Contact</a>
+    <a href="rugby-joints.html" class="mob-link">Businesses</a>
+    <a href="/blog" class="mob-link active">Blog</a>
+    <a href="contact-us.html" class="mob-link">Contact</a>
     <div class="mob-divider"></div>
-    <a href="/register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
+    <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
 </nav>
 <main>
 
-  <!-- ── Blog Hero ─────────────────────────────────────────── -->
-  <div class="blog-hero">
-    <div class="con blog-hero-inner">
-      <nav class="blog-breadcrumb" aria-label="Breadcrumb">
-        <a href="/index.html">Home</a>
-        <span class="bc-sep">›</span>
-        <span class="bc-cur">Blog</span>
-      </nav>
-      <div class="blog-hero-tag">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-        Rugby Knowledge Hub
+<section class="listing-hero" style="background-image:url('imgs/rugby-union-hero.jpg');background-size:cover;background-position:center;position:relative">
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,.92) 0%,rgba(10,22,40,.7) 100%)"></div>
+  <div class="con" style="position:relative;z-index:1;text-align:center">
+    <p style="font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">Rugby Knowledge Hub</p>
+    <h1>Rugby Blog</h1>
+    <p>Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
+  </div>
+</section>
+
+<div class="seo-links-bar">
+  <div class="con seo-links-inner">
+    <strong>Browse:</strong>
+    <a href="clubs.html">All Clubs</a><span class="sep">·</span>
+    <a href="rugby-union.html">Rugby Union</a><span class="sep">·</span>
+    <a href="rugby-league.html">Rugby League</a><span class="sep">·</span>
+    <a href="rugby-joints.html">Businesses</a><span class="sep">·</span>
+    <a href="/blog" style="color:var(--red);font-weight:700">Blog</a><span class="sep">·</span>
+    <a href="register.html">Register Your Club</a>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="con">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <p class="ey" style="font-family:var(--fb);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem">Latest Articles</p>
+        <h2 style="margin:0">Rugby Guides &amp; Insights</h2>
       </div>
-      <h1>Rugby Blog</h1>
-      <div class="blog-hero-meta">
-        <span class="blog-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-          Club guides, tips &amp; rugby news
-        </span>
-        <span class="blog-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9.5" ry="6"/></svg>
-          Updated regularly
-        </span>
+      <p id="blog-count" style="font-size:.85rem;color:var(--grey)">Loading articles...</p>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      <div class="blog-empty" id="blog-loading">
+        <svg class="spin" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+        <p>Loading articles...</p>
       </div>
     </div>
   </div>
-
-  <!-- ── Article Grid ──────────────────────────────────────── -->
-  <div class="blog-index-wrap">
-    <div class="con">
-      <div class="sh" style="text-align:left;margin-bottom:0">
-        <span class="ey">Latest Articles</span>
-        <h2>Rugby Guides &amp; Insights</h2>
-        <p>Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
-      </div>
-
-      <div class="blog-grid" id="blog-grid">
-
-        <!-- Article cards are injected by JS from index.json -->
-        <!-- Static fallback cards shown if JS fails -->
-        <noscript>
-          <a href="/blog/best-rugby-counties-england" class="blog-card">
-            <div class="blog-card-img"><img src="/imgs/rugby-union-hero.jpg" alt="Best Rugby Counties" loading="lazy"><span class="blog-card-cat">County Guides</span></div>
-            <div class="blog-card-body">
-              <span class="blog-card-date">1 June 2026</span>
-              <h2 class="blog-card-title">The Best Rugby Counties for Grassroots Rugby in England</h2>
-              <p class="blog-card-excerpt">From Yorkshire to the South West, we rank England's best counties for grassroots rugby.</p>
-              <span class="blog-card-cta">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </div>
-          </a>
-        </noscript>
-
-      </div>
-
-      <!-- Loading state -->
-      <div id="blog-loading" style="text-align:center;padding:3rem;color:var(--grey)">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="animation:spin 1s linear infinite;margin-bottom:.75rem"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
-        <p style="font-size:.9rem">Loading articles...</p>
-      </div>
-
-      <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
-    </div>
-  </div>
+</section>
 
 </main>
-
 <footer>
   <div class="ft-top">
     <div class="con ft-grid">
       <div class="ft-brand">
-        <a href="/index.html" class="ft-logo">
+        <a href="index.html" class="ft-logo">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
             <title>UK Rugby Club Directory</title>
             <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
@@ -254,123 +220,116 @@
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.45)" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
-        <p class="ft-strapline">The UK's most comprehensive rugby club directory. Connecting clubs, players and fans across England, Scotland, Wales and Northern Ireland.</p>
+        <p class="ft-strapline">The UK's most comprehensive free rugby club directory. 620 clubs each with their own full profile page, unique SEO and verified contact details across England, Scotland, Wales and Northern Ireland.</p>
         <div class="ft-socials">
-          <a href="https://twitter.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter/X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://facebook.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
           <a href="https://instagram.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
         </div>
       </div>
-      <div class="ft-col">
-        <h3>Directory</h3>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/clubs.html">All Clubs</a></li>
-          <li><a href="/rugby-union.html">Rugby Union</a></li>
-          <li><a href="/rugby-league.html">Rugby League</a></li>
-          <li><a href="/rugby-joints.html">Businesses</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h3>Regions</h3>
-        <ul>
-          <li><a href="/rugby-union.html?region=london-se">London &amp; South East</a></li>
-          <li><a href="/rugby-union.html?region=yorkshire">Yorkshire</a></li>
-          <li><a href="/rugby-union.html?region=midlands">Midlands</a></li>
-          <li><a href="/rugby-union.html?region=north-west">North West</a></li>
-          <li><a href="/rugby-union.html?region=wales">Wales</a></li>
-          <li><a href="/rugby-union.html?region=scotland">Scotland</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h3>Content</h3>
-        <ul>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/register.html">Register Your Club</a></li>
-          <li><a href="/contact-us.html">Contact Us</a></li>
-          <li><a href="https://www.englandrugby.com" target="_blank" rel="noopener">England Rugby</a></li>
-          <li><a href="https://www.rugby-league.com" target="_blank" rel="noopener">Rugby League</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/terms-of-service.html">Terms of Service</a></li>
-          <li><a href="/cookie-policy.html">Cookie Policy</a></li>
-          <li><a href="/sitemap.xml">Sitemap</a></li>
-        </ul>
-      </div>
+      <div class="ft-col"><h3>Directory</h3><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clubs.html">All Clubs</a></li>
+        <li><a href="rugby-union.html">Rugby Union</a></li>
+        <li><a href="rugby-league.html">Rugby League</a></li>
+        <li><a href="rugby-joints.html">Businesses</a></li>
+      </ul></div>
+      <div class="ft-col"><h3>Regions</h3><ul>
+        <li><a href="rugby-union.html?region=london-se">London &amp; South East</a></li>
+        <li><a href="rugby-union.html?region=yorkshire">Yorkshire</a></li>
+        <li><a href="rugby-union.html?region=midlands">Midlands</a></li>
+        <li><a href="rugby-union.html?region=north-west">North West</a></li>
+        <li><a href="rugby-union.html?region=south-west">South West</a></li>
+        <li><a href="rugby-union.html?region=wales">Wales</a></li>
+        <li><a href="rugby-union.html?region=scotland">Scotland</a></li>
+        <li><a href="rugby-union.html?region=northern-ireland">N. Ireland</a></li>
+      </ul></div>
+      <div class="ft-col"><h3>Get Involved</h3><ul>
+        <li><a href="register.html">Register Your Club</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="https://www.englandrugby.com" target="_blank" rel="noopener">England Rugby</a></li>
+        <li><a href="https://www.rugby-league.com" target="_blank" rel="noopener">Rugby League</a></li>
+        <li><a href="https://www.wru.wales" target="_blank" rel="noopener">Welsh Rugby Union</a></li>
+        <li><a href="https://www.scottishrugby.org" target="_blank" rel="noopener">Scottish Rugby</a></li>
+      </ul></div>
+      <div class="ft-col"><h3>Legal</h3><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+        <li><a href="register.html">List Your Club Free</a></li>
+      </ul></div>
     </div>
   </div>
   <div class="ft-bottom">
     <div class="con ft-bottom-inner">
-      <p>&copy; 2026 UK Rugby Club Directory. All rights reserved.</p>
+      <p>&copy; 2025 UK Rugby Club Directory. All rights reserved. 620 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
       <div class="ft-bottom-links">
-        <a href="/privacy-policy.html">Privacy</a><span>·</span>
-        <a href="/terms-of-service.html">Terms</a><span>·</span>
-        <a href="/cookie-policy.html">Cookies</a><span>·</span>
-        <a href="/sitemap.xml">Sitemap</a>
+        <a href="privacy-policy.html">Privacy</a><span>·</span>
+        <a href="terms-of-service.html">Terms</a><span>·</span>
+        <a href="cookie-policy.html">Cookies</a><span>·</span>
+        <a href="contact-us.html">Contact</a><span>·</span>
+        <a href="sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
 </footer>
 <div id="cookie-banner">
   <div class="con cookie-inner">
-    <p>We use cookies to give you the best experience. <a href="/cookie-policy.html">Cookie Policy</a></p>
+    <p>We use cookies to give you the best experience. <a href="cookie-policy.html">Cookie Policy</a></p>
     <div class="cookie-btns">
       <button id="cookie-reject" class="btn btn-outline-wh btn-sm">Reject</button>
       <button id="cookie-accept" class="btn btn-red btn-sm">Accept All</button>
     </div>
   </div>
 </div>
+<script src="js/main.js"></script>
+<script src="/js/fixes.js"></script>
 
 <script src="js/main.js"></script>
+<script src="/js/fixes.js"></script>
 <script>
-// ── Load articles from index.json and render cards ──────────
+/* Blog article loader — reads /content/blog/index.json */
 (function(){
   var grid = document.getElementById('blog-grid');
-  var loading = document.getElementById('blog-loading');
+  var countEl = document.getElementById('blog-count');
+  if(!grid) return;
 
-  function fmtDate(str){
-    try{
-      return new Date(str).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-    }catch(e){return str;}
+  function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function fmtDate(s){
+    try{ return new Date(s).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}); }
+    catch(e){ return s; }
   }
-
   function renderCard(a){
     var img = a.image
-      ? '<img src="'+a.image+'" alt="'+escHtml(a.title)+'" loading="lazy">'
-      : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;opacity:.2"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><ellipse cx="12" cy="12" rx="9.5" ry="6"/></svg></div>';
-    var cat = a.category ? '<span class="blog-card-cat">'+escHtml(a.category)+'</span>' : '';
-    return '<a href="/blog/'+escHtml(a.slug)+'" class="blog-card">'
+      ? '<img src="'+esc(a.image)+'" alt="'+esc(a.title)+'" loading="lazy">'
+      : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5"><ellipse cx="12" cy="12" rx="9.5" ry="6"/></svg></div>';
+    var cat = a.category ? '<span class="blog-card-cat">'+esc(a.category)+'</span>' : '';
+    return '<a href="/blog/'+esc(a.slug)+'" class="blog-card">'
       +'<div class="blog-card-img">'+img+cat+'</div>'
       +'<div class="blog-card-body">'
       +'<span class="blog-card-date">'+fmtDate(a.date)+'</span>'
-      +'<h2 class="blog-card-title">'+escHtml(a.title)+'</h2>'
-      +'<p class="blog-card-excerpt">'+escHtml(a.excerpt||a.metaDescription||'')+'</p>'
-      +'<span class="blog-card-cta">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>'
-      +'</div>'
-      +'</a>';
+      +'<h2 class="blog-card-title">'+esc(a.title)+'</h2>'
+      +'<p class="blog-card-excerpt">'+esc(a.excerpt||a.metaDescription||'')+'</p>'
+      +'<span class="blog-card-cta">Read article '
+      +'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
+      +'</span></div></a>';
   }
 
-  function escHtml(s){
-    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  fetch('/content/blog/index.json?v='+Date.now())
-    .then(function(r){return r.json();})
+  fetch('/content/blog/index.json?t='+Date.now())
+    .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function(articles){
-      loading.style.display = 'none';
       if(!articles||!articles.length){
-        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--grey)"><p>No articles published yet. Check back soon.</p></div>';
+        grid.innerHTML = '<div class="blog-empty"><h3>Coming Soon</h3><p>Rugby guides, club tips and county breakdowns are on the way.</p><a href="register.html" class="btn btn-red">Register Your Club Free</a></div>';
+        if(countEl) countEl.textContent = '0 articles';
         return;
       }
       grid.innerHTML = articles.map(renderCard).join('');
+      if(countEl) countEl.textContent = articles.length+' article'+(articles.length!==1?'s':'');
     })
     .catch(function(){
-      loading.style.display = 'none';
-      grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--grey)"><p>Unable to load articles. Please try again shortly.</p></div>';
+      grid.innerHTML = '<div class="blog-empty"><h3>Unable to load articles</h3><p>Please try again shortly.</p></div>';
+      if(countEl) countEl.textContent = '';
     });
 })();
 </script>
