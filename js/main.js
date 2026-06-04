@@ -169,4 +169,40 @@
     if(si) si.value=urlQ;
   }
   if(wraps.length) applyGrid(urlQ);
+
+  /* ═══════════════════════════════════════════
+     REGION FILTER — reads ?region= from URL
+     Uses data-city attribute (exact city names)
+  ═══════════════════════════════════════════ */
+  var REGION_CITIES = {
+    'yorkshire':        ['barnsley','barnsley','beverley','bingley','bridlington','cleckheaton','doncaster','driffield','guiseley','halifax','harrogate','hull','huddersfield','ilkley','keighley','leeds','malton','morley','ossett','otley','pontefract','penistone','rotherham','scarborough','selby','sheffield','skipton','wakefield','whitby','york'],
+    'london-se':        ['barnet','beckenham','blackheath','brentford','brentwood','brighton','broadstairs','camberley','cambridge','canterbury','chelmsford','cheshunt','cheshunt','chichester','cranleigh','crawley','crowborough','dartford','dorking','ealing','eastbourne','enfield','esher','folkestone','farnham','gravesend','grays','guildford','harlow','harpenden','haslemere','hastings','haywards heath','hemel hempstead','henley-on-thames','hertford','horsham','ilford','letchworth','lewes','london','maidenhead','maidstone','midhurst','petersfield','pulborough','reading','reigate','richmond','rochford','rochester','sevenoaks','sidcup','southend-on-sea','st albans','stevenage','sutton','tonbridge','tunbridge wells','twickenham','uckfield','walton-on-thames','watford','windsor','woodford green','worthing'],
+    'north-west':       ['altrincham','ambleside','barrow-in-furness','blackburn','blundellsands','bolton','burnley','carlisle','chester','chorley','congleton','crewe','egremont','fleetwood','kendal','keswick','lancaster','leigh','lytham st annes','macclesfield','manchester','millom','northwich','penrith','preston','rochdale','sale','salford','southport','st helens','stockport','warrington','whitehaven','wigan','wilmslow','windermere','wirral'],
+    'midlands':         ['bakewell','banbury','bicester','birmingham','boston','burton upon trent','chesterfield','chipping norton','colchester','corby','coventry','derby','dunstable','hinckley','holt','ilkeston','kenilworth','kettering','kidderminster','kingswinford','leamington spa','leicester','lichfield','lincoln','long eaton','loughborough','luton','lutterworth','mansfield','market harborough','matlock','melton mowbray','milton keynes','northampton','nottingham','oldham','oxford','peterborough','retford','rugby','shrewsbury','solihull','stafford','stourbridge','stratford-upon-avon','sutton coldfield','tamworth','telford','wellingborough','wigston','wolverhampton','worcester','worksop'],
+    'south-west':       ['bath','bideford','bodmin','bournemouth','bridgwater','brixham','camborne','chippenham','cinderford','cirencester','clevedon','colyton','cornwall','crediton','dorchester','exeter','exmouth','falmouth','gloucester','hartpury','hayle','helston','ivybridge','kingsbridge','launceston','liskeard','marlborough','nailsea','newquay','newton abbot','okehampton','paignton','penryn','penzance','perranporth','plymouth','poole','redruth','salisbury','south molton','st austell','st ives','st peter','stroud','swanage','taunton','tavistock','teignmouth','torquay','totton','trowbridge','truro','weston-super-mare','weymouth','wimborne','yeovil'],
+    'north-east':       ['alnwick','ashington','billingham','bishop auckland','blaydon','blyth','consett','corbridge','darlington','durham','egremont','guisborough','hartlepool','hexham','middlesbrough','morpeth','newcastle upon tyne','peterlee','ponteland','redcar','spennymoor','stockton-on-tees','sunderland','thorne'],
+    'wales':            ['aberaeron','abercynon','abertillery','aberystwyth','ammanford','bangor','beddau','bedwas','brecon','bridgend','brynamman','builth wells','caerphilly','cardiff','cardigan','carmarthen','colwyn bay','cwmavon','cwmcarn','ebbw vale','ferndale','glynneath','haverfordwest','lampeter','llandrindod wells','llandovery','llandudno','llanelli','llangefni','llangollen','llanrwst','maesteg','merthyr tydfil','neath','newbridge','newport','newtown','pencoed','penygraig','porthcawl','port talbot','pontypridd','resolven','risca','ruthin','skewen','swansea','treherbert','tumble','welshpool'],
+    'scotland':         ['aberdeen','alloa','ayr','biggar','coldstream','crieff','currie','dundee','dunfermline','edinburgh','elgin','eyemouth','falkirk','forfar','fraserburgh','galashiels','glasgow','grangemouth','haddington','hamilton','hawick','inverness','jedburgh','kelso','kendal','kirkcaldy','langholm','linlithgow','livingston','melrose','montrose','morpeth','musselburgh','peebles','perth','selkirk','st andrews','stirling'],
+    'northern-ireland': ['armagh','ballymena','belfast','dungannon']
+  };
+
+  var regionParam = new URLSearchParams(window.location.search).get('region');
+  if (regionParam && REGION_CITIES[regionParam] && wraps.length) {
+    var citiesForRegion = REGION_CITIES[regionParam];
+    var shown = 0;
+    wraps.forEach(function(w) {
+      var city = (w.getAttribute('data-city') || '').toLowerCase();
+      var name = (w.getAttribute('data-name') || '').toLowerCase();
+      var matched = citiesForRegion.indexOf(city) !== -1;
+      w.style.display = matched ? '' : 'none';
+      if (matched) shown++;
+    });
+    // Update heading and count
+    var regionLabel = regionParam.split('-').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(' ');
+    var h1 = document.querySelector('h1');
+    if (h1) h1.textContent = 'Rugby Clubs in ' + regionLabel;
+    if (countEl) countEl.textContent = shown + ' club' + (shown !== 1 ? 's' : '') + ' found in ' + regionLabel;
+    document.title = 'Rugby Clubs in ' + regionLabel + ' | UK Rugby Club Directory';
+  }
+
 })();
