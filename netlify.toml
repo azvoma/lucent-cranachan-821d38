@@ -1,0 +1,7 @@
+[[edge_functions]]
+  path = "/blog"
+  function = "blog"
+
+[[edge_functions]]
+  path = "/blog/*"
+  function = "blog"
