@@ -1,3 +1,7 @@
+# Blog — handled by edge function
+/blog  /blog  200
+/blog/*  /blog/:splat  200
+
 # Trailing slash redirects
 /rugby-joints/  /rugby-joints  301
 /rugby-league/  /rugby-league  301
