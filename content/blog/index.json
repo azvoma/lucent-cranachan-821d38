@@ -1,12 +1,11 @@
 [
   {
-    "slug": "how-rugby-clubs-build-community-spirit-in-small-towns",
-    "title": "How Rugby Clubs Build Community Spirit in Small Towns",
-    "date": "2025-05-15",
+    "slug": "your-article-slug-here",
+    "title": "Your Article Title Here",
+    "date": "2025-02-10",
     "author": "UK Rugby Club Directory",
     "category": "Grassroots Rugby",
-    "metaDescription": "Discover how grassroots rugby clubs become the heartbeat of small towns across the UK, fostering community spirit and bringing people together.",
-    "excerpt": "Discover how grassroots rugby clubs become the heartbeat of small towns across the UK, fostering community spirit and bringing people together.",
+    "metaDescription": "Your meta description here.",
+    "excerpt": "Your meta description here.",
     "image": "/imgs/rugby-union-hero.jpg"
-  }
-]
+  },
