@@ -316,7 +316,7 @@
       +'</span></div></a>';
   }
 
-  fetch('/content/blog/index.json?t='+Date.now())
+  fetch('https://raw.githubusercontent.com/azvoma/lucent-cranachan-821d38/main/content/blog/index.json?t='+Date.now())
     .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function(articles){
       if(!articles||!articles.length){
