@@ -1,0 +1,18 @@
+# Edge functions for blog article pages
+[[edge_functions]]
+  path = "/blog/*"
+  function = "blog"
+
+# Headers for JSON files — ensures browser can fetch them
+[[headers]]
+  for = "/content/blog/*.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Headers for markdown files
+[[headers]]
+  for = "/content/blog/*.md"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
