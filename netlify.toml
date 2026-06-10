@@ -1,41 +1,45 @@
 # netlify.toml
-# IMPORTANT: This replaces any previous netlify.toml in the repo root.
-# The Edge Function approach has been replaced by a build-time static generator.
+# UK Rugby Club Directory — Netlify configuration
 
 [build]
   publish = "."
-  command = "echo 'Static site — no build command needed'"
+  command = "echo 'No build command — plugin handles blog generation'"
 
-# ── Local Netlify Build Plugin ─────────────────────────────────────────────────
-# Reads content/blog/*.md and outputs static HTML to /blog/ at every deploy.
+# ─── Blog generation plugin ───────────────────────────────────────────────────
+# Runs at pre-build, reads content/blog/*.md, writes static /blog/ HTML files.
+# This replaces the old Edge Function approach entirely.
 [[plugins]]
   package = "./netlify/plugins/generate-blog"
 
-# ── Redirects ──────────────────────────────────────────────────────────────────
-# /blog        → /blog/index.html  (serve the generated index)
-# /blog/*      → /blog/*/index.html (serve individual article pages)
-# These rules are only needed as a safety net — Netlify serves index.html
-# automatically for directory requests, so they may not be strictly required.
-
+# ─── Redirects ────────────────────────────────────────────────────────────────
+# /blog → /blog/index.html (clean URL)
 [[redirects]]
   from   = "/blog"
   to     = "/blog/index.html"
   status = 200
 
+# /blog/:slug → /blog/:slug/index.html (clean article URLs)
 [[redirects]]
-  from   = "/blog/"
-  to     = "/blog/index.html"
+  from   = "/blog/:slug"
+  to     = "/blog/:slug/index.html"
   status = 200
 
-# ── Headers ────────────────────────────────────────────────────────────────────
+# ─── Headers ─────────────────────────────────────────────────────────────────
+# Static HTML files — short cache with revalidation
 [[headers]]
   for = "/blog/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
-    X-Frame-Options = "SAMEORIGIN"
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
+    Cache-Control = "public, max-age=0, must-revalidate"
     X-Content-Type-Options = "nosniff"
+
+# JSON assets (index.json kept for backwards compat in case anything reads it)
+[[headers]]
+  for = "/content/blog/*.json"
+  [headers.values]
+    Content-Type  = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
+# ─── Edge Functions (DISABLED — remove these lines if you have them) ──────────
+# The old edge function approach is replaced by the build plugin above.
+# If you have an [edge_functions] section, delete it.
