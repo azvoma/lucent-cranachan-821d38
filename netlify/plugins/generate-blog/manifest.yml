@@ -1,5 +1,1 @@
-{
-  "name": "generate-blog",
-  "version": "1.0.0",
-  "description": "Converts content/blog/*.md into static HTML at build time"
-}
+name: generate-blog
