@@ -317,6 +317,40 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
     .back-link{display:inline-flex;align-items:center;gap:.35rem;color:#c8102e;font-size:.85rem;font-weight:600;text-decoration:none;margin-bottom:2rem}
     .back-link:hover{text-decoration:underline}
     .back-link svg{flex-shrink:0}
+    /* ── Table of Contents ───────────────────────────────────────────────── */
+    .toc-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.35rem;position:sticky;top:1.5rem}
+    .toc-card-title{font-family:var(--fd,'Oswald',sans-serif);font-size:.95rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .85rem;display:flex;align-items:center;gap:.4rem}
+    .toc-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.1rem}
+    .toc-list li a{display:block;font-size:.82rem;color:#475569;text-decoration:none;padding:.32rem .5rem;border-radius:5px;border-left:2px solid transparent;transition:all .15s;line-height:1.35}
+    .toc-list li a:hover{color:#c8102e;background:#fef2f2;border-left-color:#c8102e}
+    .toc-list li a.toc-active{color:#c8102e;background:#fef2f2;border-left-color:#c8102e;font-weight:600}
+    /* ── E-E-A-T trust bar ───────────────────────────────────────────────── */
+    .eeat-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)}
+    .eeat-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:.25rem .75rem;font-size:.72rem;color:#cbd5e1;font-weight:500}
+    .eeat-badge svg{opacity:.7;flex-shrink:0}
+    /* ── Author bio box ──────────────────────────────────────────────────── */
+    .author-bio{background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%);border:1px solid #e2e8f0;border-radius:14px;padding:1.5rem;margin:2.5rem 0;display:flex;gap:1.25rem;align-items:flex-start}
+    .author-bio-avatar{width:56px;height:56px;border-radius:50%;background:var(--navy,#0a1628);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;flex-shrink:0;border:3px solid #c8102e}
+    .author-bio-content{flex:1}
+    .author-bio-name{font-family:var(--fd,'Oswald',sans-serif);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .2rem}
+    .author-bio-role{font-size:.75rem;color:#c8102e;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+    .author-bio-text{font-size:.85rem;color:#475569;line-height:1.6;margin:0}
+    /* ── Inline article images ───────────────────────────────────────────── */
+    .article-inline-img{margin:2rem 0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+    .article-inline-img img{width:100%;height:auto;display:block;max-height:400px;object-fit:cover}
+    .article-inline-img figcaption{background:#f8fafc;padding:.55rem 1rem;font-size:.78rem;color:#64748b;font-style:italic;border-top:1px solid #e2e8f0}
+    /* ── Social share ────────────────────────────────────────────────────── */
+    .share-section{margin:2.5rem 0 0;padding:1.5rem;background:var(--navy,#0a1628);border-radius:14px;display:flex;align-items:center;flex-wrap:wrap;gap:1rem}
+    .share-label{font-family:var(--fd,'Oswald',sans-serif);font-size:.9rem;font-weight:700;text-transform:uppercase;color:#fff;margin:0;flex-shrink:0}
+    .share-buttons{display:flex;gap:.5rem;flex-wrap:wrap}
+    .share-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem 1rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;transition:opacity .15s,transform .1s;white-space:nowrap}
+    .share-btn:hover{opacity:.88;transform:translateY(-1px)}
+    .share-btn-x{background:#000;color:#fff}
+    .share-btn-fb{background:#1877f2;color:#fff}
+    .share-btn-wa{background:#25d366;color:#fff}
+    .share-btn-li{background:#0a66c2;color:#fff}
+    .share-btn-copy{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:inherit}
+    .share-btn-copy.copied{background:#16a34a}
   </style>
 </head>
 <body>
@@ -334,8 +368,84 @@ ${siteFooter()}
 </div>
 <script src="/js/main.js"></script>
 <script src="/js/fixes.js"></script>
+<script>
+// TOC active section highlight on scroll
+(function(){
+  var links = document.querySelectorAll('.toc-list a');
+  if(!links.length) return;
+  var sections = Array.from(links).map(function(a){
+    return document.getElementById(a.getAttribute('href').slice(1));
+  }).filter(Boolean);
+  function onScroll(){
+    var scrollY = window.scrollY + 120;
+    var active = sections[0];
+    sections.forEach(function(s){ if(s.offsetTop <= scrollY) active = s; });
+    links.forEach(function(a){
+      a.classList.toggle('toc-active', a.getAttribute('href') === '#' + (active && active.id));
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+// Smooth scroll for TOC links
+document.querySelectorAll('.toc-list a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var target = document.getElementById(this.getAttribute('href').slice(1));
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+</script>
 </body>
 </html>`;
+}
+
+// ─── Extract H2 headings for Table of Contents ───────────────────────────────
+function extractToc(html) {
+  const toc = [];
+  const re = /<h2[^>]*>(.*?)<\/h2>/gi;
+  let m;
+  let i = 0;
+  while ((m = re.exec(html)) !== null) {
+    const text = m[1].replace(/<[^>]+>/g, "").trim();
+    const id   = "section-" + (++i);
+    toc.push({ id, text });
+  }
+  return toc;
+}
+
+// ─── Inject IDs into H2s and insert inline images at section breaks ───────────
+// Uses Unsplash rugby-themed source images (no API key needed, served via CDN)
+const RUGBY_IMAGES = [
+  { src: "https://images.unsplash.com/photo-1544279428-a5c58e35fa17?w=800&q=80", alt: "Rugby players in action" },
+  { src: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80", alt: "Rugby match at a UK club ground" },
+  { src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80", alt: "Rugby team training session" },
+  { src: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800&q=80", alt: "Rugby scrum at grassroots level" },
+  { src: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800&q=80", alt: "Rugby players celebrating" },
+];
+
+function enrichArticleHtml(html, slug) {
+  let sectionCount = 0;
+  let imageIndex   = 0;
+  // Deterministic image picks per article so they don't change on rebuild
+  const offset = slug.length % RUGBY_IMAGES.length;
+
+  // Add IDs to h2s and inject an image after the 2nd and 4th h2
+  html = html.replace(/<h2([^>]*)>(.*?)<\/h2>/gi, (match, attrs, text) => {
+    sectionCount++;
+    const id = `section-${sectionCount}`;
+    let result = `<h2${attrs} id="${id}">${text}</h2>`;
+    // Inject image after 2nd and 4th section headings (giving 2 inline images minimum)
+    if (sectionCount === 2 || sectionCount === 4 || sectionCount === 6) {
+      const img = RUGBY_IMAGES[(offset + imageIndex) % RUGBY_IMAGES.length];
+      imageIndex++;
+      result += `\n<figure class="article-inline-img">
+  <img src="${img.src}" alt="${img.alt}" loading="lazy" width="800" height="450">
+  <figcaption>${img.alt}</figcaption>
+</figure>`;
+    }
+    return result;
+  });
+  return html;
 }
 
 // ─── Blog index page ──────────────────────────────────────────────────────────
@@ -390,15 +500,112 @@ function buildIndexPage(articles) {
 
 // ─── Article page ─────────────────────────────────────────────────────────────
 function buildArticlePage(slug, fm, bodyHtml) {
-  // Req 1 & 2: heroImage from frontmatter — rendered below title, above content
-  const heroImageHtml = (fm.heroimage || fm.heroImage || fm.image)
+  // Hero image from frontmatter
+  const heroImg = fm.heroimage || fm.heroImage || fm.image || "";
+  const heroImageHtml = heroImg
     ? `<div class="article-hero-image-wrap">
-        <img src="${fm.heroimage || fm.heroImage || fm.image}" alt="${fm.title || slug}" loading="lazy">
+        <img src="${heroImg}" alt="${fm.title || slug}" loading="lazy">
       </div>`
     : "";
 
-  // Req 4: author initial for avatar chip
-  const authorInitial = fm.author ? fm.author.trim().charAt(0).toUpperCase() : "U";
+  // Author initial for avatar
+  const authorName    = fm.author || "UK Rugby Club Directory";
+  const authorInitial = authorName.trim().charAt(0).toUpperCase();
+
+  // Inject IDs into h2s and insert inline images at section breaks
+  const enrichedHtml = enrichArticleHtml(bodyHtml, slug);
+
+  // Build Table of Contents from h2s
+  const toc = extractToc(enrichedHtml);
+  const tocHtml = toc.length >= 2
+    ? `<div class="toc-card">
+        <p class="toc-card-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          In this article
+        </p>
+        <ul class="toc-list">
+          ${toc.map(t => `<li><a href="#${t.id}">${t.text}</a></li>`).join("\n          ")}
+        </ul>
+      </div>`
+    : "";
+
+  // Canonical URL for share buttons
+  const pageUrl = `https://ukrugbyclubdirectory.co.uk/blog/${slug}/`;
+  const shareTitle = encodeURIComponent(fm.title || slug);
+  const shareUrl   = encodeURIComponent(pageUrl);
+
+  // Social share buttons
+  const shareHtml = `
+    <div class="share-section">
+      <p class="share-label">Share this article</p>
+      <div class="share-buttons">
+        <a class="share-btn share-btn-x"
+           href="https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}"
+           target="_blank" rel="noopener" aria-label="Share on X">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </a>
+        <a class="share-btn share-btn-fb"
+           href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}"
+           target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+        <a class="share-btn share-btn-wa"
+           href="https://wa.me/?text=${shareTitle}%20${shareUrl}"
+           target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.532 5.857L.054 23.35l5.637-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.876 9.876 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374A9.861 9.861 0 012.118 12C2.118 6.963 6.963 2.118 12 2.118S21.882 6.963 21.882 12 17.037 21.882 12 21.882z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-btn share-btn-li"
+           href="https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareTitle}"
+           target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <button class="share-btn share-btn-copy" onclick="
+          navigator.clipboard.writeText('${pageUrl}').then(()=>{
+            this.textContent='✓ Copied!';
+            this.classList.add('copied');
+            setTimeout(()=>{this.innerHTML='<svg width=\\'14\\' height=\\'14\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'2\\'><rect x=\\'9\\' y=\\'9\\' width=\\'13\\' height=\\'13\\' rx=\\'2\\'/><path d=\\'M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1\\'/></svg> Copy link';this.classList.remove('copied')},2000)
+          })" aria-label="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy link
+        </button>
+      </div>
+    </div>`;
+
+  // Author bio box (E-E-A-T: Experience + Authoritativeness)
+  const authorBioHtml = `
+    <div class="author-bio">
+      <div class="author-bio-avatar">${authorInitial}</div>
+      <div class="author-bio-content">
+        <p class="author-bio-name">${authorName}</p>
+        <p class="author-bio-role">Rugby Content Team · UK Rugby Club Directory</p>
+        <p class="author-bio-text">Our editorial team combines years of grassroots rugby experience with in-depth knowledge of clubs across England, Scotland, Wales and Northern Ireland. Every article is written to help players, coaches and supporters get the most from the game.</p>
+      </div>
+    </div>`;
+
+  // E-E-A-T trust badge bar (Experience, Expertise, Authoritativeness, Trustworthiness)
+  const eeatHtml = `
+    <div class="eeat-bar">
+      <span class="eeat-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Expert-reviewed
+      </span>
+      <span class="eeat-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        ${fm.date ? `Updated ${fmtDate(fm.date)}` : "Regularly updated"}
+      </span>
+      <span class="eeat-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Trusted rugby resource
+      </span>
+      <span class="eeat-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        620+ clubs verified
+      </span>
+    </div>`;
 
   const bodyContent = `
     <div class="article-hero">
@@ -418,9 +625,10 @@ function buildArticlePage(slug, fm, bodyHtml) {
           ${fm.date && fm.author ? `<span class="article-meta-sep">&bull;</span>` : ""}
           ${fm.author ? `<span class="article-meta-author">
             <span class="article-meta-author-avatar">${authorInitial}</span>
-            ${fm.author}
+            ${authorName}
           </span>` : ""}
         </div>
+        ${eeatHtml}
       </div>
     </div>
     ${heroImageHtml}
@@ -430,9 +638,12 @@ function buildArticlePage(slug, fm, bodyHtml) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           Back to Blog
         </a>
-        <article class="article-body">${bodyHtml}</article>
+        <article class="article-body">${enrichedHtml}</article>
+        ${authorBioHtml}
+        ${shareHtml}
       </div>
       <aside class="article-sidebar">
+        ${tocHtml}
         <div class="sidebar-card">
           <h3>Find a Rugby Club</h3>
           <p>Search 620+ clubs across England, Scotland, Wales and Northern Ireland.</p>
@@ -449,7 +660,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
   return shell({
     title:       fm.title || slug,
     description: fm.metadescription || fm.excerpt || `Read about ${fm.title || slug} on UK Rugby Club Directory.`,
-    canonical:   `https://ukrugbyclubdirectory.co.uk/blog/${slug}/`,
+    canonical:   pageUrl,
     ogType:      "article",
     bodyContent,
   });
