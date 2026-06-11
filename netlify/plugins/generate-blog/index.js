@@ -234,8 +234,8 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
   <style>
     /* ── Blog-specific styles ───────────────────────────────────────────── */
     .blog-hero{background:var(--navy,#0a1628);padding:3.5rem 1.5rem 3rem;color:#fff;text-align:center}
-    .blog-eyebrow{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c8102e;margin:0 0 .65rem}
-    .blog-hero h1{font-family:var(--fd,'Oswald',sans-serif);font-size:clamp(2rem,5vw,3rem);font-weight:700;text-transform:uppercase;margin:0 0 .6rem;line-height:1.1}
+    .blog-eyebrow{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f5c500;margin:0 0 .65rem}
+    .blog-hero h1{font-family:var(--fd,'Oswald',sans-serif);font-size:clamp(2.8rem,7vw,4.5rem);font-weight:700;text-transform:uppercase;margin:0 0 .6rem;line-height:1.05}
     .blog-hero-meta{font-size:.9rem;color:rgba(255,255,255,.55);margin:0}
     .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
     .blog-section-hd{margin-bottom:2rem}
@@ -316,7 +316,12 @@ function buildIndexPage(articles) {
     : articles.map(a => `
       <a href="/blog/${a.slug}/" class="blog-card">
         <div class="blog-card-img">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"><ellipse cx="12" cy="12" rx="9.5" ry="6"/><path d="M12 2c0 5.5-4 10-4 10s4 4.5 4 10M2.5 9h19M2.5 15h19"/></svg>
+          <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="36" role="img" aria-label="UK Rugby Club Directory" style="opacity:.35">
+            <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
+            <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
+            <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
+            <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" letter-spacing="3">DIRECTORY</text>
+          </svg>
           ${a.category ? `<span class="blog-card-cat">${a.category}</span>` : ""}
         </div>
         <div class="blog-card-body">
@@ -333,7 +338,7 @@ function buildIndexPage(articles) {
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         Rugby Knowledge Hub
       </p>
-      <h1>Rugby Blog</h1>
+      <h1>Blog</h1>
       <p class="blog-hero-meta">${articles.length} article${articles.length !== 1 ? "s" : ""} &nbsp;&bull;&nbsp; Club guides, tips &amp; rugby news</p>
     </div>
     <div class="blog-section">
