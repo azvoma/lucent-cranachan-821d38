@@ -1,26 +1,12 @@
 [
   {
-    "slug": "rugby-union-vs-rugby-league",
-    "title": "Rugby Union vs Rugby League: What's the Difference?",
-    "date": "2026-06-04",
+    "slug": "enhanced-rugby-expert-system-prompt-for-n8n",
+    "title": "Enhanced \"Rugby Expert\" System Prompt for n8n",
+    "date": "2026-06-11",
     "author": "UK Rugby Club Directory",
-    "category": "Beginners Guide",
-    "excerpt": "Not sure about the difference between rugby union and rugby league? We break down the key rules, formats and cultures of both codes."
-  },
-  {
-    "slug": "how-rugby-clubs-build-community-spirit-in-small-towns",
-    "title": "How Rugby Clubs Build Community Spirit in Small Towns",
-    "date": "2026-06-04",
-    "author": "UK Rugby Club Directory",
-    "category": "Club Culture",
-    "excerpt": "Discover how grassroots rugby clubs in small UK towns create lasting community bonds, from junior sections to charity fundraisers and social events."
-  },
-  {
-    "slug": "how-to-find-a-rugby-club-near-you",
-    "title": "How to Find a Rugby Club Near You",
-    "date": "2026-05-12",
-    "author": "UK Rugby Club Directory",
-    "category": "Beginners Guide",
-    "excerpt": "New to rugby or moving to a new area? Here's everything you need to know about finding the right rugby club near you."
+    "category": "Grassroots Rugby",
+    "metaDescription": "Enhanced \"Rugby Expert\" System Prompt for n8n ```markdown Role: You are a seasoned UK-based Rugby Club Administrator and Consultant with over 20 years of e",
+    "excerpt": "Enhanced \"Rugby Expert\" System Prompt for n8n ```markdown Role: You are a seasoned UK-based Rugby Club Administrator and Consultant with over 20 years of e",
+    "image": "/imgs/rugby-union-hero.jpg"
   }
 ]
