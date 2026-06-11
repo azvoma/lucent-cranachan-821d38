@@ -233,11 +233,10 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
   <link rel="stylesheet" href="/css/style.css">
   <style>
     /* ── Blog-specific styles ───────────────────────────────────────────── */
-    .blog-hero{background:var(--navy,#0a1628);padding:3.5rem 1.5rem 3rem;color:#fff;text-align:center}
-    .blog-eyebrow{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f5c500;margin:0 0 .65rem}
-    .blog-hero h1{font-family:var(--fd,'Oswald',sans-serif);font-size:clamp(2.8rem,7vw,4.5rem);font-weight:700;text-transform:uppercase;margin:0 0 .6rem;line-height:1.05}
-    .blog-hero-meta{font-size:.9rem;color:rgba(255,255,255,.55);margin:0}
-    .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
+    .blog-hero{background-image:url('/imgs/rugby-union-hero.jpg');background-size:cover;background-position:center;position:relative;padding:4rem 0 5rem}
+    .blog-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.95),rgba(10,22,40,.75))}
+    .blog-hero-inner{position:relative;z-index:1;text-align:center}
+    .blog-hero-meta{font-size:.9rem;color:rgba(255,255,255,.55);margin:0}    .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
     .blog-section-hd{margin-bottom:2rem}
     .blog-section-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c8102e;margin:0 0 .3rem}
     .blog-section-title{font-family:var(--fd,'Oswald',sans-serif);font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .4rem}
@@ -416,11 +415,11 @@ function extractToc(html) {
 // ─── Inject IDs into H2s and insert inline images at section breaks ───────────
 // Uses Unsplash rugby-themed source images (no API key needed, served via CDN)
 const RUGBY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1544279428-a5c58e35fa17?w=800&q=80", alt: "Rugby players in action" },
-  { src: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80", alt: "Rugby match at a UK club ground" },
-  { src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80", alt: "Rugby team training session" },
-  { src: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800&q=80", alt: "Rugby scrum at grassroots level" },
-  { src: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800&q=80", alt: "Rugby players celebrating" },
+  { src: "/imgs/rugby-union-hero.jpg",  alt: "Rugby union action at a UK club ground" },
+  { src: "/imgs/home-hero.jpg",         alt: "Rugby players competing at grassroots level" },
+  { src: "/imgs/rugby-league-hero.jpg", alt: "Rugby league match in the UK" },
+  { src: "/imgs/contact-hero.jpg",      alt: "Rugby teams in action across the UK" },
+  { src: "/imgs/rugby-union-hero.jpg",  alt: "Scrumming down at a UK rugby club" },
 ];
 
 function enrichArticleHtml(html, slug) {
@@ -472,14 +471,14 @@ function buildIndexPage(articles) {
       </a>`).join("\n");
 
   const bodyContent = `
-    <div class="blog-hero">
-      <p class="blog-eyebrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        Rugby Knowledge Hub
-      </p>
-      <h1>Blog</h1>
-      <p class="blog-hero-meta">${articles.length} article${articles.length !== 1 ? "s" : ""} &nbsp;&bull;&nbsp; Club guides, tips &amp; rugby news</p>
-    </div>
+    <section class="blog-hero">
+      <div class="blog-hero-overlay"></div>
+      <div class="con blog-hero-inner">
+        <span class="hero-eyebrow">Rugby Knowledge Hub</span>
+        <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin:.75rem 0 1rem">Blog</h1>
+        <p style="color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;font-size:1.05rem">Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
+      </div>
+    </section>
     <div class="blog-section">
       <div class="blog-section-hd">
         <p class="blog-section-eyebrow">Latest Articles</p>
