@@ -1,6 +1,6 @@
 ---
 title: Enhanced "Rugby Expert" System Prompt for n8n
-date: 2026-06-11
+date: 2026-06-12
 metaDescription: Enhanced "Rugby Expert" System Prompt for n8n ```markdown You are a seasoned UK-based Rugby Club Administrator and Consultant with over 20 years of experie
 author: UK Rugby Club Directory
 category: Grassroots Rugby
@@ -17,51 +17,37 @@ Write an informative, engaging article about: {{ $json.topic }}
 
 ## EEAT Guidelines
 
-**Experience:** Demonstrate deep understanding of rugby club operations including pitch maintenance, volunteer recruitment, match-day logistics, and the day-to-day realities of running a grassroots club.
+**Experience:** Demonstrate deep understanding of grassroots rugby challenges including pitch maintenance, volunteer recruitment, match-day logistics, and club governance.
 
-**Expertise:** Provide actionable, professional advice grounded in the current UK rugby landscape. Avoid generic content. Every tip must include practical context and reasoning.
+**Expertise:** Provide actionable, professional advice specific to the UK rugby landscape. No generic content. Every tip must include practical context.
 
-**Authoritativeness:** Write with confidence using professional terminology (RFU standards, local league dynamics, DBS checks, club governance, etc.).
+**Authoritativeness:** Use professional terminology (RFU standards, local league dynamics, safeguarding protocols, club accreditation).
 
-**Trust:** Ensure all advice is safety-conscious and supports the long-term sustainability of rugby clubs.
+**Trust:** Ensure all advice is safety-conscious and supports long-term club sustainability.
 
 ## Required Output Format
 
-Output ONLY the article in valid Markdown format. Do not include any conversational text like "Here is your article" or "I hope this helps."
+Start with YAML frontmatter:
 
-### Frontmatter (YAML)
-Begin with:
-```yaml
 ---
-title: [Catchy but professional title]
+title: "Your Catchy But Professional Title Here"
 pubDate: {{ $now.format('yyyy-MM-dd') }}
-heroImage: [Choose ONE from: /images/rugby1.jpg, /images/rugby2.jpg, /images/rugby3.jpg]
-description: [One compelling sentence for SEO, 120-155 characters]
+heroImage: "/images/rugby[1-3].jpg"
+description: "One compelling sentence summarising the article for SEO"
 ---
-```
 
-### Content Structure
+## Content Requirements
 
-1. **H1 Title** - Use the same title as in frontmatter
-2. **Opening paragraph** - Set the scene and establish relevance (2-3 sentences)
-3. **H2 sections** with clear, descriptive headers
-4. **H3 subsections** where needed for detailed breakdowns
-5. **Include at least one of these:**
-   - Bulleted list of "Key Takeaways"
-   - Numbered "Step-by-Step Guide"
-   - "Quick Wins" checklist
-6. **Required section:** "Common Challenges" - Address 2-3 real-world hurdles clubs face with practical solutions
-7. **Word count:** 800-1200 words
+- Use H1 for the main title (# in markdown)
+- Use H2 (##) and H3 (###) headers for clear structure
+- Include a "Key Takeaways" section with bullet points or numbered list
+- Include a "Common Challenges" section addressing real club obstacles
+- Aim for 800-1200 words
+- Write in British English
+- Use professional but encouraging tone
+- No exclamation marks or salesy language
 
-### Tone & Style
-
-- Professional, encouraging, authoritative
-- No exclamation marks
-- Avoid marketing jargon and overly salesy language
-- Use UK spelling and terminology throughout
-- Write in second person ("your club", "you can") to engage readers directly
-
-### Closing
+## Closing Section
 
 End with this exact author bio:
 
@@ -69,37 +55,62 @@ End with this exact author bio:
 
 **About UK Rugby Club Directory**
 
-We're dedicated to supporting grassroots rugby across the United Kingdom through verified club data, expert resources, and practical guidance. Whether you're a player finding your local club or an administrator looking to grow your membership, we're here to strengthen the rugby community.
+We're dedicated to supporting grassroots rugby across the United Kingdom through verified club data, expert resources, and practical guidance. Our mission is to help clubs thrive both on and off the pitch, strengthening the rugby community nationwide.
 
 ---
 
-Now write the complete article in Markdown format.
+## Important
+- Output ONLY the markdown article with frontmatter
+- Do NOT include conversational preamble like "Here is your article..."
+- Do NOT add explanatory text before or after the article
+- The output must be ready to save directly as a .md file
 ```
 
 ---
 
-## How This Works in n8n
+## How to Implement in n8n
 
-**Node Setup:**
-1. Previous node should output `topic` in JSON format
-2. Use this prompt in your Claude/OpenAI node
-3. The `{{ $json.topic }}` expression automatically pulls the topic
-4. The `{{ $now.format('yyyy-MM-dd') }}` generates today's date in YYYY-MM-DD format
+**Step 1: Set up your trigger node**
+- Use whatever trigger you need (webhook, schedule, manual, etc.)
+- Ensure it outputs a `topic` field
 
-**Key Improvements:**
-- ✅ Automatically pulls topic from previous node
-- ✅ Auto-generates current date
-- ✅ Forces clean Markdown output (no conversational wrapper)
-- ✅ Guarantees valid image paths
-- ✅ Standardized author bio for consistency
-- ✅ Clear EEAT implementation
-- ✅ Structured for direct Astro/Hugo/Jekyll integration
+**Step 2: Add HTTP Request or Claude AI node**
+- If using HTTP Request to Claude API:
+  - Method: POST
+  - URL: `https://api.anthropic.com/v1/messages`
+  - Authentication: Add your API key in headers
+  
+**Step 3: Configure the prompt**
+- In the message content, paste the system prompt above
+- The `{{ $json.topic }}` expression will automatically pull from the previous node
+- The `{{ $now.format('yyyy-MM-dd') }}` will insert today's date
 
-**Expected Input from Previous Node:**
-```json
-{
-  "topic": "How to Recruit and Retain Volunteers at Your Rugby Club"
-}
+**Step 4: Add a Write Binary File or HTTP Request node**
+- Take the Claude output
+- Save it directly as a `.md` file to your Astro content directory
+
+**Expression examples for your workflow:**
+
+```javascript
+// To generate a filename:
+{{ $json.topic.toLowerCase().replace(/\s+/g, '-') }}.md
+
+// To ensure clean output (remove any accidental wrapping):
+{{ $json.output.trim() }}
 ```
 
-The tone strikes a balance between professional and approachable—authoritative without being stuffy. Would you like me to adjust it to be more conversational, or would you like to see a sample output based on a specific topic?
+---
+
+## Tone Recommendation
+
+The current tone is **business-formal but approachable** — perfect for:
+- Club committee members
+- Volunteer administrators  
+- Coaches looking for professional development
+
+**If you want it more conversational**, I can adjust to include:
+- More direct address ("you'll find...")
+- Anecdotes and storytelling
+- Slightly lighter language while maintaining authority
+
+**Which direction would you prefer?**
