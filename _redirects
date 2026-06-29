@@ -1,25 +1,51 @@
-# Blog index
+# ============================================================
+# UK Rugby Club Directory — Netlify Redirects
+# Last updated: 2026-06-30
+# ============================================================
+
+# ─── Blog (rewrite, not redirect — serve blog.html at /blog) ──────────────────
 /blog        /blog.html    200
 /blog/       /blog.html    200
 
-# Trailing slash redirects
-/rugby-joints/  /rugby-joints  301
-/rugby-league/  /rugby-league  301
-/rugby-union/   /rugby-union   301
-/cookie-policy/ /cookie-policy 301
-/terms-of-service/ /terms-of-service 301
-/privacy-policy/ /privacy-policy 301
-/contact-us/ /contact-us 301
-/contact-success/ /contact-success 301
-/register-success/ /register-success 301
-/club/*/  /club/:splat 301
+# ─── CANONICAL FIX: Club extensionless → .html (301) ─────────────────────────
+# Fixes 620 non-indexable /club/:slug URLs crawled by Google as duplicates.
+# The .html versions already carry the correct canonical tag.
+# Must come BEFORE trailing slash rules to avoid conflict.
+/club/:slug  /club/:slug.html  301!
 
-# Legacy redirects
-/rugbyjoints  /rugby-joints  301
-/contact  /contact-us  301
-/club/hull-kingston-rovers  /club/hull-kr  301
-/club/canterbury-equipment  /club/canterbury-nz  301
-/club/rugby-world-magazine  /club/rugby-world  301
-/club/york-knights/  /club/york-knights  301
-/club/harlequins/  /club/harlequins  301
-/club/exeter-chiefs/  /club/exeter-chiefs  301
+# ─── CANONICAL FIX: Top-level extensionless pages → .html (301) ──────────────
+# Fixes 9 non-indexable extensionless page URLs.
+/register           /register.html          301!
+/contact-us         /contact-us.html        301!
+/rugby-union        /rugby-union.html       301!
+/rugby-league       /rugby-league.html      301!
+/rugby-joints       /rugby-joints.html      301!
+/clubs              /clubs.html             301!
+/privacy-policy     /privacy-policy.html    301!
+/terms-of-service   /terms-of-service.html  301!
+/cookie-policy      /cookie-policy.html     301!
+
+# ─── Trailing slash redirects ─────────────────────────────────────────────────
+# Keep these AFTER the extensionless rules above.
+/register/          /register.html          301!
+/contact-us/        /contact-us.html        301!
+/rugby-joints/      /rugby-joints.html      301!
+/rugby-league/      /rugby-league.html      301!
+/rugby-union/       /rugby-union.html       301!
+/cookie-policy/     /cookie-policy.html     301!
+/terms-of-service/  /terms-of-service.html  301!
+/privacy-policy/    /privacy-policy.html    301!
+/contact-success/   /contact-success.html   301!
+/register-success/  /register-success.html  301!
+/club/*/            /club/:splat.html       301!
+
+# ─── Legacy redirects ─────────────────────────────────────────────────────────
+/rugbyjoints                    /rugby-joints.html              301
+/contact                        /contact-us.html                301
+/club/hull-kingston-rovers      /club/hull-kr.html              301
+/club/hull-kingston-rovers.html /club/hull-kr.html              301
+/club/canterbury-equipment      /club/canterbury-nz.html        301
+/club/rugby-world-magazine      /club/rugby-world.html          301
+/club/york-knights/             /club/york-knights.html         301
+/club/harlequins/               /club/harlequins.html           301
+/club/exeter-chiefs/            /club/exeter-chiefs.html        301
