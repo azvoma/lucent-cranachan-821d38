@@ -11,7 +11,7 @@
 # Fixes 620 non-indexable /club/:slug URLs crawled by Google as duplicates.
 # The .html versions already carry the correct canonical tag.
 # Must come BEFORE trailing slash rules to avoid conflict.
-/club/:slug  /club/:slug.html  301!
+/club/:slug  /club/:slug.html  301
 
 # ─── CANONICAL FIX: Orphaned root-level club duplicates → /club/ (301) ───────
 # 290 legacy club pages exist at BOTH root (/slug.html) and /club/slug.html.
