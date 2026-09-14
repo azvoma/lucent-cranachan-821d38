@@ -1,0 +1,112 @@
+{
+  "_readme": "Add clubs here to populate the hall hire section. Set available:true and fill in the fields. Clubs NOT in this file show the 'not yet listed' CTA.",
+  "bath-rugby": {
+    "available": true,
+    "description": "Bath Rugby's Recreation Ground offers premium event space in one of England's most iconic sporting venues, available for corporate hospitality, private functions and community events.",
+    "capacity": "Up to 500",
+    "size": "Main function suite",
+    "hire_rate": "POA",
+    "min_hire": "Half day",
+    "booking_note": "Contact the hospitality team to discuss your event requirements and check availability.",
+    "contact_email": "hospitality@bathrugby.com",
+    "features": [
+      "Licensed bar and catering available",
+      "AV equipment and projector screens",
+      "Dedicated event coordinator",
+      "On-site parking for guests",
+      "Accessible facilities throughout",
+      "Pitch-side views available"
+    ],
+    "notes": "Bespoke packages available for weddings, corporate events and private parties. Minimum numbers may apply."
+  },
+  "bristol-bears": {
+    "available": true,
+    "description": "Ashton Gate Stadium — home of Bristol Bears — offers world-class event and conference facilities for events of all sizes.",
+    "capacity": "Up to 2,000",
+    "size": "Multiple suites",
+    "hire_rate": "From £500",
+    "min_hire": "3 hours",
+    "booking_note": "Multiple suites available to suit your event size and budget.",
+    "contact_email": "events@ashtongate.co.uk",
+    "features": [
+      "Multiple suite options from boardroom to gala",
+      "Full in-house catering",
+      "High-speed WiFi throughout",
+      "Dedicated AV team",
+      "Stadium tours available for guests",
+      "Coach and car parking"
+    ]
+  },
+  "harlequins": {
+    "available": true,
+    "description": "The Twickenham Stoop offers prestigious event space in South West London, popular for corporate hospitality, awards evenings and private celebrations.",
+    "capacity": "Up to 800",
+    "size": "Stoop Suite and function rooms",
+    "hire_rate": "From £750",
+    "min_hire": "4 hours",
+    "booking_note": "Contact our events team to discuss bespoke packages including matchday hospitality.",
+    "contact_email": "events@quins.co.uk",
+    "features": [
+      "Pitch-view dining available",
+      "Full bar and catering service",
+      "Event management support",
+      "Accessible venue throughout",
+      "Ample parking on site",
+      "Meeting rooms for smaller events"
+    ]
+  },
+  "exeter-chiefs": {
+    "available": true,
+    "description": "Sandy Park — the home of Exeter Chiefs — is one of the South West's premier event venues, available for conferences, weddings, exhibitions and more.",
+    "capacity": "Up to 1,200",
+    "size": "Sandy Park Suite and Westpoint Rooms",
+    "hire_rate": "From £600",
+    "min_hire": "Half day",
+    "booking_note": "Our dedicated events team will work with you to create the perfect occasion.",
+    "contact_email": "events@exeterchiefs.co.uk",
+    "features": [
+      "Full catering from in-house kitchen",
+      "LED lighting rig and AV support",
+      "Conference and breakout facilities",
+      "Free car parking for 1,000+ vehicles",
+      "Accessible throughout",
+      "Outdoor event space available"
+    ]
+  },
+  "leicester-tigers": {
+    "available": true,
+    "description": "Mattioli Woods Welford Road has hosted events for over 130 years and offers versatile hospitality and conference facilities in the heart of Leicester.",
+    "capacity": "Up to 600",
+    "size": "Clubhouse and hospitality suites",
+    "hire_rate": "From £800",
+    "min_hire": "4 hours",
+    "booking_note": "Available for corporate events, private parties, exhibitions and charity fundraisers.",
+    "contact_email": "hospitality@tigers.co.uk",
+    "features": [
+      "Heritage venue with unique character",
+      "Full bar and restaurant facilities",
+      "Dedicated events team",
+      "Stadium backdrop for photography",
+      "City centre location",
+      "Accessible entrance and lifts"
+    ]
+  },
+  "northampton-saints": {
+    "available": true,
+    "description": "cinch Stadium at Franklin's Gardens offers exceptional event space in Northampton, with flexible suites for every type of occasion.",
+    "capacity": "Up to 900",
+    "size": "Franklin's Suite and hospitality boxes",
+    "hire_rate": "From £700",
+    "min_hire": "4 hours",
+    "booking_note": "Packages available for conferences, dinners, awards evenings and private parties.",
+    "contact_email": "events@northamptonsaints.co.uk",
+    "features": [
+      "Award-winning catering team",
+      "Flexible room configurations",
+      "State-of-the-art AV equipment",
+      "On-site parking",
+      "Fully accessible facilities",
+      "Matchday hospitality also available"
+    ]
+  }
+}
