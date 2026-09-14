@@ -32,6 +32,8 @@ function mdToHtml(md) {
     .replace(/>/g,  "&gt;")
     .replace(/^#### (.+)$/gm, "<h4>$1</h4>")
     .replace(/^### (.+)$/gm,  "<h3>$1</h3>")
+    .replace(/^#### (.+)$/gm, "<h4>$1</h4>")
+    .replace(/^### (.+)$/gm,  "<h3>$1</h3>")
     .replace(/^## (.+)$/gm,   "<h2>$1</h2>")
     .replace(/^# (.+)$/gm,    "<h1>$1</h1>")
     .replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>")
@@ -206,7 +208,7 @@ function siteFooter() {
 }
 
 // ─── Full page shell ──────────────────────────────────────────────────────────
-function shell({ title, description, canonical, ogType, bodyContent }) {
+function shell({ title, description, canonical, ogType, keywords, articleDate, articleAuthor, bodyContent }) {
   return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -222,6 +224,11 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
   <meta property="og:type"        content="${ogType || "website"}">
   <meta property="og:site_name"   content="UK Rugby Club Directory">
   <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@ukrugbydir">
+  <meta property="og:locale"       content="en_GB">
+  \${keywords ? `<meta name="keywords" content="\${keywords}">` : ''}
+  \${articleDate ? `<meta property="article:published_time" content="\${articleDate}"><meta property="article:modified_time" content="\${articleDate}"><meta property="article:section" content="Rugby">` : ''}
+  \${articleAuthor ? `<meta property="article:author" content="\${articleAuthor}">` : ''}
   <meta name="twitter:title"       content="${title}">
   <meta name="twitter:description" content="${description}">
   <meta name="geo.region" content="GB">
@@ -265,7 +272,7 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
     .breadcrumb a{color:#94a3b8;text-decoration:none}
     .breadcrumb a:hover{color:#fff}
     .article-cat{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#7c5cfc;color:#fff;padding:.22rem .65rem;border-radius:100px;margin-bottom:.75rem}
-    .article-hero h1{font-family:var(--fd,'Oswald',sans-serif);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;text-transform:uppercase;margin:0 0 1rem;line-height:1.1;color:#fff}
+    .article-hero h1{font-family:var(--fd,'Inter',sans-serif);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;text-transform:none;margin:0 0 1rem;line-height:1.1;color:#fff}
     /* Req 4: author/date meta — displayed neatly with avatar-style author chip */
     .article-meta{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-top:.25rem}
     .article-meta-date{font-size:.82rem;color:#94a3b8;display:flex;align-items:center;gap:.35rem}
@@ -279,9 +286,12 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
     .article-layout{max-width:1160px;margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:1fr 300px;gap:2.5rem;align-items:start}
     @media(max-width:900px){.article-layout{grid-template-columns:1fr}}
     /* Req 3: improved typography */
-    .article-body{color:#1e293b;line-height:1.85;font-size:1.05rem}
+    .article-body{color:#2d2a45;line-height:1.85;font-size:1.05rem}
+    .article-body>p:first-of-type{font-size:1.12rem;font-weight:400;color:#1e1a35;line-height:1.8}
     .article-body>*+*{margin-top:0}
-    .article-body h2{font-family:var(--fd,'Inter',sans-serif);font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:2.5rem 0 .85rem;padding-bottom:.45rem;border-bottom:2px solid #7c5cfc;line-height:1.2}
+    .article-body h3{font-family:var(--fd,'Inter',sans-serif);font-size:1.1rem;font-weight:700;text-transform:none;color:var(--navy,#0f0c1d);margin:2rem 0 .6rem;line-height:1.3;letter-spacing:-.01em}
+    .article-body h4{font-family:var(--fd,'Inter',sans-serif);font-size:1rem;font-weight:600;text-transform:none;color:var(--navy,#0f0c1d);margin:1.5rem 0 .5rem;line-height:1.4}
+        .article-body h2{font-family:var(--fd,'Inter',sans-serif);font-size:1.4rem;font-weight:700;text-transform:none;color:var(--navy,#0a1628);margin:2.5rem 0 .85rem;padding-bottom:.45rem;border-bottom:2px solid #7c5cfc;line-height:1.2}
     .article-body h3{font-size:1.1rem;font-weight:700;color:var(--navy,#0a1628);margin:2rem 0 .6rem;line-height:1.3}
     .article-body h4{font-size:1rem;font-weight:600;color:#334155;margin:1.5rem 0 .5rem}
     .article-body p{margin:0 0 1.4rem;line-height:1.85}
@@ -487,9 +497,10 @@ function buildIndexPage(articles) {
     </div>`;
 
   return shell({
-    title:       "Rugby Blog — Guides, Tips & Club Advice",
-    description: "Rugby tips, club guides, county breakdowns and grassroots rugby news from the UK Rugby Club Directory team. Find your local club today.",
+    title:       "Rugby Blog UK — Club Guides, Tips & Grassroots News | UKRCD",
+    description: "Expert rugby guides, club advice and grassroots news for UK players, coaches and fans. Written by the UK Rugby Club Directory team. Updated weekly.",
     canonical:   "https://ukrugbyclubdirectory.co.uk/blog",
+    keywords:    "rugby blog UK, rugby club guides, grassroots rugby news, rugby tips England, find a rugby club",
     ogType:      "website",
     bodyContent,
   });
@@ -624,6 +635,10 @@ function buildArticlePage(slug, fm, bodyHtml) {
             <span class="article-meta-author-avatar">${authorInitial}</span>
             ${authorName}
           </span>` : ""}
+          <span class="article-meta-sep">&bull;</span>
+          <span class="article-meta-readtime" style="font-size:.8rem;color:rgba(255,255,255,.7)">
+            ${Math.max(2, Math.ceil(bodyHtml.replace(/<[^>]+>/g,'').split(/\s+/).length / 200))} min read
+          </span>
         </div>
         ${eeatHtml}
       </div>
@@ -660,11 +675,35 @@ function buildArticlePage(slug, fm, bodyHtml) {
       </aside>
     </div>`;
 
+  // ── Yoast-style SEO enforcement for articles ──────────────────────────────
+  const rawTitle = fm.title || slug;
+  // Title: 50-60 chars, primary keyword near front
+  const seoTitle = rawTitle.length <= 45
+    ? `${rawTitle} — UK Rugby Club Guide | UKRCD`
+    : rawTitle.length <= 55
+    ? `${rawTitle} | UK Rugby Club Directory`
+    : rawTitle.slice(0, 52) + '… | UKRCD';
+
+  // Description: 150-160 chars, unique, includes primary kw + CTA
+  let seoDesc = (fm.metadescription || fm.excerpt || '').trim();
+  if (seoDesc.length < 150) {
+    seoDesc = seoDesc.trimEnd().replace(/\.$/, '') +
+      ' — UK Rugby Club Directory covers 620 clubs across England, Scotland, Wales & N. Ireland.';
+  }
+  if (seoDesc.length > 160) seoDesc = seoDesc.slice(0, 157) + '...';
+
+  // Keywords: primary + secondary clusters
+  const primaryKw    = fm.primaryKeyword || fm.primary_keyword || (fm.category ? (fm.category.toLowerCase() + ' UK') : 'rugby clubs UK');
+  const allKeywords  = [primaryKw, 'UK rugby clubs', 'find a rugby club', 'grassroots rugby', fm.category || ''].filter(Boolean).join(', ');
+
   return shell({
-    title:       fm.title || slug,
-    description: fm.metadescription || fm.excerpt || `Read about ${fm.title || slug} on UK Rugby Club Directory.`,
-    canonical:   pageUrl,
-    ogType:      "article",
+    title:         seoTitle,
+    description:   seoDesc,
+    canonical:     pageUrl,
+    ogType:        "article",
+    keywords:      allKeywords,
+    articleDate:   fm.date || '',
+    articleAuthor: fm.author || 'UK Rugby Club Directory Editorial Team',
     bodyContent,
   });
 }
