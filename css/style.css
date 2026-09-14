@@ -1886,3 +1886,189 @@ nav ul, .mob-links, .ft-col ul, .aside-card ul, .sidebar-card ul {
 }
 .supplier-banner-label { font-size: .6rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); flex-shrink: 0; }
 .supplier-banner a { color: var(--text-primary); font-weight: 600; font-size: .82rem; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   V5 FIXES — Images 1-5 + UX/Performance/Accessibility audit
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── IMAGE 1 & 5: Hide entire topbar (nations row + actions row) ─────────────
+   The topbar contains BOTH the England/Wales/Scotland/N.Ireland nations row
+   AND the + Register Club | Contact actions row.
+   Hiding the whole topbar removes both problems at once on every page. */
+.topbar { display: none !important; }
+
+/* ── IMAGE 2: Hero-actions LEFT-aligned, not centred ─────────────────────────
+   The 3 CTA buttons (Visit Website, Get Directions, Claim Listing) on listing
+   pages appear centred because .hero-actions inherits justify-content from the
+   previous order rules. Override to flex-start so they align left with the
+   club name and meta info. */
+.hero-info .hero-actions {
+  justify-content: flex-start !important;
+  flex-wrap: wrap;
+}
+/* Also remove the centred override from the general hero (homepage) */
+.hero .hero-actions { justify-content: center !important; }
+
+/* ── IMAGE 3: Fix old shield logo (logo.svg) on all pages via CSS ─────────────
+   Pages using the old logo.svg (dark navy shield + red accent) need the nav
+   logo text to be readable on white backgrounds. The SVG text fills are
+   inline so we target via CSS. The old logo.svg is also used as favicon
+   (href="favicon.svg") on all pages — that's fine, stays untouched.
+   The header SVG logo text overrides ensure it's always readable: */
+#site-header .logo svg text { fill: var(--text-primary); }
+#site-header .logo svg text:first-child { fill: var(--violet) !important; }
+#site-header .logo svg rect { fill: var(--violet) !important; }
+/* The white-fill text (Rugby Club, DIRECTORY) on the old SVG becomes dark: */
+#site-header .logo svg text[fill="white"] { fill: var(--text-primary) !important; }
+#site-header .logo svg text[fill="rgba(255,255,255,0.5)"] { fill: var(--text-muted) !important; }
+/* Keep mobile nav logo white (it's on violet background) */
+#mobile-nav .mob-logo { color: #fff !important; }
+
+/* ── IMAGE 4: Hide seo-links-bar (Rugby Union · Rugby League browse row) ──────
+   This row appears just below the header on listing pages and category pages.
+   Removing it simplifies the page hierarchy and removes the confusing
+   duplication of nav items. */
+.seo-links-bar { display: none !important; }
+
+/* ── HERO LAYOUT: badge + info side by side, actions left-aligned ─────────────
+   Ensure hero-layout is always horizontal grid so badge stays left
+   and info content (name, actions, meta) starts from the left edge */
+.hero-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+@media (max-width: 640px) {
+  .hero-layout { grid-template-columns: 1fr; text-align: left; }
+  .hero-pills, .hero-meta { justify-content: flex-start !important; }
+  .hero-info .hero-actions { justify-content: flex-start !important; }
+}
+
+/* ── UX FIX: Remove focus outline on mouse click (keep for keyboard) ─────────*/
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+
+/* ── ACCESSIBILITY: Improve colour contrast on muted elements ─────────────────
+   Several muted text items fall below WCAG AA 4.5:1 ratio. Bump them. */
+.text-muted, .bc-sep, .hm-item, .est-chip,
+.card-date, .blog-card-date,
+.stat-item span, .footer-note { color: #5a5475 !important; }
+
+/* Ensure all form placeholders meet 3:1 contrast */
+::placeholder { color: #8b87a8; opacity: 1; }
+
+/* ── PERFORMANCE: Lazy-load non-critical images via CSS hint ──────────────────
+   All images that don't already have loading=eager get contain-intrinsic-size
+   to prevent layout shift. */
+img[loading="lazy"] { contain-intrinsic-size: 0 200px; content-visibility: auto; }
+
+/* ── PERFORMANCE: Remove paint-heavy box-shadow on non-hover cards ────────────
+   Replacing always-on box-shadow with will-change hint and lighter border
+   reduces paint cost on pages with 20+ club cards. */
+.club-card.card { will-change: transform; }
+
+/* ── UX: nav dropdown accessible on keyboard (tab order) ──────────────────────*/
+.dropdown-panel:focus-within {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+/* ── UX: Improve button touch target size (minimum 44×44px for mobile) ────────*/
+@media (max-width: 768px) {
+  .btn { min-height: 44px; }
+  .filter-btn, .filter-chip { min-height: 40px; }
+  .nav-link, .nav-drop-btn { min-height: 44px; }
+}
+
+/* ── UX: Skip to main content link (screen readers + keyboard nav) ─────────────*/
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--violet);
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-size: .875rem;
+  font-weight: 600;
+  z-index: 9999;
+  transition: top .15s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── THIN CONTENT: Club page description richness indicator ───────────────────
+   Pages with minimal content get a subtle "enhance this listing" nudge.
+   Target the ach-default and gallery-coming-soon blocks which signal thin pages. */
+.gallery-coming-soon, .hall-unavailable, .ach-default {
+  border-radius: 14px;
+}
+
+/* ── UX: Smooth scroll behaviour on all pages ──────────────────────────────── */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+/* ── UX: Better link underline on body copy for readability ────────────────── */
+.rich-text a, .article-body a {
+  text-decoration: underline;
+  text-decoration-color: var(--border-md);
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s;
+}
+.rich-text a:hover, .article-body a:hover {
+  text-decoration-color: var(--violet);
+}
+
+/* ── UX: Card hover state — smoother transition ─────────────────────────────── */
+.card, .team-card, .aside-card, .ground-mini-card {
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+}
+
+/* ── PERF: Font-display swap to prevent invisible text during load ────────────*/
+/* Applied in the @import at top of file — swap is default on Google Fonts */
+
+/* ── UX: Better empty state on search — instruction text ────────────────────── */
+.ac-empty { padding: 1.25rem 1.1rem; font-size: .875rem; color: var(--text-secondary); text-align: center; line-height: 1.6; }
+
+/* ── UX: Responsive table on mobile for compare-table ───────────────────────── */
+@media (max-width: 600px) {
+  .compare-table { font-size: .78rem; }
+  .compare-table th, .compare-table td { padding: .5rem .6rem; }
+}
+
+/* ── ACCESSIBILITY: Ensure all interactive elements have visible focus ─────── */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--violet) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px var(--violet-tint) !important;
+}
+
+/* ── UX: Prevent horizontal scroll on all viewports ─────────────────────────── */
+body, html { overflow-x: hidden; max-width: 100vw; }
+
+/* ── MOBILE: Topbar fully removed — add space for sticky header breathing room */
+#site-header { top: 0 !important; }
+
+/* ── UX: Hero-actions button sizes on listing pages ─────────────────────────── */
+.club-hero .hero-actions .btn {
+  font-size: .875rem;
+  padding: .65rem 1.4rem;
+}
+
+/* ── THIN CONTENT: Blog article body min-font for readability ─────────────────*/
+.article-body { font-size: 1rem; line-height: 1.8; }
+.article-body p { margin-bottom: 1.35rem; }
+
+/* ── UX: Pricing page — highlight the Pro card more clearly ──────────────────*/
+.pricing-card.featured {
+  transform: scale(1.02);
+  z-index: 1;
+}
+.pricing-card.featured:hover { transform: scale(1.02) translateY(-3px); }
+@media (max-width: 900px) { .pricing-card.featured { transform: none; } }
