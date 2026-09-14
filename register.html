@@ -20,27 +20,22 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-    <div class="tb-actions">
-      <a href="/register.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Register Club</a>
-      <span class="tb-pipe">|</span>
-      <a href="/contact-us.html">Contact</a>
-    </div>
-  </div>
-</div>
+<a href="#main" class="skip-link">Skip to main content</a>
+
 <header id="site-header">
   <div class="con hdr-inner">
     <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
-        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="white"/>
-        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
-        <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="3.5">DIRECTORY</text>
+        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="#7c5cfc"/>
+        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#0f0c1d" letter-spacing="-0.3">Rugby Club</text>
+        <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="#8b87a8" letter-spacing="3.5">DIRECTORY</text>
       </svg>
     </a>
     <nav id="main-nav" aria-label="Main navigation">
@@ -109,9 +104,9 @@
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
-        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="white"/>
-        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
-        <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="3.5">DIRECTORY</text>
+        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="#7c5cfc"/>
+        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#0f0c1d" letter-spacing="-0.3">Rugby Club</text>
+        <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="#8b87a8" letter-spacing="3.5">DIRECTORY</text>
       </svg>
       </a>
     <button id="mob-close" aria-label="Close menu">
@@ -148,7 +143,7 @@
     <a href="/register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
 </nav>
-<main>
+<main id="main">
 <section style="background:var(--navy);padding:3.5rem 0 4rem">
   <div class="con" style="max-width:680px">
     <h1 style="color:#fff;margin-bottom:.75rem">Register Your Rugby Club</h1>
@@ -165,8 +160,34 @@
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">Club Type *</label><select name="category" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none"><option value="">Select…</option><option>Rugby Union</option><option>Rugby League</option><option>Rugby Business</option></select></div>
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">City / Town *</label><input name="city" required type="text" placeholder="e.g. Leeds" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none"></div>
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">Club Website</label><input name="website" type="url" placeholder="https://yourclub.com" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none"></div>
+      <div style="margin-bottom:1.25rem">
+        <label style="display:block;font-weight:600;margin-bottom:.75rem;font-size:.875rem">Does your club offer hall or venue hire?</label>
+        <label style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;cursor:pointer">
+          <input type="checkbox" name="hall_hire" value="yes" style="width:18px;height:18px;accent-color:#7c5cfc">
+          Yes — we offer hall hire for events, parties or community use
+        </label>
+      </div>
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">Short Club Description</label><textarea name="description" rows="4" placeholder="Tell us a bit about your club…" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none;resize:vertical"></textarea></div>
-      <button type="submit" class="btn btn-red btn-lg" style="align-self:flex-start">Submit Registration</button>
+      <!-- Plan selection -->
+      <div style="margin-bottom:1.25rem">
+        <label style="display:block;font-weight:600;margin-bottom:.75rem;font-size:.875rem">Choose your listing plan</label>
+        <div class="plan-selector">
+          <label class="plan-tile selected" id="reg-tile-free">
+            <input type="radio" name="plan" value="free" checked>
+            <div class="plan-tile-name">Free listing</div>
+            <div class="plan-tile-price">£0 / month — forever</div>
+            <div class="plan-tile-features">Full profile page, Google Maps, SEO markup, searchable directory.</div>
+          </label>
+          <label class="plan-tile" id="reg-tile-pro">
+            <input type="radio" name="plan" value="pro">
+            <div class="plan-tile-name">Pro listing ⭐</div>
+            <div class="plan-tile-price">£9.99 / month</div>
+            <div class="plan-tile-features">Everything free + photos, verified badge, priority ranking, hall hire, stats.</div>
+          </label>
+        </div>
+        <p style="font-size:.75rem;color:#8b87a8;margin-top:.5rem">Pro subscribers receive a payment link after approval. No card needed now. <a href="pricing.html" style="color:#7c5cfc">See full comparison →</a></p>
+      </div>
+            <button type="submit" class="btn btn-red btn-lg" style="align-self:flex-start">Submit Registration</button>
     </form>
   </div>
 </section>
@@ -180,8 +201,8 @@
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
             <title>UK Rugby Club Directory</title>
             <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
-            <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
-            <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
+            <rect x="29" y="5" width="2" height="30" rx="1" fill="#7c5cfc"/>
+            <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#0f0c1d" letter-spacing="-0.3">Rugby Club</text>
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.45)" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
