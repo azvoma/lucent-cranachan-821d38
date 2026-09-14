@@ -1427,3 +1427,462 @@ footer {
   .gallery-row { grid-template-columns: 1fr; }
   .gallery-slot { height: 220px; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   V3 TARGETED FIXES — all pages
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1 ── Logo visible on ALL pages (listing pages have fill="white" inline SVG) */
+/* Override inline SVG text fills via CSS specificity */
+#site-header .logo svg text:nth-child(2) { fill: #7c5cfc !important; }  /* divider rect handled separately */
+#site-header .logo svg text[fill="white"],
+#site-header .logo svg text[fill="rgba(255,255,255,0.5)"] { fill: var(--text-primary) !important; }
+
+/* SVG fill override: target the text elements specifically */
+#site-header .logo svg { overflow: visible; }
+/* Force the "Rugby Club" text dark and DIRECTORY muted on all pages */
+/* This uses attribute selectors to catch the inline fill values */
+#site-header svg text[letter-spacing="-0.3"] { fill: var(--text-primary) !important; }
+#site-header svg text[letter-spacing="3.5"]  { fill: var(--text-muted) !important; }
+#site-header svg text[letter-spacing="-0.3"][fill="white"] { fill: var(--text-primary) !important; }
+/* The vertical divider rect — make it violet */
+#site-header svg rect { fill: var(--violet) !important; }
+/* Mobile nav logo — on violet panel, keep white */
+#mobile-nav svg text[letter-spacing="-0.3"] { fill: #fff !important; }
+#mobile-nav svg text[letter-spacing="3.5"]  { fill: rgba(255,255,255,.55) !important; }
+#mobile-nav svg rect { fill: rgba(255,255,255,.5) !important; }
+
+/* 2 ── SEO-LINKS-BAR centred on ALL pages */
+.seo-links-inner { justify-content: center !important; }
+
+/* 3 ── Remove bullet balls / dots from menus and nav lists */
+#main-nav ul li::before,
+#mobile-nav ul li::before,
+#mobile-nav li::before,
+.mob-links li::before,
+.mob-sub li::before,
+.aside-card ul li::before,
+nav ul li::before,
+.ft-col ul li::before,
+.sidebar-card ul li::before { display: none !important; content: none !important; }
+
+/* Also prevent any inherited list bullet from showing in nav areas */
+.mob-sub a::before,
+.mob-link::before,
+.dp-link::before,
+.ft-col a::before { display: none !important; content: none !important; }
+
+/* 4 ── Why Choose Us — icons more visible */
+/* The icon wrappers use inline style rgba(200,16,46,.2) — we can't override inline */
+/* Instead add a rule for the section that applies brighter icon styling */
+.sec-navy [style*="background:rgba(200,16,46,.2)"],
+.sec-navy [style*="background: rgba(200,16,46,.2)"] {
+  background: rgba(255,255,255,.18) !important;
+  color: #fff !important;
+}
+/* Make the SVGs inside icon wrappers fully white */
+.sec-navy .grid-3 > div svg,
+.sec-navy .grid-4 > div svg {
+  color: #fff !important;
+  stroke: #fff !important;
+}
+
+/* 5 ── Why Choose Us — 4 boxes in one row */
+/* The Why Choose Us section uses .grid-3 inside .sec-navy */
+/* Override to 4 columns inside sec-navy sections */
+.sec-navy .grid-3 {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+@media (max-width: 1060px) {
+  .sec-navy .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 640px) {
+  .sec-navy .grid-3 { grid-template-columns: 1fr !important; }
+}
+
+/* 6 ── LISTING PAGES — hide Join & Contact section */
+section#join { display: none !important; }
+
+/* 7 ── LISTING PAGES — hide Honours Board / Achievements section */
+section#achievements { display: none !important; }
+
+/* 8 ── LISTING PAGES — centre the stats-bar (Sport / Location / Founded row) */
+.stats-inner { justify-content: center !important; }
+
+/* 9 ── LISTING PAGES — move hero-actions (3 CTA buttons) under club name */
+/* Currently: pills → name → meta → actions  
+   Target:    pills → name → actions → meta   */
+.hero-info { display: flex; flex-direction: column; }
+.hero-pills { order: 1; }
+.hero-name  { order: 2; }
+.hero-actions { order: 3; margin-bottom: .75rem !important; margin-top: .75rem !important; }
+.hero-meta  { order: 4; }
+
+/* Adjust hero-actions button sizing to feel natural under the name */
+.hero-actions .btn { font-size: .85rem; padding: .6rem 1.35rem; }
+
+/* 10 ── LISTING PAGES — remove the aside Quick Links li before dots */
+.aside-card ul { list-style: none !important; }
+.aside-card ul li::before { display: none !important; content: none !important; }
+/* Quick links arrow styling — use violet instead of red */
+.aside-card ul li a,
+.aside-card ul li a[style] { color: var(--violet) !important; }
+
+/* 11 ── General: remove any stray list-style bullets from nav/sidebar */
+nav ul, .mob-links, .ft-col ul, .aside-card ul, .sidebar-card ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+/* 12 ── Why Choose Us cards — make heading and body text fully readable */
+.sec-navy .grid-3 > div h3,
+.sec-navy .grid-4 > div h3 {
+  color: #fff !important;
+}
+.sec-navy .grid-3 > div p,
+.sec-navy .grid-4 > div p {
+  color: rgba(255,255,255,.88) !important;
+}
+
+/* 13 ── Why Choose Us card border — slightly brighter */
+.sec-navy .grid-3 > div,
+.sec-navy .grid-4 > div {
+  border-color: rgba(255,255,255,.2) !important;
+}
+
+/* 14 ── Ensure listing page hero stays violet (not dark) */
+.club-hero { background: var(--violet) !important; }
+.club-hero .hero-name { color: #fff !important; }
+.club-hero .hm-item  { color: rgba(255,255,255,.82) !important; }
+.club-hero .bc-cur,
+.club-hero .breadcrumb a { color: rgba(255,255,255,.75) !important; }
+.club-hero .bc-sep { color: rgba(255,255,255,.4) !important; }
+
+/* 15 ── Hero badge wrap and fallback on listing pages */
+.hero-badge-wrap {
+  background: rgba(255,255,255,.15) !important;
+  border-color: rgba(255,255,255,.25) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   V4 UX FIXES — all pages
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── MOBILE NAV — hide topbar on mobile, bigger close button ── */
+@media (max-width: 768px) {
+  .topbar { display: none !important; }
+  #mob-close { width: 48px !important; height: 48px !important; }
+  #mob-close svg { width: 26px !important; height: 26px !important; }
+}
+
+/* ── TRUST SIGNALS — verified chip on sidebar cards ── */
+.verified-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-radius: 100px;
+  padding: .2rem .65rem;
+  margin-bottom: .75rem;
+}
+.unverified-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  border-radius: 100px;
+  padding: .2rem .65rem;
+  margin-bottom: .75rem;
+}
+
+/* ── CLAIM LISTING BANNER — prominent on unclaimed pages ── */
+.claim-banner {
+  background: linear-gradient(135deg, var(--violet-tint) 0%, #fff 100%);
+  border: 2px solid var(--violet);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.claim-banner-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--violet);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.claim-banner-text { flex: 1; min-width: 200px; }
+.claim-banner-text strong {
+  display: block;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: .2rem;
+}
+.claim-banner-text span { font-size: .82rem; color: var(--text-secondary); }
+
+/* ── FILTER BAR — extended facility filters ── */
+.filter-section {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--sh1);
+}
+.filter-section-title {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: .75rem;
+}
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+.filter-row:last-child { margin-bottom: 0; }
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .32rem .85rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-white);
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.filter-chip:hover { border-color: var(--violet); background: var(--violet-tint); color: var(--violet-dk); }
+.filter-chip.active { border-color: var(--violet); background: var(--violet-tint); color: var(--violet-dk); font-weight: 600; }
+.filter-chip svg { flex-shrink: 0; }
+
+/* ── HALL HIRE SECTION ── */
+#hall-hire { scroll-margin-top: 90px; }
+.hall-hire-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+@media (max-width: 900px) {
+  .hall-hire-layout { grid-template-columns: 1fr; }
+}
+.hall-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.hall-spec-item {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.hall-spec-label { font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+.hall-spec-value { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.hall-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin: 1rem 0;
+}
+.hall-feature {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .875rem;
+  color: var(--text-secondary);
+}
+.hall-feature svg { color: var(--green); flex-shrink: 0; }
+.hall-enquiry-card {
+  background: var(--violet);
+  border-radius: 16px;
+  padding: 1.75rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 90px;
+}
+.hall-enquiry-card h3 { color: #fff; font-size: 1.1rem; text-transform: none; letter-spacing: 0; }
+.hall-enquiry-card p { color: rgba(255,255,255,.82); font-size: .875rem; line-height: 1.6; margin: 0; }
+.hall-price { font-size: 1.8rem; font-weight: 800; color: #fff; line-height: 1; }
+.hall-price span { font-size: .8rem; font-weight: 400; color: rgba(255,255,255,.7); }
+.hall-unavailable {
+  background: var(--bg-soft);
+  border: 1.5px dashed var(--border-md);
+  border-radius: 14px;
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+}
+.hall-unavailable svg { color: var(--border-md); }
+.hall-unavailable p { color: var(--text-muted); font-size: .875rem; margin: 0; }
+.hall-unavailable a { color: var(--violet); font-weight: 600; font-size: .875rem; }
+
+/* ── PRICING PAGE STYLES ── */
+.pricing-hero { background: var(--violet); padding: 4rem 0 5rem; text-align: center; position: relative; overflow: hidden; }
+.pricing-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(255,255,255,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.pricing-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.03em; margin-bottom: .75rem; position: relative; }
+.pricing-hero p { color: rgba(255,255,255,.8); max-width: 520px; margin: 0 auto; font-size: 1.05rem; position: relative; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
+.pricing-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--sh1);
+  position: relative;
+  transition: box-shadow .2s, transform .2s;
+}
+.pricing-card:hover { box-shadow: var(--sh3); transform: translateY(-3px); }
+.pricing-card.featured {
+  border: 2px solid var(--violet);
+  box-shadow: 0 0 0 4px var(--violet-tint), var(--sh2);
+}
+.pricing-popular {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--violet);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .25rem 1rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.pricing-name { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+.pricing-price { line-height: 1; }
+.pricing-price strong { font-size: 2.8rem; font-weight: 900; color: var(--text-primary); letter-spacing: -.04em; }
+.pricing-price span { font-size: .9rem; color: var(--text-muted); }
+.pricing-desc { font-size: .875rem; color: var(--text-secondary); line-height: 1.55; }
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: .55rem; margin: 0; padding: 0; }
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  font-size: .85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+.pricing-features li svg { color: var(--green); flex-shrink: 0; margin-top: .1rem; }
+.pricing-features li.disabled svg { color: var(--border-md); }
+.pricing-features li.disabled { color: var(--text-faint); }
+.pricing-cta { margin-top: auto; }
+
+/* ── PLAN SELECTOR on register page ── */
+.plan-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.plan-option {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  position: relative;
+}
+.plan-option.selected {
+  border-color: var(--violet);
+  background: var(--violet-tint);
+}
+.plan-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.plan-option-name { font-size: .95rem; font-weight: 700; color: var(--text-primary); margin-bottom: .2rem; }
+.plan-option-price { font-size: .82rem; font-weight: 600; color: var(--violet); margin-bottom: .35rem; }
+.plan-option-desc { font-size: .78rem; color: var(--text-secondary); line-height: 1.45; }
+
+/* ── BLOG — clubs near you widget at end of articles ── */
+.clubs-nearby-widget {
+  background: var(--violet);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+.clubs-nearby-widget h3 { color: #fff; font-size: 1.2rem; text-transform: none; letter-spacing: 0; margin-bottom: .5rem; }
+.clubs-nearby-widget p { color: rgba(255,255,255,.82); font-size: .9rem; line-height: 1.6; margin: 0 0 1.25rem; }
+
+/* ── PRO BADGE on cards and listing pages ── */
+.pro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--violet) 0%, #9c27b0 100%);
+  color: #fff;
+  border-radius: 100px;
+  padding: .18rem .6rem;
+}
+
+/* ── SUPPLIER AD BANNER ── */
+.supplier-banner {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: .75rem;
+  color: var(--text-muted);
+  margin: 1.5rem 0;
+}
+.supplier-banner-label { font-size: .6rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); flex-shrink: 0; }
+.supplier-banner a { color: var(--text-primary); font-weight: 600; font-size: .82rem; }
