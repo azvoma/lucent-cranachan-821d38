@@ -2072,3 +2072,27 @@ body, html { overflow-x: hidden; max-width: 100vw; }
 }
 .pricing-card.featured:hover { transform: scale(1.02) translateY(-3px); }
 @media (max-width: 900px) { .pricing-card.featured { transform: none; } }
+
+
+/* ═══════════════════════════════════════════════════════════
+   V6: FINAL TOPBAR FIX — removes ALL links above logo
+   ═══════════════════════════════════════════════════════════
+   
+   Three patterns exist across the 920 pages:
+   1. Full .topbar > .tb-inner > .tb-nations + .tb-actions  (club pages)
+   2. Bare .tb-actions with orphaned </div></div> (contact, region, etc.)
+   3. No topbar at all (index.html — already correct)
+   
+   .topbar { display:none } was added in V5 — covers pattern 1.
+   .tb-actions { display:none } below covers pattern 2 (all remaining pages).
+   Together these hide 100% of all links above the logo on every page. */
+
+.tb-actions  { display: none !important; }
+.tb-nations  { display: none !important; }
+.topbar      { display: none !important; }
+
+/* Also hide the ghost container divs left by the orphaned fragments
+   (the </div></div></div> that wraps tb-actions on some pages creates
+   an empty block-level element — collapse it) */
+body > div:not([class]):not([id]):empty,
+body > div[style=""]:empty { display: none !important; }
