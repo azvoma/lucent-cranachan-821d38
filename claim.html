@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claim Your Club Listing — UK Rugby Club Directory</title>
+<meta name="description" content="Is your rugby club already listed? Claim your profile, update your details, upload photos and upgrade to Pro to reach more players.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://ukrugbyclubdirectory.co.uk/claim.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claim Your Club Listing — UK Rugby Club Directory">
+<meta property="og:description" content="Take ownership of your club's profile in the UK's leading rugby directory.">
+<meta property="og:url" content="https://ukrugbyclubdirectory.co.uk/claim.html">
+<meta property="og:site_name" content="UK Rugby Club Directory">
+<meta name="theme-color" content="#7c5cfc">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.step-indicator { display: flex; align-items: center; gap: 0; margin-bottom: 2.5rem; }
+.step-dot { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.step-dot.done { background: var(--green); color: #fff; }
+.step-dot.active { background: var(--violet); color: #fff; }
+.step-dot.pending { background: var(--bg-soft); color: var(--text-muted); border: 2px solid var(--border); }
+.step-line { flex: 1; height: 2px; background: var(--border); }
+.step-line.done { background: var(--green); }
+.step-label { font-size: .72rem; text-align: center; color: var(--text-muted); margin-top: .35rem; }
+.benefit-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; }
+.benefit-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--violet-tint); color: var(--violet); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-title { font-size: .9rem; font-weight: 600; color: var(--text-primary); margin-bottom: .25rem; }
+.benefit-desc { font-size: .82rem; color: var(--text-secondary); line-height: 1.5; }
+.form-field { margin-bottom: 1.25rem; }
+.form-label { display: block; font-size: .82rem; font-weight: 600; color: var(--text-primary); margin-bottom: .4rem; }
+.form-hint { font-size: .75rem; color: var(--text-muted); margin-top: .25rem; }
+.form-input { width: 100%; padding: .75rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: var(--fb); font-size: .95rem; color: var(--text-primary); background: var(--bg-white); outline: none; transition: border-color .15s, box-shadow .15s; }
+.form-input:focus { border-color: var(--violet); box-shadow: 0 0 0 3px var(--violet-tint); }
+.form-select { width: 100%; padding: .75rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; font-family: var(--fb); font-size: .95rem; color: var(--text-primary); background: var(--bg-white); outline: none; }
+.form-select:focus { border-color: var(--violet); box-shadow: 0 0 0 3px var(--violet-tint); }
+.plan-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+@media (max-width: 600px) { .plan-choice { grid-template-columns: 1fr; } }
+.plan-tile { border: 2px solid var(--border); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all .15s; position: relative; }
+.plan-tile input { position: absolute; opacity: 0; pointer-events: none; }
+.plan-tile:has(input:checked), .plan-tile.selected { border-color: var(--violet); background: var(--violet-tint); }
+.plan-tile-name { font-size: .95rem; font-weight: 700; color: var(--text-primary); margin-bottom: .2rem; }
+.plan-tile-price { font-size: .82rem; font-weight: 600; color: var(--violet); margin-bottom: .4rem; }
+.plan-tile-features { font-size: .78rem; color: var(--text-secondary); line-height: 1.5; }
+.success-banner { display: none; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 14px; padding: 1.5rem; text-align: center; }
+.success-banner h3 { color: #15803d; font-size: 1.1rem; margin-bottom: .5rem; }
+.success-banner p { color: #166534; font-size: .875rem; }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="con tb-inner">
+  <div class="tb-nations">
+    <span class="tb-nation">England</span><span class="tb-sep">·</span>
+    <span class="tb-nation">Wales</span><span class="tb-sep">·</span>
+    <span class="tb-nation">Scotland</span><span class="tb-sep">·</span>
+    <span class="tb-nation">N. Ireland</span>
+  </div>
+  <div class="tb-actions">
+    <a href="register.html">+ Register Club</a>
+    <span class="tb-pipe">|</span>
+    <a href="contact-us.html">Contact</a>
+  </div>
+</div></div>
+
+<header id="site-header"><div class="con hdr-inner">
+  <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" style="display:block">
+      <title>UK Rugby Club Directory</title>
+      <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#7c5cfc" letter-spacing="3">UK</text>
+      <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="#7c5cfc"/>
+      <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#0f0c1d" letter-spacing="-0.3">Rugby Club</text>
+      <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="#8b87a8" letter-spacing="3.5">DIRECTORY</text>
+    </svg>
+  </a>
+  <nav id="main-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="clubs.html" class="nav-link">All Clubs</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="blog" class="nav-link">Blog</a>
+    <a href="contact-us.html" class="nav-link">Contact</a>
+    <a href="register.html" class="nav-link nav-cta btn btn-red btn-sm">+ Register Club</a>
+  </nav>
+  <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
+
+<nav id="mobile-nav" aria-hidden="true">
+  <div class="mob-header">
+    <a href="index.html" class="mob-logo">UK Rugby Club Directory</a>
+    <button id="mob-close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="mob-links">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="clubs.html" class="mob-link">All Clubs</a>
+    <a href="pricing.html" class="mob-link">Pricing</a>
+    <a href="contact-us.html" class="mob-link">Contact</a>
+    <div class="mob-divider"></div>
+    <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section style="background:var(--violet);padding:3.5rem 0 4rem;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(255,255,255,.1) 0%,transparent 65%);pointer-events:none"></div>
+  <div class="con" style="position:relative;z-index:1;max-width:680px">
+    <div class="hero-eyebrow" style="margin-bottom:1rem;display:inline-flex">Is your club already listed?</div>
+    <h1 style="color:#fff;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.03em;margin-bottom:.75rem">Claim your club listing</h1>
+    <p style="color:rgba(255,255,255,.82);font-size:1.05rem;max-width:540px;line-height:1.65">Over 620 clubs are already in our directory. Take ownership of your profile, update your details and unlock Pro features to reach more players, members and event bookers.</p>
+  </div>
+</section>
+
+<!-- WHY CLAIM -->
+<section class="sec">
+  <div class="con">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-bottom:3rem">
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="benefit-title">Verified ✓ status</div><div class="benefit-desc">Your club gets a Verified tick, building trust with players and parents searching for a club to join.</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <div><div class="benefit-title">Upload photos</div><div class="benefit-desc">Add up to 20 photos of your ground, kit and matchday atmosphere to bring your profile to life.</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <div><div class="benefit-title">Edit your details</div><div class="benefit-desc">Update contact info, training times, facilities, social links and your club description anytime.</div></div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div><div class="benefit-title">Hall hire listing</div><div class="benefit-desc">Activate your venue hire section to reach event bookers and generate additional club revenue.</div></div>
+      </div>
+    </div>
+
+    <!-- CLAIM FORM -->
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:3rem;align-items:flex-start">
+      <div>
+        <h2 style="margin-bottom:.5rem">Submit your claim</h2>
+        <p style="color:var(--text-secondary);font-size:.95rem;margin-bottom:2rem;line-height:1.6">Fill in the form below and we'll verify you're an authorised representative of the club (secretary, chairman, or committee member) within 1 working day.</p>
+
+        <div id="success-msg" class="success-banner">
+          <h3>✓ Claim submitted</h3>
+          <p>We'll verify your details and be in touch within 1 working day. Check your inbox for a confirmation email.</p>
+        </div>
+
+        <form id="claim-form" action="https://formspree.io/f/YOUR_CLAIM_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Club Claim Request — UK Rugby Directory">
+          <input type="hidden" name="_redirect" value="https://ukrugbyclubdirectory.co.uk/claim.html?submitted=1">
+          <input type="hidden" id="club-slug-field" name="club_slug" value="">
+
+          <div class="form-field">
+            <label class="form-label" for="club-name">Club name *</label>
+            <input id="club-name" class="form-input" name="club_name" type="text" required placeholder="e.g. Anytown RFC" autocomplete="organization">
+            <div class="form-hint">Start typing to search — or enter the name if your club isn't showing.</div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="your-name">Your name *</label>
+            <input id="your-name" class="form-input" name="contact_name" type="text" required placeholder="First and last name" autocomplete="name">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="your-role">Your role at the club *</label>
+            <select id="your-role" class="form-select" name="role" required>
+              <option value="">Select your role…</option>
+              <option>Club Secretary</option>
+              <option>Chairman / President</option>
+              <option>Club Treasurer</option>
+              <option>Committee Member</option>
+              <option>Head Coach</option>
+              <option>Team Manager</option>
+              <option>Welfare Officer</option>
+              <option>Other club official</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="your-email">Your email address *</label>
+            <input id="your-email" class="form-input" name="email" type="email" required placeholder="you@yourclub.co.uk" autocomplete="email">
+            <div class="form-hint">Ideally use a club email address — this helps us verify your role faster.</div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="club-website">Club website (optional)</label>
+            <input id="club-website" class="form-input" name="website" type="url" placeholder="https://yourclub.co.uk">
+          </div>
+
+          <!-- Plan selection -->
+          <div class="form-field">
+            <label class="form-label">Choose your plan</label>
+            <div class="plan-choice">
+              <label class="plan-tile" id="tile-free">
+                <input type="radio" name="plan" value="free" checked>
+                <div class="plan-tile-name">Free</div>
+                <div class="plan-tile-price">£0 / month</div>
+                <div class="plan-tile-features">Claim ownership, edit basic details, contact info and description.</div>
+              </label>
+              <label class="plan-tile" id="tile-pro">
+                <input type="radio" name="plan" value="pro">
+                <div class="plan-tile-name">Pro ⭐</div>
+                <div class="plan-tile-price">£9.99 / month</div>
+                <div class="plan-tile-features">Everything in Free + photos, verified badge, priority ranking, hall hire listing, stats.</div>
+              </label>
+            </div>
+            <div class="form-hint">Pro subscribers are contacted after claim verification with a secure payment link. No card needed now.</div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="extra-info">Anything else we should know? (optional)</label>
+            <textarea id="extra-info" class="form-input" name="notes" rows="3" placeholder="e.g. club details that need updating, hall hire info, or other notes for our team…" style="resize:vertical"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-red btn-lg">Submit Claim Request</button>
+          <p style="font-size:.78rem;color:var(--text-muted);margin-top:.75rem">We verify every claim within 1 working day. By submitting you confirm you are an authorised representative of the club.</p>
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <div style="position:sticky;top:90px;display:flex;flex-direction:column;gap:1.25rem">
+        <div class="aside-card">
+          <h3>What happens next</h3>
+          <div style="display:flex;flex-direction:column;gap:.85rem;font-size:.875rem">
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:22px;height:22px;border-radius:50%;background:var(--violet);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">1</div>
+              <div><strong style="color:var(--text-primary)">Submit this form</strong><br><span style="color:var(--text-secondary)">Takes about 2 minutes.</span></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:22px;height:22px;border-radius:50%;background:var(--violet);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">2</div>
+              <div><strong style="color:var(--text-primary)">We verify your details</strong><br><span style="color:var(--text-secondary)">Within 1 working day we confirm you're an authorised club representative.</span></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:22px;height:22px;border-radius:50%;background:var(--violet);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">3</div>
+              <div><strong style="color:var(--text-primary)">Access your dashboard</strong><br><span style="color:var(--text-secondary)">You'll receive a link to edit your profile and upload photos.</span></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">✓</div>
+              <div><strong style="color:var(--text-primary)">Your listing goes live</strong><br><span style="color:var(--text-secondary)">Verified tick appears and your updates are published.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="aside-card" style="background:var(--violet-tint);border-color:var(--border-md)">
+          <h3>Not yet listed?</h3>
+          <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1rem">If your club isn't in the directory yet, register it for free — it takes 2 minutes.</p>
+          <a href="register.html" class="btn btn-red" style="width:100%;justify-content:center">Register Your Club</a>
+        </div>
+        <div class="aside-card">
+          <h3>Need help?</h3>
+          <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.6;margin:0">Email us at <a href="mailto:hello@ukrugbyclubdirectory.co.uk" style="color:var(--violet);font-weight:600">hello@ukrugbyclubdirectory.co.uk</a> and we'll sort it out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="ft-top"><div class="con ft-grid">
+    <div class="ft-brand">
+      <a href="index.html" class="ft-logo">
+        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
+          <title>UK Rugby Club Directory</title>
+          <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
+          <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
+          <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
+          <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.72)" letter-spacing="3">DIRECTORY</text>
+        </svg>
+      </a>
+      <p class="ft-strapline">The UK's most comprehensive free rugby club directory.</p>
+    </div>
+    <div class="ft-col"><h3>Directory</h3><ul><li><a href="index.html">Home</a></li><li><a href="clubs.html">All Clubs</a></li><li><a href="rugby-union.html">Rugby Union</a></li></ul></div>
+    <div class="ft-col"><h3>For Clubs</h3><ul><li><a href="register.html">Register Free</a></li><li><a href="claim.html">Claim Listing</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+    <div class="ft-col"><h3>Legal</h3><ul><li><a href="privacy-policy.html">Privacy</a></li><li><a href="terms-of-service.html">Terms</a></li><li><a href="cookie-policy.html">Cookies</a></li></ul></div>
+  </div></div>
+  <div class="ft-bottom"><div class="con ft-bottom-inner">
+    <p>&copy; 2025 UK Rugby Club Directory. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="privacy-policy.html">Privacy</a><span>·</span><a href="terms-of-service.html">Terms</a><span>·</span><a href="sitemap.xml">Sitemap</a></div>
+  </div></div>
+</footer>
+
+<div id="cookie-banner"><div class="con cookie-inner">
+  <p>We use cookies to give you the best experience. <a href="cookie-policy.html">Cookie Policy</a></p>
+  <div class="cookie-btns">
+    <button id="cookie-reject" class="btn btn-outline btn-sm">Reject</button>
+    <button id="cookie-accept" class="btn btn-red btn-sm">Accept All</button>
+  </div>
+</div></div>
+
+<script src="js/main.js"></script>
+<script src="js/fixes.js"></script>
+<script>
+/* Pre-fill club name from query param e.g. claim.html?club=bath-rugby */
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var club = params.get('club');
+  if (club) {
+    var name = club.replace(/-/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+    var field = document.getElementById('club-name');
+    if (field) field.value = name;
+    var slugField = document.getElementById('club-slug-field');
+    if (slugField) slugField.value = club;
+  }
+  /* Show success message if redirected back */
+  if (params.get('submitted') === '1') {
+    var form = document.getElementById('claim-form');
+    var msg  = document.getElementById('success-msg');
+    if (form && msg) { form.style.display = 'none'; msg.style.display = 'block'; }
+  }
+})();
+
+/* Plan tile toggle */
+document.querySelectorAll('.plan-tile input[type="radio"]').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+    document.querySelectorAll('.plan-tile').forEach(function(t) { t.classList.remove('selected'); });
+    radio.closest('.plan-tile').classList.add('selected');
+  });
+});
+/* Set initial selected state */
+var checkedPlan = document.querySelector('.plan-tile input:checked');
+if (checkedPlan) checkedPlan.closest('.plan-tile').classList.add('selected');
+
+/* Stripe redirect for Pro selection on form submit */
+document.getElementById('claim-form').addEventListener('submit', function(e) {
+  var plan = document.querySelector('input[name="plan"]:checked');
+  if (plan && plan.value === 'pro') {
+    /* Store intent in sessionStorage so we can redirect to Stripe after claim is submitted */
+    sessionStorage.setItem('claim_plan', 'pro');
+  }
+});
+</script>
+</body>
+</html>
