@@ -141,12 +141,18 @@
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
 </nav><main>
-<section style="background-image:url('imgs/contact-hero.jpg');background-size:cover;background-position:center 40%;position:relative;padding:4rem 0 5rem">
-  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.65),rgba(10,22,40,.65))"></div>
-  <div class="con" style="position:relative;z-index:1;text-align:center">
-    <span class="hero-eyebrow">Get in Touch</span>
-    <h1>Contact UK Rugby Club Directory</h1>
-    <p style="color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;font-size:1.05rem">Get in touch for any enquiries about club listings, updating details, partnerships or general questions about the directory.</p>
+<section class="listing-hero-england">
+  <div class="lh-left" style="background:var(--navy)">
+    <span class="lh-eyebrow">UK Rugby Club Directory</span>
+    <h1>Contact Us</h1>
+    <p>Get in touch to register your club, update a listing, claim a profile or enquire about advertising. We respond within 1 working day.</p>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem">
+      <a href="register.html" class="btn-er-primary">Register a Club &#8250;</a>
+      <a href="claim.html" class="btn-er-ghost">Claim Listing &#8250;</a>
+    </div>
+  </div>
+  <div class="lh-right">
+    <img src="imgs/contact-hero.jpg" alt="Contact UK Rugby Club Directory" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block">
   </div>
 </section>
 
@@ -298,4 +304,19 @@
 </div>
 <script src="js/main.js"></script>
 <script src="/js/fixes.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.accordion-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.accordion-item');
+      var isOpen=item.classList.contains('open');
+      btn.closest('.accordion').querySelectorAll('.accordion-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.accordion-trigger').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+})();
+</script>
 </body></html>

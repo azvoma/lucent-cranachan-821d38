@@ -142,16 +142,19 @@
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
 </nav><main>
-<section class="listing-hero" style="background-image:url('imgs/rugby-union-hero.jpg');background-size:cover;background-position:center;position:relative">
-  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,.92) 0%,rgba(10,22,40,.7) 100%)"></div>
-  <div class="con" style="position:relative;z-index:1;text-align:center">
+<section class="listing-hero-england">
+  <div class="lh-left">
+    <span class="lh-eyebrow">UK Rugby Club Directory</span>
     <h1>Rugby Union Clubs UK</h1>
-    <p>Browse 453 rugby union clubs — from Premiership to grassroots across all four UK nations.</p>
-    <div class="listing-search-wrap search-wrap" style="margin:0 auto">
+    <p>Browse 453 rugby union clubs — from Premiership to grassroots across England, Scotland, Wales and Northern Ireland.</p>
+    <div class="search-wrap" style="max-width:420px;position:relative">
       <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="listing-search" class="search-input" type="search" placeholder="Search by club name or town…" aria-label="Search clubs" autocomplete="off" data-category="union">
-      <button class="btn btn-red btn-sm search-btn" onclick="document.getElementById('listing-search').dispatchEvent(new Event('input'))">Search</button>
+      <input id="listing-search" class="search-input" type="search" placeholder="Search by club name or town…" aria-label="Search by club name or town…" data-category="union" autocomplete="off">
+      <button class="btn-er-primary search-btn" style="position:absolute;right:.4rem;top:50%;transform:translateY(-50%);padding:.5rem 1rem;font-size:.75rem;letter-spacing:.06em" onclick="document.getElementById('listing-search').dispatchEvent(new Event('input'))">Search →</button>
     </div>
+  </div>
+  <div class="lh-right">
+    <img src="imgs/rugby-union-hero.jpg" alt="Rugby Union Clubs UK" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block">
   </div>
 </section><div class="seo-links-bar">
   <div class="con seo-links-inner">
@@ -188,30 +191,53 @@
       <p style="font-size:.95rem;color:var(--text-secondary,#4b4668);line-height:1.7;margin-bottom:.85rem">Women's and girls' rugby union has grown significantly in England, Scotland, and Wales over the past decade. The RFU reports that women's and girls' rugby is the fastest growing area of the game, with more clubs than ever offering dedicated women's sections. Junior rugby — covering mini rugby from age 5 and junior rugby through to under-18 level — is a cornerstone of most clubs in this directory.</p>
 
       <h3 style="font-family:'Oswald',system-ui,sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy,#1a2035);margin:2rem 0 .85rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:4px;height:1.1rem;background:#c8102e;flex-shrink:0"></span>FAQs</h3>
-      <div style="border:1px solid var(--border,#e4e1f5);border-radius:12px;overflow:hidden;margin-top:.5rem" itemscope itemtype="https://schema.org/FAQPage">
-        <div style="padding:1.1rem 1.25rem;border-bottom:1px solid var(--border,#e4e1f5)" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <div itemprop="name" style="font-size:.9rem;font-weight:600;color:var(--text-primary,#0f0c1d);margin-bottom:.4rem">How many rugby union clubs are there in the UK?</div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" style="font-size:.85rem;color:var(--text-secondary,#4b4668);line-height:1.65">The RFU alone registers over 1,900 rugby union clubs in England. Across England, Scotland, Wales and Northern Ireland the total exceeds 2,500. The UK Rugby Club Directory currently features 453 of the most prominent clubs across all four nations.</div></div>
+      <div class="accordion" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-text" itemprop="name">How many rugby union clubs are there in the UK?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">The RFU alone registers over 1,900 rugby union clubs in England. Across England, Scotland, Wales and Northern Ireland the total exceeds 2,500. The UK Rugby Club Directory currently features 453 of the most prominent clubs across all four nations.</p>
+          </div>
         </div>
-        <div style="padding:1.1rem 1.25rem;border-bottom:1px solid var(--border,#e4e1f5)" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <div itemprop="name" style="font-size:.9rem;font-weight:600;color:var(--text-primary,#0f0c1d);margin-bottom:.4rem">What is the difference between rugby union and rugby league?</div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" style="font-size:.85rem;color:var(--text-secondary,#4b4668);line-height:1.65">Rugby union is played with 15 players per side and is governed by World Rugby. Rugby league is played with 13 players per side and has different rules around tackling and possession. The two codes split in 1895 over a dispute about payments to players. Both are popular across the UK, though union has wider geographical coverage and league is strongest in the north of England.</div></div>
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-text" itemprop="name">What is the difference between rugby union and rugby league?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Rugby union is played with 15 players per side and is governed by World Rugby. Rugby league is played with 13 players per side and has different rules around tackling and possession. The two codes split in 1895 over a dispute about payments to players. Both are popular across the UK, though union has wider geographical coverage and league is strongest in the north of England.</p>
+          </div>
         </div>
-        <div style="padding:1.1rem 1.25rem;border-bottom:1px solid var(--border,#e4e1f5)" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <div itemprop="name" style="font-size:.9rem;font-weight:600;color:var(--text-primary,#0f0c1d);margin-bottom:.4rem">How do I join a rugby union club as an adult beginner?</div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" style="font-size:.85rem;color:var(--text-secondary,#4b4668);line-height:1.65">Find a club near you using this directory, then contact them to ask about beginner or social rugby sessions. Many clubs run midweek introductory sessions specifically for adults who have never played before. The RFU's "On the Ball" initiative also runs regular beginner programmes across England through affiliated clubs.</div></div>
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-text" itemprop="name">How do I join a rugby union club as an adult beginner?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Find a club near you using this directory, then contact them to ask about beginner or social rugby sessions. Many clubs run midweek introductory sessions specifically for adults who have never played before. The RFU's On the Ball initiative also runs regular beginner programmes across England through affiliated clubs.</p>
+          </div>
         </div>
-        <div style="padding:1.1rem 1.25rem;border-bottom:1px solid var(--border,#e4e1f5)" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <div itemprop="name" style="font-size:.9rem;font-weight:600;color:var(--text-primary,#0f0c1d);margin-bottom:.4rem">What leagues does rugby union in England use?</div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" style="font-size:.85rem;color:var(--text-secondary,#4b4668);line-height:1.65">England's rugby union pyramid runs from the Gallagher Premiership (Tier 1) through the RFU Championship (Tier 2), National League 1 (Tier 3), National League 2 (Tier 4), and then regional leagues from Tier 5 downwards, including London &amp; SE, Midlands, North, South West, and their respective sub-divisions all the way to county and local league level.</div></div>
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-text" itemprop="name">What leagues does rugby union in England use?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">England's rugby union pyramid runs from the Gallagher Premiership (Tier 1) through the RFU Championship (Tier 2), National League 1 (Tier 3), National League 2 (Tier 4), and then regional leagues from Tier 5 downwards, including London & SE, Midlands, North, South West, and their respective sub-divisions all the way to county and local league level.</p>
+          </div>
         </div>
-        <div style="padding:1.1rem 1.25rem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <div itemprop="name" style="font-size:.9rem;font-weight:600;color:var(--text-primary,#0f0c1d);margin-bottom:.4rem">Can women and girls join a rugby union club?</div>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" style="font-size:.85rem;color:var(--text-secondary,#4b4668);line-height:1.65">Absolutely. The majority of rugby union clubs in England, Scotland and Wales now have dedicated women's and girls' sections. Women's rugby union has grown rapidly since England's 2014 and 2021 Women's Rugby World Cup campaigns, and the game at community level is welcoming, inclusive, and actively recruiting new players of all ages and abilities.</div></div>
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-text" itemprop="name">Can women and girls join a rugby union club?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Absolutely. The majority of rugby union clubs in England, Scotland and Wales now have dedicated women's and girls' sections. Women's rugby union has grown rapidly since England's World Cup campaigns, and the game at community level is welcoming, inclusive, and actively recruiting new players of all ages and abilities.</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div></div>
 </section>
 <!-- END SEO Content Block -->
 
@@ -5744,4 +5770,20 @@
 </div>
 <script src="js/main.js"></script>
 <script src="/js/fixes.js"></script>
+
+<script>
+(function(){
+  document.querySelectorAll('.accordion-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.accordion-item');
+      var isOpen=item.classList.contains('open');
+      btn.closest('.accordion').querySelectorAll('.accordion-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.accordion-trigger').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+})();
+</script>
 </body></html>
