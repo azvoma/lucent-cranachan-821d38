@@ -19,11 +19,11 @@
 <meta name="twitter:description" content="Find 66 rugby businesses including kit suppliers, equipment brands, media outlets and more.">
 <meta name="twitter:image" content="https://ukrugbyclubdirectory.co.uk/imgs/rugby-joints-banner.jpg">
 <meta name="geo.region" content="GB">
-<meta name="theme-color" content="#0a1628">
+<meta name="theme-color" content="#1a2035">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Rugby Businesses & Services UK | 66 Listed | UK Rugby Club Directory", "description": "Find 66 rugby businesses including kit suppliers, equipment brands, media outlets and more.", "url": "https://ukrugbyclubdirectory.co.uk/rugby-joints.html"}</script>
 </head><body>
@@ -40,8 +40,8 @@
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
-        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="white"/>
-        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
+        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="#c8102e"/>
+        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="-0.3">Rugby Club</text>
         <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="3.5">DIRECTORY</text>
       </svg>
     </a>
@@ -104,8 +104,8 @@
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
-        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="white"/>
-        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
+        <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="#c8102e"/>
+        <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="-0.3">Rugby Club</text>
         <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="3.5">DIRECTORY</text>
       </svg>
       </a>
@@ -141,16 +141,20 @@
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
 </nav><main>
-<section class="listing-hero" style="background-image:url('imgs/rugby-joints-banner.jpg');background-size:cover;background-position:center 50%;position:relative">
-  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,.82) 0%,rgba(10,22,40,.60) 100%)"></div>
-  <div class="con" style="position:relative;z-index:1;text-align:center">
+<!-- England Rugby style diagonal split hero -->
+<section class="listing-hero-england">
+  <div class="lh-left">
+    <span class="lh-eyebrow">UK Rugby Club Directory</span>
     <h1>Rugby Businesses &amp; Services</h1>
-    <p>Browse rugby businesses — kit suppliers, equipment brands, media, coaching and more.</p>
-    <div class="listing-search-wrap search-wrap" style="margin:0 auto">
+    <p>Browse 66 rugby businesses — kit suppliers, equipment brands, media outlets, coaching companies and more.</p>
+    <div class="search-wrap" style="max-width:400px">
       <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="listing-search" class="search-input" type="search" placeholder="Search by club name or town…" aria-label="Search clubs" autocomplete="off" data-category="business">
-      <button class="btn btn-red btn-sm search-btn" onclick="document.getElementById('listing-search').dispatchEvent(new Event('input'))">Search</button>
+      <input id="listing-search" class="search-input" type="search" placeholder="Search businesses…" aria-label="Search rugby businesses" autocomplete="off" data-category="business">
+      <button class="btn-er-primary search-btn" style="position:absolute;right:.4rem;top:50%;transform:translateY(-50%);padding:.5rem 1rem;font-size:.75rem" onclick="document.getElementById('listing-search').dispatchEvent(new Event('input'))">Search →</button>
     </div>
+  </div>
+  <div class="lh-right">
+    <img src="imgs/rugby-joints-banner.jpg" alt="Rugby businesses and services UK" loading="eager">
   </div>
 </section><div class="seo-links-bar">
   <div class="con seo-links-inner">
@@ -166,7 +170,19 @@
     <a href="rugby-union.html?region=scotland">Scotland</a><span class="sep">·</span>
     <a href="register.html">Register Your Club</a>
   </div>
-</div><section class="sec">
+</div><!-- SEO Content: Rugby Businesses & Services -->
+<section class="sec biz-intro" style="padding:2.5rem 0 2rem;border-bottom:1px solid var(--border)">
+  <div class="con">
+    <div class="biz-intro-inner">
+      <h2>The UK's Leading Directory of Rugby Businesses &amp; Services</h2>
+      <p>Whether you are a club administrator sourcing new kit, a coach searching for specialist training equipment, or a rugby fan looking for media and coverage, the UK Rugby Club Directory brings together 66 of the most prominent rugby businesses and service providers operating across England, Scotland, Wales and Northern Ireland. From globally recognised kit manufacturers such as Canterbury, O'Neills and Kukri to specialist rugby media platforms and coaching consultancies, every business listed here has a direct connection to the sport at club, county, or national level. Each profile provides contact details, a description of services, and direct links to help you find exactly what your club needs.</p>
+      <h2>Why List Your Rugby Business Here?</h2>
+      <p>With over 620 rugby clubs actively searching this directory for equipment, services and expertise, advertising your rugby business or service here puts your brand directly in front of the decision-makers who matter — club secretaries, treasurers, coaches and team managers. Our rugby business directory is freely searchable and indexed by Google, giving your business consistent organic visibility across high-intent search queries including "rugby kit suppliers UK", "rugby equipment brands", "rugby coaching companies" and "rugby media UK". To register your business or claim an existing listing, use the button below to get started — free listings are available with a Pro upgrade for priority placement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
   <div class="con">
     <div class="filters" style="margin-bottom:1.5rem"><button class="filter-btn active" data-filter="business">Rugby Business (66)</button></div>
     <p id="results-count" class="results-count">66 clubs found</p>
@@ -975,6 +991,85 @@
     <a href="register.html" class="related-tag">Register Your Club</a>
   </div></div>
 </section></main>
+
+<!-- FAQ Section: Rugby Businesses & Services -->
+<section class="faq-section" id="faq" style="background:var(--bg-soft);border-top:1px solid var(--border)">
+  <div class="con">
+    <div class="faq-section-inner">
+      <h2 class="faq-heading">FAQs</h2>
+      <div class="accordion" id="biz-faq" itemscope itemtype="https://schema.org/FAQPage">
+
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-biz-1">
+            <span class="accordion-trigger-text" itemprop="name">How do I list my rugby business in the UK Rugby Club Directory?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-biz-1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">To list your rugby business, use the Register page on this website. Free listings are available for all UK rugby-related businesses including kit suppliers, equipment brands, media outlets, coaching companies and sports retailers. A Pro listing upgrade is available for £9.99 per month, which includes priority placement in search results, a verified badge and the ability to upload photos and additional business information.</span>
+          </div>
+        </div>
+
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-biz-2">
+            <span class="accordion-trigger-text" itemprop="name">What types of rugby businesses are listed in this directory?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-biz-2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">The directory currently lists 66 rugby businesses across a wide range of categories including: rugby kit and apparel suppliers, rugby equipment and accessories brands, rugby media and news platforms, coaching and training companies, sports physiotherapy and medical services, rugby travel and hospitality providers, and rugby technology and software businesses. If your business serves the UK rugby community in any capacity, it can be listed here.</span>
+          </div>
+        </div>
+
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-biz-3">
+            <span class="accordion-trigger-text" itemprop="name">Which rugby kit suppliers are listed in the UK Rugby Club Directory?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-biz-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">The directory includes a number of prominent rugby kit and apparel suppliers serving clubs across the UK. These include specialist rugby kit manufacturers and retailers who supply custom teamwear, training kit, playing kits and accessories to clubs at all levels from grassroots community rugby through to professional Premiership sides. Use the search box above to find specific suppliers by name.</span>
+          </div>
+        </div>
+
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-biz-4">
+            <span class="accordion-trigger-text" itemprop="name">Can I advertise my rugby brand to clubs through this directory?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-biz-4" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">Yes — the UK Rugby Club Directory offers advertising and featured placement opportunities for rugby businesses and brands. Our directory audience includes club administrators, coaches, players and parents who are actively seeking rugby products and services. Featured listings appear at the top of the business directory and are visible on the homepage. Contact us via our contact page to discuss advertising packages and supplier sponsorship options.</span>
+          </div>
+        </div>
+
+        <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-biz-5">
+            <span class="accordion-trigger-text" itemprop="name">Is the Rugby Businesses &amp; Services directory free to use?</span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-biz-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <span itemprop="text">Yes — searching and browsing the Rugby Businesses &amp; Services directory is completely free for all users. Club administrators, coaches and players can search for suppliers and service providers without creating an account or paying any fee. Businesses can also create a basic listing for free. Enhanced Pro listings with priority placement, photo uploads and a verified badge are available for £9.99 per month.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Accordion JS -->
+<script>
+(function(){
+  document.querySelectorAll('.accordion-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.accordion-item');
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.accordion-item').forEach(function(i){ i.classList.remove('open'); i.querySelector('.accordion-trigger').setAttribute('aria-expanded','false'); });
+      // Toggle current
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+})();
+</script>
+
 <footer>
   <div class="ft-top">
     <div class="con ft-grid">
@@ -983,8 +1078,8 @@
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
             <title>UK Rugby Club Directory</title>
             <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
-            <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
-            <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
+            <rect x="29" y="5" width="2" height="30" rx="1" fill="#c8102e"/>
+            <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="-0.3">Rugby Club</text>
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.45)" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
