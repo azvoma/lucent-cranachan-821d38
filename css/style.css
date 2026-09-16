@@ -2950,3 +2950,270 @@ body > div[style=""]:empty { display: none !important; }
 .er-breadcrumb-inner a:hover { color: rgba(255,255,255,.8); }
 .er-breadcrumb-inner .bc-cur { color: rgba(255,255,255,.75); }
 .er-breadcrumb-sep { font-size: .6rem; color: rgba(255,255,255,.25); }
+
+
+/* ═══════════════════════════════════════════════════════════
+   LOGO AUDIT FIXES — v7
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── FIX: Shield logo (96 club pages) on dark navy header ────
+   The shield SVG has inline fill="#0a1628" which is near-invisible
+   on the dark navy header. Fix via:
+   1. CSS filter to make the shield visible  
+   2. Ensure wordmark text is always white on dark backgrounds */
+
+#site-header .logo-shield {
+  filter: drop-shadow(0 0 0 rgba(255,255,255,0)) brightness(0) invert(1) opacity(.9);
+}
+/* The above makes the whole shield white — then tint it back with a mix */
+/* Better approach: override the path fill via SVG currentColor */
+#site-header .logo-shield path:first-child {
+  fill: rgba(255,255,255,.12) !important;
+  stroke: var(--violet) !important;
+}
+#site-header .logo-shield path:last-child {
+  fill: rgba(255,255,255,.1) !important;
+}
+
+/* Make shield body transparent so the navy header shows through,
+   keeping only the red stroke border visible */
+#site-header .logo .logo-shield {
+  filter: none !important;
+}
+
+/* Target the shield shape via CSS — since we can't change inline fills,
+   use a creative approach: invert the shield to appear light on dark */
+.logo-shield {
+  filter: brightness(0) invert(1) !important;
+  opacity: .92 !important;
+}
+/* The UK text and divider inside the shield become white via invert */
+/* The stroke was red — after invert it becomes cyan — fix it */
+/* Actually: the shield SVG has 2 paths + text elements */
+/* Simpler and more reliable: just use a CSS background-blend */
+
+/* DEFINITIVE FIX: Replace the shield appearance with CSS-only approach.
+   The shield logo on dark bg needs a light treatment.
+   Use filter: invert on the dark path, keep the red stroke */
+#site-header .logo-shield {
+  filter: brightness(10) !important; /* Boosts dark fill to near-white */
+  opacity: 1 !important;
+}
+
+/* Keep shield stroke red not washed out */  
+#site-header .logo-shield path {
+  stroke: var(--violet) !important;
+}
+
+/* Wordmark text — already white in CSS, but confirm for shield pages */
+#site-header .logo-word-top {
+  color: #fff !important;
+  font-family: 'Oswald', system-ui, sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .02em !important;
+}
+#site-header .logo-word-top span {
+  color: var(--violet) !important;
+}
+#site-header .logo-word-bot {
+  color: rgba(255,255,255,.65) !important;
+  font-size: .52rem !important;
+  letter-spacing: 3.5px !important;
+  text-transform: uppercase !important;
+  margin-top: 2px !important;
+}
+
+/* ── FIX: SVG text logo on dark header ─────────────────────── */
+/* The 524 pages with text logo: fill="white" on "Rugby Club" text
+   is CORRECT for navy header. Ensure the CSS doesn't override it. */
+#site-header .logo svg text[fill="white"],
+#site-header .logo svg text[fill="#fff"] {
+  fill: #ffffff !important;
+}
+#site-header .logo svg text[letter-spacing="3"] {
+  fill: var(--violet) !important; /* UK text = red */
+}
+#site-header .logo svg rect {
+  fill: #ffffff !important; /* divider = white */
+}
+
+/* ── FIX: Mobile nav logo — both variants ───────────────────── */
+#mobile-nav .logo-shield {
+  filter: brightness(10) !important;
+  opacity: .9 !important;
+}
+#mobile-nav .logo-word-top { color: #fff !important; }
+#mobile-nav .logo-word-bot { color: rgba(255,255,255,.55) !important; }
+#mobile-nav .mob-logo svg text { fill: #fff !important; }
+#mobile-nav .mob-logo svg rect { fill: #fff !important; }
+#mobile-nav .mob-logo svg text[letter-spacing="3"] { fill: var(--violet) !important; }
+
+/* ── CENTRED INTRO SECTIONS (rugby-joints.html) ─────────────── */
+.biz-intro-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center !important;
+}
+.biz-intro h2 {
+  justify-content: center !important;
+}
+.biz-intro h2::before {
+  display: none !important; /* Remove left accent bar when centred */
+}
+.biz-intro h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--violet);
+  margin: .6rem auto 0;
+}
+/* Override the ::before approach — use a bottom border instead when centred */
+.biz-intro h2 {
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+.biz-intro p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── FAQ ACCORDION — consistent across ALL pages ─────────────── */
+/* Already defined as .accordion + .accordion-item etc.
+   Make sure the FAQ section on category/content pages uses it. */
+
+/* Category page inline FAQ (rugby-union, rugby-league) */
+.sec .accordion,
+section .accordion {
+  border-top: 2px solid var(--navy);
+}
+.sec .accordion-item,
+section .accordion-item {
+  border-bottom: 1px solid var(--border);
+}
+.sec .accordion-trigger,
+section .accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: .95rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+}
+.sec .accordion-trigger-text,
+section .accordion-trigger-text {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.35;
+  transition: color .15s;
+}
+.sec .accordion-item.open .accordion-trigger-text,
+section .accordion-item.open .accordion-trigger-text {
+  color: var(--violet);
+}
+.sec .accordion-chevron,
+section .accordion-chevron {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  color: var(--navy);
+  transition: transform .22s, color .15s;
+}
+.sec .accordion-item.open .accordion-chevron,
+section .accordion-item.open .accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--violet);
+}
+.sec .accordion-body,
+section .accordion-body {
+  display: none;
+  padding: 0 0 1rem;
+  font-size: .9rem;
+  color: var(--text-secondary);
+  line-height: 1.72;
+}
+.sec .accordion-item.open .accordion-body,
+section .accordion-item.open .accordion-body {
+  display: block;
+}
+
+/* FAQ section heading — consistent style */
+.faq-heading,
+h2.faq-heading {
+  font-family: 'Oswald', system-ui, sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  color: var(--navy) !important;
+  margin-bottom: 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: .65rem !important;
+  text-transform: uppercase !important;
+}
+.faq-heading::before {
+  content: '' !important;
+  display: block !important;
+  width: 4px !important;
+  height: 1.3rem !important;
+  background: var(--violet) !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── LISTING HERO consistent header structure ─────────────────
+   All category and listing pages should use .listing-hero-england
+   The existing .listing-hero (category pages without new class) 
+   gets the same diagonal treatment via CSS */
+
+.listing-hero {
+  position: relative;
+  background: var(--navy) !important;
+  border-bottom: 4px solid var(--violet) !important;
+  overflow: hidden;
+  min-height: 220px;
+}
+.listing-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--navy) 0%, rgba(26,32,53,.85) 60%, rgba(200,16,46,.15) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.listing-hero > div[style*="position:absolute"] {
+  background: linear-gradient(to right, rgba(26,32,53,.92) 0%, rgba(26,32,53,.65) 100%) !important;
+}
+.listing-hero > .con {
+  position: relative;
+  z-index: 1;
+}
+.listing-hero h1 {
+  font-family: 'Oswald', system-ui, sans-serif !important;
+  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  letter-spacing: .03em !important;
+  text-transform: uppercase !important;
+}
+.listing-hero p {
+  color: rgba(255,255,255,.82) !important;
+}
+
+/* ── SECTION consistency — alternating grey/white ────────────── */
+.sec:nth-of-type(even) { background: var(--bg-soft); }
+.sec:nth-of-type(odd)  { background: var(--bg-white); }
+/* Override where explicit class is used */
+.sec-off { background: var(--bg-soft) !important; }
+.sec-navy { background: var(--navy) !important; }
