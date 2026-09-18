@@ -240,9 +240,13 @@ function shell({ title, description, canonical, ogType, keywords, articleDate, a
   <link rel="stylesheet" href="/css/style.css">
   <style>
     /* ── Blog-specific styles ───────────────────────────────────────────── */
-    .blog-hero{background:#7c5cfc;position:relative;padding:4rem 0 5rem}
-    .blog-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.95),rgba(10,22,40,.75))}
-    .blog-hero-inner{position:relative;z-index:1;text-align:center}
+    .blog-hero{background:#c8102e;border-bottom:3px solid rgba(0,0,0,.15);position:relative;min-height:180px;display:flex;align-items:stretch;overflow:hidden;padding:0}
+    .blog-hero-overlay{display:none}
+    .blog-hero-bg-img{position:absolute;right:0;top:0;bottom:0;width:50%;overflow:hidden}
+    .blog-hero-bg-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.35;mix-blend-mode:luminosity}
+    .blog-hero-bg-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#c8102e 0%,rgba(200,16,46,.6) 60%,transparent 100%);z-index:1}
+    .blog-hero-diagonal{position:absolute;right:44%;top:0;bottom:0;width:100px;background:#c8102e;clip-path:polygon(0 0,40% 0,100% 100%,0 100%);z-index:2}
+    .blog-hero-inner{position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:2.5rem 1.5rem;text-align:left!important;max-width:56%;width:56%}
     .blog-hero-meta{font-size:.9rem;color:rgba(255,255,255,.55);margin:0}    .seo-links-inner{justify-content:center!important}
     .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
     .blog-section-hd{margin-bottom:2rem}
@@ -266,13 +270,13 @@ function shell({ title, description, canonical, ogType, keywords, articleDate, a
     .blog-empty{grid-column:1/-1;text-align:center;padding:5rem 2rem;color:#94a3b8}
     .blog-empty h3{font-family:var(--fd,'Oswald',sans-serif);font-size:1.3rem;color:var(--navy,#0a1628);margin-bottom:.75rem}
     /* Article page */
-    .article-hero{background:#7c5cfc;padding:3rem 1.5rem 2.5rem;color:#fff}
+    .article-hero{background:var(--navy,#1a2035);padding:3rem 1.5rem 2.5rem;color:#fff;border-bottom:4px solid #c8102e}
     .article-hero-inner{max-width:800px;margin:0 auto}
     .breadcrumb{font-size:.8rem;color:#64748b;margin:0 0 1rem}
     .breadcrumb a{color:#94a3b8;text-decoration:none}
     .breadcrumb a:hover{color:#fff}
     .article-cat{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#7c5cfc;color:#fff;padding:.22rem .65rem;border-radius:100px;margin-bottom:.75rem}
-    .article-hero h1{font-family:var(--fd,'Inter',sans-serif);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;text-transform:none;margin:0 0 1rem;line-height:1.1;color:#fff}
+    .article-hero h1{font-family:'Oswald',system-ui,sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin:0 0 1rem;line-height:1.05;color:#fff}
     /* Req 4: author/date meta — displayed neatly with avatar-style author chip */
     .article-meta{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-top:.25rem}
     .article-meta-date{font-size:.82rem;color:#94a3b8;display:flex;align-items:center;gap:.35rem}
@@ -289,7 +293,19 @@ function shell({ title, description, canonical, ogType, keywords, articleDate, a
     .article-body{color:#2d2a45;line-height:1.85;font-size:1.05rem}
     .article-body>p:first-of-type{font-size:1.12rem;font-weight:400;color:#1e1a35;line-height:1.8}
     .article-body>*+*{margin-top:0}
-    .article-body h3{font-family:var(--fd,'Inter',sans-serif);font-size:1.1rem;font-weight:700;text-transform:none;color:var(--navy,#0f0c1d);margin:2rem 0 .6rem;line-height:1.3;letter-spacing:-.01em}
+    .article-body h3{font-family:'Oswald',system-ui,sans-serif;font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--navy,#1a2035);margin:2rem 0 .6rem;line-height:1.3}
+    /* FAQ accordion in articles */
+    .art-faq-section{margin:2.5rem 0 0;padding:2rem;background:#f0f0f0;border-top:3px solid #c8102e}
+    .art-faq-heading{font-family:'Oswald',system-ui,sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1a2035;margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem}
+    .art-faq-heading::before{content:'';display:block;width:4px;height:1.1rem;background:#c8102e;flex-shrink:0}
+    .art-accordion{border-top:2px solid #1a2035}
+    .art-acc-item{border-bottom:1px solid #d4d6de}
+    .art-acc-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:.85rem 0;background:none;border:none;cursor:pointer;text-align:left;gap:1rem;font-family:'Oswald',system-ui,sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:#1a2035;transition:color .15s}
+    .art-acc-btn:hover,.art-acc-item.open .art-acc-btn{color:#c8102e}
+    .art-acc-btn svg{flex-shrink:0;transition:transform .22s;color:#1a2035}
+    .art-acc-item.open .art-acc-btn svg{transform:rotate(180deg);color:#c8102e}
+    .art-acc-body{display:none;padding:0 0 .9rem;font-size:.875rem;color:#3d4155;line-height:1.72;max-width:640px}
+    .art-acc-item.open .art-acc-body{display:block}
     .article-body h4{font-family:var(--fd,'Inter',sans-serif);font-size:1rem;font-weight:600;text-transform:none;color:var(--navy,#0f0c1d);margin:1.5rem 0 .5rem;line-height:1.4}
         .article-body h2{font-family:var(--fd,'Inter',sans-serif);font-size:1.4rem;font-weight:700;text-transform:none;color:var(--navy,#0a1628);margin:2.5rem 0 .85rem;padding-bottom:.45rem;border-bottom:2px solid #7c5cfc;line-height:1.2}
     .article-body h3{font-size:1.1rem;font-weight:700;color:var(--navy,#0a1628);margin:2rem 0 .6rem;line-height:1.3}
@@ -406,6 +422,27 @@ document.querySelectorAll('.toc-list a').forEach(function(a){
   });
 });
 </script>
+<script>
+(function(){
+  document.querySelectorAll('.art-acc-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.art-acc-item');
+      var isOpen = item.classList.contains('open');
+      item.closest('.art-accordion').querySelectorAll('.art-acc-item').forEach(function(i){ i.classList.remove('open'); i.querySelector('.art-acc-btn').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  // Also handle .accordion class (business page / club pages)
+  document.querySelectorAll('.accordion-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.accordion-item');
+      var isOpen = item.classList.contains('open');
+      btn.closest('.accordion').querySelectorAll('.accordion-item').forEach(function(i){ i.classList.remove('open'); i.querySelector('.accordion-trigger').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+})();
+</script>
 </body>
 </html>`;
 }
@@ -481,10 +518,14 @@ function buildIndexPage(articles) {
   const bodyContent = `
     <section class="blog-hero">
       <div class="blog-hero-overlay"></div>
+      <div class="blog-hero-bg-img">
+        <img src="/imgs/rugby-union-hero.jpg" alt="Rugby blog — grassroots rugby guides and news" loading="eager">
+      </div>
+      <div class="blog-hero-diagonal"></div>
       <div class="con blog-hero-inner">
-        <span class="hero-eyebrow">Rugby Knowledge Hub</span>
-        <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin:.75rem 0 1rem">Blog</h1>
-        <p style="color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;font-size:1.05rem">Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
+        <span class="hero-eyebrow" style="font-family:Oswald,sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:.5rem">Rugby Knowledge Hub</span>
+        <h1 style="color:#fff;font-family:Oswald,sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin:.4rem 0 .75rem;line-height:1">Blog</h1>
+        <p style="color:rgba(255,255,255,.82);max-width:420px;font-size:.95rem;line-height:1.6;margin:0">Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
       </div>
     </section>
     <div class="blog-section">
