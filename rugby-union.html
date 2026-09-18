@@ -24,10 +24,11 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Rugby Union Clubs UK | 453 Clubs | UK Rugby Club Directory", "description": "Find 453 rugby union clubs across England, Scotland, Wales and Northern Ireland. From Premiership giants to grassroots community clubs, every club has a full profile page.", "url": "https://ukrugbyclubdirectory.co.uk/rugby-union.html"}</script>
 </head><body>
+<a href="#main" class="skip-link">Skip to main content</a>
     <div class="tb-actions">
       <a href="register.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Register Club</a>
       <span class="tb-pipe">|</span>
@@ -142,19 +143,21 @@
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
 </nav><main>
-<section class="listing-hero-england">
-  <div class="lh-left">
-    <span class="lh-eyebrow">UK Rugby Club Directory</span>
-    <h1>Rugby Union Clubs UK</h1>
-    <p>Browse 453 rugby union clubs — from Premiership to grassroots across England, Scotland, Wales and Northern Ireland.</p>
-    <div class="search-wrap" style="max-width:420px;position:relative">
+<section class="listing-hero-england" style="position:relative;min-height:200px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
+  <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.5rem 5rem 2.5rem 2rem;display:flex;flex-direction:column;justify-content:flex-start">
+    <span class="lh-eyebrow" style="font-family:Oswald,sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin-bottom:.5rem;display:block">UK Rugby Club Directory</span>
+    <h1 style="font-family:Oswald,sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin:0 0 .4rem;line-height:1">Rugby Union Clubs UK</h1>
+    <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.55;margin-bottom:1rem;max-width:380px">Browse 453 rugby union clubs — from Premiership to grassroots across England, Scotland, Wales and Northern Ireland.</p>
+    <div class="search-wrap" style="max-width:400px;position:relative">
       <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="listing-search" class="search-input" type="search" placeholder="Search by club name or town…" aria-label="Search by club name or town…" data-category="union" autocomplete="off">
-      <button class="btn-er-primary search-btn" style="position:absolute;right:.4rem;top:50%;transform:translateY(-50%);padding:.5rem 1rem;font-size:.75rem;letter-spacing:.06em" onclick="document.getElementById('listing-search').dispatchEvent(new Event('input'))">Search →</button>
+      <input id="listing-search" class="search-input" type="search" placeholder="Search by club name or town…" aria-label="Search by club name or town…" data-category="union" autocomplete="off" style="border-radius:0;border:2px solid rgba(255,255,255,.25);border-left:4px solid var(--violet);background:rgba(255,255,255,.08);color:#fff;padding:.75rem 5.5rem .75rem 2.8rem">
+      <button class="btn-er-primary search-btn" style="position:absolute;right:.4rem;top:50%;transform:translateY(-50%);padding:.5rem 1rem;font-size:.75rem;letter-spacing:.06em" onclick="document.getElementById('listing-search').dispatchEvent(new Event('input'))">Search ›</button>
     </div>
+    
   </div>
-  <div class="lh-right">
-    <img src="imgs/rugby-union-hero.jpg" alt="Rugby Union Clubs UK" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block">
+  
+  <div class="lh-right" style="position:absolute;right:0;top:0;bottom:0;width:42%;background:var(--violet)">
+    <img src="imgs/rugby-union-hero.jpg" alt="Rugby Union Clubs UK" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;opacity:.2;mix-blend-mode:luminosity">
   </div>
 </section><div class="seo-links-bar">
   <div class="con seo-links-inner">
@@ -181,8 +184,7 @@
       <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary,#0f0c1d);margin-bottom:1rem;letter-spacing:-.02em">Rugby Union Clubs UK — The Complete Directory</h2>
       <p style="font-size:1rem;color:var(--text-secondary,#4b4668);line-height:1.75;margin-bottom:1rem">The UK Rugby Club Directory is the most comprehensive free listing of rugby union clubs across England, Scotland, Wales and Northern Ireland. With 453 clubs featured — from Premiership giants to grassroots community sides — this directory gives players, parents and supporters everything they need to find, research and connect with the right rugby union club for them.</p>
 
-      <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary,#0f0c1d);margin:1.5rem 0 .6rem">The Rugby Union Pyramid in England</h3>
-      <p style="font-size:.95rem;color:var(--text-secondary,#4b4668);line-height:1.7;margin-bottom:.85rem">Rugby union in England is structured as a promotion and relegation pyramid overseen by the Rugby Football Union (RFU). At the summit sits the <strong>Gallagher Premiership</strong> — England's top professional division — below which the <strong>RFU Championship</strong> provides the second tier of elite competition. Beneath these professional levels runs a nine-tier pyramid of national, regional, and county leagues, culminating in hundreds of local community clubs where the vast majority of rugby union players in England compete every weekend.</p>
+      
 
       <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary,#0f0c1d);margin:1.5rem 0 .6rem">Finding a Rugby Union Club Near You</h3>
       <p style="font-size:.95rem;color:var(--text-secondary,#4b4668);line-height:1.7;margin-bottom:.85rem">Every one of the 453 rugby union clubs in this directory has a full profile page featuring the club's location, contact details, training information, teams and age groups, and facilities. Whether you are an experienced player relocating to a new area or a complete beginner looking to take up the game, use the search above to find rugby union clubs near you by town, city or region. Most clubs run open training sessions and welcome prospective members for a free trial before committing to full membership.</p>
@@ -239,6 +241,7 @@
         </div>
       </div></div>
 </section>
+
 <!-- END SEO Content Block -->
 
     <div class="filters" style="margin-bottom:1.5rem"><button class="filter-btn active" data-filter="union">Rugby Union (453)</button></div>
@@ -5691,7 +5694,51 @@
     <a href="rugby-league.html" class="related-tag">Rugby League Clubs</a>
     <a href="register.html" class="related-tag">Register Your Club</a>
   </div></div>
-</section></main>
+</section>
+</main>
+<section class="faq-reference-section" id="faq" style="background:#f0f0f0;padding:2.5rem 0 3rem">
+  <div class="con"><div class="faq-reference-inner">
+    <div class="faq-reference-heading"><span class="faq-red-bar" aria-hidden="true"></span><h2 class="faq-reference-title">FAQs</h2></div>
+    <hr class="faq-reference-rule">
+    <div class="faq-accordion" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="faq-acc-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-acc-btn" aria-expanded="false">
+            <span class="faq-acc-q" itemprop="name">How many rugby union clubs are there in the UK and where can I find one near me?</span>
+            <svg class="faq-acc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-acc-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">The RFU registers over 1,900 rugby union clubs in England alone, with a further 800+ clubs across Scotland, Wales and Northern Ireland. The UK Rugby Club Directory lists 453 of the most prominent clubs. Use the search tool above to find rugby union clubs near you.</p></div>
+        </div>
+        <div class="faq-acc-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-acc-btn" aria-expanded="false">
+            <span class="faq-acc-q" itemprop="name">What is the difference between rugby union and rugby league clubs in the UK?</span>
+            <svg class="faq-acc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-acc-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Rugby union is played with 15 players per side under World Rugby rules. Rugby league is played with 13 players per side and is strongest in the North of England. Both codes are covered in this directory — use the filter buttons to search union or league clubs separately.</p></div>
+        </div>
+        <div class="faq-acc-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-acc-btn" aria-expanded="false">
+            <span class="faq-acc-q" itemprop="name">How do I join a local rugby union club as an adult beginner with no playing experience?</span>
+            <svg class="faq-acc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-acc-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Almost all community rugby union clubs actively welcome adult beginners. Find a club near you using this directory, contact them via their profile page, and ask about beginner or social rugby sessions. Most clubs offer a free trial before committing to membership.</p></div>
+        </div>
+        <div class="faq-acc-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-acc-btn" aria-expanded="false">
+            <span class="faq-acc-q" itemprop="name">What leagues do amateur and grassroots rugby union clubs in England compete in?</span>
+            <svg class="faq-acc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-acc-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Below the Gallagher Premiership and RFU Championship, the English pyramid runs through National Leagues 1 and 2 and then regional divisions — London & SE, Midlands, North and South West — all the way to county and local league level.</p></div>
+        </div>
+        <div class="faq-acc-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-acc-btn" aria-expanded="false">
+            <span class="faq-acc-q" itemprop="name">Can women and girls join a rugby union club and are there women's rugby leagues in the UK?</span>
+            <svg class="faq-acc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-acc-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Yes — most rugby union clubs now have dedicated women's and girls' sections. The RFU's Allianz Premier 15s is the top domestic women's league in England, with a full pyramid of regional and county leagues below it.</p></div>
+        </div>
+    </div>
+  </div></div>
+</section>
 <footer>
   <div class="ft-top">
     <div class="con ft-grid">
@@ -5768,20 +5815,47 @@
     </div>
   </div>
 </div>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 <script src="/js/fixes.js"></script>
 
+<!-- Scroll to top button -->
+<button id="scroll-top" aria-label="Scroll to top of page" title="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
 <script>
 (function(){
-  document.querySelectorAll('.accordion-trigger').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var item=btn.closest('.accordion-item');
-      var isOpen=item.classList.contains('open');
-      btn.closest('.accordion').querySelectorAll('.accordion-item').forEach(function(i){
+  var btn = document.getElementById('scroll-top');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    if(window.pageYOffset > 400){
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, {passive:true});
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+<script>
+(function(){
+  var triggers = document.querySelectorAll('.faq-acc-btn');
+  triggers.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-acc-item');
+      var isOpen = item.classList.contains('open');
+      // Close all items in same accordion
+      btn.closest('.faq-accordion').querySelectorAll('.faq-acc-item').forEach(function(i){
         i.classList.remove('open');
-        i.querySelector('.accordion-trigger').setAttribute('aria-expanded','false');
+        i.querySelector('.faq-acc-btn').setAttribute('aria-expanded','false');
       });
-      if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+      if(!isOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
     });
   });
 })();
