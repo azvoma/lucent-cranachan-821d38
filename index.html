@@ -157,26 +157,67 @@
 
     <!-- RIGHT: Red news panel -->
     <div class="hero-split-news">
-      <div class="hero-split-news-head">Top news</div>
-      <a href="blog/six-nations-2026-england-title-contenders/" class="hero-news-card">
-        <span class="hero-news-card-label">Article</span>
-        <div class="hero-news-card-title">Six Nations 2026 — Can England Win the Championship?</div>
-        <div class="hero-news-card-meta">16 Sep 2026 &nbsp;·&nbsp; 6 min read</div>
-      </a>
-      <a href="blog/how-to-start-playing-rugby-as-an-adult-uk-guide/" class="hero-news-card">
-        <span class="hero-news-card-label">Guide</span>
-        <div class="hero-news-card-title">How to Start Playing Rugby as an Adult in the UK</div>
-        <div class="hero-news-card-meta">16 Sep 2026 &nbsp;·&nbsp; 8 min read</div>
-      </a>
-      <a href="blog/bbc-sport-premiership-womens-rugby-deal-2025/" class="hero-news-card">
-        <span class="hero-news-card-label">Article</span>
-        <div class="hero-news-card-title">BBC Sport to Broadcast Women's Premiership Rugby Live</div>
-        <div class="hero-news-card-meta">14 Aug 2025 &nbsp;·&nbsp; 3 min read</div>
-      </a>
+      <div class="hero-split-news-head">From the Blog</div>
+      <div id="home-news-list">
+        <!-- Populated dynamically from content/blog/index.json — see script below.
+             Static fallback links (kept for no-JS / crawlers) are replaced once the fetch resolves. -->
+        <a href="blog/six-nations-2026-england-title-contenders/" class="hero-news-card">
+          <span class="hero-news-card-label">Article</span>
+          <div class="hero-news-card-title">Six Nations 2026 — Can England Win the Championship?</div>
+          <div class="hero-news-card-meta">16 Sep 2026</div>
+        </a>
+        <a href="blog/how-to-start-playing-rugby-as-an-adult-uk-guide/" class="hero-news-card">
+          <span class="hero-news-card-label">Guide</span>
+          <div class="hero-news-card-title">How to Start Playing Rugby as an Adult in the UK</div>
+          <div class="hero-news-card-meta">16 Sep 2026</div>
+        </a>
+        <a href="blog/bbc-sport-premiership-womens-rugby-deal-2025/" class="hero-news-card">
+          <span class="hero-news-card-label">Article</span>
+          <div class="hero-news-card-title">BBC Sport to Broadcast Women's Premiership Rugby Live</div>
+          <div class="hero-news-card-meta">1 Sep 2025</div>
+        </a>
+      </div>
       <a href="blog/" class="hero-news-all">All news →</a>
     </div>
   </div>
 </section>
+<script>
+(function () {
+  // Pull the latest posts straight from the blog's own index.json so this
+  // panel never goes stale when new articles are published.
+  var list = document.getElementById('home-news-list');
+  if (!list) return;
+
+  function esc(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function fmtDate(str) {
+    try { return new Date(str).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); }
+    catch (e) { return str; }
+  }
+  function cardHtml(a) {
+    var label = a.category || 'Article';
+    return '<a href="/blog/' + esc(a.slug) + '/" class="hero-news-card">'
+      + '<span class="hero-news-card-label">' + esc(label) + '</span>'
+      + '<div class="hero-news-card-title">' + esc(a.title) + '</div>'
+      + '<div class="hero-news-card-meta">' + fmtDate(a.date) + '</div>'
+      + '</a>';
+  }
+
+  fetch('/content/blog/index.json?v=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (articles) {
+      if (!articles || !articles.length) return; // keep static fallback
+      var latest = articles.slice().sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      }).slice(0, 3);
+      list.innerHTML = latest.map(cardHtml).join('');
+    })
+    .catch(function () {
+      // Fetch failed — leave the static fallback links in place.
+    });
+})();
+</script>
 
 <div class="seo-links-bar">
   <div class="con seo-links-inner">
