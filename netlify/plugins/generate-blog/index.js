@@ -233,10 +233,10 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
   <link rel="stylesheet" href="/css/style.css">
   <style>
     /* ── Blog-specific styles ───────────────────────────────────────────── */
-    .blog-hero{background-image:url('/imgs/rugby-union-hero.jpg');background-size:cover;background-position:center;position:relative;padding:4rem 0 5rem}
-    .blog-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.95),rgba(10,22,40,.75))}
-    .blog-hero-inner{position:relative;z-index:1;text-align:center}
-    .blog-hero-meta{font-size:.9rem;color:rgba(255,255,255,.55);margin:0}    .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
+    /* Hero banner now reuses the shared .listing-hero-england / .lh-left / .lh-right
+       component from /css/style.css (same markup as rugby-union.html) so the blog
+       banner matches the rest of the directory pages exactly. No blog-only hero CSS needed. */
+    .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
     .blog-section-hd{margin-bottom:2rem}
     .blog-section-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c8102e;margin:0 0 .3rem}
     .blog-section-title{font-family:var(--fd,'Oswald',sans-serif);font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .4rem}
@@ -471,12 +471,14 @@ function buildIndexPage(articles) {
       </a>`).join("\n");
 
   const bodyContent = `
-    <section class="blog-hero">
-      <div class="blog-hero-overlay"></div>
-      <div class="con blog-hero-inner">
-        <span class="hero-eyebrow">Rugby Knowledge Hub</span>
-        <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin:.75rem 0 1rem">Blog</h1>
-        <p style="color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;font-size:1.05rem">Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
+    <section class="listing-hero-england" style="position:relative;min-height:200px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
+      <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.5rem 5rem 2.5rem 2rem;display:flex;flex-direction:column;justify-content:flex-start">
+        <span class="lh-eyebrow" style="font-family:Oswald,sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin-bottom:.5rem;display:block">Rugby Knowledge Hub</span>
+        <h1 style="font-family:Oswald,sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#fff;letter-spacing:.03em;text-transform:uppercase;margin:0 0 .4rem;line-height:1">Blog</h1>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.55;margin-bottom:1rem;max-width:380px">Club guides, beginner tips, county breakdowns and the latest from grassroots rugby across the UK.</p>
+      </div>
+      <div class="lh-right" style="position:absolute;right:0;top:0;bottom:0;width:42%;background:var(--violet)">
+        <img src="/imgs/rugby-union-hero.jpg" alt="Rugby blog — grassroots rugby guides and news" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;opacity:.84;mix-blend-mode:luminosity">
       </div>
     </section>
     <div class="blog-section">
