@@ -3378,7 +3378,7 @@ h2.faq-heading {
     rgba(10,22,40,.60) 40%,
     rgba(10,22,40,.15) 75%,
     transparent 100%
-  );
+  ), rgba(10,22,40,.18);
   pointer-events: none;
 }
 .hero-split-content {
