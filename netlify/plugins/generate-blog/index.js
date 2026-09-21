@@ -76,7 +76,7 @@ function siteHeader() {
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
         <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="white"/>
         <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
-        <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="3.5">DIRECTORY</text>
+        <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="white" letter-spacing="3.5">DIRECTORY</text>
       </svg>
     </a>
     <nav id="main-nav" aria-label="Main navigation">
@@ -146,7 +146,7 @@ function siteFooter() {
             <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
             <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
             <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
-            <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.45)" letter-spacing="3">DIRECTORY</text>
+            <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="white" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
         <p class="ft-strapline">The UK's most comprehensive free rugby club directory. 620 clubs each with their own full profile page, unique SEO and verified contact details across England, Scotland, Wales and Northern Ireland.</p>
@@ -458,7 +458,7 @@ function buildIndexPage(articles) {
             <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
             <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
             <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
-            <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" letter-spacing="3">DIRECTORY</text>
+            <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="white" letter-spacing="3">DIRECTORY</text>
           </svg>
           ${a.category ? `<span class="blog-card-cat">${a.category}</span>` : ""}
         </div>
