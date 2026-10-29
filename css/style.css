@@ -30,19 +30,19 @@
   --bg-card:    #ffffff;
 
   /* Brand — Navy + Red, classic rugby */
-  --violet:     #c8102e;   /* Action red — CTAs, active states, accents */
-  --violet-dk:  #a50d26;   /* Pressed/hover red */
-  --violet-lt:  #e8193b;   /* Lighter red for hover states */
-  --violet-tint:#fde8ec;   /* Light red tint for badges, tags */
-  --violet-mid: #fbd0d8;   /* Medium red tint */
+  --violet:     #3d5a80;   /* Steel blue — accents, links, borders (was red) */
+  --violet-dk:  #2c4566;   /* Darker steel — hover */
+  --violet-lt:  #98c1d9;   /* Sky — soft accents */
+  --violet-tint:#e0fbfc;   /* Light red tint for badges, tags */
+  --violet-mid: #c6deec;   /* Medium red tint */
 
   /* Deep Navy */
-  --navy:   #1a2035;   /* Primary navy — headers, footer, key panels */
-  --navy2:  #141829;   /* Darker navy */
-  --navy3:  #0e1020;   /* Deepest navy */
+  --navy:   #293241;   /* Primary navy — headers, footer, key panels */
+  --navy2:  #222a37;   /* Darker navy */
+  --navy3:  #1b212c;   /* Deepest navy */
 
   /* Text */
-  --text-primary:   #1a2035;   /* Deep navy — headings and key text */
+  --text-primary:   #293241;   /* Deep navy — headings and key text */
   --text-secondary: #3d4155;   /* Medium navy — body copy */
   --text-muted:     #5c5f6b;   /* Muted — captions, meta — WCAG AA on white & grey */
   --text-faint:     #6d6d72;   /* Disabled / placeholder — WCAG AA 5.15:1 */
@@ -53,18 +53,18 @@
   --border-dk:  #9295a3;   /* Strong */
 
   /* Shadows — crisp, no softness */
-  --sh1: 0 1px 4px rgba(26,32,53,.08), 0 1px 2px rgba(26,32,53,.05);
-  --sh2: 0 4px 16px rgba(26,32,53,.12), 0 1px 4px rgba(26,32,53,.07);
-  --sh3: 0 12px 36px rgba(26,32,53,.16), 0 4px 12px rgba(26,32,53,.09);
+  --sh1: 0 1px 4px rgba(41,50,65,.08), 0 1px 2px rgba(41,50,65,.05);
+  --sh2: 0 4px 16px rgba(41,50,65,.12), 0 1px 4px rgba(41,50,65,.07);
+  --sh3: 0 12px 36px rgba(41,50,65,.16), 0 4px 12px rgba(41,50,65,.09);
 
   /* Semantic */
   --green:  #16a34a;
-  --red-err:#c8102e;
+  --red-err:#b42318;
 
   /* Legacy aliases */
   --red:    var(--violet);
   --red-dk: var(--violet-dk);
-  --gold:   #c8a900;   /* Gold accent for featured/premium */
+  --gold:   #98c1d9;   /* Sky — accent text on dark panels (was gold) */
   --off:    var(--bg-soft);
   --gl:     var(--border);
   --gd:     var(--text-secondary);
@@ -77,11 +77,14 @@
 
   /* Type — Oswald for display, Inter for body */
   --fd: 'Oswald', 'Inter', system-ui, sans-serif;
+  --accent:    #c94a2c;   /* Coral — CTAs ONLY (4.67:1 with white) */
+  --accent-dk: #a83d23;
+  --accent-lt: #ee6c4d;   /* Decorative coral, large/bold use only */
   --fb: 'Inter', system-ui, sans-serif;
 
   /* Shadows via old names */
-  --sh1: 0 1px 4px rgba(26,32,53,.08), 0 1px 2px rgba(26,32,53,.05);
-  --sh2: 0 4px 16px rgba(26,32,53,.12), 0 1px 4px rgba(26,32,53,.07);
+  --sh1: 0 1px 4px rgba(41,50,65,.08), 0 1px 2px rgba(41,50,65,.05);
+  --sh2: 0 4px 16px rgba(41,50,65,.12), 0 1px 4px rgba(41,50,65,.07);
   --sh3: 0 12px 40px rgba(15,12,29,.13), 0 4px 12px rgba(15,12,29,.07);
 }
 
@@ -179,7 +182,7 @@ p { line-height: 1.7; color: var(--text-secondary); }
   background: var(--violet-dk);
   border-color: var(--violet-dk);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(200,16,46,.3);
+  box-shadow: 0 4px 16px rgba(61,90,128,.3);
   transform: translateY(-1px);
 }
 
@@ -244,8 +247,8 @@ p { line-height: 1.7; color: var(--text-secondary); }
   padding: .22rem .65rem;
   border-radius: 0;
 }
-.pill-union    { background: rgba(26,32,53,.08); color: var(--navy); border: 1px solid rgba(26,32,53,.2); }
-.pill-league   { background: var(--violet-tint); color: var(--violet-dk); border: 1px solid rgba(200,16,46,.25); }
+.pill-union    { background: rgba(41,50,65,.08); color: var(--navy); border: 1px solid rgba(41,50,65,.2); }
+.pill-league   { background: var(--violet-tint); color: var(--violet-dk); border: 1px solid rgba(61,90,128,.25); }
 .pill-business { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
 .pill-featured { background: var(--violet); color: #fff; border: 1px solid var(--violet); }
 
@@ -578,7 +581,7 @@ p { line-height: 1.7; color: var(--text-secondary); }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(26,32,53,.75) 0%, rgba(26,32,53,.45) 100%);
+  background: linear-gradient(160deg, rgba(41,50,65,.75) 0%, rgba(41,50,65,.45) 100%);
 }
 .hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; text-align: center; }
 .hero-eyebrow {
@@ -722,7 +725,7 @@ p { line-height: 1.7; color: var(--text-secondary); }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(26,32,53,.3);
+  box-shadow: 0 4px 16px rgba(41,50,65,.3);
 }
 .featured-chip {
   position: absolute;
@@ -1511,10 +1514,10 @@ nav ul li::before,
 .ft-col a::before { display: none !important; content: none !important; }
 
 /* 4 ── Why Choose Us — icons more visible */
-/* The icon wrappers use inline style rgba(200,16,46,.2) — we can't override inline */
+/* The icon wrappers use inline style rgba(61,90,128,.2) — we can't override inline */
 /* Instead add a rule for the section that applies brighter icon styling */
-.sec-navy [style*="background:rgba(200,16,46,.2)"],
-.sec-navy [style*="background: rgba(200,16,46,.2)"] {
+.sec-navy [style*="background:rgba(61,90,128,.2)"],
+.sec-navy [style*="background: rgba(61,90,128,.2)"] {
   background: rgba(255,255,255,.18) !important;
   color: #fff !important;
 }
@@ -2087,7 +2090,7 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--violet) !important;
   outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(200,16,46,.15) !important;
+  box-shadow: 0 0 0 4px rgba(61,90,128,.15) !important;
 }
 
 /* ── UX: Prevent horizontal scroll on all viewports ─────────────────────────── */
@@ -2188,7 +2191,7 @@ body > div[style=""]:empty { display: none !important; }
 
 /* Form inputs — hard edges */
 .form-input, .form-select { border-radius: 0 !important; border-left: 3px solid var(--navy) !important; }
-.form-input:focus, .form-select:focus { border-left-color: var(--violet) !important; box-shadow: 0 0 0 3px rgba(200,16,46,.12) !important; }
+.form-input:focus, .form-select:focus { border-left-color: var(--violet) !important; box-shadow: 0 0 0 3px rgba(61,90,128,.12) !important; }
 
 /* Plan tile selected state */
 .plan-tile.selected, .plan-tile:has(input:checked) { border-color: var(--violet) !important; background: var(--violet-tint) !important; }
@@ -2211,7 +2214,7 @@ body > div[style=""]:empty { display: none !important; }
 .unverified-chip { border-radius: 0 !important; }
 
 /* Team icon backgrounds */
-.team-icon { background: rgba(26,32,53,.08) !important; color: var(--navy) !important; }
+.team-icon { background: rgba(41,50,65,.08) !important; color: var(--navy) !important; }
 .team-card:hover { border-color: var(--violet) !important; border-top: 3px solid var(--violet) !important; }
 
 /* Ground mini card */
@@ -2219,8 +2222,8 @@ body > div[style=""]:empty { display: none !important; }
 .ground-mini-row svg { color: var(--violet) !important; }
 
 /* Loc icon */
-.loc-icon { background: rgba(26,32,53,.08) !important; color: var(--navy) !important; }
-.fac-icon { background: rgba(26,32,53,.08) !important; color: var(--navy) !important; }
+.loc-icon { background: rgba(41,50,65,.08) !important; color: var(--navy) !important; }
+.fac-icon { background: rgba(41,50,65,.08) !important; color: var(--navy) !important; }
 
 /* Section-label colour */
 .section-label { color: var(--violet) !important; }
@@ -2245,8 +2248,8 @@ body > div[style=""]:empty { display: none !important; }
 /* Eyebrow on dark panels */
 .hero-eyebrow {
   border-radius: 0 !important;
-  background: rgba(200,16,46,.2) !important;
-  border-color: rgba(200,16,46,.35) !important;
+  background: rgba(61,90,128,.2) !important;
+  border-color: rgba(61,90,128,.35) !important;
   font-family: 'Oswald', system-ui, sans-serif !important;
   letter-spacing: .1em !important;
 }
@@ -2263,7 +2266,7 @@ body > div[style=""]:empty { display: none !important; }
 .supplier-card.featured { border-top: 4px solid var(--violet) !important; border-radius: 0 !important; }
 
 /* Gallery caption overlay — keep dark */
-.gallery-caption { background: linear-gradient(transparent, rgba(26,32,53,.85)) !important; }
+.gallery-caption { background: linear-gradient(transparent, rgba(41,50,65,.85)) !important; }
 
 /* Hal hire spec items */
 .hall-spec-item { border-radius: 0 !important; border-left: 3px solid var(--navy); }
@@ -3116,12 +3119,12 @@ h2.faq-heading {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--navy) 0%, rgba(26,32,53,.85) 60%, rgba(200,16,46,.15) 100%);
+  background: linear-gradient(135deg, var(--navy) 0%, rgba(41,50,65,.85) 60%, rgba(61,90,128,.15) 100%);
   pointer-events: none;
   z-index: 0;
 }
 .listing-hero > div[style*="position:absolute"] {
-  background: linear-gradient(to right, rgba(26,32,53,.92) 0%, rgba(26,32,53,.65) 100%) !important;
+  background: linear-gradient(to right, rgba(41,50,65,.92) 0%, rgba(41,50,65,.65) 100%) !important;
 }
 .listing-hero > .con {
   position: relative;
@@ -3203,7 +3206,7 @@ h2.faq-heading {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(200,16,46,.35);
+  box-shadow: 0 4px 16px rgba(61,90,128,.35);
   opacity: 0;
   transform: translateY(12px);
   transition: opacity .25s, transform .25s, background .15s;
@@ -3257,7 +3260,7 @@ h2.faq-heading {
   display: block;
   width: 5px;
   height: 1.6rem;
-  background: #c8102e;
+  background: #3d5a80;
   flex-shrink: 0;
 }
 .faq-reference-title {
@@ -3266,7 +3269,7 @@ h2.faq-heading {
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: #1a2035;
+  color: #293241;
   margin: 0;
   line-height: 1;
   border: none;
@@ -3274,7 +3277,7 @@ h2.faq-heading {
 }
 .faq-reference-rule {
   border: none;
-  border-top: 2px solid #1a2035;
+  border-top: 2px solid #293241;
   margin: 0 0 0 0;
 }
 /* The accordion */
@@ -3299,28 +3302,28 @@ h2.faq-heading {
   text-align: left;
   gap: 1.5rem;
 }
-.faq-acc-btn:hover .faq-acc-q { color: #c8102e; }
+.faq-acc-btn:hover .faq-acc-q { color: #3d5a80; }
 .faq-acc-q {
   font-family: 'Oswald', system-ui, sans-serif;
   font-size: .92rem;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: #1a2035;
+  color: #293241;
   line-height: 1.35;
   transition: color .15s;
 }
 .faq-acc-item.open .faq-acc-q {
-  color: #c8102e;
+  color: #3d5a80;
 }
 .faq-acc-chevron {
   flex-shrink: 0;
-  color: #1a2035;
+  color: #293241;
   transition: transform .22s, color .15s;
 }
 .faq-acc-item.open .faq-acc-chevron {
   transform: rotate(180deg);
-  color: #c8102e;
+  color: #3d5a80;
 }
 .faq-acc-body {
   display: none;
@@ -3533,7 +3536,7 @@ h2.faq-heading {
 /* Fix box styling — hard edges, equal height */
 .sec-navy .grid-3 > div {
   border-radius: 0 !important;
-  border-left: 3px solid rgba(200,16,46,.4) !important;
+  border-left: 3px solid rgba(61,90,128,.4) !important;
   display: flex;
   flex-direction: column;
   gap: .5rem;
@@ -3555,7 +3558,7 @@ h2.faq-heading {
 }
 /* Icon boxes — boost visibility */
 .sec-navy .grid-3 > div > div:first-child {
-  background: rgba(200,16,46,.3) !important;
+  background: rgba(61,90,128,.3) !important;
   border-radius: 0 !important;
   width: 44px !important;
   height: 44px !important;
@@ -3607,7 +3610,7 @@ h2.faq-heading {
   content: '' !important;
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(to right, var(--violet) 0%, rgba(200,16,46,.5) 60%, transparent 100%) !important;
+  background: linear-gradient(to right, var(--violet) 0%, rgba(61,90,128,.5) 60%, transparent 100%) !important;
   z-index: 1 !important;
 }
 .blog-hero-inner {
@@ -3771,3 +3774,46 @@ h2.faq-heading {
   .hero-split-title { font-size: 1.4rem !important; }
   .club-hero-er-title { font-size: 1.8rem !important; }
 }
+
+
+/* ═══ Navy + coral palette (Oct 2026) — coral is reserved for actions ═══ */
+.btn-red, .btn-gold, .search-btn, .btn-er-primary, .sidebar-cta, .mob-cta, .nav-cta {
+  background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important;
+}
+.btn-red:hover, .btn-gold:hover, .search-btn:hover, .btn-er-primary:hover, .mob-cta:hover, .nav-cta:hover {
+  background: var(--accent-dk) !important; border-color: var(--accent-dk) !important; color: #fff !important;
+}
+.btn-red { box-shadow: none !important; }
+.lh-left .search-btn { background: var(--accent) !important; color: #fff !important; }
+/* Hero headline: white on photo for contrast; coral underline instead of red text */
+.hero-split-title span { color: #fff !important; box-shadow: inset 0 -.18em 0 var(--accent-lt); }
+/* Calmer type: keep Oswald caps for section titles only */
+.card-content h3, .club-card h3, .why-card h3, .feature h3, .faq-q, .faq-acc-q { text-transform: none !important; letter-spacing: .01em !important; }
+/* Accents on dark panels use sky so they stay visible */
+.sec-navy .ey, .sec-navy .sh .ey, [class*="navy"] .ey, footer .ey, .cta-band .ey { color: var(--violet-lt) !important; border-color: var(--violet-lt) !important; }
+/* Club hero: neutral pattern panel instead of a shared stock photo of pro players */
+.lh-pattern {
+  background:
+    linear-gradient(115deg, transparent 0 38%, rgba(238,108,77,.9) 38% 39.2%, transparent 39.2%),
+    repeating-linear-gradient(115deg, rgba(152,193,217,.10) 0 2px, transparent 2px 22px),
+    linear-gradient(135deg, var(--violet) 0%, var(--navy2) 100%) !important;
+}
+.lh-eyebrow, .listing-hero-england .lh-eyebrow { color: var(--violet-lt) !important; }
+.join-contact-right address a { display: inline !important; }
+/* Homepage: blog panel steps back so search leads */
+.hero-split { grid-template-columns: 72% 28%; }
+.hero-split-news { background: var(--navy2) !important; border-left: 3px solid var(--violet-lt); }
+.hero-split-news-head { color: var(--violet-lt) !important; }
+@media (max-width: 900px) { .hero-split { grid-template-columns: 1fr; } }
+/* Browse-by-area tiles */
+.area-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .75rem; }
+.area-tile { display: flex; flex-direction: column; gap: .2rem; padding: 1rem 1.1rem; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--violet); color: var(--text-primary); transition: border-color .15s, transform .15s; }
+.area-tile:hover { border-top-color: var(--accent); transform: translateY(-2px); color: var(--text-primary); }
+.area-tile strong { font-family: var(--fd); font-size: 1.05rem; letter-spacing: .02em; }
+.area-tile span { font-size: .8rem; color: var(--text-muted); }
+#site-header .logo svg text:first-child, .logo svg text:first-child { fill: var(--accent-lt) !important; }
+.join-contact-right address { display: block !important; }
+#site-header .logo svg text[letter-spacing="3"], #mobile-nav .mob-logo svg text[letter-spacing="3"], .mob-logo svg text[letter-spacing="2.5"] { fill: var(--accent-lt) !important; }
+.stats-bar .stat-item span { color: rgba(255,255,255,.62) !important; }
+main address { display: block !important; }
+main address a { display: inline !important; }

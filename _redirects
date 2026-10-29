@@ -3,6 +3,22 @@
 # Last updated: 2026-06-30
 # ============================================================
 
+# ─── Blog consolidation (Oct 2026) ───────────────────────────────────────────
+/blog/six-nations-2026-england-title-contenders      /blog/six-nations-2026-review-france-champions-england/   301!
+/blog/six-nations-2026-england-title-contenders/     /blog/six-nations-2026-review-france-champions-england/   301!
+/blog/how-to-start-a-rugby-club-from-scratch-a-complete-uk-guide    /blog/how-to-start-a-rugby-club-from-scratch-a-complete-guide-for-community-organisers/   301!
+/blog/how-to-start-a-rugby-club-from-scratch-a-complete-uk-guide/   /blog/how-to-start-a-rugby-club-from-scratch-a-complete-guide-for-community-organisers/   301!
+/blog/enhanced-rugby-expert-system-prompt-for-n8n    /blog/   301!
+/blog/enhanced-rugby-expert-system-prompt-for-n8n/   /blog/   301!
+
+# ─── Internal files are not part of the website ───────────────────────────────
+/tools/*            /404.html   404!
+/docs/*             /404.html   404!
+/growth-roadmap.md  /404.html   404!
+/link-building.html /404.html   404!
+/netlify.toml       /404.html   404!
+/netlify/*          /404.html   404!
+
 # ─── Blog (rewrite, not redirect — serve blog.html at /blog) ──────────────────
 /blog        /blog.html    200
 /blog/       /blog.html    200
@@ -311,6 +327,161 @@
 /llandovery-rfc.html  /club/llandovery-rfc.html  301!
 /llandrindod-wells-rfc.html  /club/llandrindod-wells-rfc.html  301!
 
+
+# ─── CANONICAL FIX (Oct 2026): remaining root-level club duplicates → /club/ (301) ─
+# 136 root copies (L–Z) were still live 200 pages with a canonical to /club/.
+/llandudno-rfc.html  /club/llandudno-rfc.html  301!
+/llanelli-rfc.html  /club/llanelli-rfc.html  301!
+/llangefni-rfc.html  /club/llangefni-rfc.html  301!
+/llangollen-rfc.html  /club/llangollen-rfc.html  301!
+/london-broncos.html  /club/london-broncos.html  301!
+/london-cornish-rfc.html  /club/london-cornish-rfc.html  301!
+/london-irish-rfc.html  /club/london-irish-rfc.html  301!
+/london-skolars.html  /club/london-skolars.html  301!
+/london-welsh-rfc.html  /club/london-welsh-rfc.html  301!
+/long-eaton-rfc.html  /club/long-eaton-rfc.html  301!
+/loughborough-lightning.html  /club/loughborough-lightning.html  301!
+/loughborough-rfc.html  /club/loughborough-rfc.html  301!
+/lovell-rugby.html  /club/lovell-rugby.html  301!
+/luton-rfc.html  /club/luton-rfc.html  301!
+/lutterworth-rfc.html  /club/lutterworth-rfc.html  301!
+/macclesfield-rfc.html  /club/macclesfield-rfc.html  301!
+/maesteg-rfc.html  /club/maesteg-rfc.html  301!
+/maidenhead-rfc.html  /club/maidenhead-rfc.html  301!
+/maidstone-rfc.html  /club/maidstone-rfc.html  301!
+/malone-rfc.html  /club/malone-rfc.html  301!
+/malton-norton-rfc.html  /club/malton-norton-rfc.html  301!
+/mansfield-rfc.html  /club/mansfield-rfc.html  301!
+/market-harborough-rfc.html  /club/market-harborough-rfc.html  301!
+/marlborough-rfc.html  /club/marlborough-rfc.html  301!
+/matchday-media.html  /club/matchday-media.html  301!
+/matlock-rfc.html  /club/matlock-rfc.html  301!
+/medicals-rfc.html  /club/medicals-rfc.html  301!
+/medway-rfc.html  /club/medway-rfc.html  301!
+/melrose-rfc.html  /club/melrose-rfc.html  301!
+/melton-mowbray-rfc.html  /club/melton-mowbray-rfc.html  301!
+/merthyr-rfc.html  /club/merthyr-rfc.html  301!
+/middlesbrough-rfc.html  /club/middlesbrough-rfc.html  301!
+/midhurst-rfc.html  /club/midhurst-rfc.html  301!
+/midlands-hurricanes.html  /club/midlands-hurricanes.html  301!
+/millom-arlfc.html  /club/millom-arlfc.html  301!
+/millom-rfc.html  /club/millom-rfc.html  301!
+/milton-keynes-rufc.html  /club/milton-keynes-rufc.html  301!
+/mirfield-stags.html  /club/mirfield-stags.html  301!
+/montrose-rfc.html  /club/montrose-rfc.html  301!
+/morley-rfc.html  /club/morley-rfc.html  301!
+/morpeth-rfc.html  /club/morpeth-rfc.html  301!
+/moseley-rugby-club.html  /club/moseley-rugby-club.html  301!
+/motley-grapple.html  /club/motley-grapple.html  301!
+/musselburgh-rfc.html  /club/musselburgh-rfc.html  301!
+/my-club-jersey.html  /club/my-club-jersey.html  301!
+/myton-warriors-arlfc.html  /club/myton-warriors-arlfc.html  301!
+/taibach-rfc.html  /club/taibach-rfc.html  301!
+/tamworth-rfc.html  /club/tamworth-rfc.html  301!
+/taunton-rfc.html  /club/taunton-rfc.html  301!
+/tavistock-rfc.html  /club/tavistock-rfc.html  301!
+/teignmouth-rfc.html  /club/teignmouth-rfc.html  301!
+/telford-hornets.html  /club/telford-hornets.html  301!
+/thanet-wanderers.html  /club/thanet-wanderers.html  301!
+/thatto-heath-crusaders.html  /club/thatto-heath-crusaders.html  301!
+/the-offside-line.html  /club/the-offside-line.html  301!
+/the-rugby-journal.html  /club/the-rugby-journal.html  301!
+/the-rugby-paper.html  /club/the-rugby-paper.html  301!
+/the-sportsguide.html  /club/the-sportsguide.html  301!
+/thornensians-rfc.html  /club/thornensians-rfc.html  301!
+/thornhill-trojans-arlfc.html  /club/thornhill-trojans-arlfc.html  301!
+/thurrock-rfc.html  /club/thurrock-rfc.html  301!
+/tonbridge-juddians-rfc.html  /club/tonbridge-juddians-rfc.html  301!
+/tondu-rfc.html  /club/tondu-rfc.html  301!
+/torquay-athletic-rfc.html  /club/torquay-athletic-rfc.html  301!
+/torrington-rfc.html  /club/torrington-rfc.html  301!
+/total-rugby-league-podcast.html  /club/total-rugby-league-podcast.html  301!
+/total-rugby-league.html  /club/total-rugby-league.html  301!
+/tottonians-rfc.html  /club/tottonians-rfc.html  301!
+/toulouse-olympique-women.html  /club/toulouse-olympique-women.html  301!
+/toulouse-olympique.html  /club/toulouse-olympique.html  301!
+/trailfinders-women.html  /club/trailfinders-women.html  301!
+/treherbert-rfc.html  /club/treherbert-rfc.html  301!
+/trojans-rfc.html  /club/trojans-rfc.html  301!
+/trowbridge-rfc.html  /club/trowbridge-rfc.html  301!
+/truro-rfc.html  /club/truro-rfc.html  301!
+/tumble-rfc.html  /club/tumble-rfc.html  301!
+/tunbridge-wells-rfc.html  /club/tunbridge-wells-rfc.html  301!
+/twickenham-rfc.html  /club/twickenham-rfc.html  301!
+/tycroes-rfc.html  /club/tycroes-rfc.html  301!
+/tynedale-rfc.html  /club/tynedale-rfc.html  301!
+/uckfield-rfc.html  /club/uckfield-rfc.html  301!
+/ulster-rugby.html  /club/ulster-rugby.html  301!
+/upper-runcorn-arlfc.html  /club/upper-runcorn-arlfc.html  301!
+/vale-of-lune-rfc.html  /club/vale-of-lune-rfc.html  301!
+/vipers-rfc.html  /club/vipers-rfc.html  301!
+/vx3-rugby.html  /club/vx3-rugby.html  301!
+/wakefield-trinity.html  /club/wakefield-trinity.html  301!
+/wakefield-wildcats-arlfc.html  /club/wakefield-wildcats-arlfc.html  301!
+/walesonline-rugby.html  /club/walesonline-rugby.html  301!
+/walton-on-thames-rfc.html  /club/walton-on-thames-rfc.html  301!
+/wanstead-rfc.html  /club/wanstead-rfc.html  301!
+/warrington-rfc.html  /club/warrington-rfc.html  301!
+/warrington-wolves.html  /club/warrington-wolves.html  301!
+/wasps-rfc.html  /club/wasps-rfc.html  301!
+/wasps-women.html  /club/wasps-women.html  301!
+/waterloo-rfc.html  /club/waterloo-rfc.html  301!
+/watsonians-rfc.html  /club/watsonians-rfc.html  301!
+/wellingborough-rfc.html  /club/wellingborough-rfc.html  301!
+/welsh-rugby-union.html  /club/welsh-rugby-union.html  301!
+/welshpool-rfc.html  /club/welshpool-rfc.html  301!
+/west-hartlepool-rfc.html  /club/west-hartlepool-rfc.html  301!
+/west-hull-arlfc.html  /club/west-hull-arlfc.html  301!
+/west-leeds-arlfc.html  /club/west-leeds-arlfc.html  301!
+/west-of-scotland-rfc.html  /club/west-of-scotland-rfc.html  301!
+/west-wales-raiders.html  /club/west-wales-raiders.html  301!
+/weston-super-mare-rfc.html  /club/weston-super-mare-rfc.html  301!
+/weymouth-rfc.html  /club/weymouth-rfc.html  301!
+/wharfedale-rfc.html  /club/wharfedale-rfc.html  301!
+/whitby-rfc.html  /club/whitby-rfc.html  301!
+/whitehaven-rfc-union.html  /club/whitehaven-rfc-union.html  301!
+/whitehaven-rlfc.html  /club/whitehaven-rlfc.html  301!
+/wibsey-arlfc.html  /club/wibsey-arlfc.html  301!
+/widnes-vikings.html  /club/widnes-vikings.html  301!
+/wigan-rfc.html  /club/wigan-rfc.html  301!
+/wigan-st-judes.html  /club/wigan-st-judes.html  301!
+/wigan-st-patricks.html  /club/wigan-st-patricks.html  301!
+/wigan-warriors.html  /club/wigan-warriors.html  301!
+/wigston-rfc.html  /club/wigston-rfc.html  301!
+/wilmslow-rfc.html  /club/wilmslow-rfc.html  301!
+/wimbledon-rfc.html  /club/wimbledon-rfc.html  301!
+/wimborne-rfc.html  /club/wimborne-rfc.html  301!
+/winchester-rfc.html  /club/winchester-rfc.html  301!
+/windermere-rfc.html  /club/windermere-rfc.html  301!
+/windsor-rfc.html  /club/windsor-rfc.html  301!
+/wirral-rfc.html  /club/wirral-rfc.html  301!
+/wolverhampton-rfc.html  /club/wolverhampton-rfc.html  301!
+/woodford-rfc.html  /club/woodford-rfc.html  301!
+/woolston-rovers-arlfc.html  /club/woolston-rovers-arlfc.html  301!
+/worcester-rfc.html  /club/worcester-rfc.html  301!
+/workington-town-rlfc.html  /club/workington-town-rlfc.html  301!
+/worksop-rfc.html  /club/worksop-rfc.html  301!
+/worthing-rfc.html  /club/worthing-rfc.html  301!
+/yeovil-rfc.html  /club/yeovil-rfc.html  301!
+/york-knights.html  /club/york-knights.html  301!
+/york-rugby-union.html  /club/york-rugby-union.html  301!
+/zone-rugby.html  /club/zone-rugby.html  301!
+
+# ─── Stray copies of hub/guide pages inside /club/ → root versions (301) ─
+/club/junior-youth-rugby-clubs.html  /junior-youth-rugby-clubs.html  301!
+/club/rugby-clubs-birmingham.html  /rugby-clubs-birmingham.html  301!
+/club/rugby-clubs-bristol.html  /rugby-clubs-bristol.html  301!
+/club/rugby-clubs-cardiff.html  /rugby-clubs-cardiff.html  301!
+/club/rugby-clubs-essex.html  /rugby-clubs-essex.html  301!
+/club/rugby-clubs-hull.html  /rugby-clubs-hull.html  301!
+/club/rugby-clubs-leeds.html  /rugby-clubs-leeds.html  301!
+/club/rugby-clubs-surrey.html  /rugby-clubs-surrey.html  301!
+/club/rugby-joints.html  /rugby-joints.html  301!
+/club/rugby-leagues-uk.html  /rugby-leagues-uk.html  301!
+/club/rugby-union-league-structure.html  /rugby-union-league-structure.html  301!
+/club/south-west-rugby-clubs.html  /south-west-rugby-clubs.html  301!
+/club/womens-rugby-clubs.html  /womens-rugby-clubs.html  301!
+
 # ─── CANONICAL FIX: Top-level extensionless pages → .html (301) ──────────────
 # Fixes 9 non-indexable extensionless page URLs.
 /register           /register.html          301!
@@ -349,6 +520,28 @@
 /junior-youth-rugby-clubs/         /junior-youth-rugby-clubs.html           301!
 /womens-rugby-clubs                /womens-rugby-clubs.html                 301!
 /womens-rugby-clubs/               /womens-rugby-clubs.html                 301!
+
+# ─── Area hubs (added 2026-10-29) ───────────────────────────────────────────
+/rugby-clubs-london                 /rugby-clubs-london.html   301!
+/rugby-clubs-london/                /rugby-clubs-london.html   301!
+/rugby-clubs-manchester             /rugby-clubs-manchester.html   301!
+/rugby-clubs-manchester/            /rugby-clubs-manchester.html   301!
+/rugby-clubs-cumbria                /rugby-clubs-cumbria.html   301!
+/rugby-clubs-cumbria/               /rugby-clubs-cumbria.html   301!
+/rugby-clubs-merseyside             /rugby-clubs-merseyside.html   301!
+/rugby-clubs-merseyside/            /rugby-clubs-merseyside.html   301!
+/rugby-clubs-kent                   /rugby-clubs-kent.html   301!
+/rugby-clubs-kent/                  /rugby-clubs-kent.html   301!
+/rugby-clubs-cheshire               /rugby-clubs-cheshire.html   301!
+/rugby-clubs-cheshire/              /rugby-clubs-cheshire.html   301!
+/rugby-clubs-north-yorkshire        /rugby-clubs-north-yorkshire.html   301!
+/rugby-clubs-north-yorkshire/       /rugby-clubs-north-yorkshire.html   301!
+/north-east-rugby-clubs             /north-east-rugby-clubs.html   301!
+/north-east-rugby-clubs/            /north-east-rugby-clubs.html   301!
+/rugby-clubs-hertfordshire          /rugby-clubs-hertfordshire.html   301!
+/rugby-clubs-hertfordshire/         /rugby-clubs-hertfordshire.html   301!
+/rugby-clubs-hampshire              /rugby-clubs-hampshire.html   301!
+/rugby-clubs-hampshire/             /rugby-clubs-hampshire.html   301!
 
 # ─── Trailing slash redirects ─────────────────────────────────────────────────
 # Keep these AFTER the extensionless rules above.

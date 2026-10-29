@@ -73,7 +73,7 @@ function siteHeader() {
     <a href="/index.html" class="logo" aria-label="UK Rugby Club Directory">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
-        <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c8102e" letter-spacing="3">UK</text>
+        <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
         <rect x="35" y="7" width="2.5" height="34" rx="1.25" fill="white"/>
         <text x="46" y="26" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
         <text x="46" y="40" font-family="Arial,Helvetica,sans-serif" font-size="9.5" fill="white" letter-spacing="3.5">DIRECTORY</text>
@@ -143,13 +143,13 @@ function siteFooter() {
         <a href="/index.html" class="ft-logo">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
             <title>UK Rugby Club Directory</title>
-            <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
+            <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#ee6c4d" letter-spacing="2.5">UK</text>
             <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
             <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="white" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
-        <p class="ft-strapline">The UK's most comprehensive free rugby club directory. 620 clubs each with their own full profile page, unique SEO and verified contact details across England, Scotland, Wales and Northern Ireland.</p>
+        <p class="ft-strapline">A free directory of rugby union and rugby league clubs across the UK. 637 clubs, each with its own profile page, across England, Scotland, Wales and Northern Ireland.</p>
         <div class="ft-socials">
           <a href="https://twitter.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter/X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://facebook.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -182,7 +182,7 @@ function siteFooter() {
         <li><a href="https://www.scottishrugby.org" target="_blank" rel="noopener">Scottish Rugby</a></li>
       </ul></div>
       <div class="ft-col"><h3>Legal</h3><ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/about.html">About &amp; Editorial Standards</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li>
         <li><a href="/terms-of-service.html">Terms of Service</a></li>
         <li><a href="/cookie-policy.html">Cookie Policy</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
@@ -192,7 +192,7 @@ function siteFooter() {
   </div>
   <div class="ft-bottom">
     <div class="con ft-bottom-inner">
-      <p>&copy; 2025 UK Rugby Club Directory. All rights reserved. 620 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
+      <p>&copy; ${new Date().getFullYear()} UK Rugby Club Directory. All rights reserved. 637 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
       <div class="ft-bottom-links">
         <a href="/privacy-policy.html">Privacy</a><span>·</span>
         <a href="/terms-of-service.html">Terms</a><span>·</span>
@@ -225,11 +225,11 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
   <meta name="twitter:title"       content="${title}">
   <meta name="twitter:description" content="${description}">
   <meta name="geo.region" content="GB">
-  <meta name="theme-color" content="#0a1628">
+  <meta name="theme-color" content="#293241">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <style>
     /* ── Blog-specific styles ───────────────────────────────────────────── */
@@ -238,39 +238,39 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
        banner matches the rest of the directory pages exactly. No blog-only hero CSS needed. */
     .blog-section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
     .blog-section-hd{margin-bottom:2rem}
-    .blog-section-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c8102e;margin:0 0 .3rem}
-    .blog-section-title{font-family:var(--fd,'Oswald',sans-serif);font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .4rem}
+    .blog-section-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3d5a80;margin:0 0 .3rem}
+    .blog-section-title{font-family:var(--fd,'Oswald',sans-serif);font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--navy,#293241);margin:0 0 .4rem}
     .blog-section-sub{color:#64748b;font-size:.95rem;margin:0}
     .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:2rem}
     @media(max-width:1060px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.blog-grid{grid-template-columns:1fr}}
     .blog-card{background:#fff;border:1px solid var(--gl,#e2e8f0);border-radius:var(--rad,8px);overflow:hidden;box-shadow:var(--sh1,0 1px 4px rgba(0,0,0,.06));transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
     .blog-card:hover{box-shadow:var(--sh3,0 8px 24px rgba(0,0,0,.12));transform:translateY(-4px)}
-    .blog-card-img{height:190px;background:linear-gradient(135deg,var(--navy,#0a1628) 0%,#1e3050 100%);position:relative;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .blog-card-cat{position:absolute;top:.85rem;left:.85rem;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#c8102e;color:#fff;padding:.22rem .65rem;border-radius:100px}
+    .blog-card-img{height:190px;background:linear-gradient(135deg,var(--navy,#293241) 0%,#1e3050 100%);position:relative;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .blog-card-cat{position:absolute;top:.85rem;left:.85rem;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#3d5a80;color:#fff;padding:.22rem .65rem;border-radius:100px}
     .blog-card-body{padding:1.35rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
     .blog-card-date{font-size:.73rem;color:#94a3b8;font-weight:500}
-    .blog-card-title{font-family:var(--fd,'Oswald',sans-serif);font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--navy,#0a1628);line-height:1.25;margin:0}
-    .blog-card:hover .blog-card-title{color:#c8102e}
+    .blog-card-title{font-family:var(--fd,'Oswald',sans-serif);font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--navy,#293241);line-height:1.25;margin:0}
+    .blog-card:hover .blog-card-title{color:#3d5a80}
     .blog-card-excerpt{font-size:.86rem;color:#475569;line-height:1.6;margin:0;flex:1}
-    .blog-card-cta{margin-top:auto;padding-top:.75rem;border-top:1px solid var(--off,#f1f5f9);font-size:.78rem;font-weight:700;color:#c8102e;display:flex;align-items:center;gap:.3rem;transition:gap .15s}
+    .blog-card-cta{margin-top:auto;padding-top:.75rem;border-top:1px solid var(--off,#f1f5f9);font-size:.78rem;font-weight:700;color:#3d5a80;display:flex;align-items:center;gap:.3rem;transition:gap .15s}
     .blog-card:hover .blog-card-cta{gap:.55rem}
     .blog-empty{grid-column:1/-1;text-align:center;padding:5rem 2rem;color:#94a3b8}
-    .blog-empty h3{font-family:var(--fd,'Oswald',sans-serif);font-size:1.3rem;color:var(--navy,#0a1628);margin-bottom:.75rem}
+    .blog-empty h3{font-family:var(--fd,'Oswald',sans-serif);font-size:1.3rem;color:var(--navy,#293241);margin-bottom:.75rem}
     /* Article page */
-    .article-hero{background:var(--navy,#0a1628);padding:3rem 1.5rem 2.5rem;color:#fff}
+    .article-hero{background:var(--navy,#293241);padding:3rem 1.5rem 2.5rem;color:#fff}
     .article-hero-inner{max-width:800px;margin:0 auto}
     .breadcrumb{font-size:.8rem;color:#64748b;margin:0 0 1rem}
     .breadcrumb a{color:#94a3b8;text-decoration:none}
     .breadcrumb a:hover{color:#fff}
-    .article-cat{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#c8102e;color:#fff;padding:.22rem .65rem;border-radius:100px;margin-bottom:.75rem}
+    .article-cat{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#3d5a80;color:#fff;padding:.22rem .65rem;border-radius:100px;margin-bottom:.75rem}
     .article-hero h1{font-family:var(--fd,'Oswald',sans-serif);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700;text-transform:uppercase;margin:0 0 1rem;line-height:1.1;color:#fff}
     /* Req 4: author/date meta — displayed neatly with avatar-style author chip */
     .article-meta{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-top:.25rem}
     .article-meta-date{font-size:.82rem;color:#94a3b8;display:flex;align-items:center;gap:.35rem}
     .article-meta-date svg{opacity:.6}
     .article-meta-author{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:.2rem .65rem .2rem .2rem;font-size:.78rem;color:#cbd5e1}
-    .article-meta-author-avatar{width:22px;height:22px;border-radius:50%;background:#c8102e;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#fff;flex-shrink:0}
+    .article-meta-author-avatar{width:22px;height:22px;border-radius:50%;background:#3d5a80;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#fff;flex-shrink:0}
     .article-meta-sep{color:#475569;font-size:.75rem}
     /* Req 2: hero image */
     .article-hero-image-wrap{max-width:1160px;margin:-1px auto 0;padding:0 1.5rem}
@@ -280,66 +280,66 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
     /* Req 3: improved typography */
     .article-body{color:#1e293b;line-height:1.85;font-size:1.05rem}
     .article-body>*+*{margin-top:0}
-    .article-body h2{font-family:var(--fd,'Oswald',sans-serif);font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:2.5rem 0 .85rem;padding-bottom:.45rem;border-bottom:2px solid #c8102e;line-height:1.2}
-    .article-body h3{font-size:1.1rem;font-weight:700;color:var(--navy,#0a1628);margin:2rem 0 .6rem;line-height:1.3}
+    .article-body h2{font-family:var(--fd,'Oswald',sans-serif);font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--navy,#293241);margin:2.5rem 0 .85rem;padding-bottom:.45rem;border-bottom:2px solid #3d5a80;line-height:1.2}
+    .article-body h3{font-size:1.1rem;font-weight:700;color:var(--navy,#293241);margin:2rem 0 .6rem;line-height:1.3}
     .article-body h4{font-size:1rem;font-weight:600;color:#334155;margin:1.5rem 0 .5rem}
     .article-body p{margin:0 0 1.4rem;line-height:1.85}
     .article-body p:last-child{margin-bottom:0}
     .article-body ul,.article-body ol{margin:0 0 1.4rem;padding-left:1.6rem}
     .article-body ul{list-style:none;padding-left:0}
     .article-body ul li{padding-left:1.4rem;position:relative;margin-bottom:.55rem}
-    .article-body ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:#c8102e;flex-shrink:0}
+    .article-body ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:#3d5a80;flex-shrink:0}
     .article-body ol li{margin-bottom:.55rem;padding-left:.25rem}
-    .article-body ol li::marker{color:#c8102e;font-weight:700}
+    .article-body ol li::marker{color:#3d5a80;font-weight:700}
     .article-body li p{margin-bottom:.4rem}
-    .article-body strong{color:var(--navy,#0a1628);font-weight:700}
+    .article-body strong{color:var(--navy,#293241);font-weight:700}
     .article-body em{color:#475569}
-    .article-body a{color:#c8102e;text-decoration:underline;text-underline-offset:2px}
+    .article-body a{color:#3d5a80;text-decoration:underline;text-underline-offset:2px}
     .article-body a:hover{color:#a00d25}
-    .article-body blockquote{border-left:4px solid #c8102e;margin:2rem 0;padding:1rem 1.5rem;background:linear-gradient(135deg,#fafafa 0%,#f1f5f9 100%);border-radius:0 8px 8px 0;color:#475569;font-style:italic;font-size:1.05rem}
+    .article-body blockquote{border-left:4px solid #3d5a80;margin:2rem 0;padding:1rem 1.5rem;background:linear-gradient(135deg,#fafafa 0%,#f1f5f9 100%);border-radius:0 8px 8px 0;color:#475569;font-style:italic;font-size:1.05rem}
     .article-body blockquote p{margin:0}
-    .article-body code{background:#f1f5f9;padding:.15rem .45rem;border-radius:4px;font-family:'Courier New',Courier,monospace;font-size:.86em;color:#c8102e;border:1px solid #e2e8f0}
+    .article-body code{background:#f1f5f9;padding:.15rem .45rem;border-radius:4px;font-family:'Courier New',Courier,monospace;font-size:.86em;color:#3d5a80;border:1px solid #e2e8f0}
     .article-body pre{background:#0f172a;color:#e2e8f0;padding:1.25rem 1.5rem;border-radius:10px;overflow-x:auto;margin:0 0 1.5rem;font-size:.88rem;line-height:1.65}
     .article-body pre code{background:none;border:none;color:inherit;font-size:inherit;padding:0}
     .article-body hr{border:none;border-top:2px solid #e2e8f0;margin:2.5rem 0}
     .article-body img{max-width:100%;border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 16px rgba(0,0,0,.1)}
     .article-body table{width:100%;border-collapse:collapse;margin:0 0 1.5rem;font-size:.92rem}
-    .article-body th{background:var(--navy,#0a1628);color:#fff;padding:.6rem .9rem;text-align:left;font-weight:600}
+    .article-body th{background:var(--navy,#293241);color:#fff;padding:.6rem .9rem;text-align:left;font-weight:600}
     .article-body td{padding:.55rem .9rem;border-bottom:1px solid #e2e8f0}
     .article-body tr:nth-child(even) td{background:#f8fafc}
     .article-sidebar{position:sticky;top:1.5rem;display:flex;flex-direction:column;gap:1.25rem}
     .sidebar-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.35rem}
-    .sidebar-card h3{font-family:var(--fd,'Oswald',sans-serif);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .5rem}
+    .sidebar-card h3{font-family:var(--fd,'Oswald',sans-serif);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--navy,#293241);margin:0 0 .5rem}
     .sidebar-card p{font-size:.85rem;color:#64748b;line-height:1.55;margin:0 0 1rem}
-    .sidebar-cta{display:inline-block;padding:.6rem 1.1rem;background:#c8102e;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .15s}
+    .sidebar-cta{display:inline-block;padding:.6rem 1.1rem;background:#c94a2c;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .15s}
     .sidebar-cta:hover{background:#a00d25}
-    .back-link{display:inline-flex;align-items:center;gap:.35rem;color:#c8102e;font-size:.85rem;font-weight:600;text-decoration:none;margin-bottom:2rem}
+    .back-link{display:inline-flex;align-items:center;gap:.35rem;color:#3d5a80;font-size:.85rem;font-weight:600;text-decoration:none;margin-bottom:2rem}
     .back-link:hover{text-decoration:underline}
     .back-link svg{flex-shrink:0}
     /* ── Table of Contents ───────────────────────────────────────────────── */
     .toc-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.35rem;position:sticky;top:1.5rem}
-    .toc-card-title{font-family:var(--fd,'Oswald',sans-serif);font-size:.95rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .85rem;display:flex;align-items:center;gap:.4rem}
+    .toc-card-title{font-family:var(--fd,'Oswald',sans-serif);font-size:.95rem;font-weight:700;text-transform:uppercase;color:var(--navy,#293241);margin:0 0 .85rem;display:flex;align-items:center;gap:.4rem}
     .toc-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.1rem}
     .toc-list li a{display:block;font-size:.82rem;color:#475569;text-decoration:none;padding:.32rem .5rem;border-radius:5px;border-left:2px solid transparent;transition:all .15s;line-height:1.35}
-    .toc-list li a:hover{color:#c8102e;background:#fef2f2;border-left-color:#c8102e}
-    .toc-list li a.toc-active{color:#c8102e;background:#fef2f2;border-left-color:#c8102e;font-weight:600}
+    .toc-list li a:hover{color:#3d5a80;background:#fef2f2;border-left-color:#3d5a80}
+    .toc-list li a.toc-active{color:#3d5a80;background:#fef2f2;border-left-color:#3d5a80;font-weight:600}
     /* ── E-E-A-T trust bar ───────────────────────────────────────────────── */
     .eeat-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)}
     .eeat-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:.25rem .75rem;font-size:.72rem;color:#cbd5e1;font-weight:500}
     .eeat-badge svg{opacity:.7;flex-shrink:0}
     /* ── Author bio box ──────────────────────────────────────────────────── */
     .author-bio{background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%);border:1px solid #e2e8f0;border-radius:14px;padding:1.5rem;margin:2.5rem 0;display:flex;gap:1.25rem;align-items:flex-start}
-    .author-bio-avatar{width:56px;height:56px;border-radius:50%;background:var(--navy,#0a1628);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;flex-shrink:0;border:3px solid #c8102e}
+    .author-bio-avatar{width:56px;height:56px;border-radius:50%;background:var(--navy,#293241);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;flex-shrink:0;border:3px solid #3d5a80}
     .author-bio-content{flex:1}
-    .author-bio-name{font-family:var(--fd,'Oswald',sans-serif);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--navy,#0a1628);margin:0 0 .2rem}
-    .author-bio-role{font-size:.75rem;color:#c8102e;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
+    .author-bio-name{font-family:var(--fd,'Oswald',sans-serif);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--navy,#293241);margin:0 0 .2rem}
+    .author-bio-role{font-size:.75rem;color:#3d5a80;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin:0 0 .5rem}
     .author-bio-text{font-size:.85rem;color:#475569;line-height:1.6;margin:0}
     /* ── Inline article images ───────────────────────────────────────────── */
     .article-inline-img{margin:2rem 0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1)}
     .article-inline-img img{width:100%;height:auto;display:block;max-height:400px;object-fit:cover}
     .article-inline-img figcaption{background:#f8fafc;padding:.55rem 1rem;font-size:.78rem;color:#64748b;font-style:italic;border-top:1px solid #e2e8f0}
     /* ── Social share ────────────────────────────────────────────────────── */
-    .share-section{margin:2.5rem 0 0;padding:1.5rem;background:var(--navy,#0a1628);border-radius:14px;display:flex;align-items:center;flex-wrap:wrap;gap:1rem}
+    .share-section{margin:2.5rem 0 0;padding:1.5rem;background:var(--navy,#293241);border-radius:14px;display:flex;align-items:center;flex-wrap:wrap;gap:1rem}
     .share-label{font-family:var(--fd,'Oswald',sans-serif);font-size:.9rem;font-weight:700;text-transform:uppercase;color:#fff;margin:0;flex-shrink:0}
     .share-buttons{display:flex;gap:.5rem;flex-wrap:wrap}
     .share-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem 1rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;transition:opacity .15s,transform .1s;white-space:nowrap}
@@ -455,7 +455,7 @@ function buildIndexPage(articles) {
       <a href="/blog/${a.slug}/" class="blog-card">
         <div class="blog-card-img">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" height="36" role="img" aria-label="UK Rugby Club Directory" style="opacity:.35">
-            <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#c8102e" letter-spacing="2.5">UK</text>
+            <text x="0" y="26" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#ee6c4d" letter-spacing="2.5">UK</text>
             <rect x="29" y="5" width="2" height="30" rx="1" fill="white"/>
             <text x="39" y="21" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="white" letter-spacing="-0.3">Rugby Club</text>
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="white" letter-spacing="3">DIRECTORY</text>
@@ -604,7 +604,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
       </span>
       <span class="eeat-badge">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        620+ clubs verified
+        637 clubs listed
       </span>
     </div>`;
 
@@ -647,12 +647,12 @@ function buildArticlePage(slug, fm, bodyHtml) {
         ${tocHtml}
         <div class="sidebar-card">
           <h3>Find a Rugby Club</h3>
-          <p>Search 620+ clubs across England, Scotland, Wales and Northern Ireland.</p>
+          <p>Search 637 clubs across England, Scotland, Wales and Northern Ireland.</p>
           <a class="sidebar-cta" href="/rugby-union.html">Browse clubs &rarr;</a>
         </div>
         <div class="sidebar-card">
           <h3>Register Your Club</h3>
-          <p>Get your club listed in the UK's most comprehensive rugby directory — free.</p>
+          <p>Get your club listed in our free UK rugby directory.</p>
           <a class="sidebar-cta" href="/register.html">Register free &rarr;</a>
         </div>
       </aside>
@@ -722,5 +722,25 @@ module.exports = {
 
     fs.writeFileSync(path.join(outDir, "index.html"), buildIndexPage(articles), "utf8");
     console.log(`📝 generate-blog: done — ${articles.length} article(s) + index written to ${outDir}`);
+
+    // ─── Add the blog index and every article to sitemap.xml ─────────────────
+    try {
+      const smPath = path.join(PUBLISH_DIR, "sitemap.xml");
+      let sm = fs.readFileSync(smPath, "utf8");
+      // drop any blog entries from a previous build so the list never goes stale
+      sm = sm.replace(/\s*<url><loc>https:\/\/ukrugbyclubdirectory\.co\.uk\/blog[^<]*<\/loc>.*?<\/url>/g, "");
+      const iso = d => (/^\d{4}-\d{2}-\d{2}/.test(d || "") ? d.slice(0, 10) : "");
+      const latest = articles.map(a => iso(a.date)).filter(Boolean).sort().pop() || "";
+      const entries = [
+        `  <url><loc>https://ukrugbyclubdirectory.co.uk/blog</loc>${latest ? `<lastmod>${latest}</lastmod>` : ""}<changefreq>weekly</changefreq><priority>0.7</priority></url>`,
+        ...articles.map(a =>
+          `  <url><loc>https://ukrugbyclubdirectory.co.uk/blog/${a.slug}/</loc>${iso(a.date) ? `<lastmod>${iso(a.date)}</lastmod>` : ""}<changefreq>monthly</changefreq><priority>0.6</priority></url>`),
+      ];
+      sm = sm.replace("</urlset>", entries.join("\n") + "\n</urlset>");
+      fs.writeFileSync(smPath, sm, "utf8");
+      console.log(`🗺  generate-blog: added ${articles.length + 1} blog URL(s) to sitemap.xml`);
+    } catch (e) {
+      console.warn(`  ⚠ Could not update sitemap.xml: ${e.message}`);
+    }
   },
 };
