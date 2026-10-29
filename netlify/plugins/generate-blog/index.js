@@ -722,5 +722,25 @@ module.exports = {
 
     fs.writeFileSync(path.join(outDir, "index.html"), buildIndexPage(articles), "utf8");
     console.log(`📝 generate-blog: done — ${articles.length} article(s) + index written to ${outDir}`);
+
+    // ─── Add the blog index and every article to sitemap.xml ─────────────────
+    try {
+      const smPath = path.join(PUBLISH_DIR, "sitemap.xml");
+      let sm = fs.readFileSync(smPath, "utf8");
+      // drop any blog entries from a previous build so the list never goes stale
+      sm = sm.replace(/\s*<url><loc>https:\/\/ukrugbyclubdirectory\.co\.uk\/blog[^<]*<\/loc>.*?<\/url>/g, "");
+      const iso = d => (/^\d{4}-\d{2}-\d{2}/.test(d || "") ? d.slice(0, 10) : "");
+      const latest = articles.map(a => iso(a.date)).filter(Boolean).sort().pop() || "";
+      const entries = [
+        `  <url><loc>https://ukrugbyclubdirectory.co.uk/blog</loc>${latest ? `<lastmod>${latest}</lastmod>` : ""}<changefreq>weekly</changefreq><priority>0.7</priority></url>`,
+        ...articles.map(a =>
+          `  <url><loc>https://ukrugbyclubdirectory.co.uk/blog/${a.slug}/</loc>${iso(a.date) ? `<lastmod>${iso(a.date)}</lastmod>` : ""}<changefreq>monthly</changefreq><priority>0.6</priority></url>`),
+      ];
+      sm = sm.replace("</urlset>", entries.join("\n") + "\n</urlset>");
+      fs.writeFileSync(smPath, sm, "utf8");
+      console.log(`🗺  generate-blog: added ${articles.length + 1} blog URL(s) to sitemap.xml`);
+    } catch (e) {
+      console.warn(`  ⚠ Could not update sitemap.xml: ${e.message}`);
+    }
   },
 };

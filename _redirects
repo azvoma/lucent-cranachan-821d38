@@ -3,6 +3,22 @@
 # Last updated: 2026-06-30
 # ============================================================
 
+# ─── Blog consolidation (Oct 2026) ───────────────────────────────────────────
+/blog/six-nations-2026-england-title-contenders      /blog/six-nations-2026-review-france-champions-england/   301!
+/blog/six-nations-2026-england-title-contenders/     /blog/six-nations-2026-review-france-champions-england/   301!
+/blog/how-to-start-a-rugby-club-from-scratch-a-complete-uk-guide    /blog/how-to-start-a-rugby-club-from-scratch-a-complete-guide-for-community-organisers/   301!
+/blog/how-to-start-a-rugby-club-from-scratch-a-complete-uk-guide/   /blog/how-to-start-a-rugby-club-from-scratch-a-complete-guide-for-community-organisers/   301!
+/blog/enhanced-rugby-expert-system-prompt-for-n8n    /blog/   301!
+/blog/enhanced-rugby-expert-system-prompt-for-n8n/   /blog/   301!
+
+# ─── Internal files are not part of the website ───────────────────────────────
+/tools/*            /404.html   404!
+/docs/*             /404.html   404!
+/growth-roadmap.md  /404.html   404!
+/link-building.html /404.html   404!
+/netlify.toml       /404.html   404!
+/netlify/*          /404.html   404!
+
 # ─── Blog (rewrite, not redirect — serve blog.html at /blog) ──────────────────
 /blog        /blog.html    200
 /blog/       /blog.html    200
