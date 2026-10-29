@@ -3800,3 +3800,14 @@ h2.faq-heading {
 }
 .lh-eyebrow, .listing-hero-england .lh-eyebrow { color: var(--violet-lt) !important; }
 .join-contact-right address a { display: inline !important; }
+/* Homepage: blog panel steps back so search leads */
+.hero-split { grid-template-columns: 72% 28%; }
+.hero-split-news { background: var(--navy2) !important; border-left: 3px solid var(--violet-lt); }
+.hero-split-news-head { color: var(--violet-lt) !important; }
+@media (max-width: 900px) { .hero-split { grid-template-columns: 1fr; } }
+/* Browse-by-area tiles */
+.area-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .75rem; }
+.area-tile { display: flex; flex-direction: column; gap: .2rem; padding: 1rem 1.1rem; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--violet); color: var(--text-primary); transition: border-color .15s, transform .15s; }
+.area-tile:hover { border-top-color: var(--accent); transform: translateY(-2px); color: var(--text-primary); }
+.area-tile strong { font-family: var(--fd); font-size: 1.05rem; letter-spacing: .02em; }
+.area-tile span { font-size: .8rem; color: var(--text-muted); }
