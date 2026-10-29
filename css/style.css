@@ -3811,3 +3811,9 @@ h2.faq-heading {
 .area-tile:hover { border-top-color: var(--accent); transform: translateY(-2px); color: var(--text-primary); }
 .area-tile strong { font-family: var(--fd); font-size: 1.05rem; letter-spacing: .02em; }
 .area-tile span { font-size: .8rem; color: var(--text-muted); }
+#site-header .logo svg text:first-child, .logo svg text:first-child { fill: var(--accent-lt) !important; }
+.join-contact-right address { display: block !important; }
+#site-header .logo svg text[letter-spacing="3"], #mobile-nav .mob-logo svg text[letter-spacing="3"], .mob-logo svg text[letter-spacing="2.5"] { fill: var(--accent-lt) !important; }
+.stats-bar .stat-item span { color: rgba(255,255,255,.62) !important; }
+main address { display: block !important; }
+main address a { display: inline !important; }
