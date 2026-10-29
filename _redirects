@@ -521,6 +521,28 @@
 /womens-rugby-clubs                /womens-rugby-clubs.html                 301!
 /womens-rugby-clubs/               /womens-rugby-clubs.html                 301!
 
+# ─── Area hubs (added 2026-10-29) ───────────────────────────────────────────
+/rugby-clubs-london                 /rugby-clubs-london.html   301!
+/rugby-clubs-london/                /rugby-clubs-london.html   301!
+/rugby-clubs-manchester             /rugby-clubs-manchester.html   301!
+/rugby-clubs-manchester/            /rugby-clubs-manchester.html   301!
+/rugby-clubs-cumbria                /rugby-clubs-cumbria.html   301!
+/rugby-clubs-cumbria/               /rugby-clubs-cumbria.html   301!
+/rugby-clubs-merseyside             /rugby-clubs-merseyside.html   301!
+/rugby-clubs-merseyside/            /rugby-clubs-merseyside.html   301!
+/rugby-clubs-kent                   /rugby-clubs-kent.html   301!
+/rugby-clubs-kent/                  /rugby-clubs-kent.html   301!
+/rugby-clubs-cheshire               /rugby-clubs-cheshire.html   301!
+/rugby-clubs-cheshire/              /rugby-clubs-cheshire.html   301!
+/rugby-clubs-north-yorkshire        /rugby-clubs-north-yorkshire.html   301!
+/rugby-clubs-north-yorkshire/       /rugby-clubs-north-yorkshire.html   301!
+/north-east-rugby-clubs             /north-east-rugby-clubs.html   301!
+/north-east-rugby-clubs/            /north-east-rugby-clubs.html   301!
+/rugby-clubs-hertfordshire          /rugby-clubs-hertfordshire.html   301!
+/rugby-clubs-hertfordshire/         /rugby-clubs-hertfordshire.html   301!
+/rugby-clubs-hampshire              /rugby-clubs-hampshire.html   301!
+/rugby-clubs-hampshire/             /rugby-clubs-hampshire.html   301!
+
 # ─── Trailing slash redirects ─────────────────────────────────────────────────
 # Keep these AFTER the extensionless rules above.
 /register/          /register.html          301!
