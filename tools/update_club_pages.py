@@ -202,6 +202,9 @@ def build_contact(rec, c):
         button = f'<a href="{html.escape(c["website"])}" target="_blank" rel="noopener noreferrer" {btn}>Visit Club Website</a>'
     elif c.get('facebook'):
         button = f'<a href="{html.escape(c["facebook"])}" target="_blank" rel="noopener noreferrer" {btn}>Message on Facebook</a>'
+    elif rec.get('type') == 'LocalBusiness':
+        q = '+'.join(rec['name'].split())
+        button = f'<a href="https://www.google.com/search?q={html.escape(q)}" target="_blank" rel="noopener" {btn}>Search for {html.escape(rec["name"])} online</a>'
     else:
         gb_name, gb_url = governing_body(rec['sport'], rec['county'])
         if c.get('er_team_id'):
@@ -518,6 +521,9 @@ def layout(s, rec, c, er):
             btns.append(f'<a href="{html.escape(c["facebook"])}" {ext} class="{"btn-er-ghost" if btns else "btn-er-primary"}">Facebook page ↗</a>')
         elif c.get('email') and not btns:
             btns.append(f'<a href="mailto:{html.escape(c["email"])}" class="btn-er-primary">Email the club ›</a>')
+        if not btns and rec.get('type') == 'LocalBusiness':
+            q = '+'.join(name.split())
+            btns.append(f'<a href="https://www.google.com/search?q={html.escape(q)}" {ext} class="btn-er-primary">Search online ↗</a>')
         if not btns:
             short = gb_name.replace('the ', '', 1)
             btns.append(f'<a href="{html.escape(er_url or gb_url)}" target="_blank" rel="noopener" class="btn-er-primary">'
