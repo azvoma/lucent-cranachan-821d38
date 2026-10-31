@@ -543,7 +543,7 @@ def layout(s, rec, c, er):
         facts += extra
         if rec.get('founded'): facts.append(('cal', rec['founded'], 'Founded'))
         if league: facts.append(('cup', league, 'League'))
-        if c.get('postcode'): facts.append(('pin', c['postcode'], 'Ground'))
+        if c.get('postcode'): facts.append(('pin', c['postcode'], 'Postcode'))
         items = '\n  '.join(f'<div class="stat-item">{ICON[ic]}<div><strong>{html.escape(v)}</strong><span>{lab}</span></div></div>'
                             for ic, v, lab in facts)
         s = s[:i] + f'<div class="stats-bar" aria-label="Key facts"><div class="con stats-inner">\n  {items}\n</div></div>' + s[j:]
