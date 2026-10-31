@@ -59,7 +59,7 @@ def main():
             s = re.sub(rf'href="(?:\.\./)?club/{re.escape(slug)}\.html" class="card-link".{{0,600}}?<div class=[\'"]badge-fallback[\'"][^>]*>[^<]*</div>', card, s, flags=re.S)
             # the club's own page header
             if page == f'club/{slug}.html':
-                s = re.sub(r'<div class="hero-badge-fallback"[^>]*>[^<]*</div>',
+                s = re.sub(r'<div class=[\'"]hero-badge-fallback[\'"][^>]*>[^<]*</div>',
                            f'<img src="{src}" alt="{name} club badge" class="hero-badge-img" width="56" height="56" '
                            f'style="width:56px;height:56px;object-fit:contain;background:#fff;border-radius:50%;padding:5px;flex-shrink:0">',
                            s, count=1)

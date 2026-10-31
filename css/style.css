@@ -3854,7 +3854,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #ee6c4d; outline-offs
 .lh-logo-card { position: relative; z-index: 1; height: min(170px, calc(100% - 40px)); width: auto; max-width: 78%; aspect-ratio: 1; background: #fff; border-radius: 18px;
   padding: 16px; box-shadow: 0 12px 32px rgba(0,0,0,.35), 0 0 0 4px rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; }
 .lh-logo-card img { width: 100%; height: 100%; object-fit: contain; display: block; }
-@media (min-width: 769px) { .listing-hero-england:has(.lh-logo-panel) .hero-badge-img { display: none; } }
+@media (min-width: 769px) { .listing-hero-england:has(.lh-logo-panel) .hero-badge-img, .listing-hero-england:has(.lh-logo-panel) .hero-badge-fallback { display: none !important; } }
 .lh-logo-card.dark { background: var(--navy); box-shadow: 0 12px 32px rgba(0,0,0,.45), 0 0 0 2px rgba(255,255,255,.35); }
 .lh-logo-card.duo { aspect-ratio: 2 / 1; gap: 14px; }
 .lh-logo-card.duo img { width: calc(50% - 7px); }
