@@ -20,13 +20,14 @@ PATTERN = '<div class="lh-right lh-pattern" aria-hidden="true" style="position:a
 def is_light(path):
     """True when the logo is white/very light (needs the dark card to be seen)."""
     im = Image.open(path).convert('RGBA'); im.thumbnail((120, 120))
-    px = [p for p in im.getdata() if p[3] > 128]
-    return bool(px) and sum(0.299 * r + 0.587 * g + 0.114 * b for r, g, b, a in px) / len(px) > 215
+    px = [p for p in im.get_flattened_data() if p[3] > 128] if hasattr(im, 'get_flattened_data') else [p for p in im.getdata() if p[3] > 128]
+    light = sum(1 for r, g, b, a in px if 0.299 * r + 0.587 * g + 0.114 * b > 200)
+    return bool(px) and light / len(px) > 0.95
 
 
 def main():
     if len(sys.argv) == 4 and sys.argv[1] == '--import':
-        out = import_logo(sys.argv[2], sys.argv[3])               # writes badges/{slug}.png
+        out = import_logo(sys.argv[2], sys.argv[3], square=False)               # writes badges/{slug}.png
         os.replace(os.path.join(ROOT, 'badges', out), os.path.join(ROOT, 'badges', 'regions', out))
         print('saved badges/regions/' + out); return
     pages = {}
@@ -46,6 +47,9 @@ def main():
                            f'title="{html.escape(b["body_name"])}" width="180" height="180" fetchpriority="high">' for b in bodies)
             dark = ' dark' if all(is_light(f) for f in files) else ''
             duo = ' duo' if len(bodies) > 1 else ''
+            if not duo:
+                w, h = Image.open(files[0]).size
+                duo = ' wide' if w / h > 1.6 else ''
             new = (f'<div class="lh-right lh-pattern lh-logo-panel" style="position:absolute;right:0;top:0;bottom:0;width:42%">'
                    f'<div class="lh-logo-card{duo}{dark}">{imgs}</div></div>')
         else:

@@ -3858,3 +3858,4 @@ a:focus-visible, button:focus-visible { outline: 3px solid #ee6c4d; outline-offs
 .lh-logo-card.dark { background: var(--navy); box-shadow: 0 12px 32px rgba(0,0,0,.45), 0 0 0 2px rgba(255,255,255,.35); }
 .lh-logo-card.duo { aspect-ratio: 2 / 1; gap: 14px; }
 .lh-logo-card.duo img { width: calc(50% - 7px); }
+.lh-logo-card.wide { aspect-ratio: 2.2 / 1; max-width: 88%; }
