@@ -11,7 +11,6 @@
    ── Pill CTAs, generous whitespace, section rhythm via bg
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ── Design tokens ─────────────────────────────────────────── */
 :root {
@@ -3836,3 +3835,16 @@ main address a { display: inline !important; }
   .stats-bar .stat-item strong { white-space: normal; overflow-wrap: anywhere; }
   .stats-bar .stat-div { display: none; }
 }
+
+/* ── Accessibility (WCAG AA contrast, links not by colour alone) + long lists (Oct 2026) ── */
+.join-contact-right address a, .join-contact-right a[style*="--gold"] { color: #d6e9f3 !important; text-decoration: underline; text-underline-offset: 2px; }
+.join-contact-right p[style] { color: rgba(255,255,255,.82) !important; }
+.ft-col h3 { color: #aeb7c4 !important; }
+.ft-bottom p, .ft-bottom p a { color: #a9b1bd !important; }
+#cookie-banner a { color: #98c1d9 !important; text-decoration: underline; }
+main p a:not(.btn):not([class*="btn-"]), main li > a:not(.btn):not([class]), .rich-text a, .faq-item p a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+.club-card-wrap { content-visibility: auto; contain-intrinsic-size: auto 340px; }
+a:focus-visible, button:focus-visible { outline: 3px solid #ee6c4d; outline-offset: 2px; }
+.map-load { width: 100%; margin-top: .6rem; min-height: 44px; padding: .55rem 1rem; background: transparent; border: 2px solid var(--navy); color: var(--navy); font-family: 'Oswald', system-ui, sans-serif; font-weight: 600; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; border-radius: 4px; }
+.map-load:hover { background: var(--navy); color: #fff; }
+.club-hero-er-btns a, .btn-sm, .fx-btn { min-height: 44px; }

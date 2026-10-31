@@ -555,6 +555,27 @@ def layout(s, rec, c, er):
         s = s[:m.start()].rstrip(' ') + s[j:].lstrip('\n')
     s = re.sub(r'\s*<li><a href="\.\./register\.html"[^>]*>→ Claim This Listing</a></li>', '', s)
 
+    # ground card: real address when we hold it, and a click-to-load map (no Google cookies until asked)
+    g = s.find('<div class="ground-mini-card">')
+    if g >= 0:
+        gj = find_div_block(s, g)
+        card = s[g:gj]
+        card = re.sub(r'\s*<!--map-->.*?<!--/map-->', '', card, flags=re.S)
+        card = re.sub(r'href="https://www\.google\.com/maps/search/\?api=1&(?:amp;)?query=[^"]*"', f'href="{maps}"', card, count=1)
+        if c.get('ground_address') or c.get('postcode'):
+            addr = c.get('ground_address') or town
+            if c.get('postcode') and c['postcode'] not in addr: addr += ', ' + c['postcode']
+            pin = re.search(r'<svg[^>]*>.*?</svg>', card, re.S).group(0)
+            rows = re.findall(r'<div class="ground-mini-row">.*?</div>', card, re.S)
+            if rows:
+                new_row = f'<div class="ground-mini-row">{pin}<span>{html.escape(addr)}</span></div>'
+                card = card.replace(''.join(rows), new_row, 1) if ''.join(rows) in card else card
+        q = html.escape(name + ' ' + (c.get('postcode') or town), quote=True)
+        btn = (f'<!--map--><button type="button" class="map-load" data-q="{q}" aria-controls="map-{rec["slug"]}">Show map here</button>'
+               f'<div class="map-slot" id="map-{rec["slug"]}"></div><!--/map-->')
+        card = re.sub(r'(</a>)(\s*</div>)$', lambda mm: mm.group(1) + '\n          ' + btn + mm.group(2), card, count=1)
+        s = s[:g] + card + s[gj:]
+
     # fixtures & results card
     m = re.search(r'\s*(<div class="aside-card fixtures-card">)', s)
     if m:

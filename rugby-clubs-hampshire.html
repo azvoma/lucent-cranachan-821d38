@@ -35,7 +35,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -102,7 +102,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -144,7 +144,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -176,7 +176,7 @@
       <ul style="list-style:none;padding:0;margin:0 0 1rem;line-height:1.9;font-size:.95rem"><li><strong>Alton:</strong> <a href="club/alton-rfc.html">Alton RFC</a></li><li><strong>Andover:</strong> <a href="club/andover-rfc.html">Andover RFC</a></li><li><strong>Basingstoke:</strong> <a href="club/basingstoke-rfc.html">Basingstoke RFC</a></li><li><strong>Eastleigh:</strong> <a href="club/eastleigh-rfc.html">Eastleigh RFC</a>, <a href="club/trojans-rfc.html">Trojans Rugby Club</a></li><li><strong>Havant:</strong> <a href="club/havant-rfc.html">Havant RFC</a></li><li><strong>Petersfield:</strong> <a href="club/petersfield-rfc.html">Petersfield RFC</a></li><li><strong>Totton:</strong> <a href="club/tottonians-rfc.html">Tottonians RFC</a></li><li><strong>Winchester:</strong> <a href="club/winchester-rfc.html">Winchester RFC</a></li></ul>
     </div>
     <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary);margin:2.25rem 0 1rem;letter-spacing:-.02em" id="clubs">All Rugby Clubs in Hampshire</h2><div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="union" data-name="alton rfc" data-city="alton"><article class="club-card card">
-  <a href="club/alton-rfc.html" class="card-link" aria-label="View Alton RFC profile">
+  <a href="club/alton-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">A</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1928</span></div>
@@ -187,7 +187,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="andover rfc" data-city="andover"><article class="club-card card">
-  <a href="club/andover-rfc.html" class="card-link" aria-label="View Andover RFC profile">
+  <a href="club/andover-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">A</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1928</span></div>
@@ -198,7 +198,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="basingstoke rfc" data-city="basingstoke"><article class="club-card card">
-  <a href="club/basingstoke-rfc.html" class="card-link" aria-label="View Basingstoke RFC profile">
+  <a href="club/basingstoke-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">B</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1948</span></div>
@@ -209,7 +209,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="eastleigh rfc" data-city="eastleigh"><article class="club-card card">
-  <a href="club/eastleigh-rfc.html" class="card-link" aria-label="View Eastleigh RFC profile">
+  <a href="club/eastleigh-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">E</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1975</span></div>
@@ -220,7 +220,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="trojans rfc" data-city="southampton"><article class="club-card card">
-  <a href="club/trojans-rfc.html" class="card-link" aria-label="View Trojans RFC profile">
+  <a href="club/trojans-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1927</span></div>
@@ -231,7 +231,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="havant rfc" data-city="havant"><article class="club-card card">
-  <a href="club/havant-rfc.html" class="card-link" aria-label="View Havant RFC profile">
+  <a href="club/havant-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">H</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1951</span></div>
@@ -242,7 +242,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="petersfield rfc" data-city="petersfield"><article class="club-card card">
-  <a href="club/petersfield-rfc.html" class="card-link" aria-label="View Petersfield RFC profile">
+  <a href="club/petersfield-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1883</span></div>
@@ -253,18 +253,18 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="tottonians rfc" data-city="totton"><article class="club-card card">
-  <a href="club/tottonians-rfc.html" class="card-link" aria-label="View Tottonians RFC profile">
+  <a href="club/tottonians-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1948</span></div>
       <h3 class="club-name">Tottonians RFC</h3>
       <p class="club-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Totton, Hampshire</p>
-      <p class="club-desc">South Hampshire club competing in the National Leagues with a strong playing history.</p>
+      <p class="club-desc">South Hampshire club with a strong playing history.</p>
       <div class="card-cta"><span class="view-link">View Profile <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="winchester rfc" data-city="winchester"><article class="club-card card">
-  <a href="club/winchester-rfc.html" class="card-link" aria-label="View Winchester RFC profile">
+  <a href="club/winchester-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1893</span></div>

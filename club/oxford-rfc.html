@@ -40,7 +40,7 @@
   </div>
 </div></div>
 <header id="site-header"><div class="con hdr-inner">
-  <a href="../index.html" class="logo" aria-label="UK Rugby Club Directory">
+  <a href="../index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -96,7 +96,7 @@
   </nav>
   <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="../index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -137,7 +137,7 @@
     <div class="mob-divider"></div>
     <a href="../register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:200px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2rem 5rem 2rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -248,6 +248,7 @@
           <h3>Ground &amp; Location</h3>
           <div class="ground-mini-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Oxford</span></div><div class="ground-mini-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Oxfordshire</span></div>
           <a href="https://www.google.com/maps/search/?api=1&query=Oxford+Rugby+Football+Club+Oxford" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-sm" style="width:100%;justify-content:center;margin-top:.85rem;display:inline-flex">Open in Google Maps</a>
+          <!--map--><button type="button" class="map-load" data-q="Oxford Rugby Football Club Oxford" aria-controls="map-oxford-rfc">Show map here</button><div class="map-slot" id="map-oxford-rfc"></div><!--/map-->
         </div>
         <div class="aside-card">
           <h3>Quick Links</h3>
@@ -306,7 +307,7 @@
   <div class="con">
     <div class="sh"><span class="ey">Discover More</span><h2>Clubs Near Oxford Rugby Football Club</h2>
     <p>Compare other clubs close to Oxford before you choose.</p></div>
-    <div class="grid-3"><div><article class="club-card card"><a href="../club/chinnor-rfc.html" class="card-link"><div class="badge-area"><img src='../chinnor rfc thame.jpg' alt='Chinnor RFC badge' class='club-badge' loading='lazy' width='80' height='80'></div><div class="card-content"><div class="card-meta"><span class="pill pill-union">Rugby Union</span></div><h3 class="club-name">Chinnor RFC</h3><p class="club-desc">Oxfordshire club competing in the National Leagues with excellent facilities in the Chiltern Hi…</p><div class="card-cta"><span class="view-link">View Profile →</span></div></div></a></article></div><div><article class="club-card card"><a href="../club/oxford-quins.html" class="card-link"><div class="badge-area"><img src='../oxford quins rfc.png' alt='Oxford Quins RFC badge' class='club-badge' loading='lazy' width='80' height='80'></div><div class="card-content"><div class="card-meta"><span class="pill pill-union">Rugby Union</span></div><h3 class="club-name">Oxford Quins RFC</h3><p class="club-desc">Oxfordshire club with a large mixed membership and strong junior development programme.…</p><div class="card-cta"><span class="view-link">View Profile →</span></div></div></a></article></div><div><article class="club-card card"><a href="../club/chipping-norton-rfc.html" class="card-link"><div class="badge-area"><div class='badge-fallback'>C</div></div><div class="card-content"><div class="card-meta"><span class="pill pill-union">Rugby Union</span></div><h3 class="club-name">Chipping Norton RFC</h3><p class="club-desc">North Oxfordshire Cotswolds market town club with competitive rugby in county leagues.…</p><div class="card-cta"><span class="view-link">View Profile →</span></div></div></a></article></div></div>
+    <div class="grid-3"><div><article class="club-card card"><a href="../club/chinnor-rfc.html" class="card-link"><div class="badge-area"><img src='../chinnor rfc thame.jpg' alt='Chinnor RFC badge' class='club-badge' loading='lazy' width='80' height='80'></div><div class="card-content"><div class="card-meta"><span class="pill pill-union">Rugby Union</span></div><h3 class="club-name">Chinnor RFC</h3><p class="club-desc">Oxfordshire club with excellent facilities in the Chiltern Hills.</p><div class="card-cta"><span class="view-link">View Profile →</span></div></div></a></article></div><div><article class="club-card card"><a href="../club/oxford-quins.html" class="card-link"><div class="badge-area"><img src='../oxford quins rfc.png' alt='Oxford Quins RFC badge' class='club-badge' loading='lazy' width='80' height='80'></div><div class="card-content"><div class="card-meta"><span class="pill pill-union">Rugby Union</span></div><h3 class="club-name">Oxford Quins RFC</h3><p class="club-desc">Oxfordshire club with a large mixed membership and strong junior development programme.…</p><div class="card-cta"><span class="view-link">View Profile →</span></div></div></a></article></div><div><article class="club-card card"><a href="../club/chipping-norton-rfc.html" class="card-link"><div class="badge-area"><div class='badge-fallback'>C</div></div><div class="card-content"><div class="card-meta"><span class="pill pill-union">Rugby Union</span></div><h3 class="club-name">Chipping Norton RFC</h3><p class="club-desc">North Oxfordshire Cotswolds market town club with competitive rugby in county leagues.…</p><div class="card-cta"><span class="view-link">View Profile →</span></div></div></a></article></div></div>
     <div class="nearby-cta"><a href="../rugby-union.html" class="btn btn-navy btn-lg">Browse All Rugby Union Clubs</a></div>
   </div>
 </section>

@@ -1549,14 +1549,14 @@
   "type": "SportsTeam",
   "sport": "Rugby League",
   "town": "Perpignan",
-  "county": "Pyr\u00e9n\u00e9es-Orientales",
+  "county": "Pyrénées-Orientales",
   "founded": "2006",
   "ld_website": [
    "https://www.catalans-dragons.fr"
   ],
   "has_tel": false,
   "has_mail": false,
-  "meta": "Catalans Dragons has played rugby league in Perpignan, Pyr\u00e9n\u00e9es-Orientales since 2006. Read the club history and find the ground. Get in touch today.",
+  "meta": "Catalans Dragons has played rugby league in Perpignan, Pyrénées-Orientales since 2006. Read the club history and find the ground. Get in touch today.",
   "canonical": "https://ukrugbyclubdirectory.co.uk/club/catalans-dragons.html"
  },
  {
@@ -6104,20 +6104,6 @@
   "has_mail": false,
   "meta": "Penrith RFC has played rugby union in Penrith, Cumbria since 1872. Read the club history and find the ground. Take your first step onto the pitch.",
   "canonical": "https://ukrugbyclubdirectory.co.uk/club/penrith-rfc.html"
- },
- {
-  "slug": "penrith-union-rfc",
-  "name": "Penrith RUFC",
-  "type": "SportsTeam",
-  "sport": "Rugby Union",
-  "town": "Penrith",
-  "county": "Cumbria",
-  "founded": "1872",
-  "ld_website": "",
-  "has_tel": false,
-  "has_mail": false,
-  "meta": "Penrith RUFC has played rugby union in Penrith, Cumbria since 1872. See the ground, history and how to join. Take your first step onto the pitch.",
-  "canonical": "https://ukrugbyclubdirectory.co.uk/club/penrith-union-rfc.html"
  },
  {
   "slug": "penryn-rfc",

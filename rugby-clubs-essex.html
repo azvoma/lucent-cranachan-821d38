@@ -37,7 +37,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -104,7 +104,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -146,7 +146,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -181,18 +181,18 @@
     </div>
     <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary,#0f0c1d);margin:2.25rem 0 1rem;letter-spacing:-.02em" id="clubs">All Rugby Clubs in Essex</h2>
       <div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="union" data-name="brentwood rfc" data-city="brentwood"><article class="club-card card">
-  <a href="club/brentwood-rfc.html" class="card-link" aria-label="View Brentwood RFC profile">
+  <a href="club/brentwood-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/brentwood-rfc.png" alt="Brentwood RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1938</span></div>
       <h3 class="club-name">Brentwood RFC</h3>
       <p class="club-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brentwood, Essex</p>
-      <p class="club-desc">Essex market town club with strong competition in the London and county leagues.</p>
+      <p class="club-desc">Essex market town club with competitive league rugby and a strong local following.</p>
       <div class="card-cta"><span class="view-link">View Profile <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="chelmsford rfc" data-city="chelmsford"><article class="club-card card">
-  <a href="club/chelmsford-rfc.html" class="card-link" aria-label="View Chelmsford RFC profile">
+  <a href="club/chelmsford-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/chelmsford-rfc.png" alt="Chelmsford RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1920</span></div>
@@ -203,7 +203,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="colchester rfc" data-city="colchester"><article class="club-card card">
-  <a href="club/colchester-rfc.html" class="card-link" aria-label="View Colchester RFC profile">
+  <a href="club/colchester-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/colchester-rfc.png" alt="Colchester RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1925</span></div>
@@ -214,7 +214,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="harlow rfc" data-city="harlow"><article class="club-card card">
-  <a href="club/harlow-rfc.html" class="card-link" aria-label="View Harlow RFC profile">
+  <a href="club/harlow-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/harlow-rfc.png" alt="Harlow RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1955</span></div>
@@ -225,18 +225,18 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="rochford hundred rfc" data-city="rochford"><article class="club-card card">
-  <a href="club/rochford-hundred-rfc.html" class="card-link" aria-label="View Rochford Hundred RFC profile">
+  <a href="club/rochford-hundred-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/rochford-hundred-rfc.png" alt="Rochford Hundred RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1962</span></div>
       <h3 class="club-name">Rochford Hundred RFC</h3>
       <p class="club-loc"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Rochford, Essex</p>
-      <p class="club-desc">South Essex club with a long history competing in London and Essex county leagues.</p>
+      <p class="club-desc">South Essex club with a long history of league rugby.</p>
       <div class="card-cta"><span class="view-link">View Profile <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="southend rfc" data-city="southend-on-sea"><article class="club-card card">
-  <a href="club/southend-rfc.html" class="card-link" aria-label="View Southend RFC profile">
+  <a href="club/southend-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/southend-rfc.png" alt="Southend RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1870</span></div>
@@ -247,7 +247,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="thurrock rfc" data-city="grays"><article class="club-card card">
-  <a href="club/thurrock-rfc.html" class="card-link" aria-label="View Thurrock RFC profile">
+  <a href="club/thurrock-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/thurrock-rfc.png" alt="Thurrock RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1928</span></div>
