@@ -343,7 +343,7 @@ def process(path, rec, contacts):
         STATS['badges'] += 1
         cls = 'hero-badge-fallback' if 'hero-badge' in tag else 'badge-fallback'
         return f'<div class="{cls}">{initial}</div>'
-    fake_rx = r"<img[^>]*src=['\"][^'\"]*(?:%s)['\"][^>]*>(\s*<div class=['\"](?:hero-)?badge-fallback['\"] style=['\"]display:none['\"]>[^<]*</div>)?" % '|'.join(re.escape(b) for b in FAKE_BADGES)
+    fake_rx = r"<img[^>]*src=['\"](?:[^'\"]*/)?(?:%s)['\"][^>]*>(\s*<div class=['\"](?:hero-)?badge-fallback['\"] style=['\"]display:none['\"]>[^<]*</div>)?" % '|'.join(re.escape(b) for b in FAKE_BADGES)
     s = re.sub(fake_rx, badge, s)
 
     # 2. gallery placeholders

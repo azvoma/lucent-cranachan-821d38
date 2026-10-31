@@ -77,7 +77,11 @@ def main():
         rec = recs.get(slug)
         if not rec or rec['type'] not in ('SportsTeam', 'LocalBusiness'):
             continue
-        s = open(p, encoding='utf-8', errors='surrogateescape').read()
+        s = orig = open(p, encoding='utf-8', errors='surrogateescape').read()
+        # older header markup: a 56px box wrapping an img or initial -> standard fallback (apply_badges fills it)
+        s = re.sub(r'<div style="width:56px;height:56px;flex-shrink:0;border-radius:10px;background:rgba\(255,255,255,\.12\)[^"]*">\s*'
+                   r'(?:<img[^>]*>|<div class=[\'"]badge-fallback[\'"]>[^<]*</div>)\s*</div>',
+                   f'<div class="hero-badge-fallback">{html.escape(rec["name"][:1].upper())}</div>', s, count=1)
         i = s.find('<div class="lh-right')
         if i < 0:
             continue
@@ -100,6 +104,7 @@ def main():
             new = PATTERN
         if new != block:
             s = s[:i] + new + s[j:]
+        if s != orig:
             open(p, 'w', encoding='utf-8', errors='surrogateescape').write(s); changed += 1
     print(f'{imported} logos imported to /badges; {with_logo} pages with a logo panel; {changed} pages changed')
     subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'apply_badges.py')], check=True)
