@@ -20,6 +20,13 @@ What it does (safe to re-run — every step is idempotent):
      email, Facebook, ground address, postcode) into the page, the contact
      button and the JSON-LD.  Blank cells are ignored, so you can fill the
      CSV in gradually and re-run.
+  9. Page layout: hero buttons only offer what we actually hold (call /
+     website / directions, or the governing body when we hold nothing);
+     one key-facts strip (sport, location, founded, league, postcode)
+     replaces the repeated subtitle, pill and "Club Information" card;
+     "Claim this listing" appears once, in the contact panel.
+ 10. Fixtures & results card from tools/er-teams.csv (England Rugby team
+     ID + league line).  Only shown when a team ID is known.
 
 Only pages in /club/ that are live (not 301'd) are touched.
 """
@@ -27,6 +34,8 @@ import csv, glob, html, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(ROOT, 'tools', 'club-contacts.csv')
+ER_PATH = os.path.join(ROOT, 'tools', 'er-teams.csv')
+ER_URL = 'https://www.englandrugby.com/fixtures-and-results/search-results?team={}'
 
 WALES = {'South Glamorgan', 'Carmarthenshire', 'Neath Port Talbot', 'Rhondda Cynon Taf', 'Ceredigion',
          'Caerphilly', 'Powys', 'Bridgend', 'Conwy', 'Blaenau Gwent', 'Monmouthshire', 'Pembrokeshire',
@@ -194,7 +203,11 @@ def build_contact(rec, c):
     elif c.get('facebook'):
         button = f'<a href="{html.escape(c["facebook"])}" target="_blank" rel="noopener noreferrer" {btn}>Message on Facebook</a>'
     else:
-        button = f'<a href="../claim.html" {btn}>Claim &amp; Add Contact Details</a>'
+        gb_name, gb_url = governing_body(rec['sport'], rec['county'])
+        if c.get('er_team_id'):
+            gb_url = ER_URL.format(c['er_team_id'])
+        short = gb_name.replace('the ', '', 1)
+        button = f'<a href="{html.escape(gb_url)}" target="_blank" rel="noopener" {btn}>Find the club on {html.escape(short)}</a>'
     missing = [x for x, k in [('a phone number', 'phone'), ('an email address', 'email'), ('training times', '_')] if not c.get(k)]
     foot = ('<p style="font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.75rem">Club official? '
             '<a href="../claim.html" style="color:inherit;text-decoration:underline">Claim this listing</a> to add '
@@ -362,6 +375,9 @@ def process(path, rec, contacts):
     c = existing_contact(s)
     c.update({k: v for k, v in contacts.get(rec['slug'], {}).items() if v})
     contactable = has_contact(c)
+    er = ER.get(rec['slug'], {})
+    if er.get('er_team_id'):
+        c['er_team_id'] = er['er_team_id']
 
     # 4b. corrected founding year from the CSV
     new_year = c.get('founded', '')
@@ -443,12 +459,130 @@ def process(path, rec, contacts):
         return mm.group(1) + nd + mm.group(3)
     s = re.sub(r'(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")([^"]*)(")', meta, s)
 
+    # 9 + 10. layout: honest hero actions, one key-facts strip, single claim link, fixtures card
+    if 'class="stats-bar"' in s:
+        s = layout(s, rec, c, er)
+
     if s != orig:
         open(path, 'w', encoding='utf-8', errors='surrogateescape').write(s)
         STATS['pages'] += 1
 
 
+ER = {}
+
+
+def load_er():
+    rows = {}
+    if os.path.exists(ER_PATH):
+        for r in csv.DictReader(open(ER_PATH, encoding='utf-8')):
+            r = {k: (v or '').strip() for k, v in r.items()}
+            if r.get('slug') and re.fullmatch(r'\d+', r.get('er_team_id', '')):
+                rows[r['slug']] = r
+    return rows
+
+
+ICON = {
+    'sport': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9.5" ry="6"/></svg>',
+    'pin': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    'cal': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    'cup': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4zM17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg>',
+}
+
+
+def layout(s, rec, c, er):
+    name, sport, town, county = rec['name'], rec['sport'], rec['town'], rec['county']
+    league = (er.get('league') or '').split('|')[0].strip()
+    division = (er.get('league') or '').split('|')[1].strip() if '|' in (er.get('league') or '') else ''
+    if re.match(r'Division \d', league) and division:   # merit leagues: "Division 3 | Essex Merit League"
+        league, division = f'{division} {league}', ''
+    gb_name, gb_url = governing_body(sport, county)
+    er_url = ER_URL.format(er['er_team_id']) if er.get('er_team_id') else ''
+    maps_q = '+'.join((name + ' ' + (c.get('postcode') or town)).split())
+    maps = f'https://www.google.com/maps/search/?api=1&query={html.escape(maps_q)}'
+
+    # hero: drop the repeated subtitle line and sport pill (both live in the key-facts strip)
+    hero_i = s.find('<section class="listing-hero-england"')
+    hero_j = s.find('</section>', hero_i)
+    if hero_i >= 0:
+        hero = s[hero_i:hero_j]
+        hero = re.sub(r'\s*<p style="font-size:\.85rem;color:rgba\(255,255,255,\.8\);[^"]*">[^<]*</p>', '', hero, count=1)
+        hero = re.sub(r'\s*<div class="hero-pills"[^>]*>.*?</div>', '', hero, count=1, flags=re.S)
+        # hero actions: only what we actually hold
+        ext = 'target="_blank" rel="noopener noreferrer"'
+        btns = []
+        if c.get('phone'):
+            btns.append(f'<a href="tel:{tel_href(c["phone"])}" class="btn-er-primary">Call the club ›</a>')
+        if c.get('website'):
+            btns.append(f'<a href="{html.escape(c["website"])}" {ext} class="{"btn-er-ghost" if btns else "btn-er-primary"}">Club website ↗</a>')
+        elif c.get('facebook'):
+            btns.append(f'<a href="{html.escape(c["facebook"])}" {ext} class="{"btn-er-ghost" if btns else "btn-er-primary"}">Facebook page ↗</a>')
+        elif c.get('email') and not btns:
+            btns.append(f'<a href="mailto:{html.escape(c["email"])}" class="btn-er-primary">Email the club ›</a>')
+        if not btns:
+            short = gb_name.replace('the ', '', 1)
+            btns.append(f'<a href="{html.escape(er_url or gb_url)}" target="_blank" rel="noopener" class="btn-er-primary">'
+                        f'Find on {html.escape(short)} ↗</a>')
+        btns.append(f'<a href="{maps}" {ext} class="btn-er-ghost">{"Directions" if c.get("postcode") else "Find on map"} ↗</a>')
+        hero = re.sub(r'(<div class="club-hero-er-btns">).*?(</div>)',
+                      lambda m: m.group(1) + '\n      ' + '\n      '.join(btns) + '\n    ' + m.group(2), hero, count=1, flags=re.S)
+        s = s[:hero_i] + hero + s[hero_j:]
+
+    # extra facts that only lived in the old "Club Information" card (kept on re-runs via the strip)
+    extra = []
+    for lab_in, lab_out in (('Gender', 'Team'), ('Teams', 'Teams')):
+        m = re.search(rf'<dt>{lab_in}</dt><dd>(.*?)</dd>', s) or \
+            re.search(rf'<div class="stat-item">(?:(?!</div></div>).)*?<strong>([^<]*)</strong><span>{lab_out}</span>', s, re.S)
+        if m: extra.append(('sport', html.unescape(m.group(1)), lab_out))
+
+    # one key-facts strip
+    i = s.find('<div class="stats-bar">')
+    if i >= 0:
+        j = find_div_block(s, i)
+        facts = [('sport', sport or 'Rugby', 'Sport'),
+                 ('pin', ', '.join(x for x in [town, county] if x), 'Location')]
+        facts += extra
+        if rec.get('founded'): facts.append(('cal', rec['founded'], 'Founded'))
+        if league: facts.append(('cup', league, 'League'))
+        if c.get('postcode'): facts.append(('pin', c['postcode'], 'Ground'))
+        items = '\n  '.join(f'<div class="stat-item">{ICON[ic]}<div><strong>{html.escape(v)}</strong><span>{lab}</span></div></div>'
+                            for ic, v, lab in facts)
+        s = s[:i] + f'<div class="stats-bar" aria-label="Key facts"><div class="con stats-inner">\n  {items}\n</div></div>' + s[j:]
+
+    # sidebar: the "Club Information" card repeats the strip; claim link lives in the contact panel only
+    m = re.search(r'<div class="aside-card">\s*<h3>Club Information</h3>', s)
+    if m:
+        j = find_div_block(s, m.start())
+        s = s[:m.start()].rstrip(' ') + s[j:].lstrip('\n')
+    s = re.sub(r'\s*<li><a href="\.\./register\.html"[^>]*>→ Claim This Listing</a></li>', '', s)
+
+    # fixtures & results card
+    m = re.search(r'\s*(<div class="aside-card fixtures-card">)', s)
+    if m:
+        s = s[:m.start()] + s[find_div_block(s, m.start(1)):]
+    if er_url:
+        lines = ''
+        if league:
+            lines += f'<p class="fx-league">{html.escape(league)}</p>'
+        if division:
+            lines += f'<p class="fx-div">{html.escape(division)}</p>'
+        team = re.sub(r'\s+1st XV$', '', er.get('er_name') or name)
+        card = (f'\n        <div class="aside-card fixtures-card">\n'
+                f'          <h3>Fixtures &amp; Results</h3>\n'
+                f'          {lines}\n'
+                f'          <a href="{er_url}" target="_blank" rel="noopener" class="btn btn-navy btn-sm fx-btn">Fixtures, results &amp; table ↗</a>\n'
+                f'          <p class="fx-note">Live from England Rugby for the {html.escape(team)} first team'
+                + (f'. League checked {html.escape(er.get("checked_date", ""))}.' if league and er.get('checked_date') else '.')
+                + '</p>\n        </div>')
+        k = s.find('<div class="club-sidebar">')
+        if k >= 0:
+            k += len('<div class="club-sidebar">')
+            s = s[:k] + card + s[k:]
+    return s
+
+
 def main():
+    global ER
+    ER = load_er()
     redirected = set()
     for line in open(os.path.join(ROOT, '_redirects'), encoding='utf-8'):
         m = re.match(r'(/club/[^\s]+\.html)\s+/[^\s]*\s+301', line)
