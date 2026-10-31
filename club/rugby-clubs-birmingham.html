@@ -37,7 +37,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -104,7 +104,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -146,7 +146,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -163,7 +163,7 @@
     </div>
   </div>
   <div class="lh-right" style="position:absolute;right:0;top:0;bottom:0;width:42%;background:var(--violet)">
-    <img src="imgs/rugby-union-hero.jpg" alt="Rugby union players competing for the ball, representing rugby clubs in Birmingham" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;opacity:1">
+    <img src="imgs/rugby-union-hero.webp" alt="Rugby union players competing for the ball, representing rugby clubs in Birmingham" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;opacity:1">
   </div>
 </section>
 <div class="seo-links-bar">
@@ -184,7 +184,7 @@
     </div>
     <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary,#0f0c1d);margin:2.25rem 0 1rem;letter-spacing:-.02em" id="clubs">Rugby Teams in Birmingham and Solihull</h2>
       <div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="union" data-name="birmingham &amp; solihull rfc" data-city="birmingham"><article class="club-card card">
-  <a href="club/birmingham-solihull-rfc.html" class="card-link" aria-label="View Birmingham &amp; Solihull RFC profile">
+  <a href="club/birmingham-solihull-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">B</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span></div>
@@ -195,7 +195,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="birmingham moseley" data-city="birmingham"><article class="club-card card">
-  <a href="club/birmingham-moseley.html" class="card-link" aria-label="View Birmingham Moseley profile">
+  <a href="club/birmingham-moseley.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">B</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1873</span></div>
@@ -206,7 +206,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="bournville rfc" data-city="birmingham"><article class="club-card card">
-  <a href="club/bournville-rfc.html" class="card-link" aria-label="View Bournville RFC profile">
+  <a href="club/bournville-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">B</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1909</span></div>
@@ -217,7 +217,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="camp hill rfc" data-city="shirley"><article class="club-card card">
-  <a href="club/camp-hill-rfc.html" class="card-link" aria-label="View Camp Hill RFC profile">
+  <a href="club/camp-hill-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1893</span></div>
@@ -228,7 +228,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="edwardian fc (rugby union)" data-city="solihull"><article class="club-card card">
-  <a href="club/edwardian-fc.html" class="card-link" aria-label="View Edwardian FC (Rugby Union) profile">
+  <a href="club/edwardian-fc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">E</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1882</span></div>
@@ -239,7 +239,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="harborne rfc" data-city="birmingham"><article class="club-card card">
-  <a href="club/harborne-rfc.html" class="card-link" aria-label="View Harborne RFC profile">
+  <a href="club/harborne-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">H</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1928</span></div>
@@ -250,7 +250,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="yardley &amp; district rfc" data-city="birmingham"><article class="club-card card">
-  <a href="club/yardley-district-rfc.html" class="card-link" aria-label="View Yardley &amp; District RFC profile">
+  <a href="club/yardley-district-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">Y</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1971</span></div>

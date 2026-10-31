@@ -35,7 +35,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -102,7 +102,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -144,7 +144,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -176,7 +176,7 @@
       <ul style="list-style:none;padding:0;margin:0 0 1rem;line-height:1.9;font-size:.95rem"><li><strong>Ambleside:</strong> <a href="club/ambleside-rfc.html">Ambleside RFC</a></li><li><strong>Askam-in-Furness:</strong> <a href="club/askam-arlfc.html">Askam ARLFC</a></li><li><strong>Barrow-in-Furness:</strong> <a href="club/barrow-rfc.html">Barrow RFC</a>, <a href="club/barrow-raiders.html">Barrow Raiders</a>, <a href="club/furness-rfc.html">Furness RFC</a></li><li><strong>Carlisle:</strong> <a href="club/carlisle-rfc.html">Carlisle RFC</a></li><li><strong>Egremont:</strong> <a href="club/egremont-rfc.html">Egremont RFC</a>, <a href="club/egremont-rangers-arlfc.html">Egremont Rangers ARLFC</a></li><li><strong>Kendal:</strong> <a href="club/kendal-rfc.html">Kendal RFC</a></li><li><strong>Keswick:</strong> <a href="club/keswick-rfc.html">Keswick RFC</a></li><li><strong>Millom:</strong> <a href="club/millom-arlfc.html">Millom ARLFC</a>, <a href="club/millom-rfc.html">Millom RFC</a></li><li><strong>Penrith:</strong> <a href="club/penrith-rfc.html">Penrith RFC</a></li><li><strong>Whitehaven:</strong> <a href="club/kells-arlfc.html">Kells ARLFC</a>, <a href="club/whitehaven-rfc-union.html">Whitehaven RFC (Union)</a>, <a href="club/whitehaven-rlfc.html">Whitehaven RLFC</a></li><li><strong>Windermere:</strong> <a href="club/windermere-rfc.html">Windermere RFC</a></li><li><strong>Workington:</strong> <a href="club/seaton-rangers-arlfc.html">Seaton Rangers ARLFC</a>, <a href="club/workington-town-rlfc.html">Workington Town RLFC</a></li></ul>
     </div>
     <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary);margin:2.25rem 0 1rem;letter-spacing:-.02em" id="clubs">Rugby Union Clubs in Cumbria</h2><div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="union" data-name="ambleside rfc" data-city="ambleside"><article class="club-card card">
-  <a href="club/ambleside-rfc.html" class="card-link" aria-label="View Ambleside RFC profile">
+  <a href="club/ambleside-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">A</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1935</span></div>
@@ -187,7 +187,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="barrow rfc" data-city="barrow-in-furness"><article class="club-card card">
-  <a href="club/barrow-rfc.html" class="card-link" aria-label="View Barrow RFC profile">
+  <a href="club/barrow-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">B</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1873</span></div>
@@ -198,7 +198,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="furness rfc" data-city="barrow-in-furness"><article class="club-card card">
-  <a href="club/furness-rfc.html" class="card-link" aria-label="View Furness RFC profile">
+  <a href="club/furness-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">F</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1924</span></div>
@@ -209,7 +209,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="carlisle rfc" data-city="carlisle"><article class="club-card card">
-  <a href="club/carlisle-rfc.html" class="card-link" aria-label="View Carlisle RFC profile">
+  <a href="club/carlisle-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1884</span></div>
@@ -220,7 +220,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="egremont rfc" data-city="egremont"><article class="club-card card">
-  <a href="club/egremont-rfc.html" class="card-link" aria-label="View Egremont RFC profile">
+  <a href="club/egremont-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">E</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1870</span></div>
@@ -231,7 +231,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="kendal rfc" data-city="kendal"><article class="club-card card">
-  <a href="club/kendal-rfc.html" class="card-link" aria-label="View Kendal RFC profile">
+  <a href="club/kendal-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">K</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1905</span></div>
@@ -242,7 +242,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="keswick rfc" data-city="keswick"><article class="club-card card">
-  <a href="club/keswick-rfc.html" class="card-link" aria-label="View Keswick RFC profile">
+  <a href="club/keswick-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">K</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1948</span></div>
@@ -253,7 +253,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="millom rfc" data-city="millom"><article class="club-card card">
-  <a href="club/millom-rfc.html" class="card-link" aria-label="View Millom RFC profile">
+  <a href="club/millom-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">M</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1895</span></div>
@@ -264,7 +264,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="penrith rfc" data-city="penrith"><article class="club-card card">
-  <a href="club/penrith-rfc.html" class="card-link" aria-label="View Penrith RFC profile">
+  <a href="club/penrith-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1872</span></div>
@@ -275,7 +275,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="whitehaven rfc (union)" data-city="whitehaven"><article class="club-card card">
-  <a href="club/whitehaven-rfc-union.html" class="card-link" aria-label="View Whitehaven RFC (Union) profile">
+  <a href="club/whitehaven-rfc-union.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1929</span></div>
@@ -286,7 +286,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="windermere rfc" data-city="windermere"><article class="club-card card">
-  <a href="club/windermere-rfc.html" class="card-link" aria-label="View Windermere RFC profile">
+  <a href="club/windermere-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1930</span></div>
@@ -297,7 +297,7 @@
     </div>
   </a>
 </article></div></div><h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary);margin:2.25rem 0 1rem;letter-spacing:-.02em">Rugby League Clubs in Cumbria</h2><div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="league" data-name="askam arlfc" data-city="askam-in-furness"><article class="club-card card">
-  <a href="club/askam-arlfc.html" class="card-link" aria-label="View Askam ARLFC profile">
+  <a href="club/askam-arlfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">A</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1919</span></div>
@@ -308,7 +308,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="barrow raiders" data-city="barrow-in-furness"><article class="club-card card">
-  <a href="club/barrow-raiders.html" class="card-link" aria-label="View Barrow Raiders profile">
+  <a href="club/barrow-raiders.html" class="card-link">
     <div class="badge-area"><img src="barrow raiders copy.png" alt="Barrow Raiders official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">B</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1900</span></div>
@@ -319,7 +319,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="egremont rangers arlfc" data-city="egremont"><article class="club-card card">
-  <a href="club/egremont-rangers-arlfc.html" class="card-link" aria-label="View Egremont Rangers ARLFC profile">
+  <a href="club/egremont-rangers-arlfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">E</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1925</span></div>
@@ -330,7 +330,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="millom arlfc" data-city="millom"><article class="club-card card">
-  <a href="club/millom-arlfc.html" class="card-link" aria-label="View Millom ARLFC profile">
+  <a href="club/millom-arlfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">M</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1873</span></div>
@@ -341,7 +341,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="kells arlfc" data-city="whitehaven"><article class="club-card card">
-  <a href="club/kells-arlfc.html" class="card-link" aria-label="View Kells ARLFC profile">
+  <a href="club/kells-arlfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">K</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1936</span></div>
@@ -352,7 +352,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="whitehaven rlfc" data-city="whitehaven"><article class="club-card card">
-  <a href="club/whitehaven-rlfc.html" class="card-link" aria-label="View Whitehaven RLFC profile">
+  <a href="club/whitehaven-rlfc.html" class="card-link">
     <div class="badge-area"><img src="whitehaven rlfc.png" alt="Whitehaven RLFC official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1948</span></div>
@@ -363,7 +363,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="seaton rangers arlfc" data-city="workington"><article class="club-card card">
-  <a href="club/seaton-rangers-arlfc.html" class="card-link" aria-label="View Seaton Rangers ARLFC profile">
+  <a href="club/seaton-rangers-arlfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1940</span></div>
@@ -374,7 +374,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="league" data-name="workington town rlfc" data-city="workington"><article class="club-card card">
-  <a href="club/workington-town-rlfc.html" class="card-link" aria-label="View Workington Town RLFC profile">
+  <a href="club/workington-town-rlfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-league">Rugby League</span><span class="est-chip">Est. 1945</span></div>

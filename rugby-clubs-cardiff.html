@@ -37,7 +37,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -104,7 +104,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -146,7 +146,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -181,7 +181,7 @@
     </div>
     <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary,#0f0c1d);margin:2.25rem 0 1rem;letter-spacing:-.02em" id="clubs">Cardiff Rugby Teams</h2>
       <div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="union" data-name="cardiff metropolitan university rfc" data-city="cardiff"><article class="club-card card">
-  <a href="club/cardiff-met-rfc.html" class="card-link" aria-label="View Cardiff Metropolitan University RFC profile">
+  <a href="club/cardiff-met-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span></div>
@@ -192,7 +192,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="cardiff rfc" data-city="cardiff"><article class="club-card card">
-  <a href="club/cardiff-rfc.html" class="card-link" aria-label="View Cardiff RFC profile">
+  <a href="club/cardiff-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1876</span></div>
@@ -203,7 +203,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="cardiff rugby" data-city="cardiff"><article class="club-card card  club-card--featured">
-  <a href="club/cardiff-rugby.html" class="card-link" aria-label="View Cardiff Rugby profile">
+  <a href="club/cardiff-rugby.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="cardiff rugby copy.jpg" alt="Cardiff Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1876</span></div>
@@ -214,7 +214,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="glamorgan wanderers rfc" data-city="cardiff"><article class="club-card card">
-  <a href="club/glamorgan-wanderers-rfc.html" class="card-link" aria-label="View Glamorgan Wanderers RFC profile">
+  <a href="club/glamorgan-wanderers-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">G</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1893</span></div>
@@ -225,7 +225,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="llanishen rfc" data-city="cardiff"><article class="club-card card">
-  <a href="club/llanishen-rfc.html" class="card-link" aria-label="View Llanishen RFC profile">
+  <a href="club/llanishen-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">L</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1962</span></div>
@@ -236,7 +236,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="rumney rfc" data-city="cardiff"><article class="club-card card">
-  <a href="club/rumney-rfc.html" class="card-link" aria-label="View Rumney RFC profile">
+  <a href="club/rumney-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span></div>
@@ -247,7 +247,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="st peter&#x27;s rfc" data-city="cardiff"><article class="club-card card">
-  <a href="club/st-peters-rfc.html" class="card-link" aria-label="View St Peter&#x27;s RFC profile">
+  <a href="club/st-peters-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1886</span></div>

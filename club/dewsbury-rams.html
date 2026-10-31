@@ -40,7 +40,7 @@
   </div>
 </div></div>
 <header id="site-header"><div class="con hdr-inner">
-  <a href="../index.html" class="logo" aria-label="UK Rugby Club Directory">
+  <a href="../index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -96,7 +96,7 @@
   </nav>
   <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="../index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -137,7 +137,7 @@
     <div class="mob-divider"></div>
     <a href="../register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:200px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2rem 5rem 2rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -242,6 +242,7 @@
           <h3>Ground &amp; Location</h3>
           <div class="ground-mini-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dewsbury</span></div><div class="ground-mini-row"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>West Yorkshire</span></div>
           <a href="https://www.google.com/maps/search/?api=1&query=Dewsbury+Rams+Dewsbury" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-sm" style="width:100%;justify-content:center;margin-top:.85rem;display:inline-flex">Open in Google Maps</a>
+          <!--map--><button type="button" class="map-load" data-q="Dewsbury Rams Dewsbury" aria-controls="map-dewsbury-rams">Show map here</button><div class="map-slot" id="map-dewsbury-rams"></div><!--/map-->
         </div>
         <div class="aside-card">
           <h3>Quick Links</h3>

@@ -35,7 +35,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -102,7 +102,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -144,7 +144,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
@@ -176,7 +176,7 @@
       <ul style="list-style:none;padding:0;margin:0 0 1rem;line-height:1.9;font-size:.95rem"><li><strong>Cheshunt:</strong> <a href="club/cheshunt-rfc.html">Cheshunt RFC</a></li><li><strong>Harpenden:</strong> <a href="club/harpenden-rfc.html">Harpenden RFC</a></li><li><strong>Hemel Hempstead:</strong> <a href="club/hemel-hempstead-rfc.html">Hemel Hempstead RFC</a></li><li><strong>Hertford:</strong> <a href="club/hertford-rfc.html">Hertford RFC</a></li><li><strong>Hitchin:</strong> <a href="club/hitchin-rfc.html">Hitchin RFC</a></li><li><strong>Letchworth:</strong> <a href="club/letchworth-garden-city-eagles.html">Letchworth Garden City Eagles</a></li><li><strong>St Albans:</strong> <a href="club/st-albans-rfc.html">St Albans RFC</a></li><li><strong>Stevenage:</strong> <a href="club/stevenage-rfc.html">Stevenage RFC</a></li><li><strong>Watford:</strong> <a href="club/fullerians-rfc.html">Fullerians RFC</a></li></ul>
     </div>
     <h2 style="font-size:1.6rem;font-weight:700;color:var(--text-primary);margin:2.25rem 0 1rem;letter-spacing:-.02em" id="clubs">All Rugby Clubs in Hertfordshire</h2><div class="grid-3" style="margin-bottom:1.5rem"><div class="club-card-wrap" data-category="union" data-name="cheshunt rfc" data-city="cheshunt"><article class="club-card card">
-  <a href="club/cheshunt-rfc.html" class="card-link" aria-label="View Cheshunt RFC profile">
+  <a href="club/cheshunt-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/cheshunt-rfc.png" alt="Cheshunt RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1929</span></div>
@@ -187,7 +187,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="harpenden rfc" data-city="harpenden"><article class="club-card card">
-  <a href="club/harpenden-rfc.html" class="card-link" aria-label="View Harpenden RFC profile">
+  <a href="club/harpenden-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/harpenden-rfc.jpg" alt="Harpenden RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1933</span></div>
@@ -198,7 +198,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="hemel hempstead rfc" data-city="hemel hempstead"><article class="club-card card">
-  <a href="club/hemel-hempstead-rfc.html" class="card-link" aria-label="View Hemel Hempstead RFC profile">
+  <a href="club/hemel-hempstead-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">H</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1965</span></div>
@@ -209,7 +209,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="hertford rfc" data-city="hertford"><article class="club-card card">
-  <a href="club/hertford-rfc.html" class="card-link" aria-label="View Hertford RFC profile">
+  <a href="club/hertford-rfc.html" class="card-link">
     <div class="badge-area"><img src="badges/hertford-rfc.png" alt="Hertford RFC club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1895</span></div>
@@ -220,7 +220,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="hitchin rfc" data-city="hitchin"><article class="club-card card">
-  <a href="club/hitchin-rfc.html" class="card-link" aria-label="View Hitchin RFC profile">
+  <a href="club/hitchin-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">H</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1904</span></div>
@@ -231,7 +231,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="letchworth garden city eagles" data-city="letchworth"><article class="club-card card">
-  <a href="club/letchworth-garden-city-eagles.html" class="card-link" aria-label="View Letchworth Garden City Eagles profile">
+  <a href="club/letchworth-garden-city-eagles.html" class="card-link">
     <div class="badge-area"><img src="badges/letchworth-garden-city-eagles.png" alt="Letchworth Garden City Eagles club badge" class="club-badge" loading="lazy" width="100" height="100"></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1927</span></div>
@@ -242,7 +242,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="st albans rfc" data-city="st albans"><article class="club-card card">
-  <a href="club/st-albans-rfc.html" class="card-link" aria-label="View St Albans RFC profile">
+  <a href="club/st-albans-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1898</span></div>
@@ -253,7 +253,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="stevenage rfc" data-city="stevenage"><article class="club-card card">
-  <a href="club/stevenage-rfc.html" class="card-link" aria-label="View Stevenage RFC profile">
+  <a href="club/stevenage-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1984</span></div>
@@ -264,7 +264,7 @@
     </div>
   </a>
 </article></div><div class="club-card-wrap" data-category="union" data-name="fullerians rfc" data-city="watford"><article class="club-card card">
-  <a href="club/fullerians-rfc.html" class="card-link" aria-label="View Fullerians RFC profile">
+  <a href="club/fullerians-rfc.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">F</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-union">Rugby Union</span><span class="est-chip">Est. 1928</span></div>

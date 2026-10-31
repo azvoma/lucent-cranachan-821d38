@@ -37,7 +37,7 @@
 </div>
 <header id="site-header">
   <div class="con hdr-inner">
-    <a href="index.html" class="logo" aria-label="UK Rugby Club Directory">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="48" role="img" aria-label="UK Rugby Club Directory" style="display:block">
         <title>UK Rugby Club Directory</title>
         <text x="0" y="31" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#ee6c4d" letter-spacing="3">UK</text>
@@ -104,7 +104,7 @@
     <button id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobile-nav" aria-hidden="true">
+<nav id="mobile-nav" aria-hidden="true" inert>
   <div class="mob-header">
     <a href="index.html" class="mob-logo">
       <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" height="40" role="img" aria-label="UK Rugby Club Directory" style="display:block">
@@ -146,7 +146,7 @@
     <div class="mob-divider"></div>
     <a href="register.html" class="btn btn-red mob-cta">+ Register Your Club Free</a>
   </div>
-</nav><main>
+</nav><main id="main">
 <!-- England Rugby style diagonal split hero -->
 <section class="listing-hero-england" style="position:relative;min-height:200px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.5rem 5rem 2.5rem 2rem;display:flex;flex-direction:column;justify-content:flex-start">
@@ -162,7 +162,7 @@
   </div>
   
   <div class="lh-right" style="position:absolute;right:0;top:0;bottom:0;width:42%;background:var(--violet)">
-    <img src="imgs/rugby-joints-banner.jpg" alt="Rugby Businesses &amp; Services" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;opacity:1">
+    <img src="imgs/rugby-joints-banner.webp" alt="Rugby Businesses &amp; Services" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;opacity:1">
   </div>
 </section><div class="seo-links-bar">
   <div class="con seo-links-inner">
@@ -195,7 +195,7 @@
     <div class="filters" style="margin-bottom:1.5rem"><button class="filter-btn active" data-filter="business">Rugby Business (66)</button></div>
     <p id="results-count" class="results-count">66 clubs found</p>
     <div class="grid-3" id="clubs-grid"><div class="club-card-wrap" data-category="business" data-name="planet rugby" data-city="london"><article class="club-card card  club-card--featured">
-  <a href="club/planet-rugby.html" class="card-link" aria-label="View Planet Rugby profile">
+  <a href="club/planet-rugby.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="planet rugby.jpg" alt="Planet Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -207,7 +207,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby world magazine" data-city="london"><article class="club-card card">
-  <a href="club/rugby-world-magazine.html" class="card-link" aria-label="View Rugby World Magazine profile">
+  <a href="club/rugby-world-magazine.html" class="card-link">
     <div class="badge-area"><img src="rugby world.jpg" alt="Rugby World Magazine official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -219,7 +219,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="ruck.co.uk" data-city="london"><article class="club-card card">
-  <a href="club/ruck-co-uk.html" class="card-link" aria-label="View Ruck.co.uk profile">
+  <a href="club/ruck-co-uk.html" class="card-link">
     <div class="badge-area"><img src="ruck.png" alt="Ruck.co.uk official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -231,7 +231,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugbydump" data-city="london"><article class="club-card card">
-  <a href="club/rugbydump.html" class="card-link" aria-label="View RugbyDump profile">
+  <a href="club/rugbydump.html" class="card-link">
     <div class="badge-area"><img src="rugbydump.jpg" alt="RugbyDump official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -243,7 +243,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="total rugby league" data-city="leeds"><article class="club-card card">
-  <a href="club/total-rugby-league.html" class="card-link" aria-label="View Total Rugby League profile">
+  <a href="club/total-rugby-league.html" class="card-link">
     <div class="badge-area"><img src="total rugby league.jpg" alt="Total Rugby League official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -255,7 +255,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="the offside line" data-city="cardiff"><article class="club-card card">
-  <a href="club/the-offside-line.html" class="card-link" aria-label="View The Offside Line profile">
+  <a href="club/the-offside-line.html" class="card-link">
     <div class="badge-area"><img src="the offside line.jpg" alt="The Offside Line official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -267,7 +267,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="walesonline rugby" data-city="cardiff"><article class="club-card card">
-  <a href="club/walesonline-rugby.html" class="card-link" aria-label="View WalesOnline Rugby profile">
+  <a href="club/walesonline-rugby.html" class="card-link">
     <div class="badge-area"><img src="walesonline rugby.jpg" alt="WalesOnline Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -279,7 +279,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="scottish rugby blog" data-city="edinburgh"><article class="club-card card">
-  <a href="club/scottish-rugby-blog.html" class="card-link" aria-label="View Scottish Rugby Blog profile">
+  <a href="club/scottish-rugby-blog.html" class="card-link">
     <div class="badge-area"><img src="scottish rugby blog.jpg" alt="Scottish Rugby Blog official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -291,7 +291,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="the rugby journal" data-city="london"><article class="club-card card">
-  <a href="club/the-rugby-journal.html" class="card-link" aria-label="View The Rugby Journal profile">
+  <a href="club/the-rugby-journal.html" class="card-link">
     <div class="badge-area"><img src="the rugby journal.png" alt="The Rugby Journal official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -303,7 +303,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugbyreferee.net" data-city="london"><article class="club-card card">
-  <a href="club/rugbyreferee-net.html" class="card-link" aria-label="View RugbyReferee.Net profile">
+  <a href="club/rugbyreferee-net.html" class="card-link">
     <div class="badge-area"><img src="rugbyreferee.net.jpg" alt="RugbyReferee.Net official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -315,7 +315,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="gilbert rugby" data-city="robertsbridge"><article class="club-card card  club-card--featured">
-  <a href="club/gilbert-rugby.html" class="card-link" aria-label="View Gilbert Rugby profile">
+  <a href="club/gilbert-rugby.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="gilbert rugby copy.png" alt="Gilbert Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">G</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -327,7 +327,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="canterbury of new zealand" data-city="leeds"><article class="club-card card  club-card--featured">
-  <a href="club/canterbury-nz.html" class="card-link" aria-label="View Canterbury of New Zealand profile">
+  <a href="club/canterbury-nz.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="canterbury of new zealand copy.png" alt="Canterbury of New Zealand official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -339,7 +339,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rhino rugby" data-city="london"><article class="club-card card">
-  <a href="club/rhino-rugby.html" class="card-link" aria-label="View Rhino Rugby profile">
+  <a href="club/rhino-rugby.html" class="card-link">
     <div class="badge-area"><img src="rhino rugby.png" alt="Rhino Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -351,7 +351,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="lovell rugby" data-city="manchester"><article class="club-card card">
-  <a href="club/lovell-rugby.html" class="card-link" aria-label="View Lovell Rugby profile">
+  <a href="club/lovell-rugby.html" class="card-link">
     <div class="badge-area"><img src="lovell rugby copy.png" alt="Lovell Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">L</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -363,7 +363,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="vx3 rugby" data-city="aberystwyth"><article class="club-card card">
-  <a href="club/vx3-rugby.html" class="card-link" aria-label="View VX3 Rugby profile">
+  <a href="club/vx3-rugby.html" class="card-link">
     <div class="badge-area"><img src="vx3 rugby.png" alt="VX3 Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">V</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -375,7 +375,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugbystore" data-city="northampton"><article class="club-card card">
-  <a href="club/rugbystore.html" class="card-link" aria-label="View Rugbystore profile">
+  <a href="club/rugbystore.html" class="card-link">
     <div class="badge-area"><img src="rugbystore.jpg" alt="Rugbystore official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -387,7 +387,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="oxen sports" data-city="birmingham"><article class="club-card card">
-  <a href="club/oxen-sports.html" class="card-link" aria-label="View Oxen Sports profile">
+  <a href="club/oxen-sports.html" class="card-link">
     <div class="badge-area"><img src="oxen sports.png" alt="Oxen Sports official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">O</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -399,7 +399,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="motley grapple" data-city="bristol"><article class="club-card card">
-  <a href="club/motley-grapple.html" class="card-link" aria-label="View Motley Grapple profile">
+  <a href="club/motley-grapple.html" class="card-link">
     <div class="badge-area"><img src="motley grapple.png" alt="Motley Grapple official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">M</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -411,7 +411,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="premiership rugby" data-city="london"><article class="club-card card  club-card--featured">
-  <a href="club/premiership-rugby.html" class="card-link" aria-label="View Premiership Rugby profile">
+  <a href="club/premiership-rugby.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="premiership rugby.png" alt="Premiership Rugby official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -423,7 +423,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby football league" data-city="leeds"><article class="club-card card  club-card--featured">
-  <a href="club/rugby-football-league.html" class="card-link" aria-label="View Rugby Football League profile">
+  <a href="club/rugby-football-league.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="rugby football league.png" alt="Rugby Football League official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -435,7 +435,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="england rugby (rfu)" data-city="london"><article class="club-card card  club-card--featured">
-  <a href="club/england-rugby-rfu.html" class="card-link" aria-label="View England Rugby (RFU) profile">
+  <a href="club/england-rugby-rfu.html" class="card-link">
     <div class="badge-area"><div class="featured-chip">★ Featured</div><img src="england rugby (rfu) copy.png" alt="England Rugby (RFU) official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">E</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -447,7 +447,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="s72 sports" data-city="london"><article class="club-card card">
-  <a href="club/s72-sports.html" class="card-link" aria-label="View S72 Sports profile">
+  <a href="club/s72-sports.html" class="card-link">
     <div class="badge-area"><img src="s72.png" alt="S72 Sports official badge" class="club-badge" loading="lazy" width="100" height="100"><div class="badge-fallback" style="display:none">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -459,7 +459,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="coaching rugby ltd" data-city="manchester"><article class="club-card card">
-  <a href="club/coaching-rugby-ltd.html" class="card-link" aria-label="View Coaching Rugby Ltd profile">
+  <a href="club/coaching-rugby-ltd.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -471,7 +471,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby tours uk" data-city="bristol"><article class="club-card card">
-  <a href="club/rugby-tours-uk.html" class="card-link" aria-label="View Rugby Tours UK profile">
+  <a href="club/rugby-tours-uk.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -483,7 +483,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby physiotherapy solutions" data-city="leeds"><article class="club-card card">
-  <a href="club/rugby-physio-solutions.html" class="card-link" aria-label="View Rugby Physiotherapy Solutions profile">
+  <a href="club/rugby-physio-solutions.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -495,7 +495,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="prosport nutrition" data-city="sheffield"><article class="club-card card">
-  <a href="club/prosport-nutrition.html" class="card-link" aria-label="View ProSport Nutrition profile">
+  <a href="club/prosport-nutrition.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -507,7 +507,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby strength &amp; conditioning" data-city="london"><article class="club-card card">
-  <a href="club/rugby-strength-conditioning.html" class="card-link" aria-label="View Rugby Strength &amp; Conditioning profile">
+  <a href="club/rugby-strength-conditioning.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -519,7 +519,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="club rugby insurance" data-city="norwich"><article class="club-card card">
-  <a href="club/club-rugby-insurance.html" class="card-link" aria-label="View Club Rugby Insurance profile">
+  <a href="club/club-rugby-insurance.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -531,7 +531,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby kit direct" data-city="birmingham"><article class="club-card card">
-  <a href="club/rugby-kit-direct.html" class="card-link" aria-label="View Rugby Kit Direct profile">
+  <a href="club/rugby-kit-direct.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -543,7 +543,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="matchday media" data-city="london"><article class="club-card card">
-  <a href="club/matchday-media.html" class="card-link" aria-label="View MatchDay Media profile">
+  <a href="club/matchday-media.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">M</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -555,7 +555,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby scores live" data-city="london"><article class="club-card card">
-  <a href="club/rugby-scores-live.html" class="card-link" aria-label="View Rugby Scores Live profile">
+  <a href="club/rugby-scores-live.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -567,7 +567,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="scottish rugby union" data-city="edinburgh"><article class="club-card card">
-  <a href="club/scottish-rugby-union.html" class="card-link" aria-label="View Scottish Rugby Union profile">
+  <a href="club/scottish-rugby-union.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -579,7 +579,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="welsh rugby union" data-city="cardiff"><article class="club-card card">
-  <a href="club/welsh-rugby-union.html" class="card-link" aria-label="View Welsh Rugby Union profile">
+  <a href="club/welsh-rugby-union.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">W</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -591,7 +591,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="irish rugby football union" data-city="dublin"><article class="club-card card">
-  <a href="club/irfu.html" class="card-link" aria-label="View Irish Rugby Football Union profile">
+  <a href="club/irfu.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">I</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -603,7 +603,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="england rugby performance centre" data-city="london"><article class="club-card card">
-  <a href="club/england-rugby-performance-centre.html" class="card-link" aria-label="View England Rugby Performance Centre profile">
+  <a href="club/england-rugby-performance-centre.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">E</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -615,7 +615,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="oval sports" data-city="london"><article class="club-card card">
-  <a href="club/oval-sports.html" class="card-link" aria-label="View Oval Sports profile">
+  <a href="club/oval-sports.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">O</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -627,7 +627,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby scout network" data-city="bath"><article class="club-card card">
-  <a href="club/rugby-scout-network.html" class="card-link" aria-label="View Rugby Scout Network profile">
+  <a href="club/rugby-scout-network.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -639,7 +639,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="kooga rugby" data-city="manchester"><article class="club-card card">
-  <a href="club/kooga-rugby.html" class="card-link" aria-label="View Kooga Rugby profile">
+  <a href="club/kooga-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">K</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -651,7 +651,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="force sport" data-city="sheffield"><article class="club-card card">
-  <a href="club/force-sport.html" class="card-link" aria-label="View Force Sport profile">
+  <a href="club/force-sport.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">F</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -663,7 +663,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="total rugby league podcast" data-city="leeds"><article class="club-card card">
-  <a href="club/total-rugby-league-podcast.html" class="card-link" aria-label="View Total Rugby League Podcast profile">
+  <a href="club/total-rugby-league-podcast.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -675,7 +675,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="the rugby paper" data-city="london"><article class="club-card card">
-  <a href="club/the-rugby-paper.html" class="card-link" aria-label="View The Rugby Paper profile">
+  <a href="club/the-rugby-paper.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -687,7 +687,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby on tour" data-city="bristol"><article class="club-card card">
-  <a href="club/rugby-on-tour.html" class="card-link" aria-label="View Rugby On Tour profile">
+  <a href="club/rugby-on-tour.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -699,7 +699,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="pro direct rugby" data-city="exeter"><article class="club-card card">
-  <a href="club/pro-direct-rugby.html" class="card-link" aria-label="View Pro Direct Rugby profile">
+  <a href="club/pro-direct-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -711,7 +711,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="samba soccer schools (rugby)" data-city="leeds"><article class="club-card card">
-  <a href="club/samba-rugby.html" class="card-link" aria-label="View Samba Soccer Schools (Rugby) profile">
+  <a href="club/samba-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -723,7 +723,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="hy-pro sport" data-city="leicester"><article class="club-card card">
-  <a href="club/hy-pro-sport.html" class="card-link" aria-label="View Hy-Pro Sport profile">
+  <a href="club/hy-pro-sport.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">H</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -735,7 +735,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="sportengland rugby" data-city="london"><article class="club-card card">
-  <a href="club/sport-england-rugby.html" class="card-link" aria-label="View SportEngland Rugby profile">
+  <a href="club/sport-england-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -747,7 +747,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby league world magazine" data-city="leeds"><article class="club-card card">
-  <a href="club/rugby-league-world.html" class="card-link" aria-label="View Rugby League World Magazine profile">
+  <a href="club/rugby-league-world.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -759,7 +759,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="league express" data-city="leeds"><article class="club-card card">
-  <a href="club/league-express.html" class="card-link" aria-label="View League Express profile">
+  <a href="club/league-express.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">L</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -771,7 +771,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="scrum queens" data-city="london"><article class="club-card card">
-  <a href="club/scrum-queens.html" class="card-link" aria-label="View Scrum Queens profile">
+  <a href="club/scrum-queens.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -783,7 +783,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby tonight" data-city="london"><article class="club-card card">
-  <a href="club/rugby-tonight.html" class="card-link" aria-label="View Rugby Tonight profile">
+  <a href="club/rugby-tonight.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -795,7 +795,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="pitch hero" data-city="london"><article class="club-card card">
-  <a href="club/pitch-hero.html" class="card-link" aria-label="View Pitch Hero profile">
+  <a href="club/pitch-hero.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">P</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -807,7 +807,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="clubspark rugby" data-city="london"><article class="club-card card">
-  <a href="club/clubspark-rugby.html" class="card-link" aria-label="View ClubSpark Rugby profile">
+  <a href="club/clubspark-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">C</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -819,7 +819,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="sportito" data-city="london"><article class="club-card card">
-  <a href="club/sportito.html" class="card-link" aria-label="View Sportito profile">
+  <a href="club/sportito.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -831,7 +831,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="my club jersey" data-city="leeds"><article class="club-card card">
-  <a href="club/my-club-jersey.html" class="card-link" aria-label="View My Club Jersey profile">
+  <a href="club/my-club-jersey.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">M</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -843,7 +843,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="kukri sports" data-city="belfast"><article class="club-card card">
-  <a href="club/kukri-sports.html" class="card-link" aria-label="View Kukri Sports profile">
+  <a href="club/kukri-sports.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">K</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -855,7 +855,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="acumen sports" data-city="london"><article class="club-card card">
-  <a href="club/acumen-sports.html" class="card-link" aria-label="View Acumen Sports profile">
+  <a href="club/acumen-sports.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">A</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -867,7 +867,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="gps sports rugby" data-city="bath"><article class="club-card card">
-  <a href="club/gps-sports-rugby.html" class="card-link" aria-label="View GPS Sports Rugby profile">
+  <a href="club/gps-sports-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">G</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -879,7 +879,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="instat rugby" data-city="london"><article class="club-card card">
-  <a href="club/instat-rugby.html" class="card-link" aria-label="View InStat Rugby profile">
+  <a href="club/instat-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">I</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -891,7 +891,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby coach weekly" data-city="northampton"><article class="club-card card">
-  <a href="club/rugby-coach-weekly.html" class="card-link" aria-label="View Rugby Coach Weekly profile">
+  <a href="club/rugby-coach-weekly.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -903,7 +903,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="rugby nations" data-city="london"><article class="club-card card">
-  <a href="club/rugby-nations.html" class="card-link" aria-label="View Rugby Nations profile">
+  <a href="club/rugby-nations.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">R</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -915,7 +915,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="the sportsguide" data-city="london"><article class="club-card card">
-  <a href="club/the-sportsguide.html" class="card-link" aria-label="View The Sportsguide profile">
+  <a href="club/the-sportsguide.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">T</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -927,7 +927,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="epitch" data-city="manchester"><article class="club-card card">
-  <a href="club/epitch.html" class="card-link" aria-label="View ePitch profile">
+  <a href="club/epitch.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">e</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -939,7 +939,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="geared rugby" data-city="edinburgh"><article class="club-card card">
-  <a href="club/geared-rugby.html" class="card-link" aria-label="View Geared Rugby profile">
+  <a href="club/geared-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">G</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -951,7 +951,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="saddlery brands international" data-city="robertsbridge"><article class="club-card card">
-  <a href="club/saddlery-brands.html" class="card-link" aria-label="View Saddlery Brands International profile">
+  <a href="club/saddlery-brands.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">S</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -963,7 +963,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="optimum sportswear" data-city="london"><article class="club-card card">
-  <a href="club/optimum-sportswear.html" class="card-link" aria-label="View Optimum Sportswear profile">
+  <a href="club/optimum-sportswear.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">O</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>
@@ -975,7 +975,7 @@
   </a>
 </article></div>
 <div class="club-card-wrap" data-category="business" data-name="zone rugby" data-city="bristol"><article class="club-card card">
-  <a href="club/zone-rugby.html" class="card-link" aria-label="View Zone Rugby profile">
+  <a href="club/zone-rugby.html" class="card-link">
     <div class="badge-area"><div class="badge-fallback">Z</div></div>
     <div class="card-content">
       <div class="card-meta"><span class="pill pill-business">Rugby Business</span></div>

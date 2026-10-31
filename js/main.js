@@ -36,8 +36,8 @@
 
   /* Mobile nav */
   var ham=document.getElementById('hamburger'),mobNav=document.getElementById('mobile-nav'),mobClose=document.getElementById('mob-close');
-  function openMob(){if(!ham||!mobNav)return;ham.setAttribute('aria-expanded','true');ham.classList.add('open');mobNav.removeAttribute('aria-hidden');mobNav.classList.add('open');document.body.style.overflow='hidden';}
-  function closeMob(){if(!ham||!mobNav)return;ham.setAttribute('aria-expanded','false');ham.classList.remove('open');mobNav.setAttribute('aria-hidden','true');mobNav.classList.remove('open');document.body.style.overflow='';}
+  function openMob(){if(!ham||!mobNav)return;ham.setAttribute('aria-expanded','true');ham.classList.add('open');mobNav.removeAttribute('aria-hidden');mobNav.removeAttribute('inert');mobNav.classList.add('open');document.body.style.overflow='hidden';}
+  function closeMob(){if(!ham||!mobNav)return;ham.setAttribute('aria-expanded','false');ham.classList.remove('open');mobNav.setAttribute('aria-hidden','true');mobNav.setAttribute('inert','');mobNav.classList.remove('open');document.body.style.overflow='';}
   if(ham) ham.addEventListener('click',openMob);
   if(mobClose) mobClose.addEventListener('click',closeMob);
   document.querySelectorAll('.mob-link,.mob-sub-link,.mob-cta').forEach(function(l){l.addEventListener('click',closeMob);});
@@ -206,3 +206,16 @@
   }
 
 })();
+
+/* Click-to-load ground map: Google is only contacted when the visitor asks for the map */
+document.querySelectorAll('button.map-load').forEach(function(b){
+  b.addEventListener('click',function(){
+    var slot=document.getElementById(b.getAttribute('aria-controls'));
+    if(!slot||slot.firstChild) return;
+    var f=document.createElement('iframe');
+    f.src='https://www.google.com/maps?q='+encodeURIComponent(b.getAttribute('data-q'))+'&output=embed';
+    f.title='Map: '+b.getAttribute('data-q'); f.loading='lazy'; f.referrerPolicy='no-referrer-when-downgrade';
+    f.style.cssText='width:100%;height:220px;border:0;border-radius:6px;margin-top:.75rem';
+    slot.appendChild(f); b.hidden=true;
+  });
+});
