@@ -3817,3 +3817,22 @@ h2.faq-heading {
 .stats-bar .stat-item span { color: rgba(255,255,255,.62) !important; }
 main address { display: block !important; }
 main address a { display: inline !important; }
+
+/* ── Club pages: fixtures card, key-facts strip, mobile header (Oct 2026) ── */
+.fixtures-card { border-top: 3px solid var(--accent); }
+.fixtures-card .fx-league { font-family: 'Oswald', system-ui, sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin: 0; line-height: 1.3; }
+.fixtures-card .fx-div { font-size: .8rem; color: #5a5475; margin: .2rem 0 0; }
+.fixtures-card .fx-btn { width: 100%; justify-content: center; display: inline-flex; margin-top: .9rem; }
+.fixtures-card .fx-note { font-size: .72rem; color: #5a5475; margin: .6rem 0 0; line-height: 1.45; }
+.stats-bar .stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,.12); }
+@media (max-width: 768px) {
+  .listing-hero-england { min-height: 0 !important; }
+  .listing-hero-england .lh-right { display: none !important; }
+  .listing-hero-england .lh-left { flex: 1 1 100% !important; width: 100% !important; max-width: 100% !important; clip-path: none !important; padding: 1.5rem 1.25rem 1.6rem !important; }
+  .listing-hero-england h1 { font-size: 1.6rem !important; line-height: 1.1 !important; }
+  .club-hero-er-btns a { flex: 1 1 auto; justify-content: center; text-align: center; }
+  .stats-inner { flex-wrap: wrap; overflow: visible; justify-content: flex-start !important; }
+  .stats-bar .stat-item { flex: 1 1 50%; min-width: 0; padding: .8rem 1rem; border-left: 0 !important; border-top: 1px solid rgba(255,255,255,.1); }
+  .stats-bar .stat-item strong { white-space: normal; overflow-wrap: anywhere; }
+  .stats-bar .stat-div { display: none; }
+}
