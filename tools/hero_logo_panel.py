@@ -21,6 +21,19 @@ from update_club_pages import find_div_block  # noqa: E402
 PATTERN = '<div class="lh-right lh-pattern" aria-hidden="true" style="position:absolute;right:0;top:0;bottom:0;width:42%"></div>'
 
 
+def is_light(path):
+    """True when a logo is (almost) all white/very light - it needs the dark card to be seen."""
+    try:
+        im = Image.open(path).convert('RGBA')
+    except Exception:
+        return False
+    im.thumbnail((120, 120))
+    data = im.get_flattened_data() if hasattr(im, 'get_flattened_data') else im.getdata()
+    px = [q for q in data if q[3] > 128]
+    light = sum(1 for r, g, b, a in px if 0.299 * r + 0.587 * g + 0.114 * b > 200)
+    return bool(px) and light / len(px) > 0.95
+
+
 def badge_for(slug):
     for f in glob.glob(os.path.join(ROOT, 'badges', slug + '.*')):
         if re.search(r'\.(png|jpe?g|webp|svg)$', f, re.I):
@@ -96,8 +109,9 @@ def main():
                     logo = import_logo(src, slug); imported += 1
         if logo:
             name = html.escape(rec['name'])
+            dark = ' dark' if not logo.endswith('.svg') and is_light(os.path.join(ROOT, 'badges', logo)) else ''
             new = (f'<div class="lh-right lh-pattern lh-logo-panel" style="position:absolute;right:0;top:0;bottom:0;width:42%">'
-                   f'<div class="lh-logo-card"><img src="../badges/{logo}" alt="{name} logo" width="180" height="180" '
+                   f'<div class="lh-logo-card{dark}"><img src="../badges/{logo}" alt="{name} logo" width="180" height="180" '
                    f'fetchpriority="high"></div></div>')
             with_logo += 1
         else:
