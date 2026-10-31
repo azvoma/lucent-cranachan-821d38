@@ -1,6 +1,6 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-  <rect x="0" y="0" width="32" height="32" rx="4" fill="#0a1628"/>
-  <text x="7" y="13" font-family="Arial,Helvetica,sans-serif" font-size="7" font-weight="700" fill="#c8102e" letter-spacing="0.3">UK</text>
-  <rect x="5" y="15" width="22" height="1.5" fill="#c8102e"/>
-  <text x="6" y="25" font-family="Arial,Helvetica,sans-serif" font-size="6" font-weight="700" fill="white" letter-spacing="0.5">RUGBY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#293241"/>
+  <text x="17" y="39" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#ee6c4d" letter-spacing="0.5">UK</text>
+  <rect x="30.5" y="16" width="3" height="32" rx="1.5" fill="#ffffff"/>
+  <text x="47.5" y="40.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#ffffff" letter-spacing="-0.5">RC</text>
 </svg>
