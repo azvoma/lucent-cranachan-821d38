@@ -9,10 +9,10 @@ andover-rfc,657,Andover,Counties 1 Hampshire | London & SE Division,31 Oct 2026
 ashford-rfc,876,Ashford,Counties 1 Kent | London & SE Division,31 Oct 2026
 ashington-rfc,899,Ashington,Counties 2 North East (North) | Northern Division,31 Oct 2026
 avonmouth-old-boys-rfc,1088,Avonmouth Old Boys,Counties 3 Tribute Ale Gloucestershire South | South West Division,31 Oct 2026
-bakewell-rfc,1242,Bakewell Mannerians,,31 Oct 2026
+bakewell-rfc,1242,Bakewell Mannerians,Counties 3 Midlands East (North West) | Midlands Division,31 Oct 2026
 banbury-rfc,1270,Banbury,Regional 1 Midlands | Midlands Division,31 Oct 2026
 barnes-rfc,1400,Barnes,National League 2 East | National Leagues,31 Oct 2026
-barnet-rfc,1427,Barnet Elizabethans,,31 Oct 2026
+barnet-rfc,1427,Barnet Elizabethans,Counties 2 Middx | London & SE Division,31 Oct 2026
 barnsley-rfc,1457,Barnsley,Counties 3 Yorkshire B | Northern Division,31 Oct 2026
 barnstaple-rfc,1479,Barnstaple,National League 2 West | National Leagues,31 Oct 2026
 basingstoke-rfc,1565,Basingstoke,Counties 1 Hampshire | London & SE Division,31 Oct 2026
@@ -138,7 +138,7 @@ havant-rfc,9690,Havant,National League 2 East | National Leagues,31 Oct 2026
 hayle-rfc,9762,Hayle,Counties 3 Tribute Ale Cornwall | South West Division,31 Oct 2026
 haywards-heath-rfc,9776,Haywards Heath,,31 Oct 2026
 helston-rfc,9925,Helston,Counties 2 Tribute Ale Cornwall | South West Division,31 Oct 2026
-hemel-hempstead-rfc,9950,Hemel Hempstead (Camelot) 1st XV,,31 Oct 2026
+hemel-hempstead-rfc,9950,Hemel Hempstead (Camelot) 1st XV,Counties 1 Herts | London & SE Division,31 Oct 2026
 henley-rfc,9984,Henley,National League 2 East | National Leagues,31 Oct 2026
 hereford-rfc,10011,Hereford,Regional 2 Midlands West | Midlands Division,31 Oct 2026
 hertford-rfc,10046,Hertford,Regional 1 South East | London & SE Division,31 Oct 2026
@@ -154,170 +154,170 @@ ilkley-rfc,10834,Ilkley,Regional 1 North East | Northern Division,31 Oct 2026
 ipswich-rfc,10940,Ipswich,Counties 1 Eastern Counties | London & SE Division,31 Oct 2026
 isle-of-wight-rfc,11009,Isle Of Wight,Counties 3 Hampshire | London & SE Division,31 Oct 2026
 ivybridge-rfc,11039,Ivybridge,Regional 2 Tribute Ale South West | South West Division,31 Oct 2026
-keighley-rfc,11209,Keighley,,31 Oct 2026
-kendal-rfc,11240,Kendal,,31 Oct 2026
-kenilworth-rfc,11254,Kenilworth,,31 Oct 2026
-keswick-rfc,11329,Keswick,,31 Oct 2026
-kettering-rfc,11346,Kettering,,31 Oct 2026
-kidderminster-rfc,11411,Kidderminster,,31 Oct 2026
-kingsbridge-rfc,11610,Kingsbridge,,31 Oct 2026
-launceston-rfc,11893,Launceston,,31 Oct 2026
-leamington-rfc,11942,Leamington,,31 Oct 2026
+keighley-rfc,11209,Keighley,Counties 1 Yorkshire | Northern Division,31 Oct 2026
+kendal-rfc,11240,Kendal,Regional 1 North West | Northern Division,31 Oct 2026
+kenilworth-rfc,11254,Kenilworth,Regional 2 Midlands West | Midlands Division,31 Oct 2026
+keswick-rfc,11329,Keswick,Regional 2 North | Northern Division,31 Oct 2026
+kettering-rfc,11346,Kettering,Regional 2 Midlands East | Midlands Division,31 Oct 2026
+kidderminster-rfc,11411,Kidderminster,Counties 2 Midlands West (West) | Midlands Division,31 Oct 2026
+kingsbridge-rfc,11610,Kingsbridge,Counties 1 Tribute Ale Western West | South West Division,31 Oct 2026
+launceston-rfc,11893,Launceston,Regional 1 Tribute Ale South West | South West Division,31 Oct 2026
+leamington-rfc,11942,Leamington,Counties 1 Midlands West (South) | Midlands Division,31 Oct 2026
 leicester-tigers,46,Leicester Tigers,,31 Oct 2026
 leicester-tigers-women,124608,Leicester Tigers Women,,31 Oct 2026
-leigh-rfc,12118,Leigh,,31 Oct 2026
-letchworth-garden-city-eagles,12182,Letchworth Garden City,,31 Oct 2026
+leigh-rfc,12118,Leigh,Counties 2 adm Lancashire & Cheshire | Northern Division,31 Oct 2026
+letchworth-garden-city-eagles,12182,Letchworth Garden City,Regional 1 South East | London & SE Division,31 Oct 2026
 lewes-rfc,12206,Lewes,,31 Oct 2026
-lichfield-rfc,12236,Lichfield,,31 Oct 2026
+lichfield-rfc,12236,Lichfield,Regional 1 Midlands | Midlands Division,31 Oct 2026
 lincoln-rfc,12276,Lincoln,,31 Oct 2026
-liskeard-looe-rfc,12347,Liskeard-Looe,,31 Oct 2026
-london-cornish-rfc,12508,London Cornish,,31 Oct 2026
-london-welsh-rfc,12635,London Welsh,,31 Oct 2026
-long-eaton-rfc,12695,Long Eaton,,31 Oct 2026
+liskeard-looe-rfc,12347,Liskeard-Looe,Counties 2 Tribute Ale Cornwall | South West Division,31 Oct 2026
+london-cornish-rfc,12508,London Cornish,Counties 1 Surrey/Sussex | London & SE Division,31 Oct 2026
+london-welsh-rfc,12635,London Welsh,National League 2 East | National Leagues,31 Oct 2026
+long-eaton-rfc,12695,Long Eaton,Regional 2 Midlands North | Midlands Division,31 Oct 2026
 loughborough-lightning,12828,Loughborough Lightning,,31 Oct 2026
-loughborough-rfc,12818,Loughborough,,31 Oct 2026
-luton-rfc,12941,Luton,,31 Oct 2026
-lutterworth-rfc,12958,Lutterworth,,31 Oct 2026
-macclesfield-rfc,13064,Macclesfield,,31 Oct 2026
-maidenhead-rfc,13105,Maidenhead,,31 Oct 2026
-maidstone-rfc,13128,Maidstone,,31 Oct 2026
-malton-norton-rfc,13184,Malton and Norton,,31 Oct 2026
+loughborough-rfc,12818,Loughborough,Counties 2 Midlands East (North) | Midlands Division,31 Oct 2026
+luton-rfc,12941,Luton,Counties 2 Herts | London & SE Division,31 Oct 2026
+lutterworth-rfc,12958,Lutterworth,Regional 1 Midlands | Midlands Division,31 Oct 2026
+macclesfield-rfc,13064,Macclesfield,Regional 1 North West | Northern Division,31 Oct 2026
+maidenhead-rfc,13105,Maidenhead,Regional 1 South Central | London & SE Division,31 Oct 2026
+maidstone-rfc,13128,Maidstone,Counties 2 Kent | London & SE Division,31 Oct 2026
+malton-norton-rfc,13184,Malton and Norton,Regional 2 North East | Northern Division,31 Oct 2026
 mansfield-rfc,13297,Mansfield,,31 Oct 2026
-market-harborough-rfc,13377,Market Harborough,,31 Oct 2026
-marlborough-rfc,13418,Marlborough,,31 Oct 2026
-matlock-rfc,13509,Matlock,,31 Oct 2026
-medicals-rfc,13586,Medicals,,31 Oct 2026
-medway-rfc,13595,Medway,,31 Oct 2026
-melton-mowbray-rfc,13693,Melton Mowbray,,31 Oct 2026
-middlesbrough-rfc,13793,Middlesbrough,,31 Oct 2026
+market-harborough-rfc,13377,Market Harborough,Regional 2 Midlands East | Midlands Division,31 Oct 2026
+marlborough-rfc,13418,Marlborough,Regional 2 Tribute Ale Severn | South West Division,31 Oct 2026
+matlock-rfc,13509,Matlock,Regional 2 Midlands North | Midlands Division,31 Oct 2026
+medicals-rfc,13586,Medicals,Counties 1 North East | Northern Division,31 Oct 2026
+medway-rfc,13595,Medway,Regional 2 South East | London & SE Division,31 Oct 2026
+melton-mowbray-rfc,13693,Melton Mowbray,Counties 2 Midlands East (North) | Midlands Division,31 Oct 2026
+middlesbrough-rfc,13793,Middlesbrough,Regional 1 North East | Northern Division,31 Oct 2026
 midhurst-rfc,13824,Midhurst,,31 Oct 2026
-millom-rfc,13890,Millom,,31 Oct 2026
-milton-keynes-rufc,13918,Milton Keynes,,31 Oct 2026
-morley-rfc,14116,Morley,,31 Oct 2026
-morpeth-rfc,14137,Morpeth,,31 Oct 2026
+millom-rfc,13890,Millom,Counties 2 Cumbria | Northern Division,31 Oct 2026
+milton-keynes-rufc,13918,Milton Keynes,Counties 2 Tribute Ale Berks/Bucks & Oxon East | South West Division,31 Oct 2026
+morley-rfc,14116,Morley,Regional 2 North East | Northern Division,31 Oct 2026
+morpeth-rfc,14137,Morpeth,Regional 2 North | Northern Division,31 Oct 2026
 nailsea-backwell-rfc,14247,Nailsea & Backwell,,31 Oct 2026
-newark-rfc,14387,Newark,,31 Oct 2026
-newbury-rfc,14433,Newbury Blues,,31 Oct 2026
+newark-rfc,14387,Newark,Counties 1 Midlands East (North) | Midlands Division,31 Oct 2026
+newbury-rfc,14433,Newbury Blues,Regional 2 Tribute Ale Severn | South West Division,31 Oct 2026
 newcastle-falcons,48,Newcastle Red Bulls,,31 Oct 2026
-newquay-hornets-rfc,14584,Newquay Hornets,,31 Oct 2026
-newton-abbot-rfc,14607,Newton Abbot,,31 Oct 2026
-northampton-old-scouts,14907,Northampton Old Scouts,,31 Oct 2026
+newquay-hornets-rfc,14584,Newquay Hornets,Counties 2 Tribute Ale Cornwall | South West Division,31 Oct 2026
+newton-abbot-rfc,14607,Newton Abbot,Counties 1 Tribute Ale Western West | South West Division,31 Oct 2026
+northampton-old-scouts,14907,Northampton Old Scouts,Regional 1 South East | London & SE Division,31 Oct 2026
 northampton-saints,49,Northampton Saints,,31 Oct 2026
-northwich-rfc,15005,Northwich,,31 Oct 2026
-norwich-rfc,15036,Norwich,,31 Oct 2026
-nottingham-rfc,15075,Nottingham,,31 Oct 2026
-okehampton-rfc,15342,Okehampton,,31 Oct 2026
-old-crossleyans-rfc,15619,Old Crossleyans,,31 Oct 2026
-old-elthamians-rfc,15658,Old Elthamians,,31 Oct 2026
-old-halesonians-rfc,15751,Old Halesonians,,31 Oct 2026
-old-leamingtonians-rfc,15805,Old Leamingtonians,,31 Oct 2026
-old-northamptonians-rfc,15843,Old Northamptonians,,31 Oct 2026
-old-redcliffians-rfc,15929,Old Redcliffians,,31 Oct 2026
-oldham-rufc,16153,Oldham,,31 Oct 2026
-ossett-rfc,16303,Ossett,,31 Oct 2026
-otley-rfc,16336,Otley,,31 Oct 2026
-oxford-quins,16431,Oxford Harlequins,,31 Oct 2026
+northwich-rfc,15005,Northwich,Regional 2 North West | Northern Division,31 Oct 2026
+norwich-rfc,15036,Norwich,Counties 1 Eastern Counties | London & SE Division,31 Oct 2026
+nottingham-rfc,15075,Nottingham,Champ Rugby | Champ Rugby,31 Oct 2026
+okehampton-rfc,15342,Okehampton,Regional 2 Tribute Ale South West | South West Division,31 Oct 2026
+old-crossleyans-rfc,15619,Old Crossleyans,Counties 1 Yorkshire | Northern Division,31 Oct 2026
+old-elthamians-rfc,15658,Old Elthamians,Regional 2 South East | London & SE Division,31 Oct 2026
+old-halesonians-rfc,15751,Old Halesonians,Counties 1 Midlands West (North) | Midlands Division,31 Oct 2026
+old-leamingtonians-rfc,15805,Old Leamingtonians,Counties 1 Midlands West (South) | Midlands Division,31 Oct 2026
+old-northamptonians-rfc,15843,Old Northamptonians,Regional 1 South East | London & SE Division,31 Oct 2026
+old-redcliffians-rfc,15929,Old Redcliffians,National League 2 West | National Leagues,31 Oct 2026
+oldham-rufc,16153,Oldham,Counties 3 adm Lancashire & Cheshire | Northern Division,31 Oct 2026
+ossett-rfc,16303,Ossett,Counties 3 Yorkshire B | Northern Division,31 Oct 2026
+otley-rfc,16336,Otley,National League 2 North | National Leagues,31 Oct 2026
+oxford-quins,16431,Oxford Harlequins,Regional 1 Midlands | Midlands Division,31 Oct 2026
 oxford-rfc,16419,Oxford,Counties 1 Tribute Ale Southern North | South West Division,31 Oct 2026
 paignton-rfc,16526,Paignton,Counties 1 Tribute Ale Western West | South West Division,31 Oct 2026
-penrith-rfc,16686,Penrith,,31 Oct 2026
-penrith-union-rfc,16686,Penrith,,31 Oct 2026
-penryn-rfc,16704,Penryn,,31 Oct 2026
-perranporth-rfc,16772,Perranporth,,31 Oct 2026
-peterborough-rfc,16819,Peterborough,,31 Oct 2026
-peterlee-rfc,10386,Peterlee and Horden,,31 Oct 2026
-petersfield-rfc,16848,Petersfield,,31 Oct 2026
-plymouth-albion,16953,Plymouth Albion,,31 Oct 2026
-pontefract-rufc,17027,Pontefract,,31 Oct 2026
-ponteland-rfc,17046,Ponteland,,31 Oct 2026
+penrith-rfc,16686,Penrith,Regional 2 North | Northern Division,31 Oct 2026
+penrith-union-rfc,16686,Penrith,Regional 2 North | Northern Division,31 Oct 2026
+penryn-rfc,16704,Penryn,Counties 2 Tribute Ale Cornwall | South West Division,31 Oct 2026
+perranporth-rfc,16772,Perranporth,Counties 2 Tribute Ale Cornwall | South West Division,31 Oct 2026
+peterborough-rfc,16819,Peterborough,Regional 2 Midlands East | Midlands Division,31 Oct 2026
+peterlee-rfc,10386,Peterlee and Horden,Counties 1 North East | Northern Division,31 Oct 2026
+petersfield-rfc,16848,Petersfield,Regional 2 South Central | London & SE Division,31 Oct 2026
+plymouth-albion,16953,Plymouth Albion,National League 1 | National Leagues,31 Oct 2026
+pontefract-rufc,17027,Pontefract,Regional 2 North East | Northern Division,31 Oct 2026
+ponteland-rfc,17046,Ponteland,Counties 1 North East | Northern Division,31 Oct 2026
 poole-rfc,17076,Poole,,31 Oct 2026
-preston-grasshoppers,17180,Preston Grasshoppers,,31 Oct 2026
+preston-grasshoppers,17180,Preston Grasshoppers,National League 2 North | National Leagues,31 Oct 2026
 pulborough-rfc,17255,Pulborough,,31 Oct 2026
-reading-rfc,17506,Reading,,31 Oct 2026
-redcar-rfc,17572,Redcar,,31 Oct 2026
-redruth-rfc,17621,Redruth,,31 Oct 2026
+reading-rfc,17506,Reading,Counties 1 Tribute Ale Southern North | South West Division,31 Oct 2026
+redcar-rfc,17572,Redcar,Counties 2 North East (South) | Northern Division,31 Oct 2026
+redruth-rfc,17621,Redruth,National League 2 West | National Leagues,31 Oct 2026
 retford-rfc,7191,East Retford,,31 Oct 2026
-richmond-rfc,17742,Richmond,,31 Oct 2026
-rochdale-rfc,17889,Rochdale,,31 Oct 2026
-rochford-hundred-rfc,17906,Rochford Hundred,,31 Oct 2026
-rosslyn-park-fc,18036,Rosslyn Park,,31 Oct 2026
+richmond-rfc,17742,Richmond,Champ Rugby | Champ Rugby,31 Oct 2026
+rochdale-rfc,17889,Rochdale,Regional 1 North West | Northern Division,31 Oct 2026
+rochford-hundred-rfc,17906,Rochford Hundred,Regional 2 Anglia | London & SE Division,31 Oct 2026
+rosslyn-park-fc,18036,Rosslyn Park,National League 1 | National Leagues,31 Oct 2026
 rotherham-titans,63,Rotherham Titans,,31 Oct 2026
-roundhegians-rfc,18124,Roundhegians,,31 Oct 2026
+roundhegians-rfc,18124,Roundhegians,Counties 2 Yorkshire B | Northern Division,31 Oct 2026
 sale-sharks,50,Sale Sharks,,31 Oct 2026
 sale-sharks-women,124298,Sale Sharks Women,,31 Oct 2026
-salisbury-rfc,18607,Salisbury,,31 Oct 2026
-sandal-rfc,18658,Sandal,,31 Oct 2026
+salisbury-rfc,18607,Salisbury,Counties 1 Tribute Ale Southern South | South West Division,31 Oct 2026
+sandal-rfc,18658,Sandal,Regional 1 North East | Northern Division,31 Oct 2026
 saracens,51,Saracens,,31 Oct 2026
 saracens-women,18764,Saracens Women,,31 Oct 2026
-scarborough-rfc,18780,Scarborough,,31 Oct 2026
-sefton-rfc,18947,Sefton,,31 Oct 2026
-selby-rfc,18969,Selby,,31 Oct 2026
-sevenoaks-rfc,19006,Sevenoaks,,31 Oct 2026
-sheffield-tigers-rfc,19099,Sheffield Tigers,,31 Oct 2026
-shrewsbury-rfc,19280,Shrewsbury,,31 Oct 2026
-sidcup-rfc,19314,Sidcup,,31 Oct 2026
-sidmouth-rfc,19335,Sidmouth,,31 Oct 2026
-skipton-rfc,19473,Skipton,,31 Oct 2026
-south-molton-rfc,19624,South Molton,,31 Oct 2026
-southend-rfc,19725,Southend Saxons,,31 Oct 2026
-southport-rfc,19778,Southport,,31 Oct 2026
-st-albans-rfc,20102,St Albans,,31 Oct 2026
-st-austell-rfc,20157,St Austell,,31 Oct 2026
-st-ives-rfc,20429,St Ives (SW),,31 Oct 2026
+scarborough-rfc,18780,Scarborough,Regional 1 North East | Northern Division,31 Oct 2026
+sefton-rfc,18947,Sefton,Counties 2 adm Lancashire & Cheshire | Northern Division,31 Oct 2026
+selby-rfc,18969,Selby,Regional 2 North East | Northern Division,31 Oct 2026
+sevenoaks-rfc,19006,Sevenoaks,Regional 1 South Central | London & SE Division,31 Oct 2026
+sheffield-tigers-rfc,19099,Sheffield Tigers,National League 2 North | National Leagues,31 Oct 2026
+shrewsbury-rfc,19280,Shrewsbury,Counties 1 Midlands West (North) | Midlands Division,31 Oct 2026
+sidcup-rfc,19314,Sidcup,Regional 1 South East | London & SE Division,31 Oct 2026
+sidmouth-rfc,19335,Sidmouth,Regional 1 Tribute Ale South West | South West Division,31 Oct 2026
+skipton-rfc,19473,Skipton,Counties 3 Yorkshire A | Northern Division,31 Oct 2026
+south-molton-rfc,19624,South Molton,Counties 2 Tribute Ale Devon | South West Division,31 Oct 2026
+southend-rfc,19725,Southend Saxons,Regional 1 South East | London & SE Division,31 Oct 2026
+southport-rfc,19778,Southport,Counties 1 adm Lancashire & Cheshire | Northern Division,31 Oct 2026
+st-albans-rfc,20102,St Albans,Counties 2 Herts | London & SE Division,31 Oct 2026
+st-austell-rfc,20157,St Austell,Regional 1 Tribute Ale South West | South West Division,31 Oct 2026
+st-ives-rfc,20429,St Ives (SW),Counties 1 Tribute Ale Western West | South West Division,31 Oct 2026
 stafford-rfc,20777,Stafford,,31 Oct 2026
-stockport-rfc,117609,Stockport,,31 Oct 2026
-stockton-rfc,21024,Stockton,,31 Oct 2026
-stourbridge-rfc,21144,Stourbridge,,31 Oct 2026
-streatham-croydon-rfc,21255,Streatham-Croydon,,31 Oct 2026
-stroud-rfc,21275,Stroud,,31 Oct 2026
-sunderland-rfc,21339,Sunderland,,31 Oct 2026
-sutton-coldfield-rfc,21454,Sutton Coldfield,,31 Oct 2026
-sutton-epsom-rfc,21414,Sutton & Epsom,,31 Oct 2026
-swanage-wareham-rfc,21497,Swanage & Wareham,,31 Oct 2026
-swindon-rfc,21532,Swindon,,31 Oct 2026
+stockport-rfc,117609,Stockport,Regional 1 North West | Northern Division,31 Oct 2026
+stockton-rfc,21024,Stockton,Counties 1 North East | Northern Division,31 Oct 2026
+stourbridge-rfc,21144,Stourbridge,Regional 1 Midlands | Midlands Division,31 Oct 2026
+streatham-croydon-rfc,21255,Streatham-Croydon,Counties 3 Surrey | London & SE Division,31 Oct 2026
+stroud-rfc,21275,Stroud,Counties 2 Tribute Ale Gloucestershire | South West Division,31 Oct 2026
+sunderland-rfc,21339,Sunderland,Regional 2 North | Northern Division,31 Oct 2026
+sutton-coldfield-rfc,21454,Sutton Coldfield,Regional 2 Midlands North | Midlands Division,31 Oct 2026
+sutton-epsom-rfc,21414,Sutton & Epsom,Regional 2 South East | London & SE Division,31 Oct 2026
+swanage-wareham-rfc,21497,Swanage & Wareham,Counties 1 Tribute Ale Southern South | South West Division,31 Oct 2026
+swindon-rfc,21532,Swindon,Counties 2 Tribute Ale Dorset & Wilts North | South West Division,31 Oct 2026
 tamworth-rfc,21629,Tamworth,,31 Oct 2026
-taunton-rfc,21681,Taunton Titans,,31 Oct 2026
-tavistock-rfc,21699,Tavistock,,31 Oct 2026
-teignmouth-rfc,21773,Teignmouth,,31 Oct 2026
-telford-hornets,21796,Telford Hornets,,31 Oct 2026
-thanet-wanderers,21901,Thanet Wanderers,,31 Oct 2026
+taunton-rfc,21681,Taunton Titans,National League 2 West | National Leagues,31 Oct 2026
+tavistock-rfc,21699,Tavistock,Counties 2 Tribute Ale Devon | South West Division,31 Oct 2026
+teignmouth-rfc,21773,Teignmouth,Regional 2 Tribute Ale South West | South West Division,31 Oct 2026
+telford-hornets,21796,Telford Hornets,Counties 2 Midlands West (West) | Midlands Division,31 Oct 2026
+thanet-wanderers,21901,Thanet Wanderers,Counties 1 Kent | London & SE Division,31 Oct 2026
 thornensians-rfc,22713,Thornensians,,31 Oct 2026
-thurrock-rfc,22768,Thurrock,,31 Oct 2026
-tonbridge-juddians-rfc,22915,Tonbridge Juddians,,31 Oct 2026
-torquay-athletic-rfc,22968,Torquay Athletic,,31 Oct 2026
-torrington-rfc,22992,Torrington,,31 Oct 2026
-tottonians-rfc,23023,Tottonians,,31 Oct 2026
+thurrock-rfc,22768,Thurrock,Regional 2 Anglia | London & SE Division,31 Oct 2026
+tonbridge-juddians-rfc,22915,Tonbridge Juddians,National League 1 | National Leagues,31 Oct 2026
+torquay-athletic-rfc,22968,Torquay Athletic,Counties 1 Tribute Ale Western West | South West Division,31 Oct 2026
+torrington-rfc,22992,Torrington,Counties 3 Tribute Ale Devon North & East | South West Division,31 Oct 2026
+tottonians-rfc,23023,Tottonians,Regional 2 South Central | London & SE Division,31 Oct 2026
 trailfinders-women,127626,Trailfinders Women,,31 Oct 2026
-trojans-rfc,23216,Trojans,,31 Oct 2026
-trowbridge-rfc,23240,Trowbridge,,31 Oct 2026
-truro-rfc,23260,Truro,,31 Oct 2026
-tunbridge-wells-rfc,23285,Tunbridge Wells,,31 Oct 2026
-twickenham-rfc,23336,Twickenham,,31 Oct 2026
-tynedale-rfc,23390,Tynedale,,31 Oct 2026
+trojans-rfc,23216,Trojans,Counties 1 Hampshire | London & SE Division,31 Oct 2026
+trowbridge-rfc,23240,Trowbridge,Regional 1 Tribute Ale South West | South West Division,31 Oct 2026
+truro-rfc,23260,Truro,Counties 1 Tribute Ale Western West | South West Division,31 Oct 2026
+tunbridge-wells-rfc,23285,Tunbridge Wells,Regional 1 South Central | London & SE Division,31 Oct 2026
+twickenham-rfc,23336,Twickenham,Regional 2 South Central | London & SE Division,31 Oct 2026
+tynedale-rfc,23390,Tynedale,National League 2 North | National Leagues,31 Oct 2026
 uckfield-rfc,23445,Uckfield,,31 Oct 2026
-vale-of-lune-rfc,23900,Vale of Lune,,31 Oct 2026
-vipers-rfc,24033,Vipers,,31 Oct 2026
-wanstead-rfc,24241,Wanstead,,31 Oct 2026
-warrington-rfc,24339,Warrington,,31 Oct 2026
-waterloo-rfc,8162,Firwood Waterloo,,31 Oct 2026
-wellingborough-rfc,24604,Wellingborough,,31 Oct 2026
-west-hartlepool-rfc,24767,West Hartlepool,,31 Oct 2026
+vale-of-lune-rfc,23900,Vale of Lune,Regional 1 North West | Northern Division,31 Oct 2026
+vipers-rfc,24033,Vipers,Counties 1 Midlands East (South) | Midlands Division,31 Oct 2026
+wanstead-rfc,24241,Wanstead,Regional 2 Anglia | London & SE Division,31 Oct 2026
+warrington-rfc,24339,Warrington,Regional 2 North West | Northern Division,31 Oct 2026
+waterloo-rfc,8162,Firwood Waterloo,Regional 2 North West | Northern Division,31 Oct 2026
+wellingborough-rfc,24604,Wellingborough,Counties 1 Midlands East (South) | Midlands Division,31 Oct 2026
+west-hartlepool-rfc,24767,West Hartlepool,Regional 2 North | Northern Division,31 Oct 2026
 weston-super-mare-rfc,25046,Weston-super-Mare,,31 Oct 2026
 weymouth-rfc,25111,Weymouth & Portland,,31 Oct 2026
-wharfedale-rfc,25147,Wharfedale,,31 Oct 2026
+wharfedale-rfc,25147,Wharfedale,National League 2 North | National Leagues,31 Oct 2026
 whitby-rfc,25209,Whitby,,31 Oct 2026
-whitehaven-rfc-union,25273,Whitehaven,,31 Oct 2026
-wigan-rfc,25389,Wigan,,31 Oct 2026
-wilmslow-rfc,25471,Wilmslow,,31 Oct 2026
-wimbledon-rfc,25512,Wimbledon,,31 Oct 2026
-wimborne-rfc,25549,Wimborne,,31 Oct 2026
-winchester-rfc,25574,Winchester,,31 Oct 2026
-windermere-rfc,25596,Windermere,,31 Oct 2026
-windsor-rfc,25603,Windsor,,31 Oct 2026
-wirral-rfc,25707,Wirral,,31 Oct 2026
+whitehaven-rfc-union,25273,Whitehaven,Counties 1 Cumbria | Northern Division,31 Oct 2026
+wigan-rfc,25389,Wigan,Counties 1 adm Lancashire & Cheshire | Northern Division,31 Oct 2026
+wilmslow-rfc,25471,Wilmslow,Regional 2 North West | Northern Division,31 Oct 2026
+wimbledon-rfc,25512,Wimbledon,Regional 1 South Central | London & SE Division,31 Oct 2026
+wimborne-rfc,25549,Wimborne,Regional 2 South Central | London & SE Division,31 Oct 2026
+winchester-rfc,25574,Winchester,Regional 2 South Central | London & SE Division,31 Oct 2026
+windermere-rfc,25596,Windermere,Counties 2 Cumbria | Northern Division,31 Oct 2026
+windsor-rfc,25603,Windsor,Counties 1 Tribute Ale Southern North | South West Division,31 Oct 2026
+wirral-rfc,25707,Wirral,Regional 1 North West | Northern Division,31 Oct 2026
 wolverhampton-rfc,25906,Wolverhampton,,31 Oct 2026
-woodford-rfc,25970,Woodford,,31 Oct 2026
-worcester-rfc,26044,Worcester,,31 Oct 2026
+woodford-rfc,25970,Woodford,Regional 2 Anglia | London & SE Division,31 Oct 2026
+worcester-rfc,26044,Worcester,Regional 2 Midlands West | Midlands Division,31 Oct 2026
 worksop-rfc,26105,Worksop,,31 Oct 2026
 worthing-rfc,26122,Worthing,,31 Oct 2026
-yeovil-rfc,26435,Yeovil,,31 Oct 2026
-york-rugby-union,26458,York,,31 Oct 2026
+yeovil-rfc,26435,Yeovil,Counties 2 Tribute Ale Dorset & Wilts South | South West Division,31 Oct 2026
+york-rugby-union,26458,York,Regional 1 North East | Northern Division,31 Oct 2026
