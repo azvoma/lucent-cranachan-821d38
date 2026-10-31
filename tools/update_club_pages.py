@@ -535,7 +535,7 @@ def layout(s, rec, c, er):
         if m: extra.append(('sport', html.unescape(m.group(1)), lab_out))
 
     # one key-facts strip
-    i = s.find('<div class="stats-bar">')
+    i = s.find('<div class="stats-bar"')
     if i >= 0:
         j = find_div_block(s, i)
         facts = [('sport', sport or 'Rugby', 'Sport'),
