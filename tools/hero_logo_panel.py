@@ -28,7 +28,7 @@ def badge_for(slug):
     return None
 
 
-def import_logo(src, slug):
+def import_logo(src, slug, square=True):
     """Trim borders, pad to a square, cap at 600px, save as badges/{slug}.png."""
     im = Image.open(src).convert('RGBA')
     alpha_bbox = im.getchannel('A').point(lambda a: 255 if a > 8 else 0).getbbox()
@@ -57,11 +57,14 @@ def import_logo(src, slug):
                     if mp[x, y] == (255, 0, 255): px[x, y] = (0, 0, 0, 0)
             bb = im.getchannel('A').getbbox()
             if bb: im = im.crop(bb)
-    side = max(im.size)
-    sq = Image.new('RGBA', (side, side), (0, 0, 0, 0))
-    sq.paste(im, ((side - im.width) // 2, (side - im.height) // 2))
-    if side > 600:
-        sq = sq.resize((600, 600), Image.LANCZOS)
+    if square:
+        side = max(im.size)
+        sq = Image.new('RGBA', (side, side), (0, 0, 0, 0))
+        sq.paste(im, ((side - im.width) // 2, (side - im.height) // 2))
+    else:
+        sq = im
+    if max(sq.size) > 600:
+        sq.thumbnail((600, 600), Image.LANCZOS)
     sq.save(os.path.join(ROOT, 'badges', slug + '.png'), optimize=True)
     return slug + '.png'
 
