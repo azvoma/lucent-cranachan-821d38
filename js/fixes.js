@@ -1,11 +1,11 @@
-/* UK Rugby Club Directory — fixes.js v3
-   Blog nav is hard-coded in HTML.
-   Region filter is in main.js.
-   This file handles: favicon only. */
+/* UK Rugby Club Directory — fixes.js v4
+   Favicon, .ico and Apple touch icon are now set in each page's <head>.
+   This script only adds the SVG favicon if a page is missing one. */
 (function(){
   'use strict';
-  document.querySelectorAll('link[rel*="icon"]').forEach(function(el){ el.parentNode.removeChild(el); });
-  var lnk = document.createElement('link');
-  lnk.rel = 'icon'; lnk.type = 'image/svg+xml'; lnk.href = '/favicon.svg';
-  document.head.appendChild(lnk);
+  if (!document.querySelector('link[rel~="icon"]')) {
+    var lnk = document.createElement('link');
+    lnk.rel = 'icon'; lnk.type = 'image/svg+xml'; lnk.href = '/favicon.svg';
+    document.head.appendChild(lnk);
+  }
 }());

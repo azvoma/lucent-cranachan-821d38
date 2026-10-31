@@ -34,8 +34,8 @@
 
   /* ── 2. Favicon ─────────────────────────────────────────── */
   function setFavicon() {
-    // Remove existing favicons
-    document.querySelectorAll('link[rel*="icon"]').forEach(function(el) { el.remove(); });
+    // Pages now declare their own icons; only fill in if missing
+    if (document.querySelector('link[rel~="icon"]')) return;
     // Add new Rule Divide favicon
     var svg = document.createElement('link');
     svg.rel = 'icon';
