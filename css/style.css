@@ -3909,3 +3909,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #ee6c4d; outline-offs
 .guide-faq details > div { padding-top: .6rem; }
 .guide-related { font-size: .92rem; margin-top: 2rem !important; padding-top: 1rem; border-top: 1px solid #d9dee5; }
 .guide-wrap { padding: 2.5rem 0 3rem; }
+.glance-table { min-width: 0; }
+.glance-table th { background: #eef2f6; color: var(--text-primary); width: 36%; font-weight: 600; border-bottom: 1px solid #e3e7ec; }
+.glance-table tr:nth-child(even) td { background: #fff; }
+.club-glance .guide-answer { margin-bottom: 1rem; }
+.glance-src { font-size: .8rem; color: #5b6573; margin-top: -.5rem; }
