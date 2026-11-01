@@ -19,7 +19,7 @@ H2 = 'style="font-size:1.6rem;font-weight:700;color:var(--text-primary);margin:2
 
 HUBS = [
     dict(slug='rugby-clubs-london', place='London', counties=['Greater London'],
-         title='Rugby Clubs in London | Union &amp; League Clubs by Area',
+         title='Rugby Clubs in London: Union &amp; League Clubs by Area',
          meta='Find rugby clubs in London: {n} union and league clubs across the capital, from Harlequins and Saracens to community sides in Barnes, Wimbledon and Woodford.',
          keywords='rugby clubs in London, London rugby clubs, rugby union London, rugby league London, rugby near me London',
          intro=[
@@ -29,7 +29,7 @@ HUBS = [
          faqs=[('Are there rugby league clubs in London?', 'Yes. <a href="club/london-broncos.html">London Broncos</a> are the capital\'s best-known rugby league club, and <a href="club/london-skolars.html">London Skolars</a> are based in north London. Most London clubs, however, play rugby union.'),
                ('Where are the professional rugby clubs in London?', '<a href="club/harlequins.html">Harlequins</a> play at the Twickenham Stoop in south-west London and <a href="club/saracens.html">Saracens</a> in north London. Both run community programmes alongside their professional teams.')]),
     dict(slug='rugby-clubs-manchester', place='Greater Manchester', counties=['Greater Manchester'],
-         title='Rugby Clubs in Manchester | Union &amp; League in Greater Manchester',
+         title='Rugby Clubs in Manchester | Manchester Rugby Teams',
          meta='Find rugby clubs in Greater Manchester: {n} rugby league and union clubs in Wigan, Leigh, Salford, Oldham, Stockport and more. Compare clubs near you.',
          keywords='rugby clubs Manchester, rugby clubs Greater Manchester, rugby league Wigan, rugby league Leigh, rugby union Manchester',
          intro=[
@@ -56,7 +56,7 @@ HUBS = [
              'Use the town list below to see which code is closest to you.'],
          faqs=[('Is St Helens a rugby league or rugby union town?', 'Mainly rugby league. St Helens has a professional rugby league club and several amateur league sides, although there is also a rugby union club in the town.')]),
     dict(slug='rugby-clubs-kent', place='Kent', counties=['Kent'],
-         title='Rugby Clubs in Kent | Find a Rugby Union Club in Kent',
+         title='Rugby Clubs in Kent | Find a Kent Rugby Club Near You',
          meta='Find rugby clubs in Kent: {n} rugby union clubs in Maidstone, Canterbury, Tonbridge, Sevenoaks, Ashford and more. Compare clubs and find one near you.',
          keywords='rugby clubs Kent, Kent rugby clubs, rugby union Kent, Maidstone rugby club, Canterbury rugby club, Tonbridge rugby',
          intro=[
@@ -100,8 +100,8 @@ HUBS = [
              'Clubs include <a href="club/st-albans-rfc.html">St Albans</a>, <a href="club/hitchin-rfc.html">Hitchin</a>, <a href="club/harpenden-rfc.html">Harpenden</a>, <a href="club/hertford-rfc.html">Hertford</a>, Stevenage, Hemel Hempstead, Cheshunt and <a href="club/fullerians-rfc.html">Fullerians</a> in Watford.',
              'South Hertfordshire is close to north London, so it is worth looking at our <a href="rugby-clubs-london.html">London rugby clubs</a> page too.'],
          faqs=[('Can adults start playing rugby in Hertfordshire?', 'Yes. Most clubs in the county run several senior teams, so beginners can start at a level that suits them. Our guide to <a href="blog/how-to-start-playing-rugby-as-an-adult-uk-guide/">starting rugby as an adult</a> explains what to expect.')]),
-    dict(slug='rugby-clubs-hampshire', place='Hampshire', counties=['Hampshire'],
-         title='Rugby Clubs in Hampshire | Find a Rugby Club in Hampshire',
+    dict(slug='rugby-clubs-hampshire', place='Hampshire', counties=['Hampshire', 'Isle of Wight'],
+         title='Rugby Clubs in Hampshire | Southampton &amp; Hampshire Rugby',
          meta='Find rugby clubs in Hampshire: {n} rugby union clubs in Winchester, Basingstoke, Eastleigh, Andover, Havant and more. Compare clubs and find one near you.',
          keywords='rugby clubs Hampshire, Hampshire rugby, Winchester rugby club, Basingstoke rugby, Eastleigh rugby, Southampton rugby clubs',
          intro=[
@@ -109,6 +109,55 @@ HUBS = [
              'Around Southampton, <a href="club/trojans-rfc.html">Trojans</a> and Eastleigh are based in Eastleigh, with <a href="club/tottonians-rfc.html">Tottonians</a> in Totton. Further north and east there are clubs in <a href="club/winchester-rfc.html">Winchester</a>, <a href="club/basingstoke-rfc.html">Basingstoke</a>, <a href="club/andover-rfc.html">Andover</a>, Alton, Petersfield and Havant.',
              'Clubs near the Surrey border are also within reach of our <a href="rugby-clubs-surrey.html">Surrey rugby clubs</a>.'],
          faqs=[('Which rugby clubs are near Southampton?', 'In our directory, the nearest clubs are <a href="club/trojans-rfc.html">Trojans</a> and Eastleigh RFC in Eastleigh, and <a href="club/tottonians-rfc.html">Tottonians</a> in Totton.')]),
+    dict(slug='rugby-clubs-edinburgh', place='Edinburgh', counties=['Midlothian', 'East Lothian', 'West Lothian'],
+         title='Rugby Clubs in Edinburgh | Edinburgh &amp; Lothians Rugby Teams',
+         meta='Find rugby clubs in Edinburgh and the Lothians: {n} clubs including Edinburgh Rugby, Watsonians, Heriot\'s, Boroughmuir and Currie Chieftains. Find one near you.',
+         keywords='rugby clubs Edinburgh, rugby teams Edinburgh, Edinburgh rugby club, rugby clubs in Edinburgh, Lothians rugby',
+         intro=[
+             'Edinburgh is the home of Scottish rugby, with Murrayfield on its doorstep and some of the oldest clubs in the world. This page lists the {n} clubs in our directory in Edinburgh and the Lothians.',
+             'At the top, <a href="club/edinburgh-rugby.html">Edinburgh Rugby</a> are the city\'s professional side. Below them are historic clubs such as <a href="club/watsonians-rfc.html">Watsonians</a>, <a href="club/heriots-fp-rfc.html">Heriot\'s</a> and <a href="club/boroughmuir-rfc.html">Boroughmuir</a>, and community clubs across East and West Lothian.'],
+         faqs=[('Which rugby clubs are in Edinburgh city?', 'Our directory lists <a href="club/watsonians-rfc.html">Watsonians</a>, <a href="club/heriots-fp-rfc.html">Heriot\'s</a>, <a href="club/boroughmuir-rfc.html">Boroughmuir</a>, <a href="club/inverleith-rfc.html">Inverleith</a> and <a href="club/currie-chieftains.html">Currie Chieftains</a>, plus the professional <a href="club/edinburgh-rugby.html">Edinburgh Rugby</a>.')]),
+    dict(slug='rugby-clubs-sussex', place='Sussex', counties=['West Sussex', 'East Sussex'],
+         title='Rugby Clubs in Sussex | Find a Sussex Rugby Club Near You',
+         meta='Find rugby clubs in Sussex: {n} clubs in Brighton, Worthing, Horsham, Crawley, Uckfield, Eastbourne, Chichester and more. Compare clubs and find one near you.',
+         keywords='rugby clubs Sussex, rugby clubs in Sussex, Sussex rugby, Brighton rugby club, Uckfield rugby, Horsham rugby club',
+         intro=[
+             'Sussex has a rugby union club in almost every town, from the coast to the Weald. This page lists the {n} East and West Sussex clubs in our directory.',
+             'Clubs include <a href="club/brighton-rfc.html">Brighton</a>, one of the oldest in the south, plus <a href="club/worthing-rfc.html">Worthing</a>, <a href="club/horsham-rfc.html">Horsham</a>, <a href="club/uckfield-rfc.html">Uckfield</a>, <a href="club/eastbourne-rfc.html">Eastbourne</a> and <a href="club/chichester-rfc.html">Chichester</a>.'],
+         faqs=[('Is there a rugby club in Uckfield?', 'Yes. <a href="club/uckfield-rfc.html">Uckfield RFC</a>, founded in 1936, runs senior and junior teams. <a href="club/crowborough-rfc.html">Crowborough</a> and <a href="club/lewes-rfc.html">Lewes</a> are also nearby.')]),
+    dict(slug='rugby-clubs-somerset', place='Somerset', counties=['Somerset'],
+         title='Rugby Clubs in Somerset | Bath, Taunton &amp; More',
+         meta='Find rugby clubs in Somerset: {n} clubs including Bath Rugby, Taunton, Bridgwater &amp; Albion, Weston-super-Mare, Clevedon and Yeovil. Find one near you.',
+         keywords='rugby clubs Somerset, rugby clubs in Somerset, Somerset rugby, Taunton rugby club, Bath rugby club, rugby clubs near Bath',
+         intro=[
+             'Somerset is rugby union country, home to <a href="club/bath-rugby.html">Bath Rugby</a> and a strong network of town clubs. This page lists the {n} Somerset clubs in our directory.',
+             '<a href="club/taunton-rfc.html">Taunton</a> are the leading community club, alongside <a href="club/bridgwater-albion-rfc.html">Bridgwater &amp; Albion</a>, <a href="club/weston-super-mare-rfc.html">Weston-super-Mare</a>, <a href="club/clevedon-rfc.html">Clevedon</a> and <a href="club/yeovil-rfc.html">Yeovil</a>.'],
+         faqs=[('What is the best rugby club in Somerset?', '<a href="club/bath-rugby.html">Bath Rugby</a> are the county\'s professional club in PREM Rugby. Among community clubs, <a href="club/taunton-rfc.html">Taunton</a> play at the highest level, in National League 2 West.')]),
+    dict(slug='rugby-clubs-gloucestershire', place='Gloucestershire', counties=['Gloucestershire'],
+         title='Rugby Clubs in Gloucestershire &amp; Gloucester',
+         meta='Find rugby clubs in Gloucestershire: {n} clubs including Gloucester Rugby, Hartpury, Cinderford, Cleve, Cheltenham, Stroud and Cirencester. Find one near you.',
+         keywords='rugby clubs Gloucestershire, Gloucestershire rugby clubs, rugby clubs in Gloucester, Cheltenham rugby club, Stroud rugby',
+         intro=[
+             'Gloucestershire has one of England\'s deepest rugby traditions, centred on <a href="club/gloucester-rugby.html">Gloucester Rugby</a> at Kingsholm. This page lists the {n} Gloucestershire clubs in our directory.',
+             'Below the professional game, <a href="club/hartpury-rfc.html">Hartpury</a>, <a href="club/cinderford-rfc.html">Cinderford</a> and <a href="club/cleve-rfc.html">Cleve</a> lead a strong community scene, with town clubs in <a href="club/cheltenham-rfc.html">Cheltenham</a>, <a href="club/stroud-rfc.html">Stroud</a> and <a href="club/cirencester-rfc.html">Cirencester</a>. Bristol clubs are on our <a href="rugby-clubs-bristol.html">Bristol page</a>.'],
+         faqs=[('Are there rugby clubs in Gloucester city?', '<a href="club/gloucester-rugby.html">Gloucester Rugby</a> play at Kingsholm, and <a href="club/hartpury-rfc.html">Hartpury</a> is just outside the city. If you run a Gloucester community club that is not listed, <a href="register.html">register it free</a>.')]),
+    dict(slug='rugby-clubs-warwickshire', place='Warwickshire', counties=['Warwickshire'],
+         extra=['coventry-rfc', 'broadstreet-rfc', 'midlands-hurricanes'],
+         title='Rugby Clubs in Warwickshire | Leamington, Kenilworth &amp; More',
+         meta='Find rugby clubs in Warwickshire: {n} clubs in Coventry, Leamington Spa, Kenilworth, Rugby and Stratford-upon-Avon. Compare clubs and find one near you.',
+         keywords='rugby clubs Warwickshire, Warwickshire rugby clubs, Leamington Spa rugby club, Kenilworth rugby club, rugby clubs in Warwickshire',
+         intro=[
+             'Warwickshire is where the game of rugby is traditionally said to have started, at Rugby School in the town of Rugby. This page lists the {n} clubs in our directory across Warwickshire and Coventry.',
+             '<a href="club/coventry-rfc.html">Coventry</a> are the leading club, with <a href="club/broadstreet-rfc.html">Broadstreet</a>, <a href="club/kenilworth-rfc.html">Kenilworth</a>, <a href="club/leamington-rfc.html">Leamington</a>, <a href="club/old-leamingtonians-rfc.html">Old Leamingtonians</a> and <a href="club/stratford-upon-avon-rfc.html">Stratford-upon-Avon</a> across the county.'],
+         faqs=[('How many rugby clubs are there in Leamington Spa?', 'Our directory lists two: <a href="club/leamington-rfc.html">Leamington RFC</a> and <a href="club/old-leamingtonians-rfc.html">Old Leamingtonians RFC</a>. Both play in Counties 1 Midlands West (South).')]),
+    dict(slug='rugby-clubs-lancashire', place='Lancashire', counties=['Lancashire'],
+         title='Rugby Clubs in Lancashire | Preston, Fylde, Blackburn &amp; More',
+         meta='Find rugby clubs in Lancashire: {n} clubs including Fylde, Preston Grasshoppers, Blackburn, Vale of Lune, Fleetwood and Burnley. Find one near you.',
+         keywords='rugby clubs Lancashire, Lancashire rugby clubs, Preston rugby club, Fylde rugby, Blackburn rugby club',
+         intro=[
+             'Lancashire has a proud rugby union tradition along the Fylde coast and through its mill towns. This page lists the {n} clubs in our directory in the county north of Greater Manchester and Merseyside.',
+             '<a href="club/fylde-rfc.html">Fylde</a> and <a href="club/preston-grasshoppers.html">Preston Grasshoppers</a> are the leading clubs, with <a href="club/blackburn-rfc.html">Blackburn</a>, <a href="club/vale-of-lune-rfc.html">Vale of Lune</a>, <a href="club/fleetwood-rfc.html">Fleetwood</a> and <a href="club/burnley-rfc.html">Burnley</a> close behind.'],
+         faqs=[('Where are the rugby league clubs in Lancashire?', 'Most of the historic Lancashire rugby league towns, such as Wigan, Leigh, St Helens and Warrington, are now in Greater Manchester, Merseyside or Cheshire. See our <a href="rugby-clubs-manchester.html">Manchester</a>, <a href="rugby-clubs-merseyside.html">Merseyside</a> and <a href="rugby-clubs-cheshire.html">Cheshire</a> pages.')]),
 ]
 
 
@@ -140,7 +189,7 @@ def plural(n, one, many):
 
 def build(hub, clubs, cards, all_hubs, shell_parts):
     head_tail, header, footer = shell_parts
-    rs = sorted([c for c in clubs if c['county'] in hub['counties'] and c['slug'] in cards],
+    rs = sorted([c for c in clubs if (c['county'] in hub['counties'] or c['slug'] in hub.get('extra', [])) and c['slug'] in cards],
                 key=lambda c: (c['town'] or 'zz', c['name']))
     n = len(rs)
     league = sum(1 for r in rs if 'league' in r['sport'].lower())
