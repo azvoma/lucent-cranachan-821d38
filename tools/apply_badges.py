@@ -74,6 +74,17 @@ def main():
                             n['logo'] = f'{SITE}/badges/{fname}'; hit = True
                     return '<script type="application/ld+json">' + json.dumps(j, ensure_ascii=False) + '</script>' if hit else m.group(0)
                 s = re.sub(r'<script type="application/ld\+json">(.*?)</script>', ld, s, flags=re.S)
+        # one logo per card: drop any older logo sitting next to the badges/ logo
+        def one_logo(m):
+            imgs = re.findall(r'<img [^>]*>', m.group(1))
+            if len(imgs) < 2 or not any('badges/' in i for i in imgs):
+                return m.group(0)
+            body = m.group(1)
+            for i in imgs:
+                if 'badges/' not in i:
+                    body = body.replace(i, '', 1)
+            return m.group(0).replace(m.group(1), body, 1)
+        s = re.sub(r'<div class="badge-area">(.*?)</div>(?=\s*<div class="card-content">)', one_logo, s, flags=re.S)
         if s != o:
             open(path, 'w', encoding='utf-8', errors='surrogateescape').write(s); changed += 1
     idx = os.path.join(ROOT, 'js', 'clubs-index.json')
