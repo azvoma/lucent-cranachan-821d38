@@ -159,8 +159,9 @@
 </section>
 <section class="sec">
   <div class="con" style="max-width:680px">
-    <form id="register-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:1.25rem">
-      <input type="hidden" name="_subject" value="New Club Registration - UK Rugby Directory">
+    <form id="register-form" name="register-club" method="POST" action="/thank-you.html?form=register" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:1.25rem">
+          <input type="hidden" name="form-name" value="register-club">
+          <p class="nf-hp" hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">Club Name *</label><input name="club_name" required type="text" placeholder="e.g. Anytown Rugby Club" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none"></div>
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">Your Name *</label><input name="contact_name" required type="text" placeholder="First and last name" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none"></div>
       <div><label style="display:block;font-weight:600;margin-bottom:.4rem;font-size:.875rem">Email Address *</label><input name="email" required type="email" placeholder="your@email.com" style="width:100%;padding:.75rem 1rem;border:2px solid var(--gl);border-radius:var(--rad);font-family:var(--fb);font-size:1rem;outline:none"></div>
@@ -246,6 +247,7 @@
         <ul>
           <li><a href="/register.html">Register Your Club</a></li>
           <li><a href="/contact-us.html">Contact Us</a></li>
+        <li><a href="mailto:hello@ukrugbyclubdirectory.co.uk">hello@ukrugbyclubdirectory.co.uk</a></li>
           <li><a href="https://www.englandrugby.com" target="_blank" rel="noopener">England Rugby</a></li>
           <li><a href="https://www.rugby-league.com" target="_blank" rel="noopener">Rugby League</a></li>
           <li><a href="https://www.wru.wales" target="_blank" rel="noopener">Welsh Rugby Union</a></li>

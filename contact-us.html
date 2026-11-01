@@ -174,6 +174,35 @@
 
 <section class="sec">
   <div class="con" style="max-width:680px;margin:0 auto">
+<!--nf-contact-->
+    <div class="nf-card" id="contact-form">
+      <h2 style="margin-bottom:.35rem">Send us a message</h2>
+      <p style="color:var(--text-secondary);font-size:.92rem;margin-bottom:1.5rem">We reply within 1 working day. You can also email <a href="mailto:hello@ukrugbyclubdirectory.co.uk">hello@ukrugbyclubdirectory.co.uk</a>.</p>
+      <form name="contact" method="POST" action="/thank-you.html?form=contact" data-netlify="true" netlify-honeypot="bot-field" class="nf-form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="nf-hp" hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="nf-row">
+          <p><label for="cf-name">Your name *</label><input id="cf-name" class="form-input" name="name" type="text" required autocomplete="name"></p>
+          <p><label for="cf-email">Email address *</label><input id="cf-email" class="form-input" name="email" type="email" required autocomplete="email"></p>
+        </div>
+        <div class="nf-row">
+          <p><label for="cf-topic">What is it about? *</label><select id="cf-topic" class="form-select" name="topic" required>
+            <option value="">Choose one</option>
+            <option>General enquiry</option>
+            <option>Update or correct a club listing</option>
+            <option>Add my club to the directory</option>
+            <option>Remove a listing</option>
+            <option>Advertising or partnership</option>
+            <option>Report a problem with the website</option>
+          </select></p>
+          <p><label for="cf-club">Club or business name</label><input id="cf-club" class="form-input" name="club" type="text" autocomplete="organization"></p>
+        </div>
+        <p><label for="cf-message">Message *</label><textarea id="cf-message" class="form-input" name="message" rows="6" required></textarea></p>
+        <p class="nf-note">We only use your details to reply to this message. See our <a href="privacy-policy.html">privacy policy</a>.</p>
+        <p><button type="submit" class="btn btn-red btn-lg">Send message</button></p>
+      </form>
+    </div>
+<!--/nf-contact-->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem">
       <div style="text-align:center;padding:2.5rem 1.5rem;background:var(--off);border-radius:16px;border:1px solid var(--gl)">
         <div style="width:64px;height:64px;border-radius:16px;background:#fef2f2;color:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem">
@@ -181,11 +210,11 @@
         </div>
         <h3 style="font-size:1rem;text-transform:none;letter-spacing:0;margin-bottom:.5rem">Send Us an Email</h3>
         <p style="font-size:.875rem;margin-bottom:1.25rem;color:var(--gd)">Opens in your email app. We aim to respond within 2 business days.</p>
-        <a href="mailto:hello@anoziva.com?subject=UK Rugby Club Directory Enquiry" class="btn btn-red" style="display:inline-flex">
+        <a href="mailto:hello@ukrugbyclubdirectory.co.uk?subject=UK Rugby Club Directory Enquiry" class="btn btn-red" style="display:inline-flex">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Email Us
         </a>
-        <p style="font-size:.75rem;color:var(--grey);margin-top:.75rem">hello@anoziva.com</p>
+        <p style="font-size:.75rem;color:var(--grey);margin-top:.75rem">hello@ukrugbyclubdirectory.co.uk</p>
       </div>
 
       <div style="padding:2.5rem 1.5rem;background:var(--off);border-radius:16px;border:1px solid var(--gl)">
@@ -193,7 +222,7 @@
         <dl style="display:grid;grid-template-columns:auto 1fr;gap:.65rem 1rem;font-size:.875rem">
           <dt style="color:var(--grey);font-weight:600">Response Time</dt><dd style="color:var(--navy)">Within 2 business days</dd>
           <dt style="color:var(--grey);font-weight:600">Based In</dt><dd style="color:var(--navy)">United Kingdom</dd>
-          <dt style="color:var(--grey);font-weight:600">Email</dt><dd><a href="mailto:hello@anoziva.com" style="color:var(--red);font-weight:600;word-break:break-all">hello@anoziva.com</a></dd>
+          <dt style="color:var(--grey);font-weight:600">Email</dt><dd><a href="mailto:hello@ukrugbyclubdirectory.co.uk" style="color:var(--red);font-weight:600;word-break:break-all">hello@ukrugbyclubdirectory.co.uk</a></dd>
         </dl>
       </div>
     </div>
@@ -266,6 +295,7 @@
       <div class="ft-col"><h3>Get Involved</h3><ul>
         <li><a href="register.html">Register Your Club</a></li>
         <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="mailto:hello@ukrugbyclubdirectory.co.uk">hello@ukrugbyclubdirectory.co.uk</a></li>
         <li><a href="https://www.englandrugby.com" target="_blank" rel="noopener">England Rugby</a></li>
         <li><a href="https://www.rugby-league.com" target="_blank" rel="noopener">Rugby League</a></li>
         <li><a href="https://www.wru.wales" target="_blank" rel="noopener">Welsh Rugby Union</a></li>

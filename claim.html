@@ -156,9 +156,9 @@
           <p>We'll verify your details and be in touch within 1 working day. Check your inbox for a confirmation email.</p>
         </div>
 
-        <form id="claim-form" action="https://formspree.io/f/YOUR_CLAIM_FORM_ID" method="POST">
-          <input type="hidden" name="_subject" value="Club Claim Request — UK Rugby Directory">
-          <input type="hidden" name="_redirect" value="https://ukrugbyclubdirectory.co.uk/claim.html?submitted=1">
+        <form id="claim-form" name="claim-listing" method="POST" action="/thank-you.html?form=claim" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="claim-listing">
+          <p class="nf-hp" hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <input type="hidden" id="club-slug-field" name="club_slug" value="">
 
           <div class="form-field">
