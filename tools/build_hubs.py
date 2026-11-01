@@ -127,7 +127,7 @@ def shell():
     head_end = s.find('<link rel="icon"')
     head_tail = s[head_end:s.find('</head>')]
     head_tail = re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', head_tail, flags=re.S)
-    header = s[s.find('</head>'):s.find('<main>')]
+    header = s[s.find('</head>'):s.find('<main')]
     footer = s[s.find('</main>'):]
     # drop the generic FAQ block that follows </main> on older pages
     footer = re.sub(r'<section class="faq-reference-section".*?</section>\s*', '', footer, flags=re.S)
@@ -209,7 +209,7 @@ def build(hub, clubs, cards, all_hubs, shell_parts):
 <meta name="geo.region" content="GB">
 <meta name="theme-color" content="#293241">
 {head_tail}<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-{header}<main>
+{header}<main id="main">
 <section class="listing-hero-england" style="position:relative;min-height:220px;display:flex;align-items:stretch;overflow:hidden;border-bottom:none">
   <div class="lh-left" style="position:relative;z-index:2;flex:0 0 58%;background:var(--navy);clip-path:polygon(0 0,82% 0,100% 100%,0 100%);padding:2.25rem 5rem 2.25rem 2rem;display:flex;flex-direction:column;justify-content:center">
     <nav class="breadcrumb" style="margin-bottom:.6rem">
