@@ -44,7 +44,7 @@ def apply(slug, g):
     if g.get('h1'):
         s = re.sub(r'(<h1[^>]*>).*?(</h1>)', lambda m: m.group(1) + g['h1'] + m.group(2), s, count=1, flags=re.S)
     s = re.sub(r'<section class="faq-reference-section".*?</section>\s*', '', s, count=1, flags=re.S)
-    g = dict(g, updated=U, byline=True, toc=False)
+    g = dict(g, updated=g.get('updated', U), byline=True, toc=False)
     block = f'<section class="sec guide-wrap" id="guide"><div class="con">\n{render_block(g)}\n</div></section>'
     if '<!--guide:start-->' in s:
         s = re.sub(r'<section class="sec guide-wrap" id="guide"><div class="con">\s*<!--guide:start-->.*?<!--guide:end-->\s*</div></section>',
