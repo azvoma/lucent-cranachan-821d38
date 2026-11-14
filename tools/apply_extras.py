@@ -23,6 +23,7 @@ from content import extras as X  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = {'index.html': X.HOME_EXTRA, 'clubs.html': X.CLUBS_EXTRA, 'rugby-union.html': X.UNION_EXTRA,
          'rugby-league.html': X.LEAGUE_EXTRA, 'south-west-rugby-clubs.html': X.SW_EXTRA}
+RETIRED = {'rugby-league.html': ['uk-rugby-leagues', 'london-league-clubs'], 'clubs.html': ['rfu-rfl-finder']}  # sections removed to resolve keyword cannibalization (14 Nov 2026)
 YEARS = {'leeds-rhinos': ('1890', '1870'), 'warrington-wolves': ('1879', '1876'), 'folkestone-rfc': ('1929', '1973'),
          'solihull-rfc': ('1924', '1933'), 'eccles-salford-arlfc': ('1921', '1977')}
 
@@ -36,6 +37,9 @@ def section_html(sec):
 def apply(fn, secs):
     path = os.path.join(ROOT, fn)
     s = open(path, encoding='utf-8').read()
+    for old in RETIRED.get(fn, []):
+        s = re.sub(r'<section class="guide-sec" id="%s".*?</section>\s*' % re.escape(old), '', s, count=1, flags=re.S)
+        s = re.sub(r'<li><a href="#%s">.*?</a></li>' % re.escape(old), '', s, count=1)
     for sec in secs:
         s = re.sub(r'<section class="guide-sec" id="%s".*?</section>\s*' % re.escape(sec['id']), '', s, count=1, flags=re.S)
         s = re.sub(r'<li><a href="#%s">.*?</a></li>' % re.escape(sec['id']), '', s, count=1)
