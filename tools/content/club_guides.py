@@ -61,16 +61,6 @@ Rosslyn Park has stayed in the top three tiers or just below for most of the lea
 
 The Rock sits next to the Roehampton Club on the edge of Richmond Park, so there is little street parking. Plan to use public transport on busy match days.
 '''),
-        dict(id='london-league', h2='Are there rugby league clubs in London?',
-             answer='Yes, but far fewer than rugby union clubs. Our directory lists two rugby league clubs in London: London Broncos and London Skolars. Rosslyn Park is a rugby union club, so for rugby league clubs in London use the pages below.',
-             md='''
-People searching for rugby league clubs in London sometimes land on union club pages like this one, so here is the quick route:
-
-- [London Broncos](club/london-broncos.html), the professional club.
-- [London Skolars](club/london-skolars.html), the community club.
-- [All rugby clubs in London](rugby-clubs-london.html), covering both codes.
-- [All UK rugby league clubs](rugby-league.html), if you are open to travelling.
-'''),
     ],
     faqs=[
         ('What league do Rosslyn Park play in?', 'In 2026-27 Rosslyn Park\'s first XV plays in National League 1, according to England Rugby. That is the third tier of English rugby union.'),
@@ -278,21 +268,12 @@ The Birmingham & Solihull name has been used by three separate rugby clubs, whic
 
 The old ground at Sharmans Cross Road was left in 2010 after relegation from the Championship, and the site has stood unused since. The former clubhouse was damaged by fire in 2014.
 '''),
-        dict(id='where-to-play', h2='Which rugby clubs are in and near Birmingham?',
-             answer='Birmingham has more than a dozen rugby union clubs in our directory, from Moseley and Birmingham & Solihull to Bournville, Camp Hill and Sutton Coldfield. If you want rugby near Birmingham, start with the table below and then check training nights with the club.',
+        dict(id='where-to-play', h2='Where to play rugby near Solihull today',
+             answer='For rugby near Solihull today, Edwardian FC has its own ground on Streetsbrook Road, and Birmingham & Solihull RFC plays at Portway. Our Birmingham rugby clubs page compares every club in the area, including Moseley, Bournville, Camp Hill and Sutton Coldfield.',
              md='''
-| Club | Town |
-|---|---|
-| [Birmingham & Solihull RFC](club/birmingham-solihull-rfc.html) | Birmingham |
-| [Birmingham Moseley](club/birmingham-moseley.html) and [Moseley Rugby Club](club/moseley-rugby-club.html) | Birmingham |
-| [Bournville RFC](club/bournville-rfc.html) | Birmingham |
-| [Camp Hill RFC](club/camp-hill-rfc.html) | Shirley |
-| [Edwardian FC](club/edwardian-fc.html) | Solihull |
-| [Harborne RFC](club/harborne-rfc.html) | Birmingham |
-| [Sutton Coldfield RFC](club/sutton-coldfield-rfc.html) | Sutton Coldfield |
-| [Yardley & District RFC](club/yardley-district-rfc.html) | Birmingham |
-
-Our [Birmingham rugby clubs page](rugby-clubs-birmingham.html) compares them all, including women's and junior sections.
+- [Edwardian FC](club/edwardian-fc.html), Solihull
+- [Birmingham & Solihull RFC](club/birmingham-solihull-rfc.html), Portway
+- [All rugby clubs in Birmingham](rugby-clubs-birmingham.html)
 '''),
     ],
     faqs=[
@@ -602,8 +583,8 @@ Area guides: [Manchester](rugby-clubs-manchester.html), [Lancashire](rugby-clubs
 
 # ---------------------------------------------------------------------------------------------
 CLUBS['leeds-rhinos'] = dict(
-    title='Leeds Rhinos: Address, History & Leeds Rugby Union Clubs',
-    meta='Leeds Rhinos, founded 1870, play Super League at Headingley Stadium, LS6 3BR. Get the address, club facts and details of Leeds rugby union side Tykes.',
+    title='Leeds Rhinos: Address, Club History & Headingley Ground',
+    meta='Leeds Rhinos, founded 1870, play Super League at Headingley Stadium, LS6 3BR. Get the address, club facts, honours and how Leeds Tykes fit in.',
     about=[
         'Leeds Rhinos are a professional rugby league club in Leeds, West Yorkshire, founded in 1870 as Leeds St John\'s. They play in Super League at Headingley Stadium, St Michael\'s Lane, Leeds LS6 3BR.',
         'The Rhinos are a rugby league club. The city\'s rugby union club is Leeds Tykes, which plays in National League 1.',
@@ -629,18 +610,10 @@ CLUBS['leeds-rhinos'] = dict(
 
 The Rhinos are a professional club and do not run open-age teams for beginners. For amateur rugby league in Leeds, see East Leeds, West Leeds, Hunslet Warriors and Bramley Buffaloes on our [Leeds rugby clubs page](rugby-clubs-leeds.html).
 '''),
-        dict(id='leeds-union', h2='Is there a Leeds rugby union team?',
-             answer='Yes. Leeds Tykes is Leeds\' rugby union club and plays in National League 1, the third tier of English rugby, at The Sycamores in Bramhope. It was formed in 1991 as Leeds RUFC from the merger of Roundhay and Headingley, and its history is closely tied to the Rhinos.',
+        dict(id='leeds-union', h2='Rhinos or Tykes: league and union in Leeds',
+             answer='Leeds Rhinos play rugby league. Leeds\' rugby union club is Leeds Tykes, in National League 1 at The Sycamores, Bramhope. Both clubs sit under Leeds Rugby Limited, but they are separate teams, and our Leeds rugby clubs page lists every league and union club in the city.',
              md='''
-| Detail | Leeds Rhinos | Leeds Tykes |
-|---|---|---|
-| Code | Rugby league | Rugby union |
-| Competition | Super League | National League 1 (2026-27) |
-| Ground | Headingley Stadium | The Sycamores, Bramhope |
-| Founded | 1870 | 1991 (as Leeds RUFC) |
-| Link | Both clubs came together under Leeds Rugby Limited in 1998 | Played at Headingley from 1996 and later moved to The Sycamores |
-
-For union clubs at every level in the city, including Roundhay and Otley, use our [Leeds rugby clubs page](rugby-clubs-leeds.html) and the [rugby union directory](rugby-union.html).
+This page covers Leeds Rhinos only. For every club in the city, union and league, with leagues and grounds, go to [rugby clubs in Leeds](rugby-clubs-leeds.html).
 '''),
         dict(id='rhinos-address', h2='What is the Leeds Rhinos address?',
              answer='The address is Headingley Stadium, St Michael\'s Lane, Leeds LS6 3BR. The ground is in Headingley, about two miles north-west of Leeds city centre, and shares its site with the cricket ground. For ticket office hours and match-day travel, check the official club website before you go.',

@@ -65,27 +65,11 @@ CLUBS_EXTRA = [
 
 Compare these clubs by town on our [Lancashire rugby clubs page](rugby-clubs-lancashire.html) and our [Cheshire rugby clubs page](rugby-clubs-cheshire.html). Greater Manchester and Merseyside clubs, which many people count as part of the North West, are on the [Manchester](rugby-clubs-manchester.html) and [Merseyside](rugby-clubs-merseyside.html) pages.
 '''),
-    dict(id='rfu-rfl-finder', h2='RFU, RFL and club finders: who runs your club?',
-         answer='The RFU (Rugby Football Union) governs rugby union in England, and the RFL (Rugby Football League) governs rugby league. A club is affiliated to one or the other, so a "clubs RFU" search finds union clubs and an RFL club finder finds league clubs. Our directory covers both in one list.',
+    dict(id='rugby-divisions', h2='Rugby divisions: where to see every league',
+         answer='Every club profile shows the division the club plays in for 2026-27. For how the divisions connect, use our guide to rugby leagues in the UK for both codes, or the RFU league structure page for English rugby union.',
          md='''
-| Question | Rugby union | Rugby league |
-|---|---|---|
-| Governing body in England | RFU (England Rugby) | RFL |
-| Other UK nations | Scottish Rugby, Welsh Rugby Union, IRFU | Scotland, Wales and Ireland rugby league are run by their own bodies |
-| Typical club name | RFC, RUFC or FC | ARLFC, RLFC or a nickname |
-| Where English union leagues are listed | [Rugby union league structure](rugby-union-league-structure.html) | [Rugby league in the UK](rugby-leagues-uk.html) |
-
-Both governing bodies run their own club finders. They only show clubs that have registered with them, so use them alongside this directory to double-check a club\'s fixtures and affiliation: [England Rugby](https://www.englandrugby.com/) for union and [rugby-league.com](https://www.rugby-league.com/) for league.
-'''),
-    dict(id='rugby-divisions', h2='Rugby divisions and the England RFU leagues in short',
-         answer='England\'s RFU leagues run from PREM Rugby (level 1) and Champ Rugby (level 2) through the National Leagues to the Regional and Counties divisions. Rugby league has its own divisions: Super League at the top, with the Championship, League 1 and community leagues below it.',
-         md='''
-- **Union, national:** PREM Rugby (1), Champ Rugby (2), National League 1 (3), National League 2 (4).
-- **Union, regional and county:** Regional 1 (5), Regional 2 (6), Counties 1 to Counties 4 (7 to 10), run by each region and county.
-- **League, professional and semi-professional:** Super League, then the Championship and League 1.
-- **League, amateur:** community leagues, including the NCRL National Premier League.
-
-Our [league structure guide](rugby-union-league-structure.html) explains promotion and relegation, and every club profile lists the league the club plays in for 2026-27 where England Rugby confirms it.
+- [Rugby leagues in the UK](rugby-leagues-uk.html): union and league, every level.
+- [English RFU league structure](rugby-union-league-structure.html): PREM Rugby down to Counties 4.
 '''),
 ]
 
@@ -123,13 +107,10 @@ More on the [Hampshire rugby clubs page](rugby-clubs-hampshire.html). Club offic
 
 # ------------------------------------------------------------------ rugby-union.html
 UNION_EXTRA = [
-    dict(id='rfu-leagues', h2='English RFU leagues and the rugby teams list',
-         answer='English RFU leagues are the competitions run by the Rugby Football Union, from PREM Rugby at the top to Counties 4 at level 10. Every club profile in our rugby teams list shows the league the club plays in for 2026-27 where England Rugby has confirmed it.',
+    dict(id='rfu-leagues', h2='The rugby teams list and RFU leagues',
+         answer='Every club in this rugby teams list shows the RFU league it plays in for 2026-27 where England Rugby has confirmed it. For how those leagues fit together, see our English RFU league structure guide.',
          md='''
-Use the rugby teams list on this page to compare clubs by region, then open any club profile to see its league, ground and contact route. Clubs that play in the same RFU league are usually within a reasonable travelling distance of each other, so the league also tells you who your fixtures will be against.
-
-- [English rugby union league structure](rugby-union-league-structure.html): levels, promotion and relegation.
-- [Rugby clubs by county](clubs.html): the full directory with filters.
+Clubs in the same league are usually within reasonable travelling distance, so the league also tells you who your fixtures will be against. Full detail on levels, promotion and relegation: [English rugby union league structure](rugby-union-league-structure.html).
 '''),
     dict(id='first-session', h2='Join a rugby club: what happens at your first session',
          answer='When you join a rugby club, you normally turn up to a training session, meet the coach and play non-contact drills first. The club then registers you with the RFU, which you do through the club, so contact the club first to confirm the training night.',
@@ -145,15 +126,6 @@ Not sure which club? Start with our guide to [how to join a rugby union club](#j
 
 # ------------------------------------------------------------------ rugby-league.html
 LEAGUE_EXTRA = [
-    dict(id='uk-rugby-leagues', h2='UK rugby leagues and rugby leagues in the UK',
-         answer='UK rugby leagues are the competitions that make up rugby league in England, from Super League down to community leagues. Most clubs are in Yorkshire, Lancashire, Cheshire and Cumbria, with a handful in London, the Midlands and the South West. This page lists the clubs in our directory.',
-         md='''
-- **Professional and semi-professional:** Super League, the Championship and League 1.
-- **Community:** the NCRL National Premier League and the leagues beneath it.
-- **Other UK nations:** Wales, Scotland and Ireland run their own rugby league competitions.
-
-How the divisions connect is explained in [rugby leagues in the UK](rugby-leagues-uk.html), and rugby union has a parallel pyramid in [the RFU league structure](rugby-union-league-structure.html).
-'''),
     dict(id='leeds-league-clubs', h2='Rugby league clubs in Leeds',
          answer=f'Leeds has {len(leeds_l)} rugby league clubs in our directory: Leeds Rhinos in Super League, plus Hunslet RLFC and the amateur clubs East Leeds, West Leeds, Bramley Buffaloes, Hunslet Warriors, Oulton Raiders and Stanningley.',
          md=f'''
@@ -161,12 +133,11 @@ How the divisions connect is explained in [rugby leagues in the UK](rugby-league
 
 Leeds Rhinos are a professional club. Beginners should look at the amateur clubs. More on the [Leeds rugby clubs page](rugby-clubs-leeds.html), which covers rugby union in the city as well.
 '''),
-    dict(id='rfu-affiliated', h2='RFU affiliated clubs and rugby union clubs',
-         answer='RFU affiliated clubs are rugby union clubs registered with the Rugby Football Union in England. This page covers rugby league clubs, which are governed by the RFL instead, so for RFU affiliated clubs and any UK rugby union club, use our rugby union pages.',
+    dict(id='rfu-affiliated', h2='RFU affiliated clubs are rugby union clubs',
+         answer='RFU affiliated clubs are rugby union clubs registered with the Rugby Football Union. Rugby league clubs are governed by the RFL, so use our rugby union page for RFU affiliated clubs. For how both codes\' leagues fit together, read rugby leagues in the UK.',
          md='''
-- [UK rugby union clubs](rugby-union.html): the union list, with each club\'s league.
-- [All UK rugby clubs](clubs.html): union and league together.
-- [English rugby union league structure](rugby-union-league-structure.html): how RFU leagues are organised.
+- [UK rugby union clubs](rugby-union.html), each with its RFU league.
+- [Rugby leagues in the UK](rugby-leagues-uk.html), both codes.
 '''),
 ]
 
