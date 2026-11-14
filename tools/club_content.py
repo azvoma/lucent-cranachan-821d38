@@ -259,6 +259,11 @@ def main():
             s = s[:i] + block + '\n        ' + s[i:]
         # title
         t = new_title(c, None)
+        try:  # hand-written titles (tools/content/club_guides.py) win over the generated form
+            from club_guides import CLUBS as _CG
+            t = _CG[slug]['title'] if slug in _CG else t
+        except ImportError:
+            pass
         if t:
             from guide_render import set_head
             s = set_head(s, t)
@@ -305,4 +310,5 @@ def main():
 if __name__ == '__main__':
     import sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'content'))
     main()

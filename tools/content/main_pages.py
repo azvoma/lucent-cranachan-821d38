@@ -264,7 +264,7 @@ Popular area pages:
 
 LEAGUE = dict(
     file='rugby-league.html',
-    title='Rugby League Clubs & Teams Near Me: 101 UK Clubs',
+    title='UK Rugby League Clubs & Teams Near Me: All 101 Clubs',
     meta='Find rugby league clubs near you: 101 UK rugby league teams, from the 14 Super League clubs to amateur ARLFC sides in Yorkshire, Lancashire and Cumbria.',
     h1='Rugby League Clubs &amp; Teams UK',
     updated=UPDATED,
@@ -345,5 +345,10 @@ For both codes side by side, including rugby union's leagues, see [rugby leagues
     ],
     related=[('rugby-leagues-uk.html', 'Rugby leagues in the UK'), ('rugby-union.html', 'Rugby union clubs'), ('clubs.html', 'All rugby clubs')],
 )
+
+from content import extras as _x  # noqa: E402  (keyword-gap sections added 14 Nov 2026)
+for _g, _e in ((HOME, _x.HOME_EXTRA), (CLUBS, _x.CLUBS_EXTRA), (UNION, _x.UNION_EXTRA), (LEAGUE, _x.LEAGUE_EXTRA)):
+    _g['sections'] = list(_g['sections']) + _e
+    _g['updated'] = _x.UPDATED
 
 PAGES = [HOME, CLUBS, UNION, LEAGUE]

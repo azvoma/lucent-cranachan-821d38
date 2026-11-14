@@ -599,3 +599,8 @@ Old Leamingtonians are often shortened to "OLRFC" or "Old Leams". Search either 
 '''),
         ]),
 }
+
+
+from content import extras as _x  # noqa: E402  (South West keyword sections added 14 Nov 2026)
+HUB_GUIDES['south-west-rugby-clubs']['sections'] = list(HUB_GUIDES['south-west-rugby-clubs']['sections']) + _x.SW_EXTRA
+HUB_GUIDES['south-west-rugby-clubs']['updated'] = _x.UPDATED
