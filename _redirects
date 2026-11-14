@@ -20,8 +20,8 @@
 /netlify/*          /404.html   404!
 
 # ─── Blog (rewrite, not redirect — serve blog.html at /blog) ──────────────────
-/blog        /blog.html    200
-/blog/       /blog.html    200
+/blog         /blog/index.html  200
+/blog/        /blog/index.html  200
 
 # ─── CANONICAL FIX: Club extensionless → .html (301) ─────────────────────────
 # Fixes 620 non-indexable /club/:slug URLs crawled by Google as duplicates.
@@ -566,17 +566,25 @@
 /cookie-policy/     /cookie-policy.html     301!
 /terms-of-service/  /terms-of-service.html  301!
 /privacy-policy/    /privacy-policy.html    301!
-/contact-success/   /contact-success.html   301!
-/register-success/  /register-success.html  301!
 /club/*/            /club/:splat.html       301!
+
+# ─── Mis-pathed /club/<main-page>.html URLs → root pages (GSC 404 fix) ─
+/club/rugby-union.html  /rugby-union.html  301!
+/club/rugby-league.html  /rugby-league.html  301!
+/club/register.html  /register.html  301!
+/club/contact-us.html  /contact-us.html  301!
+/club/clubs.html  /clubs.html  301!
+/club/cookie-policy.html  /cookie-policy.html  301!
+/club/privacy-policy.html  /privacy-policy.html  301!
+/club/terms-of-service.html  /terms-of-service.html  301!
+/club/about.html  /about.html  301!
+/club/claim.html  /claim.html  301!
+/club/index.html  /  301!
 
 # ─── Legacy redirects ─────────────────────────────────────────────────────────
 /rugbyjoints                    /rugby-joints.html              301
 /contact                        /contact-us.html                301
-/club/hull-kingston-rovers      /club/hull-kr.html              301
-/club/hull-kingston-rovers.html /club/hull-kr.html              301
 /club/canterbury-equipment      /club/canterbury-nz.html        301
-/club/rugby-world-magazine      /club/rugby-world.html          301
 /club/york-knights/             /club/york-knights.html         301
 /club/harlequins/               /club/harlequins.html           301
 /club/exeter-chiefs/            /club/exeter-chiefs.html        301
