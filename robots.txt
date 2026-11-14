@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /404.html
+Disallow: /*?region=
+Disallow: /*?q=
 
 Sitemap: https://ukrugbyclubdirectory.co.uk/sitemap.xml
