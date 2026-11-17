@@ -4005,3 +4005,5 @@ details.faq-item > summary { padding: .9rem 0; }
 .photo-empty-s { font-size: .78rem; color: var(--text-muted); }
 .photo-badge { display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 2; border-radius: 10px; border: 1px solid var(--border); background: #fff; padding: 1rem; }
 .photo-badge img { max-height: 100%; max-width: 70%; width: auto; height: auto; object-fit: contain; }
+.about-more p { margin: .75rem 0 0; }
+.matchday-card .matchday-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; font-size: .875rem; line-height: 1.55; }
