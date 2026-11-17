@@ -1,0 +1,23 @@
+{
+  "_note": "Monetisation and behaviour switches for the club profile template. All affiliate URLs are PLACEHOLDERS on the reserved .invalid domain: replace with real tracked links before launch. Every monetised element is rendered with rel=\"sponsored nofollow noopener\" and a visible disclosure label.",
+  "site_url": "https://ukrugbyclubdirectory.co.uk",
+  "contact_email": "hello@ukrugbyclubdirectory.co.uk",
+  "demo_forms": true,
+  "monetisation": {
+    "enabled": true,
+    "sidebar_slot": "travel",
+    "gear_strip": {
+      "enabled": true,
+      "url_3g": "https://partner.invalid/rugby-boots-moulded?utm_source=ukrcd&utm_medium=club-profile&club={slug}",
+      "url_grass": "https://partner.invalid/rugby-boots-soft-ground?utm_source=ukrcd&utm_medium=club-profile&club={slug}"
+    },
+    "travel": { "url": "https://partner.invalid/hotels?lat={lat}&lng={lng}&radius=3mi&utm_source=ukrcd&club={slug}" },
+    "injury_cover": { "url": "https://partner.invalid/sports-injury-cover?utm_source=ukrcd&club={slug}" },
+    "streaming": { "url": "https://partner.invalid/watch-rugby-live?utm_source=ukrcd&club={slug}" },
+    "local_partner": { "url": "https://partner.invalid/local-stays-eats?postcode={postcode}&utm_source=ukrcd&club={slug}" }
+  },
+  "b2b": {
+    "upgrade_url": "../pricing.html",
+    "sponsor_url": "../contact-us.html?subject=Sponsor%20a%20club%20page"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "_note": "MOCK DATA ONLY. Brackenfield Vale RFC is a fictional club used to test every section of the club profile template. Replace with a real club record to generate a live page.",
+  "slug": "brackenfield-vale-rfc",
+  "name": "Brackenfield Vale RFC",
+  "code": "Rugby Union",
+  "division": "Midlands 3 East (North)",
+  "town": "Brackenfield",
+  "county": "Derbyshire",
+  "region_url": "../rugby-union.html",
+  "founded": 1921,
+  "crest": null,
+  "claimed": false,
+  "ground": {
+    "name": "Vale Park Rugby Ground",
+    "address": "Vale Park, Church Lane, Brackenfield",
+    "postcode": "DE55 7XX",
+    "lat": 53.1245,
+    "lng": -1.4203,
+    "surface": "3G",
+    "station": { "name": "Alfreton", "walk_mins": 32 }
+  },
+  "governing_body": "RFU",
+  "colours": "Black and amber hoops",
+  "nickname": "The Valesmen",
+  "leadership": [
+    { "role": "Director of Rugby", "name": "Dave Marsden" },
+    { "role": "1st XV Captain", "name": "Callum Rhodes" }
+  ],
+  "website": "https://example.com/brackenfield-vale-rfc",
+  "socials": {
+    "facebook": "https://facebook.com/example-brackenfield-vale",
+    "instagram": "https://instagram.com/example_brackenfield_vale",
+    "x": ""
+  },
+  "teams": [
+    {
+      "key": "mens",
+      "label": "Men's XVs",
+      "summary": "1st, 2nd and Vets XV playing Saturday league and friendly rugby.",
+      "sessions": [{ "days": "Tuesdays & Thursdays", "time": "19:00–20:30", "note": "Senior squad training" }],
+      "beginner_policy": "New players and beginners welcome — just turn up in boots and a gumshield.",
+      "contact": "Dave Marsden, Director of Rugby"
+    },
+    {
+      "key": "womens",
+      "label": "Women's XV",
+      "summary": "Women's XV and a social touch squad, all abilities.",
+      "sessions": [{ "days": "Wednesdays", "time": "19:00–20:30", "note": "Contact and skills" }],
+      "beginner_policy": "No experience needed. Loan boots and bibs available for first sessions.",
+      "contact": "Priya Nair, Women's Rugby Lead"
+    },
+    {
+      "key": "colts",
+      "label": "Colts / U18s",
+      "summary": "U17 and U18 boys bridging the gap into senior rugby.",
+      "sessions": [{ "days": "Wednesdays", "time": "18:30–20:00", "note": "" }, { "days": "Sundays", "time": "10:30–12:00", "note": "Match days alternate" }],
+      "beginner_policy": "Players new to the game can join a trial session; safeguarding forms required.",
+      "contact": "Mark Ellis, Colts Organiser"
+    },
+    {
+      "key": "minis",
+      "label": "Minis & Juniors (U6–U16)",
+      "summary": "Age-grade sections from U6 to U16, September to April.",
+      "sessions": [{ "days": "Sundays", "time": "10:00–11:30", "note": "September–April, all age groups" }],
+      "beginner_policy": "First three sessions free. All coaches RFU-accredited and DBS-checked.",
+      "contact": "Rachel Cole, Minis Chair"
+    },
+    {
+      "key": "touch",
+      "label": "Touch / Walking Rugby",
+      "summary": "Non-contact rugby for all ages and fitness levels.",
+      "sessions": [{ "days": "Fridays", "time": "10:30–11:30", "note": "Walking rugby" }, { "days": "Mondays", "time": "19:00–20:00", "note": "Touch, summer months" }],
+      "beginner_policy": "Everyone welcome. No contact, no experience necessary.",
+      "contact": "Reception: info via the enquiry form"
+    }
+  ],
+  "standing": { "position": 4, "of": 12, "played": 9, "points": 31, "form": ["W", "W", "L", "W", "D"] },
+  "fixtures": [
+    { "date": "2026-11-21", "ko": "14:30", "opponent": "Ashworth Heath RFC", "venue": "H" },
+    { "date": "2026-11-28", "ko": "14:30", "opponent": "Dunsmere RFC", "venue": "A" },
+    { "date": "2026-12-05", "ko": "14:30", "opponent": "Kelbrook Park RFC", "venue": "H" },
+    { "date": "2026-12-12", "ko": "14:30", "opponent": "Stoneleigh Vale RFC", "venue": "A" }
+  ],
+  "matchday": {
+    "parking": "Free on-site car park (approx. 60 spaces) with overflow on the lower field on busy days.",
+    "bar_food": "Clubhouse bar open from 12:30 on match days. Post-match hot food, tea and coffee served from the kitchen hatch.",
+    "comfort": "Covered stand for around 150, floodlights on the main pitch, step-free access from the car park.",
+    "dogs": "Dogs welcome on leads",
+    "notes": "Visiting teams change in the main clubhouse with hot showers. Please check in with the fixtures secretary on arrival. The ground is a short signposted walk from the village centre, and the bus stop on Church Lane is two minutes away. Home fixtures usually kick off at 14:30 unless stated; the club posts any weather or pitch inspection updates on Facebook by 10:00 on match days."
+  },
+  "history": {
+    "text": "Brackenfield Vale Rugby Football Club was founded in 1921 by a group of colliery clerks, farm workers and returning servicemen who wanted a winter game for the village. Early fixtures were played on a rented field behind the Fox and Hounds, with the changing rooms little more than a hired marquee. The club moved to its present home at Vale Park in 1958 after a local landowner agreed to lease the ground for a peppercorn rent, and volunteers built the first clubhouse over three summers. The black and amber hoops have been worn without a break since the 1930s.\n\nThrough the 1970s and 1980s the club built a strong reputation for its colts section, sending a steady stream of players to county and divisional sides. A women's team was established in 2012 and now fields a full XV each season, and the minis section has grown to more than 150 registered children. Floodlights were installed in 2004 and the 3G training pitch opened in 2022, funded by a community appeal and a sports foundation grant.\n\nToday Brackenfield Vale is run entirely by volunteers and remains the social centre of the village on Saturdays.",
+    "honours": [
+      "Midlands 4 East (North) champions, 2018–19",
+      "Derbyshire Vase winners, 2015 and 2023",
+      "Derbyshire Colts Cup winners, 1986, 1994, 2011",
+      "RFU Community Club of the Year (East Midlands), 2022"
+    ],
+    "alumni": [
+      { "name": "Sam Oduya", "note": "Midlands U20 representative, 2011" },
+      { "name": "Ellie Hartley", "note": "England Counties Women's squad, 2019" },
+      { "name": "Joe Tindall", "note": "Notts, Lincs & Derbyshire county captain, 2005" }
+    ]
+  },
+  "ratings": {
+    "count": 38,
+    "overall": 4.4,
+    "bars": { "atmosphere": 4.6, "pitch": 4.1, "welcome": 4.8, "food": 4.2 }
+  },
+  "sponsors": [
+    { "name": "Hartley & Sons Builders", "tier": "Principal partner", "url": "https://example.com/hartley" },
+    { "name": "Vale Garage", "tier": "Kit sponsor", "url": "https://example.com/vale-garage" },
+    { "name": "The Fox & Hounds", "tier": "Club partner", "url": "https://example.com/fox-hounds" }
+  ],
+  "nearby_10mi": [
+    { "name": "Ashworth Heath RFC", "slug": "", "distance_mi": 3.2, "code": "Rugby Union", "division": "Midlands 3 East (North)" },
+    { "name": "Dunsmere RFC", "slug": "", "distance_mi": 5.6, "code": "Rugby Union", "division": "Midlands 4 East (North)" },
+    { "name": "Kelbrook Park RFC", "slug": "", "distance_mi": 7.1, "code": "Rugby Union", "division": "Midlands 3 East (North)" },
+    { "name": "Marlow Street ARLFC", "slug": "", "distance_mi": 9.4, "code": "Rugby League", "division": "Midlands Amateur League" }
+  ],
+  "same_division": [
+    { "name": "Stoneleigh Vale RFC", "slug": "", "distance_mi": 14.8, "code": "Rugby Union", "division": "Midlands 3 East (North)" },
+    { "name": "Ashworth Heath RFC", "slug": "", "distance_mi": 3.2, "code": "Rugby Union", "division": "Midlands 3 East (North)" },
+    { "name": "Kelbrook Park RFC", "slug": "", "distance_mi": 7.1, "code": "Rugby Union", "division": "Midlands 3 East (North)" },
+    { "name": "Thornley Moor RFC", "slug": "", "distance_mi": 21.0, "code": "Rugby Union", "division": "Midlands 3 East (North)" }
+  ]
+}
