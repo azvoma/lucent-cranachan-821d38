@@ -3914,3 +3914,79 @@ a:focus-visible, button:focus-visible { outline: 3px solid #ee6c4d; outline-offs
 .glance-table tr:nth-child(even) td { background: #fff; }
 .club-glance .guide-answer { margin-bottom: 1rem; }
 .glance-src { font-size: .8rem; color: #5b6573; margin-top: -.5rem; }
+
+/* ═══════════════════════════════════════════════════════════
+   NOV 2026 — FAQ accordions, venue hire, matchday, tidy-ups
+   (generated markup comes from tools/enhance_site.py)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── FAQ accordion (native <details>: works without JS, text stays in the DOM) ── */
+details.faq-item { border-bottom: 1px solid #d0d0d0; margin: 0; }
+details.faq-item:first-child { border-top: 2px solid var(--navy); }
+details.faq-item > summary { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding: 1.1rem 0; cursor: pointer; list-style: none; }
+details.faq-item > summary::-webkit-details-marker { display: none; }
+details.faq-item > summary h3 { margin: 0; font-family: 'Oswald', system-ui, sans-serif; font-size: .98rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--navy); line-height: 1.35; transition: color .15s; }
+details.faq-item > summary::after { content: ""; flex-shrink: 0; width: .55rem; height: .55rem; border-right: 2px solid var(--navy); border-bottom: 2px solid var(--navy); transform: rotate(45deg); transition: transform .2s, border-color .15s; margin-top: -.2rem; }
+details.faq-item[open] > summary::after { transform: rotate(-135deg); margin-top: .2rem; border-color: var(--violet); }
+details.faq-item > summary:hover h3, details.faq-item[open] > summary h3 { color: var(--violet); }
+details.faq-item > summary:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+details.faq-item .faq-a { padding: 0 0 1.25rem; max-width: 760px; }
+details.faq-item .faq-a p { font-size: .95rem; color: var(--text-secondary); line-height: 1.75; margin: 0; }
+
+/* ── Homepage guide: heading + answer stay visible, the long text folds away ── */
+details.guide-more { margin-top: 1rem; border: 1px solid #d9dee5; border-radius: 10px; background: #fff; }
+details.guide-more > summary { cursor: pointer; list-style: none; padding: .8rem 1.1rem; font-family: Oswald, sans-serif; font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--violet); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+details.guide-more > summary::-webkit-details-marker { display: none; }
+details.guide-more > summary::after { content: ""; width: .55rem; height: .55rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s; margin-top: -.2rem; }
+details.guide-more[open] > summary::after { transform: rotate(-135deg); margin-top: .2rem; }
+details.guide-more > summary:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+details.guide-more > .guide-more-body { padding: .25rem 1.1rem 1.1rem; }
+
+/* ── Follow the game strip ── */
+.follow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.follow-card { display: block; background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--violet); border-radius: 8px; padding: 1rem 1.1rem; text-decoration: none; color: var(--text-primary); transition: box-shadow .15s, transform .15s; }
+.follow-card:hover { box-shadow: var(--sh2); transform: translateY(-2px); }
+.follow-card strong { display: block; font-family: Oswald, sans-serif; text-transform: uppercase; letter-spacing: .06em; font-size: .95rem; margin-bottom: .25rem; }
+.follow-card span { font-size: .84rem; color: var(--text-muted); line-height: 1.5; display: block; }
+
+/* ── Venue hire & events (compact) ── */
+.venue-compact { max-width: 860px; margin: 0 auto; text-align: center; }
+.venue-compact h2 { font-family: 'Oswald', system-ui, sans-serif; font-size: clamp(1.35rem, 2.4vw, 1.8rem); color: var(--text-primary); letter-spacing: .03em; text-transform: uppercase; margin: .4rem 0 .6rem; }
+.venue-intro { color: var(--text-secondary); line-height: 1.65; margin: 0 auto 1rem; max-width: 720px; }
+.venue-chips { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; list-style: none; margin: 0 0 1rem; padding: 0; }
+.venue-chips li { background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: .35rem .85rem; font-size: .86rem; color: var(--text-primary); }
+.venue-note { font-size: .88rem; color: var(--text-muted); line-height: 1.6; margin: 0 auto 1rem; max-width: 720px; }
+.venue-cta { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; justify-content: center; align-items: center; }
+.venue-cta a:not(.btn) { font-size: .88rem; }
+
+/* ── Matchday block ── */
+.matchday-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; }
+.matchday-list li { font-size: .98rem; color: var(--text-secondary); line-height: 1.65; padding-left: 1rem; border-left: 3px solid var(--violet-mid); }
+.matchday-list li strong { color: var(--text-primary); }
+
+/* ── Contact band: one-line intro stacks above the card instead of leaving a blank half ── */
+.join-contact-layout.join-solo { display: block; max-width: 640px; margin: 0 auto; }
+.join-contact-layout.join-solo .join-contact-left { text-align: center; margin-bottom: 1.25rem; }
+
+/* ── Nearby clubs: the "more in county" list under the cards ── */
+.nearby-more { max-width: 860px; margin: 2rem auto 0; }
+.nearby-more p { color: var(--text-secondary); line-height: 1.7; margin: 0 0 .6rem; }
+
+/* ── Club pages: tighter vertical rhythm so the extra content does not lengthen the page ── */
+.matchday-list { margin-top: .75rem; }
+#venue-hire.sec, #contact.sec, #faq.sec, #nearby.sec { padding: 2.75rem 0; }
+#venue-hire .sh, #contact .sh, #faq .sh, #nearby .sh { margin-bottom: 1.5rem; }
+#nearby .badge-area { height: 120px; padding: .9rem; }
+.nearby-more { margin-top: 1.5rem; }
+#nearby .nearby-cta { margin-top: 1.5rem; }
+details.faq-item > summary { padding: .9rem 0; }
+@media (max-width: 768px) { #venue-hire.sec, #contact.sec, #faq.sec, #nearby.sec { padding: 2rem 0; } }
+.glance-table th, .glance-table td { padding-top: .55rem; padding-bottom: .55rem; }
+.about-divider { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+@media (max-width: 600px) {
+  .venue-chips { gap: .35rem; margin-bottom: .75rem; }
+  .venue-chips li { font-size: .78rem; padding: .25rem .6rem; }
+  .venue-intro { font-size: .92rem; line-height: 1.55; margin-bottom: .75rem; }
+  .venue-note { font-size: .82rem; margin-bottom: .75rem; }
+}

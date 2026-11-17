@@ -104,6 +104,7 @@ def apply(slug, g):
         s = s[:i] + block + '\n' + s[i:]
     # extra FAQ items (replace any earlier guide-N items)
     s = re.sub(r'<div class="faq-item" data-faq="guide-\d+"[^>]*>.*?</div>', '', s, flags=re.S)
+    s = re.sub(r'<details class="faq-item[^"]*" data-faq="guide-\d+"[^>]*>.*?</details>', '', s, flags=re.S)  # accordion form (tools/enhance_site.py)
     m = re.search(r'(<section class="sec" id="faq">.*?<div style="max-width:860px;margin:0 auto">)', s, re.S)
     assert m, slug
     s = s[:m.end()] + faq_items(g, s) + s[m.end():]
