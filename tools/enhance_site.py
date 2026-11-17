@@ -447,21 +447,28 @@ def add_photos(s, slug, name):
             if os.path.exists(f):
                 found[kind] = f'../{PHOTO_DIR}/{slug}-{kind}.{ext}'
                 break
-    if len(found) < 2:
-        return s
-    import hashlib
-    h = [hashlib.md5(open(os.path.join(ROOT, v[3:]), 'rb').read()).hexdigest() for v in found.values()]
-    if h[0] == h[1]:
-        return s
+    if len(found) == 2:
+        import hashlib
+        h = [hashlib.md5(open(os.path.join(ROOT, v[3:]), 'rb').read()).hexdigest() for v in found.values()]
+        if h[0] == h[1]:
+            found.pop('club')
     meta = PHOTO_META.get(slug, {})
     g_alt = esc(meta.get('ground_alt') or f'{name} home ground')
     c_alt = esc(meta.get('club_alt') or f'{name} players and clubhouse')
     credit = meta.get('credit')
     cap = f'<p class="club-photos-credit">{esc(credit)}</p>' if credit else ''
+    def fig(kind, label, alt):
+        if kind in found:
+            return (f'<figure><img src="{found[kind]}" alt="{alt}" width="800" height="533" loading="lazy" decoding="async">'
+                    f'<figcaption>{label}</figcaption></figure>')
+        what = 'stadium and facilities' if kind == 'ground' else 'club and players'
+        return (f'<figure><a class="photo-empty" href="../claim.html" aria-label="Send us a photo of the {esc(name)} {what}">'
+                f'<span class="photo-empty-ico" aria-hidden="true">&#128247;</span>'
+                f'<span class="photo-empty-t">{label}: photo coming soon</span>'
+                f'<span class="photo-empty-s">Club official? Send us a photo</span></a><figcaption>{label}</figcaption></figure>')
     block = (f'<div class="about-block club-photos" id="club-photos"><div class="club-photos-grid">'
-             f'<figure><img src="{found["ground"]}" alt="{g_alt}" width="800" height="533" loading="lazy" decoding="async"><figcaption>The ground</figcaption></figure>'
-             f'<figure><img src="{found["club"]}" alt="{c_alt}" width="800" height="533" loading="lazy" decoding="async"><figcaption>The club</figcaption></figure>'
-             f'</div>{cap}</div>\n        ')
+             + fig('ground', 'Stadium &amp; facilities', g_alt) + fig('club', 'The club', c_alt)
+             + f'</div>{cap}</div>\n        ')
     k = s.find('<!--glance-->')
     if k < 0:
         return s
