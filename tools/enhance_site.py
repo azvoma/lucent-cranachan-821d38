@@ -390,6 +390,7 @@ def enhance_club(path, rec, contacts, grounds, ER):
     s = strip_gallery(s)
     s = strip_history_tiles(s)
     s = merge_nearby(s, rec)
+    s = add_photos(s, rec['slug'], rec.get('name') or rec['slug'])
     if is_team:
         s = add_venue(s, rec, pro)
         s = add_ground(s, rec, c, g, er)
@@ -429,9 +430,72 @@ FOLLOW = '''<!-- FOLLOW THE GAME -->
 '''
 
 
+PHOTO_DIR = 'imgs/clubs'
+
+
+def add_photos(s, slug, name):
+    """Two-image gallery (ground + club) straight after the About block.
+    Only rendered when BOTH files exist and are different, so no empty placeholders ever ship.
+    Files: imgs/clubs/<slug>-ground.(webp|jpg) and imgs/clubs/<slug>-club.(webp|jpg)
+    Optional captions/credits: tools/club-photos.csv (slug,ground_alt,club_alt,credit)."""
+    if 'id="club-photos"' in s:
+        return s
+    found = {}
+    for kind in ('ground', 'club'):
+        for ext in ('webp', 'jpg', 'jpeg', 'png'):
+            f = os.path.join(ROOT, PHOTO_DIR, f'{slug}-{kind}.{ext}')
+            if os.path.exists(f):
+                found[kind] = f'../{PHOTO_DIR}/{slug}-{kind}.{ext}'
+                break
+    if len(found) < 2:
+        return s
+    import hashlib
+    h = [hashlib.md5(open(os.path.join(ROOT, v[3:]), 'rb').read()).hexdigest() for v in found.values()]
+    if h[0] == h[1]:
+        return s
+    meta = PHOTO_META.get(slug, {})
+    g_alt = esc(meta.get('ground_alt') or f'{name} home ground')
+    c_alt = esc(meta.get('club_alt') or f'{name} players and clubhouse')
+    credit = meta.get('credit')
+    cap = f'<p class="club-photos-credit">{esc(credit)}</p>' if credit else ''
+    block = (f'<div class="about-block club-photos" id="club-photos"><div class="club-photos-grid">'
+             f'<figure><img src="{found["ground"]}" alt="{g_alt}" width="800" height="533" loading="lazy" decoding="async"><figcaption>The ground</figcaption></figure>'
+             f'<figure><img src="{found["club"]}" alt="{c_alt}" width="800" height="533" loading="lazy" decoding="async"><figcaption>The club</figcaption></figure>'
+             f'</div>{cap}</div>\n        ')
+    k = s.find('<!--glance-->')
+    if k < 0:
+        return s
+    bump('photos')
+    return s[:k] + block + s[k:]
+
+
+HOME_REMOVE = ['union-or-league', 'areas-guide', 'areas', 'beginners', 'leagues', 'about-directory',
+               'rugby-teams', 'england-teams', 'sources', 'england-rugby-league-teams',
+               'gloucestershire-clubs', 'lymington-mariners']
+
+
+def remove_home_sections(s):
+    """Owner request: drop these guide sections (and their TOC links) from the homepage only."""
+    n = 0
+    for sid in HOME_REMOVE:
+        m = re.search(r'<section class="guide-sec"[^>]*\bid="%s"[^>]*>' % re.escape(sid), s)
+        if not m:
+            continue
+        end = s.find('</section>', m.end())
+        if end < 0 or '<section' in s[m.end():end]:
+            continue
+        s = s[:m.start()] + s[end + len('</section>'):].lstrip('\n')
+        s = re.sub(r'<li><a href="#%s">.*?</a></li>' % re.escape(sid), '', s, count=1)
+        n += 1
+    if n:
+        bump('home_sections_removed', n)
+    return s
+
+
 def enhance_home(path):
     s = read(path)
     orig = s
+    s = remove_home_sections(s)
 
     def fold(m):
         full, idattr, sid, aria, _, h2, title, body = (m.group(0), m.group(1), m.group(2), m.group(3), m.group(4), m.group(5), m.group(6), m.group(7))
@@ -493,6 +557,20 @@ def load_grounds():
             if r.get('slug'):
                 rows[r['slug']] = r
     return rows
+
+
+def load_photo_meta():
+    rows = {}
+    p = os.path.join(HERE, 'club-photos.csv')
+    if os.path.exists(p):
+        for r in csv.DictReader(open(p, encoding='utf-8')):
+            r = {k: (v or '').strip() for k, v in r.items()}
+            if r.get('slug'):
+                rows[r['slug']] = r
+    return rows
+
+
+PHOTO_META = load_photo_meta()
 
 
 def main():
