@@ -3990,3 +3990,11 @@ details.faq-item > summary { padding: .9rem 0; }
   .venue-intro { font-size: .92rem; line-height: 1.55; margin-bottom: .75rem; }
   .venue-note { font-size: .82rem; margin-bottom: .75rem; }
 }
+
+/* Club photos: ground + club */
+.club-photos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin: 0; }
+.club-photos figure { margin: 0; }
+.club-photos img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; background: #e9edf2; }
+.club-photos figcaption { font-size: .8rem; color: var(--text-muted); margin-top: .35rem; }
+.club-photos-credit { font-size: .75rem; color: var(--text-muted); margin: .5rem 0 0; }
+@media (max-width: 520px) { .club-photos-grid { grid-template-columns: 1fr; } }
