@@ -24,7 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CFG = json.loads((ROOT / "tools/club-profile-config.json").read_text(encoding="utf-8"))
-SHELL_SRC = ROOT / "club/aireborough-rfc.html"
+SHELL_SRC = ROOT / "tools/club-page-shell.html"   # frozen copy of an original club page: header/footer source
 TODAY = datetime.date.today()
 
 # ---------------------------------------------------------------- helpers
