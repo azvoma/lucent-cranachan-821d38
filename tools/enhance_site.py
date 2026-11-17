@@ -391,9 +391,12 @@ def enhance_club(path, rec, contacts, grounds, ER):
     s = strip_history_tiles(s)
     s = merge_nearby(s, rec)
     s = add_photos(s, rec['slug'], rec.get('name') or rec['slug'])
+    s = move_history(s)
+    s = add_about_more(s, rec, pro, g)
     if is_team:
         s = add_venue(s, rec, pro)
         s = add_ground(s, rec, c, g, er)
+        s = move_matchday(s)
         s = rebuild_faq(s, rec, c, g, pro)
         s = solo_contact(s)
     else:
@@ -440,6 +443,9 @@ def add_photos(s, slug, name):
     k = s.find('<!--glance-->')
     if k < 0:
         return s
+    h = s.find('<div class="about-block" id="history">')
+    if 0 <= h < k:
+        k = h
     m = re.search(r'<img src="(\.\./badges/[^"]+)"[^>]*class="hero-badge-img"', s)
     badge = m.group(1) if m else None
     ground = None
@@ -472,6 +478,122 @@ def add_photos(s, slug, name):
              f'{cap}</div>\n        ')
     bump('photos')
     return s[:k] + block + s[k:]
+
+
+# ───────────── layout moves + longer About ─────────────
+
+def tidy_dividers(s):
+    s = s.replace('<!-- History -->', '')
+    s = re.sub(r'(<div class="about-divider"></div>\s*){2,}', '<div class="about-divider"></div>\n        ', s)
+    s = re.sub(r'<div class="about-divider"></div>\s*(</div>\s*<!-- SIDEBAR -->)', r'\1', s)
+    return s
+
+
+def move_history(s):
+    """'Our Story' goes straight under the gallery (above At a Glance)."""
+    i = s.find('<div class="about-block" id="history">')
+    g = s.find('<!--glance-->')
+    if i < 0 or g < 0 or i < g:
+        return s
+    j = find_div_block(s, i)
+    blk = s[i:j]
+    s = s[:i] + s[j:]
+    s = s[:g] + blk + '\n        ' + s[g:]
+    bump('history_moved')
+    return tidy_dividers(s)
+
+
+def move_matchday(s):
+    """Matchday leaves the main column and becomes a sidebar card above Quick Links."""
+    i = s.find('<div class="about-block" id="matchday">')
+    if i < 0:
+        return s
+    j = find_div_block(s, i)
+    blk = s[i:j]
+    lis = [li for li in re.findall(r'<li>.*?</li>', blk, re.S)
+           if not re.match(r'<li><strong>(Ground|Capacity|Fixtures)', li)]   # already in the cards above it
+    q = re.search(r'<div class="aside-card">\s*<h3>Quick Links</h3>', s)
+    s = s[:i] + s[j:]
+    if lis and q:
+        q = re.search(r'<div class="aside-card">\s*<h3>Quick Links</h3>', s)
+        card = ('<div class="aside-card matchday-card" id="matchday"><h3>Matchday &amp; travel</h3>'
+                '<ul class="matchday-list">' + ''.join(lis) + '</ul></div>\n        ')
+        s = s[:q.start()] + card + s[q.start():]
+    else:
+        s = s.replace('<li><a href="#matchday" style="color:var(--red)">→ Matchday &amp; travel</a></li>\n            ', '')
+    bump('matchday_moved')
+    return tidy_dividers(s)
+
+
+def glance(s):
+    d = {}
+    for m in re.finditer(r'<tr><th scope="row">(.*?)</th><td>(.*?)</td></tr>', s, re.S):
+        d[text_of(m.group(1))] = m.group(2)
+    return d
+
+
+def add_about_more(s, rec, pro, g=None):
+    if 'id="club-photos"' not in s:           # clubs only (not business/other profile pages)
+        return re.sub(r'<div class="about-more">.*?</div>', '', s, flags=re.S)
+    s = re.sub(r'<div class="about-more">.*?</div>', '', s, flags=re.S)     # regenerate each run
+    a = s.find('<!-- About the Club -->')
+    r = s.find('<div class="rich-text">', a) if a >= 0 else -1
+    if r < 0:
+        return s
+    end = find_div_block(s, r)
+    d = glance(s)
+    name, town, county = rec['name'], rec.get('town') or '', rec.get('county') or ''
+    code = text_of(d.get('Code', ''))
+    union = 'union' in code.lower()
+    sport = 'rugby union' if union else 'rugby league'
+    lg_key = next((k for k in d if k.startswith('League') or k.startswith('Competition')), None)
+    league = text_of(d[lg_key]) if lg_key else ''
+    lvl = re.search(r'\(level (\d+)\)', league)
+    gov = text_of(d.get('Governing body', ''))
+    ground = text_of(d.get('Ground', '')) or ((g or {}).get('ground_name') or '')
+    pro = pro or bool(re.search(r'PREM Rugby|Champ Rugby|Super League|Premiership', league))
+    guide = re.search(r'<a href="[^"]+">.*?</a>', d.get('Area guide', ''), re.S)
+    near = re.findall(r'<li><a href="(\.\./club/[^"]+)">(.*?)</a>', s[s.find('id="county"'):] if 'id="county"' in s else '')[:3]
+    out = []
+    where = f'{esc(name)} is based in {esc(town)}' + (f', {esc(county)}' if county and county != town else '') + '.'
+    if guide:
+        where += f' See how it compares with other clubs in the area in the {guide.group(0)}'
+        where += '.' if not near else ', or look at its neighbours: ' + ', '.join(f'<a href="{h}">{n}</a>' for h, n in near) + '.'
+    out.append(where)
+    comp = ''
+    if league:
+        comp = f'In {"2026-27" if "League (" in (lg_key or "") or union else "2026"} the first team is listed in {esc(league.split(" (level")[0])}.'
+        if lvl and union:
+            comp += f' That is level {lvl.group(1)} of the English rugby union pyramid, where level 1 is the top tier.'
+    if gov:
+        comp += f' The club comes under {esc(gov)}, the body to check for official fixtures, affiliation and safeguarding information.'
+    if comp:
+        out.append(comp.strip())
+    if pro:
+        what = (f'As a professional club, {esc(name)} plays its home games at {esc(ground)}. ' if ground else
+                f'As a professional club, {esc(name)} sells tickets for its home games. ')
+        what += ('Ticket sales, kick-off times and travel advice are published by the club, so check its official website '
+                 'before you set off. Many professional clubs also run women\'s, academy and community programmes; the club can tell you what is on offer.')
+    else:
+        what = (f'Community clubs at this level usually run more than one adult team, and many also have women\'s, girls\', '
+                f'junior or touch sections alongside a social side. Which sections {esc(name)} runs can change from season to season, '
+                f'so contact the club to ask about training nights and whether beginners are welcome.')
+    out.append(what)
+    if 'id="contact"' in s:
+        tail = []
+        if 'id="venue-hire"' in s:
+            tail.append('visit <a href="#venue-hire">venue hire &amp; events</a> if you are planning a celebration')
+        if 'id="faq"' in s:
+            tail.append('read the <a href="#faq">FAQs</a> for quick answers')
+        sent = 'Use <a href="#contact">Join &amp; Contact</a> to get in touch with the club'
+        if len(tail) == 2:
+            sent += ', ' + tail[0] + ', or ' + tail[1]
+        elif tail:
+            sent += ' or ' + tail[0]
+        out.append(sent + '.')
+    more = '<div class="about-more">' + ''.join(f'<p>{p}</p>' for p in out) + '</div>'
+    bump('about_more')
+    return s[:end - len('</div>')] + more + s[end - len('</div>'):]
 
 
 HOME_REMOVE = ['union-or-league', 'areas-guide', 'areas', 'beginners', 'leagues', 'about-directory',
