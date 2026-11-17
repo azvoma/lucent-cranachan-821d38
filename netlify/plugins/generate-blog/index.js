@@ -149,7 +149,7 @@ function siteFooter() {
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="white" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
-        <p class="ft-strapline">A free directory of rugby union and rugby league clubs across the UK. 637 clubs, each with its own profile page, across England, Scotland, Wales and Northern Ireland.</p>
+        <p class="ft-strapline">A free directory of rugby union and rugby league clubs across the UK. 656 clubs, each with its own profile page, across England, Scotland, Wales and Northern Ireland.</p>
         <div class="ft-socials">
           <a href="https://twitter.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter/X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://facebook.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -193,7 +193,7 @@ function siteFooter() {
   </div>
   <div class="ft-bottom">
     <div class="con ft-bottom-inner">
-      <p>&copy; ${new Date().getFullYear()} UK Rugby Club Directory. All rights reserved. 637 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
+      <p>&copy; ${new Date().getFullYear()} UK Rugby Club Directory. All rights reserved. 656 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
       <div class="ft-bottom-links">
         <a href="/privacy-policy.html">Privacy</a><span>·</span>
         <a href="/terms-of-service.html">Terms</a><span>·</span>
@@ -556,7 +556,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
         <a class="share-btn share-btn-wa"
            href="https://wa.me/?text=${shareTitle}%20${shareUrl}"
            target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.532 5.857L.054 23.35l5.637-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.876 9.876 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374A9.861 9.861 0 012.118 12C2.118 6.963 6.963 2.118 12 2.118S21.882 6.963 21.882 12 17.037 21.882 12 21.882z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.532 5.857L.054 23.35l5.656-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.876 9.876 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374A9.861 9.861 0 012.118 12C2.118 6.963 6.963 2.118 12 2.118S21.882 6.963 21.882 12 17.037 21.882 12 21.882z"/></svg>
           WhatsApp
         </a>
         <a class="share-btn share-btn-li"
@@ -605,7 +605,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
       </span>
       <span class="eeat-badge">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        637 clubs listed
+        656 clubs listed
       </span>
     </div>`;
 
@@ -648,7 +648,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
         ${tocHtml}
         <div class="sidebar-card">
           <h3>Find a Rugby Club</h3>
-          <p>Search 637 clubs across England, Scotland, Wales and Northern Ireland.</p>
+          <p>Search 656 clubs across England, Scotland, Wales and Northern Ireland.</p>
           <a class="sidebar-cta" href="/rugby-union.html">Browse clubs &rarr;</a>
         </div>
         <div class="sidebar-card">

@@ -82,7 +82,7 @@
         "width": 220,
         "height": 56
       },
-      "description": "A free UK rugby club directory. 637 clubs across England, Scotland, Wales and Northern Ireland with full profile pages.",
+      "description": "A free UK rugby club directory. 656 clubs across England, Scotland, Wales and Northern Ireland with full profile pages.",
       "foundingDate": "2024",
       "areaServed": {
         "@type": "Country",
