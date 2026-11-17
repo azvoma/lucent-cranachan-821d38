@@ -219,3 +219,19 @@ document.querySelectorAll('button.map-load').forEach(function(b){
     slot.appendChild(f); b.hidden=true;
   });
 });
+
+/* Open a collapsed <details> when a hash link targets something inside it */
+(function () {
+  function openForHash() {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    for (var p = el.closest('details'); p; p = p.parentElement && p.parentElement.closest('details')) {
+      p.open = true;
+    }
+    if (el.scrollIntoView) el.scrollIntoView();
+  }
+  window.addEventListener('hashchange', openForHash);
+  document.addEventListener('DOMContentLoaded', openForHash);
+})();

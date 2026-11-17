@@ -292,7 +292,7 @@ def main():
                        lambda m: m.group(1) + ', "alternateName": ' + json.dumps(aka, ensure_ascii=False), s, count=1)
         sec = re.search(r'<section class="sec" id="faq">(.*?)</section>', s, re.S)
         if sec:
-            qa = re.findall(r'<h3[^>]*>(.*?)</h3>\s*<p[^>]*>(.*?)</p>', sec.group(1), re.S)
+            qa = re.findall(r'<h3[^>]*>(.*?)</h3>(?:\s*</summary>\s*<div class="faq-a">)?\s*<p[^>]*>(.*?)</p>', sec.group(1), re.S)
             cl = lambda t: H.unescape(re.sub(r'<[^>]+>', '', t)).strip()
             ld = ('<script type="application/ld+json" id="guide-ld">' + json.dumps({
                 "@context": "https://schema.org", "@type": "FAQPage", "@id": f'{SITE}/club/{slug}.html#faq',

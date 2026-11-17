@@ -190,7 +190,7 @@ def build_contact(rec, c):
     if c.get('facebook'):
         lines.append(f'Facebook: <a href="{html.escape(c["facebook"])}" target="_blank" rel="noopener noreferrer" {gold}>{html.escape(pretty_url(c["facebook"]))}</a>')
     q = '+'.join((rec['name'] + ' ' + (c.get('postcode') or rec['town'])).split())
-    lines.append(f'<a href="https://www.google.com/maps/search/?api=1&query={html.escape(q)}" target="_blank" rel="noopener noreferrer" {gold}>Open in Google Maps</a>')
+    # (no "Open in Google Maps" line here: the Ground & Location card already offers it)
     address = ('<address style="font-style:normal;line-height:1.9;color:rgba(255,255,255,.85)">'
                + '<br>'.join(lines) + '</address>')
     btn = 'class="btn btn-gold btn-sm" style="width:100%;justify-content:center;margin-top:1.25rem;display:inline-flex"'
@@ -310,7 +310,7 @@ def rebuild_faqpage(s):
     if 'FAQPage' not in s: return s
     sec = re.search(r'id="faq".*?</section>', s, re.S)
     if not sec: return s
-    pairs = re.findall(r'<h3[^>]*>(.*?)</h3>\s*<p>(.*?)</p>', sec.group(0), re.S)
+    pairs = re.findall(r'<h3[^>]*>(.*?)</h3>(?:\s*</summary>\s*<div class="faq-a">)?\s*<p>(.*?)</p>', sec.group(0), re.S)
     if not pairs: return s
     ents = [{"@type": "Question", "name": html.unescape(re.sub('<[^>]+>', '', q)),
              "acceptedAnswer": {"@type": "Answer", "text": html.unescape(re.sub('<[^>]+>', '', a))}} for q, a in pairs]
@@ -447,7 +447,7 @@ def process(path, rec, contacts):
             return m.group(1) + m.group(2) + m.group(3) + new + m.group(5)
         sec = re.search(r'id="faq".*?</section>', s, re.S)
         if sec:
-            fixed = re.sub(r'(<h3[^>]*>)(.*?)(</h3>\s*<p>)(.*?)(</p>)', faq, sec.group(0), flags=re.S)
+            fixed = re.sub(r'(<h3[^>]*>)(.*?)(</h3>(?:\s*</summary>\s*<div class="faq-a">)?\s*<p>)(.*?)(</p>)', faq, sec.group(0), flags=re.S)
             s = s[:sec.start()] + fixed + s[sec.end():]
         s = rebuild_faqpage(s)
 
