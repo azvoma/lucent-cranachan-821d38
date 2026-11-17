@@ -8,6 +8,10 @@
 # ─── Blog generation plugin ───────────────────────────────────────────────────
 # Runs at pre-build, reads content/blog/*.md, writes static /blog/ HTML files.
 # This replaces the old Edge Function approach entirely.
+# Never let Netlify rewrite /x.html -> /x (conflicts with .html canonicals, causes redirect loops)
+[build.processing.html]
+  pretty_urls = false
+
 [[plugins]]
   package = "./netlify/plugins/generate-blog"
 
