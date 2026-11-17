@@ -578,7 +578,6 @@ def add_about_more(s, rec, pro, g=None):
         what = (f'Community clubs at this level usually run more than one adult team, and many also have women\'s, girls\', '
                 f'junior or touch sections alongside a social side. Which sections {esc(name)} runs can change from season to season, '
                 f'so contact the club to ask about training nights and whether beginners are welcome.')
-    out.append(what)
     if 'id="contact"' in s:
         tail = []
         if 'id="venue-hire"' in s:
@@ -590,7 +589,6 @@ def add_about_more(s, rec, pro, g=None):
             sent += ', ' + tail[0] + ', or ' + tail[1]
         elif tail:
             sent += ' or ' + tail[0]
-        out.append(sent + '.')
     more = '<div class="about-more">' + ''.join(f'<p>{p}</p>' for p in out) + '</div>'
     bump('about_more')
     return s[:end - len('</div>')] + more + s[end - len('</div>'):]
