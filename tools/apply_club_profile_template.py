@@ -45,6 +45,8 @@ def build_one(slug, rec_src):
     old = path.read_text(encoding="utf-8")
     if 'class="cp-page"' in old:
         return "skipped"
+    if "pill-business" in old:
+        return "skipped"          # businesses (shops, blogs, podcasts...) keep their own layout
     soup = BeautifulSoup(old, "html.parser")
 
     rec = B.record(rec_src)
