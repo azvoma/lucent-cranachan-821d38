@@ -434,44 +434,42 @@ PHOTO_DIR = 'imgs/clubs'
 
 
 def add_photos(s, slug, name):
-    """Two-image gallery (ground + club) straight after the About block.
-    Only rendered when BOTH files exist and are different, so no empty placeholders ever ship.
-    Files: imgs/clubs/<slug>-ground.(webp|jpg) and imgs/clubs/<slug>-club.(webp|jpg)
-    Optional captions/credits: tools/club-photos.csv (slug,ground_alt,club_alt,credit)."""
-    if 'id="club-photos"' in s:
-        return s
-    found = {}
-    for kind in ('ground', 'club'):
-        for ext in ('webp', 'jpg', 'jpeg', 'png'):
-            f = os.path.join(ROOT, PHOTO_DIR, f'{slug}-{kind}.{ext}')
-            if os.path.exists(f):
-                found[kind] = f'../{PHOTO_DIR}/{slug}-{kind}.{ext}'
-                break
-    if len(found) == 2:
-        import hashlib
-        h = [hashlib.md5(open(os.path.join(ROOT, v[3:]), 'rb').read()).hexdigest() for v in found.values()]
-        if h[0] == h[1]:
-            found.pop('club')
-    meta = PHOTO_META.get(slug, {})
-    g_alt = esc(meta.get('ground_alt') or f'{name} home ground')
-    c_alt = esc(meta.get('club_alt') or f'{name} players and clubhouse')
-    credit = meta.get('credit')
-    cap = f'<p class="club-photos-credit">{esc(credit)}</p>' if credit else ''
-    def fig(kind, label, alt):
-        if kind in found:
-            return (f'<figure><img src="{found[kind]}" alt="{alt}" width="800" height="533" loading="lazy" decoding="async">'
-                    f'<figcaption>{label}</figcaption></figure>')
-        what = 'stadium and facilities' if kind == 'ground' else 'club and players'
-        return (f'<figure><a class="photo-empty" href="../claim.html" aria-label="Send us a photo of the {esc(name)} {what}">'
-                f'<span class="photo-empty-ico" aria-hidden="true">&#128247;</span>'
-                f'<span class="photo-empty-t">{label}: photo coming soon</span>'
-                f'<span class="photo-empty-s">Club official? Send us a photo</span></a><figcaption>{label}</figcaption></figure>')
-    block = (f'<div class="about-block club-photos" id="club-photos"><div class="club-photos-grid">'
-             + fig('ground', 'Stadium &amp; facilities', g_alt) + fig('club', 'The club', c_alt)
-             + f'</div>{cap}</div>\n        ')
+    """Two-slot gallery straight after the About block:
+       1) the club badge   2) a stadium/facilities photo (imgs/clubs/<slug>-ground.*) or a 'photo coming soon' frame."""
+    s = re.sub(r'<div class="about-block club-photos" id="club-photos">.*?</div>(?:<p class="club-photos-credit">.*?</p>)?</div>\n        ', '', s, flags=re.S)
     k = s.find('<!--glance-->')
     if k < 0:
         return s
+    m = re.search(r'<img src="(\.\./badges/[^"]+)"[^>]*class="hero-badge-img"', s)
+    badge = m.group(1) if m else None
+    ground = None
+    for ext in ('webp', 'jpg', 'jpeg', 'png'):
+        if os.path.exists(os.path.join(ROOT, PHOTO_DIR, f'{slug}-ground.{ext}')):
+            ground = f'../{PHOTO_DIR}/{slug}-ground.{ext}'
+            break
+    meta = PHOTO_META.get(slug, {})
+    g_alt = esc(meta.get('ground_alt') or f'{name} stadium and facilities')
+    credit = meta.get('credit') if ground else None
+    cap = f'<p class="club-photos-credit">{esc(credit)}</p>' if credit else ''
+
+    def empty(label, what):
+        return (f'<figure><a class="photo-empty" href="../claim.html" aria-label="Send us a photo of the {esc(name)} {what}">'
+                f'<span class="photo-empty-ico" aria-hidden="true">&#128247;</span>'
+                f'<span class="photo-empty-t">Photo coming soon</span>'
+                f'<span class="photo-empty-s">Club official? Send us a photo</span></a><figcaption>{label}</figcaption></figure>')
+
+    if badge:
+        first = (f'<figure><div class="photo-badge"><img src="{badge}" alt="{esc(name)} club badge" width="220" height="220" '
+                 f'loading="lazy" decoding="async"></div><figcaption>Club badge</figcaption></figure>')
+    else:
+        first = empty('Club badge', 'badge')
+    if ground:
+        second = (f'<figure><img src="{ground}" alt="{g_alt}" width="800" height="533" loading="lazy" decoding="async">'
+                  f'<figcaption>Stadium &amp; facilities</figcaption></figure>')
+    else:
+        second = empty('Stadium &amp; facilities', 'stadium and facilities')
+    block = (f'<div class="about-block club-photos" id="club-photos"><div class="club-photos-grid">{first}{second}</div>'
+             f'{cap}</div>\n        ')
     bump('photos')
     return s[:k] + block + s[k:]
 

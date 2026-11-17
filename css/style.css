@@ -4003,3 +4003,5 @@ details.faq-item > summary { padding: .9rem 0; }
 .photo-empty-ico { font-size: 1.8rem; }
 .photo-empty-t { font-weight: 600; font-size: .9rem; }
 .photo-empty-s { font-size: .78rem; color: var(--text-muted); }
+.photo-badge { display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 2; border-radius: 10px; border: 1px solid var(--border); background: #fff; padding: 1rem; }
+.photo-badge img { max-height: 100%; max-width: 70%; width: auto; height: auto; object-fit: contain; }
