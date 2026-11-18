@@ -235,3 +235,123 @@ document.querySelectorAll('button.map-load').forEach(function(b){
   window.addEventListener('hashchange', openForHash);
   document.addEventListener('DOMContentLoaded', openForHash);
 })();
+
+
+/* ── Share bar ────────────────────────────────────────────────────────────────
+   WordPress-style sharing on every page: a floating rail on desktop, a bottom
+   bar on mobile. Uses the native share sheet where the browser has one (phones,
+   which covers Instagram, WhatsApp etc.), plus X, Facebook, WhatsApp, LinkedIn,
+   email and copy-link. Skipped on the 404 page. */
+(function () {
+  'use strict';
+  if (window.__shareBarLoaded) return;
+  window.__shareBarLoaded = true;
+
+  function init() {
+    if (document.querySelector('.share-rail') || /(^|\/)404\.html$/.test(location.pathname)) return;
+
+    var canon = document.querySelector('link[rel="canonical"]');
+    var url = (canon && canon.href) || (location.origin + location.pathname);
+    var ogt = document.querySelector('meta[property="og:title"]');
+    var title = ((ogt && ogt.content) || document.title || '').replace(/\s+/g, ' ').trim();
+    var u = encodeURIComponent(url), t = encodeURIComponent(title);
+
+    var I = {
+      share: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',
+      x: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+      fb: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>',
+      wa: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c.5 2.2 2.3 4 4.5 4.5l1.2-1.2-1.6-.9-.7.5c-.8-.4-1.4-1-1.8-1.8l.5-.7-.9-1.6L9 9.5z" fill="currentColor" stroke="none"/></svg>',
+      li: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>',
+      mail: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>',
+      link: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.07 0l3-3a5 5 0 00-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 00-7.07 0l-3 3a5 5 0 007.07 7.07l1.5-1.5"/></svg>',
+      ok: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
+    };
+
+    var items = [
+      ['x', 'Share on X', 'https://twitter.com/intent/tweet?text=' + t + '&url=' + u],
+      ['fb', 'Share on Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + u],
+      ['wa', 'Share on WhatsApp', 'https://wa.me/?text=' + t + '%20' + u],
+      ['li', 'Share on LinkedIn', 'https://www.linkedin.com/sharing/share-offsite/?url=' + u],
+      ['mail', 'Share by email', 'mailto:?subject=' + t + '&body=' + t + '%0A%0A' + u]
+    ];
+
+    var css = document.createElement('style');
+    css.textContent =
+      '.share-rail{position:fixed;z-index:900;display:flex;gap:.4rem;align-items:center;font-family:inherit}' +
+      '.share-rail-label{display:none}' +
+      '.share-rail button,.share-rail a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid #d5dbe4;background:#fff;color:#293241;cursor:pointer;padding:0;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .12s,background .12s,color .12s}' +
+      '.share-rail button:hover,.share-rail a:hover{background:#293241;color:#fff;transform:translateY(-1px)}' +
+      '.share-rail button:focus-visible,.share-rail a:focus-visible{outline:3px solid #3d5a80;outline-offset:2px}' +
+      '.share-rail .is-copied{background:#16a34a;color:#fff;border-color:#16a34a}' +
+      '.share-rail-toast{position:absolute;right:calc(100% + 8px);top:50%;transform:translateY(-50%);background:#293241;color:#fff;font-size:.75rem;font-weight:600;padding:.35rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}' +
+      '.share-rail-toast.show{opacity:1}' +
+      '.share-rail-toggle{display:none!important}' +
+      '@media (min-width:1280px){.share-rail{left:14px;top:50%;transform:translateY(-50%);flex-direction:column}.share-rail-toast{right:auto;left:calc(100% + 8px)}}' +
+      '@media (max-width:1279px){.share-rail{right:10px;top:50%;transform:translateY(-50%);flex-direction:column}.share-rail-toast{right:calc(100% + 8px)}' +
+      '.share-rail-toggle{display:inline-flex!important;background:#293241!important;color:#fff!important;width:48px!important;height:48px!important;box-shadow:0 4px 14px rgba(0,0,0,.3)!important}' +
+      '.share-rail:not(.open) .share-rail-item{display:none!important}}' +
+      '@media print{.share-rail{display:none!important}}';
+    document.head.appendChild(css);
+
+    var rail = document.createElement('div');
+    rail.className = 'share-rail';
+    rail.setAttribute('role', 'group');
+    rail.setAttribute('aria-label', 'Share this page');
+
+    var label = document.createElement('span');
+    label.className = 'share-rail-label';
+    label.textContent = 'Share';
+    rail.appendChild(label);
+
+    var tg = document.createElement('button');
+    tg.type = 'button'; tg.className = 'share-rail-toggle'; tg.innerHTML = I.share;
+    tg.setAttribute('aria-label', 'Share this page'); tg.setAttribute('aria-expanded', 'false'); tg.title = 'Share';
+    tg.addEventListener('click', function () {
+      if (navigator.share) { navigator.share({ title: title, url: url }).catch(function () {}); return; }
+      var open = rail.classList.toggle('open');
+      tg.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { rail.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); } });
+    rail.appendChild(tg);
+
+    items.forEach(function (it) {
+      var a = document.createElement('a');
+      a.href = it[2]; a.innerHTML = I[it[0]];
+      a.setAttribute('aria-label', it[1]); a.title = it[1];
+      a.className = 'share-rail-item';
+      if (it[0] !== 'mail') { a.target = '_blank'; a.rel = 'noopener'; }
+      rail.appendChild(a);
+    });
+
+    var cb = document.createElement('button');
+    cb.type = 'button'; cb.innerHTML = I.link;
+    cb.setAttribute('aria-label', 'Copy link'); cb.title = 'Copy link';
+    var toast = document.createElement('span');
+    toast.className = 'share-rail-toast'; toast.setAttribute('role', 'status');
+    cb.style.position = 'relative'; cb.className = 'share-rail-item';
+    function done() {
+      cb.innerHTML = I.ok; cb.classList.add('is-copied');
+      toast.textContent = 'Link copied'; toast.classList.add('show');
+      setTimeout(function () { cb.innerHTML = I.link; cb.classList.remove('is-copied'); toast.classList.remove('show'); }, 1800);
+    }
+    cb.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, fallback);
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+    cb.appendChild(toast);
+    rail.appendChild(cb);
+
+    document.body.appendChild(rail);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+}());
