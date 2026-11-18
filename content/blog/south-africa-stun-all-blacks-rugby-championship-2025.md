@@ -4,7 +4,7 @@ date: 2025-09-14
 metaDescription: South Africa produced a dominant second-half display to beat New Zealand 43-10 in Wellington, keeping the 2025 Rugby Championship title race wide open heading into the final rounds.
 author: UK Rugby Club Directory Editorial Team
 category: International Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/73763/pexels-photo-73763.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 South Africa produced one of their most commanding performances against New Zealand in years, running in six tries to record a stunning 43-10 victory in Wellington during the fourth round of the 2025 Rugby Championship. The result was a serious statement of intent from Rassie Erasmus's side, who had been under pressure following back-to-back defeats earlier in the tournament.

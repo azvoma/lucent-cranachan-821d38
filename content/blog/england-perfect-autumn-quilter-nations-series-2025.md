@@ -4,7 +4,7 @@ date: 2025-11-29
 metaDescription: England won all four Quilter Nations Series matches in November 2025, beating Australia, Fiji, New Zealand and Argentina. Here's what it means for the 2026 Six Nations.
 author: UK Rugby Club Directory Editorial Team
 category: International Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/36438761/pexels-photo-36438761.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 England rounded off their 2025 autumn international programme with an unbeaten clean sweep through the Quilter Nations Series, defeating Australia, Fiji, New Zealand and Argentina across four Twickenham fixtures in November. The results represented England's most positive autumn window in several seasons and prompted genuine optimism ahead of the 2026 Six Nations Championship.

@@ -4,7 +4,7 @@ date: 2026-06-09
 metaDescription: Rugby union vs rugby league explained: team sizes, scoring, the tackle, scrums and lineouts, where each code is played in the UK, and which one suits you.
 author: UK Rugby Club Directory
 category: Rugby Explained
-image: /imgs/rugby-league-hero.jpg
+image: https://images.pexels.com/photos/3631053/pexels-photo-3631053.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 Rugby union and rugby league are two codes of the same sport, and yet they are often confused — even by people who have watched one or the other for years. Both involve an oval ball, physical contact, and a deep culture of community and camaraderie, but the rules, structures, and traditions that govern each code are strikingly different. Whether you are new to rugby or simply trying to understand what separates these two games, this guide breaks down the key differences in plain terms.

@@ -4,7 +4,7 @@ date: 2026-10-29
 metaDescription: Six Nations 2026 review: France won the title by beating England 48-46 in Paris, while England won only one game and finished fifth. Round-by-round results.
 author: UK Rugby Club Directory
 category: International Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/38329351/pexels-photo-38329351.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 England went into the 2026 Six Nations on the back of an unbeaten autumn, and plenty of supporters — us included — thought this could be the year they won a first championship since 2020. It wasn't. France won the title on the final weekend, and England finished fifth with a single win.

@@ -4,7 +4,7 @@ date: 2025-02-07
 metaDescription: Discover how UK rugby clubs are leading the way in environmental sustainability, from solar panels to rewilding projects and eco-friendly facilities.
 author: UK Rugby Club Directory
 category: Grassroots Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/5585969/pexels-photo-5585969.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 Rugby clubs across the United Kingdom are increasingly recognising their responsibility to tackle climate change and embrace sustainability. From grassroots community clubs to larger establishments, the rugby family is proving that sporting excellence and environmental stewardship can go hand in hand. This growing movement is transforming how clubs operate, maintain their facilities, and engage with their local communities.

@@ -4,7 +4,7 @@ date: 2025-02-07
 metaDescription: Everything you need to know about starting a rugby club in your community, from initial planning and governance to finding players and facilities.
 author: UK Rugby Club Directory
 category: Grassroots Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/33880196/pexels-photo-33880196.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 Starting a rugby club from scratch might seem like a daunting prospect, but with the right approach and a dedicated group of enthusiasts, you can create a thriving community hub that serves generations of players. Whether you're looking to fill a gap in your local area or simply passionate about bringing rugby to your community, this comprehensive guide will walk you through every step of the journey.

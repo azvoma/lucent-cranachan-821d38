@@ -4,7 +4,7 @@ date: 2026-10-29
 metaDescription: How to find a rugby club near you in the UK: choose union or league, search by town, check the club's age groups and training night, then go along to a session.
 author: UK Rugby Club Directory
 category: Beginners Guide
-image: /imgs/home-hero.jpg
+image: https://images.pexels.com/photos/19082794/pexels-photo-19082794.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 Finding a rugby club is easier than most people expect. There are community clubs in almost every town in England, Wales and Scotland, and in many parts of Northern Ireland, and nearly all of them want new players. The hard part is knowing what to look for and who to ask. This guide walks you through it step by step, whether you are a complete beginner, an ex-player coming back, or a parent looking for a junior section.

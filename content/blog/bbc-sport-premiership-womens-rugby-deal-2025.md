@@ -4,7 +4,7 @@ date: 2025-09-01
 metaDescription: BBC Sport has secured a deal to broadcast Premiership Women's Rugby live every week of the 2025/26 and 2026/27 seasons, marking a significant step for women's rugby in the UK.
 author: UK Rugby Club Directory Editorial Team
 category: Women's Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/41018255/pexels-photo-41018255.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 BBC Sport has announced a significant broadcast deal with Premiership Women's Rugby that will see at least one live match available to watch every single week of the season across the 2025/26 and 2026/27 campaigns. The agreement, available via BBC iPlayer and the BBC Sport website and app, also includes one semi-final and the final of the competition — making it free to watch for rugby fans across the UK.

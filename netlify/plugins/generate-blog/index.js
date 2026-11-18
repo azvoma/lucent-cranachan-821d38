@@ -421,30 +421,23 @@ function extractToc(html) {
   return toc;
 }
 
-// ─── Inject IDs into H2s and insert inline images at section breaks ───────────
-// Uses Unsplash rugby-themed source images (no API key needed, served via CDN)
-const RUGBY_IMAGES = [
-  { src: "/imgs/rugby-union-hero.jpg",  alt: "Rugby union action at a UK club ground" },
-  { src: "/imgs/home-hero.jpg",         alt: "Rugby players competing at grassroots level" },
-  { src: "/imgs/rugby-league-hero.jpg", alt: "Rugby league match in the UK" },
-  { src: "/imgs/contact-hero.jpg",      alt: "Rugby teams in action across the UK" },
-  { src: "/imgs/rugby-union-hero.jpg",  alt: "Scrumming down at a UK rugby club" },
-];
+// ─── Inject IDs into H2s and insert each article's own inline images ─────────
+// Images come from content/blog/images.json (one curated, topic-relevant set per
+// article). There is no shared pool, so an image can never repeat across posts.
+let BLOG_IMAGES = {};
 
 function enrichArticleHtml(html, slug) {
   let sectionCount = 0;
   let imageIndex   = 0;
-  // Deterministic image picks per article so they don't change on rebuild
-  const offset = slug.length % RUGBY_IMAGES.length;
+  const own = (BLOG_IMAGES[slug] && BLOG_IMAGES[slug].inline) || [];
 
-  // Add IDs to h2s and inject an image after the 2nd and 4th h2
+  // Add IDs to h2s and place the article's inline images after the 2nd, 4th and 6th headings
   html = html.replace(/<h2([^>]*)>(.*?)<\/h2>/gi, (match, attrs, text) => {
     sectionCount++;
     const id = `section-${sectionCount}`;
     let result = `<h2${attrs} id="${id}">${text}</h2>`;
-    // Inject image after 2nd and 4th section headings (giving 2 inline images minimum)
-    if (sectionCount === 2 || sectionCount === 4 || sectionCount === 6) {
-      const img = RUGBY_IMAGES[(offset + imageIndex) % RUGBY_IMAGES.length];
+    if ((sectionCount === 2 || sectionCount === 4 || sectionCount === 6) && own[imageIndex]) {
+      const img = own[imageIndex];
       imageIndex++;
       result += `\n<figure class="article-inline-img">
   <img src="${img.src}" alt="${img.alt}" loading="lazy" width="800" height="450">
@@ -454,6 +447,12 @@ function enrichArticleHtml(html, slug) {
     return result;
   });
   return html;
+}
+
+// Photo identity for duplicate checks (Pexels photo id, otherwise the bare path)
+function imageKey(src) {
+  const m = /pexels\.com\/photos\/(\d+)\//.exec(src || "");
+  return m ? "pexels:" + m[1] : String(src || "").split("?")[0];
 }
 
 // ─── Blog index page ──────────────────────────────────────────────────────────
@@ -511,7 +510,7 @@ function buildIndexPage(articles) {
 // ─── Article page ─────────────────────────────────────────────────────────────
 function buildArticlePage(slug, fm, bodyHtml) {
   // Hero image from frontmatter
-  const heroImg = fm.heroimage || fm.heroImage || fm.image || "";
+  const heroImg = (BLOG_IMAGES[slug] && BLOG_IMAGES[slug].hero) || fm.heroimage || fm.heroImage || fm.image || "";
   const heroImageHtml = heroImg
     ? `<div class="article-hero-image-wrap">
         <img src="${heroImg}" alt="${fm.title || slug}" loading="lazy">
@@ -684,7 +683,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
     canonical:   pageUrl,
     ogType:      "article",
     ogImage:     (function () {
-      const im = fm.heroimage || fm.heroImage || fm.image || "";
+      const im = (BLOG_IMAGES[slug] && BLOG_IMAGES[slug].hero) || fm.heroimage || fm.heroImage || fm.image || "";
       if (!im) return "";
       return /^https?:/.test(im) ? im : "https://ukrugbyclubdirectory.co.uk" + (im.startsWith("/") ? "" : "/") + im;
     })(),
@@ -709,6 +708,27 @@ module.exports = {
         .filter(f => f.endsWith(".md") && f !== "BLOG_README.md");
     } catch (e) {
       utils.build.failBuild(`Could not read ${contentDir}: ${e.message}`);
+      return;
+    }
+
+    // Load curated per-article images and refuse to build if any image repeats
+    try {
+      BLOG_IMAGES = JSON.parse(fs.readFileSync(path.join(contentDir, "images.json"), "utf8"));
+    } catch (e) {
+      BLOG_IMAGES = {};
+      console.warn("  ⚠ content/blog/images.json not found or invalid — articles will have no inline images");
+    }
+    const seenImg = new Map();
+    const dupes = [];
+    for (const [slug, set] of Object.entries(BLOG_IMAGES)) {
+      for (const src of [set.hero, ...((set.inline || []).map(i => i.src))].filter(Boolean)) {
+        const k = imageKey(src);
+        if (seenImg.has(k)) dupes.push(`${k} used in "${seenImg.get(k)}" and "${slug}"`);
+        else seenImg.set(k, slug);
+      }
+    }
+    if (dupes.length) {
+      utils.build.failBuild("Duplicate blog images found. Every image must be used once across all posts:\n  " + dupes.join("\n  "));
       return;
     }
 

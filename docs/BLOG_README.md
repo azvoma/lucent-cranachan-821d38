@@ -108,12 +108,26 @@ Netlify will deploy automatically. Your article will be live at:
 
 ---
 
-## Available image paths
+## Blog images (every image must be unique)
 
-These images already exist on the site and can be used as article hero images:
+Each post has its own curated rugby images in `content/blog/images.json`, keyed by the article slug:
 
-| Path | Description |
-|------|-------------|
+```json
+"my-article-slug": {
+  "hero": "https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "inline": [
+    { "src": "https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&cs=tinysrgb&w=1200", "alt": "What the photo shows" }
+  ]
+}
+```
+
+Rules:
+- Use free Pexels (or similar stock) photos of **rugby** that match the article topic.
+- The hero goes at the top of the article; inline images appear after the 2nd, 4th and 6th headings.
+- **An image can only be used once across the whole blog.** The build fails with a list of the repeats if any photo appears twice, so fix them before deploying.
+- Also set `image:` in the article's frontmatter to the same hero URL (it is used for the social-share preview and `index.json`).
+
+------|-------------|
 | `/imgs/home-hero.jpg` | General rugby / players |
 | `/imgs/rugby-union-hero.jpg` | Rugby Union action |
 | `/imgs/rugby-league-hero.jpg` | Rugby League action |

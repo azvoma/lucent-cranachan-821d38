@@ -4,7 +4,7 @@ date: 2025-05-15
 metaDescription: Discover how grassroots rugby clubs become the heartbeat of small towns across the UK, fostering community spirit and bringing people together.
 author: UK Rugby Club Directory
 category: Grassroots Rugby
-image: /imgs/rugby-union-hero.jpg
+image: https://images.pexels.com/photos/1627960/pexels-photo-1627960.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 In villages and small towns across the United Kingdom, the local rugby club often serves as far more than just a sporting venue. These clubs become the beating heart of their communities, creating bonds that extend well beyond the pitch and fostering a sense of belonging that strengthens the entire social fabric of rural and suburban life.

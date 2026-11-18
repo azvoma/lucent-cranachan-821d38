@@ -5,7 +5,7 @@ metaDescription: Never played rugby before? This complete beginner's guide cover
 author: UK Rugby Club Directory Editorial Team
 category: Beginners Guide
 primaryKeyword: how to start playing rugby as an adult
-image: /imgs/home-hero.jpg
+image: https://images.pexels.com/photos/33758975/pexels-photo-33758975.jpeg?auto=compress&cs=tinysrgb&w=1600
 ---
 
 Rugby is one of the most welcoming sports for adult beginners in the UK. Unlike many team sports where a lack of childhood experience creates a permanent disadvantage, rugby clubs actively recruit adults at all stages of life — and most clubs run sessions specifically designed for people who have never played before. This guide covers everything you need to know to take the first step.
