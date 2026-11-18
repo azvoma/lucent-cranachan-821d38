@@ -151,9 +151,9 @@ function siteFooter() {
         </a>
         <p class="ft-strapline">A free directory of rugby union and rugby league clubs across the UK. 656 clubs, each with its own profile page, across England, Scotland, Wales and Northern Ireland.</p>
         <div class="ft-socials">
-          <a href="https://twitter.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter/X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="https://facebook.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" class="ft-soc" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/ukrugbyclub" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter/X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61582000350872" target="_blank" rel="noopener" class="ft-soc" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/ukrugbyclubdirectory/" target="_blank" rel="noopener" class="ft-soc" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
         </div>
       </div>
       <div class="ft-col"><h3>Directory</h3><ul>
@@ -351,6 +351,10 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
     .share-btn-li{background:#0a66c2;color:#fff}
     .share-btn-copy{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:inherit}
     .share-btn-copy.copied{background:#16a34a}
+    .share-follow{flex-basis:100%;display:flex;align-items:center;flex-wrap:wrap;gap:.9rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.15)}
+    .share-follow-label{font-size:.8rem;color:#cbd5e1;font-weight:600}
+    .share-follow-link{display:inline-flex;align-items:center;gap:.4rem;color:#fff;font-size:.8rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+    .share-follow-link:hover{opacity:.85}
   </style>
 </head>
 <body>
@@ -574,6 +578,12 @@ function buildArticlePage(slug, fm, bodyHtml) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
           Copy link
         </button>
+      </div>
+      <div class="share-follow">
+        <span class="share-follow-label">Follow us</span>
+        <a class="share-follow-link" href="https://x.com/ukrugbyclub" target="_blank" rel="noopener" aria-label="Follow on X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</a>
+        <a class="share-follow-link" href="https://www.instagram.com/ukrugbyclubdirectory/" target="_blank" rel="noopener" aria-label="Follow on Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg> Instagram</a>
+        <a class="share-follow-link" href="https://www.facebook.com/profile.php?id=61582000350872" target="_blank" rel="noopener" aria-label="Follow on Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg> Facebook</a>
       </div>
     </div>`;
 
