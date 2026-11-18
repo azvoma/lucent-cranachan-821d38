@@ -287,7 +287,7 @@ document.querySelectorAll('button.map-load').forEach(function(b){
       '.share-rail-toast{position:absolute;right:calc(100% + 8px);top:50%;transform:translateY(-50%);background:#293241;color:#fff;font-size:.75rem;font-weight:600;padding:.35rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}' +
       '.share-rail-toast.show{opacity:1}' +
       '.share-rail-toggle{display:none!important}' +
-      '@media (min-width:1280px){.share-rail{left:14px;top:50%;transform:translateY(-50%);flex-direction:column}.share-rail-toast{right:auto;left:calc(100% + 8px)}}' +
+      '@media (min-width:1280px){.share-rail{display:none!important}}' +
       '@media (max-width:1279px){.share-rail{right:10px;top:50%;transform:translateY(-50%);flex-direction:column}.share-rail-toast{right:calc(100% + 8px)}' +
       '.share-rail-toggle{display:inline-flex!important;background:#293241!important;color:#fff!important;width:48px!important;height:48px!important;box-shadow:0 4px 14px rgba(0,0,0,.3)!important}' +
       '.share-rail:not(.open) .share-rail-item{display:none!important}}' +
