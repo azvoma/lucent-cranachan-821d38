@@ -487,6 +487,8 @@ def head(c, canonical, sample):
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/club-profile.css">
 <script type="application/ld+json">{jsonld(c, canonical)}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9712447512133158"
+     crossorigin="anonymous"></script>
 </head>
 '''
 

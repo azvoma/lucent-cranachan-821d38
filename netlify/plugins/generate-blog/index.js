@@ -360,6 +360,8 @@ function shell({ title, description, canonical, ogType, ogImage, bodyContent }) 
     .share-follow-link{display:inline-flex;align-items:center;gap:.4rem;color:#fff;font-size:.8rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
     .share-follow-link:hover{opacity:.85}
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9712447512133158"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 ${siteHeader()}
