@@ -207,7 +207,8 @@ function siteFooter() {
 }
 
 // ─── Full page shell ──────────────────────────────────────────────────────────
-function shell({ title, description, canonical, ogType, bodyContent }) {
+function shell({ title, description, canonical, ogType, ogImage, bodyContent }) {
+  const img = ogImage || "https://ukrugbyclubdirectory.co.uk/imgs/home-hero.jpg";
   return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -222,9 +223,11 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
   <meta property="og:url"         content="${canonical}">
   <meta property="og:type"        content="${ogType || "website"}">
   <meta property="og:site_name"   content="UK Rugby Club Directory">
+  <meta property="og:image"       content="${img}">
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="${title}">
   <meta name="twitter:description" content="${description}">
+  <meta name="twitter:image"       content="${img}">
   <meta name="geo.region" content="GB">
   <meta name="theme-color" content="#293241">
   <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -349,6 +352,7 @@ function shell({ title, description, canonical, ogType, bodyContent }) {
     .share-btn-fb{background:#1877f2;color:#fff}
     .share-btn-wa{background:#25d366;color:#fff}
     .share-btn-li{background:#0a66c2;color:#fff}
+    .share-btn-ig{background:linear-gradient(45deg,#f09433,#dc2743 55%,#bc1888);color:#fff;border:0;cursor:pointer;font-family:inherit}
     .share-btn-copy{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:inherit}
     .share-btn-copy.copied{background:#16a34a}
     .share-follow{flex-basis:100%;display:flex;align-items:center;flex-wrap:wrap;gap:.9rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.15)}
@@ -546,7 +550,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
       <p class="share-label">Share this article</p>
       <div class="share-buttons">
         <a class="share-btn share-btn-x"
-           href="https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}"
+           href="https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}"
            target="_blank" rel="noopener" aria-label="Share on X">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X / Twitter
@@ -569,6 +573,11 @@ function buildArticlePage(slug, fm, bodyHtml) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
+        <button class="share-btn share-btn-ig" type="button" aria-label="Share on Instagram: copies the link, then opens Instagram"
+           onclick="(function(b){var u='${pageUrl}';var d=function(){b.textContent='✓ Link copied, paste it into Instagram';setTimeout(function(){b.textContent='Instagram'},3500);window.open('https://www.instagram.com/ukrugbyclubdirectory/','_blank','noopener')};if(navigator.clipboard){navigator.clipboard.writeText(u).then(d,d)}else{d()}})(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </button>
         <button class="share-btn share-btn-copy" onclick="
           navigator.clipboard.writeText('${pageUrl}').then(()=>{
             this.textContent='✓ Copied!';
@@ -674,6 +683,11 @@ function buildArticlePage(slug, fm, bodyHtml) {
     description: fm.metadescription || fm.excerpt || `Read about ${fm.title || slug} on UK Rugby Club Directory.`,
     canonical:   pageUrl,
     ogType:      "article",
+    ogImage:     (function () {
+      const im = fm.heroimage || fm.heroImage || fm.image || "";
+      if (!im) return "";
+      return /^https?:/.test(im) ? im : "https://ukrugbyclubdirectory.co.uk" + (im.startsWith("/") ? "" : "/") + im;
+    })(),
     bodyContent,
   });
 }

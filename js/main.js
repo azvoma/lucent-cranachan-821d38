@@ -259,6 +259,7 @@ document.querySelectorAll('button.map-load').forEach(function(b){
     var I = {
       share: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',
       x: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+      ig: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>',
       fb: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>',
       wa: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c.5 2.2 2.3 4 4.5 4.5l1.2-1.2-1.6-.9-.7.5c-.8-.4-1.4-1-1.8-1.8l.5-.7-.9-1.6L9 9.5z" fill="currentColor" stroke="none"/></svg>',
       li: '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>',
@@ -268,7 +269,7 @@ document.querySelectorAll('button.map-load').forEach(function(b){
     };
 
     var items = [
-      ['x', 'Share on X', 'https://twitter.com/intent/tweet?text=' + t + '&url=' + u],
+      ['x', 'Share on X', 'https://x.com/intent/post?text=' + t + '&url=' + u],
       ['fb', 'Share on Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + u],
       ['wa', 'Share on WhatsApp', 'https://wa.me/?text=' + t + '%20' + u],
       ['li', 'Share on LinkedIn', 'https://www.linkedin.com/sharing/share-offsite/?url=' + u],
@@ -323,16 +324,30 @@ document.querySelectorAll('button.map-load').forEach(function(b){
       rail.appendChild(a);
     });
 
+    var ib = document.createElement('button');
+    ib.type = 'button'; ib.className = 'share-rail-item'; ib.innerHTML = I.ig;
+    ib.setAttribute('aria-label', 'Share on Instagram (copies the link, then opens Instagram)'); ib.title = 'Instagram: copies the link, then opens Instagram';
+    ib.addEventListener('click', function () {
+      var go = function () { window.open('https://www.instagram.com/ukrugbyclubdirectory/', '_blank', 'noopener'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { flash('Link copied: paste it into Instagram'); go(); }, go);
+      else go();
+    });
+    rail.appendChild(ib);
+
     var cb = document.createElement('button');
     cb.type = 'button'; cb.innerHTML = I.link;
     cb.setAttribute('aria-label', 'Copy link'); cb.title = 'Copy link';
     var toast = document.createElement('span');
     toast.className = 'share-rail-toast'; toast.setAttribute('role', 'status');
     cb.style.position = 'relative'; cb.className = 'share-rail-item';
+    function flash(msg) {
+      toast.textContent = msg; toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 2600);
+    }
     function done() {
       cb.innerHTML = I.ok; cb.classList.add('is-copied');
-      toast.textContent = 'Link copied'; toast.classList.add('show');
-      setTimeout(function () { cb.innerHTML = I.link; cb.classList.remove('is-copied'); toast.classList.remove('show'); }, 1800);
+      flash('Link copied');
+      setTimeout(function () { cb.innerHTML = I.link; cb.classList.remove('is-copied'); }, 1800);
     }
     cb.addEventListener('click', function () {
       if (navigator.clipboard && navigator.clipboard.writeText) {
