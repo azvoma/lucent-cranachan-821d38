@@ -205,9 +205,9 @@ def hub_list():
         out.append((slug, label, n))
     return sorted(out, key=lambda x: x[1].replace('the ', ''))
 
-WALES = {'Anglesey','Blaenau Gwent','Bridgend','Caerphilly','Carmarthenshire','Ceredigion','Conwy','Denbighshire','Gwynedd','Merthyr Tydfil','Monmouthshire','Neath Port Talbot','Pembrokeshire','Powys','Rhondda Cynon Taf','South Glamorgan','West Glamorgan','Wrexham'}
+WALES = {'Anglesey','Blaenau Gwent','Bridgend','Caerphilly','Carmarthenshire','Ceredigion','Conwy','Denbighshire','Gwynedd','Merthyr Tydfil','Monmouthshire','Neath Port Talbot','Pembrokeshire','Powys','Rhondda Cynon Taf','Swansea','Torfaen','South Glamorgan','West Glamorgan','Wrexham'}
 SCOT = {'Aberdeenshire','Angus','Ayrshire','Berwickshire','Clackmannanshire','Dumfriesshire','East Lothian','Fife','Inverness-shire','Lanarkshire','Midlothian','Morayshire','Peeblesshire','Perthshire','Roxburghshire','Selkirkshire','Stirlingshire','West Lothian'}
-NI = {'County Antrim','County Armagh','County Tyrone'}
+NI = {'County Antrim','County Armagh','County Tyrone','County Down'}
 OTHER = {'Haute-Garonne','Pyrénées-Orientales','Jersey',''}
 
 def nation(c):
