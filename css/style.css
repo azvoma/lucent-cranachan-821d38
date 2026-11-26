@@ -4014,3 +4014,50 @@ details.faq-item > summary { padding: .9rem 0; }
 #site-header .logo svg text[letter-spacing="-0.3"],
 #site-header .logo svg text[letter-spacing="3.5"] { fill: #ffffff !important; }
 #site-header .logo svg rect { fill: #ffffff !important; }
+
+/* ── Rugby Joints: sectioned directory (26 Nov 2026) ─────────────────────── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.rj-answer{max-width:860px;margin:0 auto 1.25rem;text-align:left}
+.rj-answer-text{font-size:1.05rem;line-height:1.65;color:var(--text-primary);margin:0 0 .6rem}
+.rj-find-line{font-size:.92rem;margin:0;color:var(--text-secondary)}
+.rj-find-link{font-weight:700;color:var(--violet);text-decoration:underline;text-underline-offset:3px}
+.rj-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0 1.75rem}
+.rj-chip{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .85rem;border:1px solid var(--border);background:#fff;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--navy);text-decoration:none;transition:background .15s,border-color .15s}
+.rj-chip b{display:inline-block;min-width:1.4rem;padding:.05rem .4rem;border-radius:999px;background:var(--violet-tint);color:var(--violet-dk);font-size:.72rem;text-align:center}
+.rj-chip:hover,.rj-chip:focus-visible{border-color:var(--violet);background:var(--violet-tint)}
+.rj-h2{font-family:Oswald,sans-serif;font-size:clamp(1.25rem,2.4vw,1.7rem);font-weight:600;line-height:1.2;color:var(--navy);margin:0 0 1rem}
+.rj-h3{font-family:Oswald,sans-serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin:0 0 .5rem}
+.rj-table-wrap{overflow-x:auto;margin-bottom:1.5rem;border:1px solid var(--border)}
+.rj-table{width:100%;border-collapse:collapse;font-size:.9rem;background:#fff;min-width:640px}
+.rj-table th,.rj-table td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+.rj-table thead th{background:var(--navy);color:#fff;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.rj-table tbody th a{font-weight:700;color:var(--violet-dk)}
+.rj-table tbody tr:last-child th,.rj-table tbody tr:last-child td{border-bottom:0}
+.rj-num{text-align:center!important;font-weight:700}
+.rj-az{border:2px solid var(--violet);background:#fff;margin:0 0 1rem;scroll-margin-top:90px}
+.rj-az summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;padding:.9rem 1.1rem;cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
+.rj-az summary::-webkit-details-marker{display:none}
+.rj-az summary::after{content:"+";margin-left:auto;font-size:1.4rem;line-height:1;color:var(--violet)}
+.rj-az[open] summary::after{content:"–"}
+.rj-az summary small{font-weight:500;color:var(--text-muted);font-size:.8rem}
+.rj-az-list{list-style:none;margin:0;padding:.25rem 1.1rem 1.1rem;columns:3 240px;column-gap:2rem;font-size:.9rem}
+.rj-az-list li{break-inside:avoid;padding:.22rem 0;border-bottom:1px dotted var(--border)}
+.rj-az-list a{font-weight:600;color:var(--violet-dk)}
+.rj-az-list span{display:block;font-size:.72rem;color:var(--text-muted)}
+.rj-none{padding:1rem;border:1px dashed var(--border-md);background:#fff;font-size:.95rem}
+.rj-section{padding:2.25rem 0 1.25rem;border-top:1px solid var(--border);scroll-margin-top:80px}
+.rj-section.rj-alt{background:var(--bg-soft)}
+.rj-sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:.5rem 1.5rem;border-left:4px solid var(--violet);padding-left:.9rem;margin-bottom:.75rem}
+.rj-sec-head .rj-h2{margin:0;flex:1 1 420px}
+.rj-sec-meta{display:flex;align-items:center;gap:1rem;font-size:.82rem;color:var(--text-muted)}
+.rj-top-link{font-weight:600;color:var(--violet)}
+.rj-sec-intro{max-width:860px;font-size:.98rem;line-height:1.65;color:var(--text-secondary);margin:0 0 1.5rem}
+.club-card-wrap{scroll-margin-top:90px}
+.club-card-wrap:target .club-card{outline:3px solid var(--violet);outline-offset:3px;box-shadow:0 0 0 6px var(--violet-tint)}
+.rj-trust{padding:2.5rem 0;background:#fff;border-top:1px solid var(--border)}
+.rj-trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.rj-trust p,.rj-trust li{font-size:.95rem;line-height:1.65;color:var(--text-secondary)}
+.rj-meta-list{list-style:none;margin:0 0 1rem;padding:0}
+.rj-meta-list li{padding:.35rem 0;border-bottom:1px solid var(--border)}
+.rj-related{padding:0 0 2rem}
+@media (max-width:760px){.rj-trust-grid{grid-template-columns:1fr}.rj-sec-head .rj-h2{flex-basis:100%}.rj-chip{font-size:.78rem}}
