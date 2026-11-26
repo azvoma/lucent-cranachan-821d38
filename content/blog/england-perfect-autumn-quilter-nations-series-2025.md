@@ -35,4 +35,4 @@ Steve Borthwick has spoken consistently about England being a work in progress �
 
 England's success on the international stage energises the domestic game. When England win — particularly over iconic opposition like New Zealand — club registrations tend to rise and junior sections see increased interest.
 
-Rugby clubs across England, from the Premiership to the community game, benefit from this enthusiasm. If you have been thinking about joining a rugby club or registering your existing club in our directory, now is a great time. You can search over 620 clubs across England, Scotland, Wales and Northern Ireland to find one near you.
+Rugby clubs across England, from the Premiership to the community game, benefit from this enthusiasm. If you have been thinking about joining a rugby club or registering your existing club in our directory, now is a great time. You can search 590 clubs across England, Scotland, Wales and Northern Ireland to find one near you.

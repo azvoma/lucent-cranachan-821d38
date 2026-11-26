@@ -82,7 +82,7 @@
         "width": 220,
         "height": 56
       },
-      "description": "A free UK rugby club directory. 656 clubs across England, Scotland, Wales and Northern Ireland with full profile pages.",
+      "description": "A free UK rugby club directory. 590 clubs across England, Scotland, Wales and Northern Ireland with full profile pages.",
       "foundingDate": "2024",
       "areaServed": {
         "@type": "Country",
@@ -301,7 +301,7 @@
       ? 'Browse 453 rugby union clubs across England, Scotland, Wales and Northern Ireland. Every club with a full profile page.'
       : isLeague
       ? 'Browse 101 rugby league clubs across England and Wales. Super League, Championship and community clubs all listed.'
-      : 'Browse all 620 rugby clubs across the UK — union, league and rugby businesses.';
+      : 'Browse all 590 rugby clubs across the UK — union, league and rugby businesses.';
     var catUrl = getPageUrl();
 
     // Build ItemList from visible club cards

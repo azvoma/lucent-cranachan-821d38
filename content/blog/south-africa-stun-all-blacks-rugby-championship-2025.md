@@ -39,4 +39,4 @@ The result left New Zealand needing to win their remaining matches convincingly 
 
 Test matches at this level have a real trickle-down effect on the grassroots game. When the Rugby Championship is competitive, enthusiasm builds across UK clubs, particularly through the autumn international window that follows. Many players and coaches at clubs around the UK follow the southern hemisphere game closely for tactical insights and inspiration.
 
-If your club is looking to get involved or you are searching for a rugby club near you, use our directory to find over 620 clubs across England, Scotland, Wales and Northern Ireland.
+If your club is looking to get involved or you are searching for a rugby club near you, use our directory to find 590 clubs across England, Scotland, Wales and Northern Ireland.

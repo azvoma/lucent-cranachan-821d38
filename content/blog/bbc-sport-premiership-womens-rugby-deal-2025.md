@@ -33,4 +33,4 @@ Broadcast visibility for the elite game has a direct impact on grassroots partic
 
 Across the UK, the number of clubs offering women's and girls' rugby has grown significantly over the past decade. Many clubs that feature in our directory have established women's sections that welcome players of all abilities and backgrounds.
 
-If you are looking to get involved in women's rugby — whether as a player, coach or volunteer — our directory covers over 620 clubs across England, Scotland, Wales and Northern Ireland. Many run women's sessions specifically designed for beginners. Find your local club today.
+If you are looking to get involved in women's rugby — whether as a player, coach or volunteer — our directory covers 590 clubs across England, Scotland, Wales and Northern Ireland. Many run women's sessions specifically designed for beginners. Find your local club today.
