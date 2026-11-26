@@ -149,7 +149,7 @@ function siteFooter() {
             <text x="39" y="33" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="white" letter-spacing="3">DIRECTORY</text>
           </svg>
         </a>
-        <p class="ft-strapline">A free directory of rugby union and rugby league clubs across the UK. 656 clubs, each with its own profile page, across England, Scotland, Wales and Northern Ireland.</p>
+        <p class="ft-strapline">A free directory of rugby union and rugby league clubs across the UK. 590 clubs, each with its own profile page, across England, Scotland, Wales and Northern Ireland.</p>
         <div class="ft-socials">
           <a href="https://x.com/ukrugbyclub" target="_blank" rel="noopener" class="ft-soc" aria-label="Twitter/X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.856L1.999 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://www.facebook.com/profile.php?id=61582000350872" target="_blank" rel="noopener" class="ft-soc" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -193,7 +193,7 @@ function siteFooter() {
   </div>
   <div class="ft-bottom">
     <div class="con ft-bottom-inner">
-      <p>&copy; ${new Date().getFullYear()} UK Rugby Club Directory. All rights reserved. 656 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
+      <p>&copy; ${new Date().getFullYear()} UK Rugby Club Directory. All rights reserved. 590 individual club profiles across England, Scotland, Wales and Northern Ireland.</p>
       <div class="ft-bottom-links">
         <a href="/privacy-policy.html">Privacy</a><span>·</span>
         <a href="/terms-of-service.html">Terms</a><span>·</span>
@@ -625,7 +625,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
       </span>
       <span class="eeat-badge">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        656 clubs listed
+        590 clubs listed
       </span>
     </div>`;
 
@@ -668,7 +668,7 @@ function buildArticlePage(slug, fm, bodyHtml) {
         ${tocHtml}
         <div class="sidebar-card">
           <h3>Find a Rugby Club</h3>
-          <p>Search 656 clubs across England, Scotland, Wales and Northern Ireland.</p>
+          <p>Search 590 clubs across England, Scotland, Wales and Northern Ireland.</p>
           <a class="sidebar-cta" href="/rugby-union.html">Browse clubs &rarr;</a>
         </div>
         <div class="sidebar-card">

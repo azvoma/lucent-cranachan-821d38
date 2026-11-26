@@ -66,4 +66,4 @@ Many clubs also offer pay-as-you-train options for people who want to try before
 
 ## Find Your Club
 
-If this guide has convinced you that rugby is worth trying, the next step is straightforward. Search the UK Rugby Club Directory to find clubs near you. With over 620 clubs listed across England, Scotland, Wales and Northern Ireland — each with full contact details, training information, and what teams they run — finding the right club for you has never been easier.
+If this guide has convinced you that rugby is worth trying, the next step is straightforward. Search the UK Rugby Club Directory to find clubs near you. With 590 clubs listed across England, Scotland, Wales and Northern Ireland — each with full contact details, training information, and what teams they run — finding the right club for you has never been easier.
